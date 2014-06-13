@@ -204,35 +204,17 @@ def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper
 					if len(grid[i][j].assignments)==0:
 						
 						if sufficient_gradient:
-							for di in range(-neighborhood_size,neighborhood_size+1):
-								for dj in range(-neighborhood_size,neighborhood_size+1):
-									if i+di >= 0 and i+di<grid_size and j+dj>=0 and j+dj<grid_size:
-										if grid[i+di][j+dj].assignments > 0:
-											grid[i+di][j+dj].add_lonely_gridpoint(i,j)
+							from_i, to_i = max(0, i-neighborhood_size), min(grid_size, i+neighborhood_size+1)
+							from_j, to_j = max(0, j-neighborhood_size), min(grid_size, j+neighborhood_size+1)
+							for ii in range(from_i,to_i):
+								for jj in range(from_j,to_j):
+									if grid[ii][jj].assignments > 0:
+											grid[ii][jj].add_lonely_gridpoint(i,j)
 						else:
 							for elem in assigned:
 								if grid[elem[0]][elem[1]].assignments > 0:
 									grid[elem[0]][elem[1]].add_lonely_gridpoint(i,j)
-						
-						
-						# found = False
-						# ran_len = 10
-						# old = 0
-						# while not found:
-							# ran = range(-ran_len+1, ran_len)							
-							# for di in ran:
-								# for dj in ran:
-									# if not(di > -old and di < old and dj > -old and dj < old):
-										# if i+di >= 0 and i+di<grid_size and j+dj>=0 and j+dj<grid_size:
-											# if grid[i+di][j+dj].assignments > 0:
-												# grid[i+di][j+dj].add_lonely_gridpoint(i,j)
-												# found = True
-							# if len(assigned) > 0.3*nr_items:
-								# old = ran_len
-								# ran_len+=10					
-							# else:
-								# found = True
-								
+														
 			nr_movements = 0
 			for i in range(nr_items):
 				nearest = [int(round(data[i,0])), int(round(data[i,1]))]
