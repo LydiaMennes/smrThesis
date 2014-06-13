@@ -1,0 +1,2 @@
+puzzle.py limit1000_nolog 11756 --process all --max_closest 8 --nr_trials_re_init 100 --stop_nr_trials 200 --to_file_trials 5 --old_grid_size 10
+puzzle.py cutoff_10_nolog 30888 --process all --max_closest 8 --nr_trials_re_init 100 --stop_nr_trials 200 --to_file_trials 5 --old_grid_size 50

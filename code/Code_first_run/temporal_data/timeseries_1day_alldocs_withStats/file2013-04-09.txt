@@ -1,0 +1,12 @@
+Sneijder**Wesley;1;1;7
+Mol**John;12;11;1
+Jol**Martin;2;5;1
+Koeman**Ronald;2;0;3
+Seedorf**Clarence;1;2;1
+Robben**Arjen;0;0;2
+Ronaldo**Cristiano;2;4;12
+Borsato**Marco;10;12;1
+Persie**Robin;0;2;2
+Mol**Linda;11;11;1
+Lurling**Anthony;5;4;1
+Vaart**Rafael;0;1;3

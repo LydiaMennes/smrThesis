@@ -1,0 +1,13 @@
+-EMPTY-; -EMPTY-; -EMPTY-; -EMPTY-; -EMPTY-; Vermeer**Kenneth; Heitinga**John; Vlaar**Ron; Jong**Nigel; Stekelenburg**Maarten; Persie**Robin; Vaart**Rafael; Robben**Arjen; 
+-EMPTY-; -EMPTY-; -EMPTY-; -EMPTY-; -EMPTY-; Emanuelson**Urby; Krul**Tim; Kuijt**Dirk; Ibrahimovic**Zlatan; Schaars**Stijn; Sneijder**Wesley; Ronaldo**Cristiano; Gaal**Louis; 
+-EMPTY-; Leeuw**Paul; -EMPTY-; -EMPTY-; -EMPTY-; Marwijk**Bert; Jol**Martin; Mathijsen**Joris; Brom**John; Been**Mario; Bakker**Bas; Seedorf**Clarence; Boer**Frank; 
+Mol**Johnny; B**Ali; Paay**Patricia; Bauer**Frans; Tuitert**Mark; Sauerbreij**Nicolien; Stevens**Huub; Overmars**Marc; Gullit**Ruud; Hanegem**Willem; Geel**Martin; Bommel**Mark; Cocu**Phillip; 
+Verlinde**Albert; Brard**Patty; Meeuwis**Guus; Tan**Humberto; Eurlings**Camiel; Halsema**Femke; Ecclestone**Bernie; Schumacher**Michael; Boer**Ronald; Sar**Edwin; Brands**Marcel; Hiddink**Guus; Basten**Marco; 
+Borsato**Marco; Mol**Linda; Moszkowicz**Bram; Mol**John; DeLange**Ilse; Aboutaleb**Ahmed; Smeets**Mart; Barneveld**Raymond; Pot**Cor; Bakkal**Otman; Janssen**Theo; Wouters**Jan; Verbeek**Gertjan; 
+Joling**Gerard; Meis**Sylvie; Houten**Carice; Janzen**Chantal; Dijk**Wendy; Ulenbelt**Paul; Crone**Ferd; Wennemars**Erben; Lurling**Anthony; Beckham**David; Jans**Ron; Koeman**Erwin; Bosz**Peter; 
+Smit**Jan; Williams**Robbie; Hoes**Onno; Royen**Heleen; **Shakira; Graus**Dion; Vries**Jan; Cohen**Job; Booy**Foeke; Janssen**Anton; Derksen**Johan; Koeman**Ronald; Cruijff**Johan; 
+Spears**Britney; Frans**Lange; Hilton**Paris; Clooney**George; Beelen**Giel; Wolfsen**Aleid; Dijk**Jasper; Rouwe**Sander; Fritsma**Sietse; Hijum**Eddy; Thieme**Marianne; Advocaat**Dick; Rutten**Fred; 
+Jackson**Michael; Pitt**Brad; Timberlake**Justin; Cruise**Tom; Bos**Wouter; Verbeet**Gerdi; Raak**Ronald; Verdonk**Rita; Dijksma**Sharon; Omtzigt**Pieter; Hamer**Mariëtte; -EMPTY-; -EMPTY-; 
+**Madonna; John**Elton; Agema**Fleur; Brinkman**Hero; Heerts**Ton; Balkenende**Jan Peter; Staaij**Kees; Plasterk**Ronald; Kamp**Henk; Bussemaker**Jet; Opstelten**Ivo; -EMPTY-; -EMPTY-; 
+Winfrey**Oprah; Grace**Glennis; Baalen**Hans; Bommel**Harry; Koenders**Bert; Leijten**Renske; Schippers**Edith; Roemer**Emile; Miltenburg**Anouchka; Weekers**Frans; Voordewind**Joël; Slob**Arie; -EMPTY-; 
+Lexmond**Lieke; Rens**Peter Jan; Dijsselbloem**Jeroen; Spekman**Hans; Blok**Stef; Rutte**Mark; Wilders**Geert; Haersma Buma**Sybrand; Pechtold**Alexander; Samsom**Diederik; Zijlstra**Halbe; Teeven**Fred; Timmermans**Frans; 

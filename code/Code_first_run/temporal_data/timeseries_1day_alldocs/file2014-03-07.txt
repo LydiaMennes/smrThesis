@@ -1,0 +1,7 @@
+Gaal**Louis;1;0;1
+Wouters**Jan;11;0;1
+Robben**Arjen;0;0;1
+Bosz**Peter;7;0;1
+Jans**Ron;12;1;1
+Schippers**Edith;9;3;1
+Boer**Frank;3;0;4

@@ -1,0 +1,8 @@
+Sneijder**Wesley;1;1;6
+Verbeek**Gertjan;2;1;1
+Vermeer**Kenneth;0;6;2
+Brands**Marcel;4;2;1
+Beckham**David;4;6;1
+Been**Mario;3;6;1
+Vaart**Rafael;0;1;2
+Advocaat**Dick;4;0;1

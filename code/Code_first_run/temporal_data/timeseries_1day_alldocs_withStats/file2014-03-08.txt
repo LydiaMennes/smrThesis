@@ -1,0 +1,6 @@
+Stekelenburg**Maarten;1;3;2
+Cocu**Phillip;9;0;1
+Mol**John;12;11;1
+Wouters**Jan;11;0;1
+Persie**Robin;0;2;3
+Heitinga**John;0;5;1

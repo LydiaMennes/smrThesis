@@ -1,0 +1,17 @@
+Smit**Jan;7;12;3
+DeLange**Ilse;8;10;4
+Houten**Carice;7;10;1
+Cruijff**Johan;8;0;1
+Gullit**Ruud;3;4;1
+Janssen**Theo;5;2;2
+Overmars**Marc;3;5;6
+B**Ali;11;12;1
+Brands**Marcel;4;2;1
+Beckham**David;4;6;1
+Ronaldo**Cristiano;2;4;1
+Borsato**Marco;10;12;1
+Persie**Robin;0;2;1
+Bosz**Peter;7;0;7
+Meeuwis**Guus;11;10;6
+Jong**Nigel;0;3;1
+Basten**Marco;10;0;2
