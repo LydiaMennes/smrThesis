@@ -42,7 +42,7 @@ figure_size = 8
 
 class GridElem:
 
-	def __init__(self, i, pos, name, blob_color, blob_nr):
+	def __init__(self, i, pos, name, blob_color, blob_nr=None):
 		self.id = i
 		self.pos = np.array(pos)
 		self.closest = []
@@ -54,6 +54,9 @@ class GridElem:
 		self.followers2 = {}
 		self.closest_copy = []
 		self.sem_rep = None
+	
+	def add_blob_nr(i):
+		self.blob_nr = i
 	
 	# n = [dist, id, x pos, y pos]
 	def check_neighbor(self, n):
@@ -180,26 +183,11 @@ def print_all_lists(x):
 	f.write("\n\n")
 	f.close()
 			
-def get_colors():
-	r = [[0,1,0],[1,1,0],[0,1,1],[0,0,1],[0,1,0.5],[1,0,0.5],[0.5,1,0],[0,0.5,1],[1,0,1], [1,0,0],[0.5,0,1],[1,0.5,0]]
-	q = np.array(r)
-	q = q*0.5
-	r.extend(map(list,list(q)))
-	return r
 
-def grid_to_file(grid_size, suffix):
-	f = open(output_directory + r"\grid_" + suffix +".txt", "w")	
-	grid_size = int(grid_size)
-	for i in range(grid_size):
-		for j in range(grid_size):
-			if grid_f[i][j]!= None:
-				f.write(grid_f[i][j].name + " ; " )
-			else:
-				f.write("-EMPTY- ; ")
-		f.write("\n")
-	f.close()
 
-def grid_from_file():
+
+
+def grid_and_blob_from_file():
 	f = open(output_directory+r"\blob_file.txt")
 	blob_nrs = {}
 	for line in f:
@@ -212,25 +200,15 @@ def grid_from_file():
 			blob_nrs[w] = blob_nr
 	f.close()
 
-	f = open(output_directory+r"\grid_initial.txt")
-	colors = get_colors()
-	row = 0
-	column = 0
-	nr_words = 0
-	id = 0
-	for line in f:
-		line = line.replace(" ; \n", "")
-		line = line.split(" ; ")
-		for w in line:
-			if w != "-EMPTY-":
-				grid_f[row][column] = GridElem(id, [row,column], w, colors[id%len(colors)], blob_nrs[w])
-				global_index[id] = grid_f[row][column]
-				id+=1
-				nr_words+=1
-			column += 1
-		column = 0
-		row+= 1	
-	f.close()
+	landscape_file = output_directory+r"\grid_initial.txt"
+	grid = grid_from_file(landscape_file)
+	for x, inDict in grid.iteritems():
+		for y, elem in inDict.iteritems():
+			grid_f[x][y] = elem
+			if elem != None:
+				elem.add_blob_nr()
+				global_index[elem.id] = elem
+				blob_nrs[elem.name]
 	return row, nr_words
 	
 # Requires semantic representation as a list of lists of the non-zeros entries: [[name, value],[name,value]]
@@ -834,7 +812,7 @@ def build_final_grid(nr_words, process, old_grid_size = -1):
 		log_file.close()
 		grid_to_file(new_grid_size, "initial")
 	elif process == "only_puzzle":
-		(new_grid_size, nr_words) = grid_from_file()
+		(new_grid_size, nr_words) = grid_and_blob_from_file()
 		grid_to_file(new_grid_size, "as_from_file")
 	else:
 		print "unrecognized process type"

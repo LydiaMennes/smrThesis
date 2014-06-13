@@ -10,6 +10,7 @@ import numpy as np
 import os
 import sys
 import unicodedata
+from thesis_utilities import *
 
 window_size = 8
 query = "SELECT itemText FROM newsitems WHERE sourceType = 2"
@@ -127,14 +128,6 @@ def cooc_stats_to_file(cooc, tf_idf):
 	image_name = result_path + r"\cooc_stats_nolog.pdf"
 	fig.savefig(image_name, bbox_inches='tight')
 	# plt.show()
-			
-def get_parabots_stopwords():
-	file = open(r"D:\Users\Lydia\code stuff\dutchStopwords.txt", 'r')
-	stopwords = []
-	for line in file:
-		line = line.replace("\n", "")
-		stopwords.append(line)
-	return stopwords
 
 def stats_to_file(doc_nr, total_nr_words, nr_words, nr_entries, nr_words_single_freq, nr_included_words):
 	filename_out = result_path+r"\stats.txt" 
@@ -222,7 +215,6 @@ def get_cooccurrences(folder):
 		stop_words = stopwords.words('dutch')
 	elif stopwords_type == "parabots":
 		stop_words = get_parabots_stopwords()
-	has_digits = re.compile('\d')
 	
 	# init dictionary
 	cooc = defaultdict(lambda: defaultdict(int))
@@ -242,7 +234,7 @@ def get_cooccurrences(folder):
 				
 		for word in text:			
 			word = word.lower()
-			if len(word)!=1 and word != "" and word not in stop_words and not bool(has_digits.search(word)) and word not in silly_words:				
+			if len(word)!=1 and word != "" and word not in stop_words and not has_digits(word) and word not in silly_words:				
 				window.append(word)	
 				total_nr_words+=1
 		

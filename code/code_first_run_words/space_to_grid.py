@@ -245,7 +245,7 @@ def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper
 			if iternr%20!=0:
 				print "i:",iternr,"ass",len(assigned), "mo:", nr_movements
 		
-			if nr_movements < 150:
+			if nr_movements < 300:
 				neighborhood_size += 5
 				print "neigh size upgraded"
 		
