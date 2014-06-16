@@ -36,6 +36,7 @@ stop_nr_trials = 0
 blob_neighbors = []
 init_type = "probabilistic" # can be probabilistic or deterministic
 log_file_n = ""
+grid_input = ""
 
 stress_cutoff = 1.2
 figure_size = 8
@@ -185,7 +186,7 @@ def print_all_lists(x):
 	f.close()
 
 def grid_and_blob_from_file():
-	f = open(output_directory+r"\blob_file.txt")
+	f = open(grid_input+r"\blob_file.txt")
 	blob_nrs = {}
 	for line in f:
 		line = line.replace("\n", "")
@@ -199,7 +200,7 @@ def grid_and_blob_from_file():
 	
 	colors = get_colors()
 
-	landscape_file = output_directory+r"\grid_initial.txt"
+	landscape_file = grid_input+r"\grid_initial.txt"
 	grid = grid_from_file(landscape_file)
 	id = 0
 	nr_words = 0
@@ -214,7 +215,7 @@ def grid_and_blob_from_file():
 				id+=1
 				nr_words+=1
 	print "\n====\nFile read\n===="
-	grid_to_file(output_directory, x+1, "test", grid_f)
+	grid_to_file(grid_input, x+1, "test", grid_f)
 	return x+1, nr_words
 	
 # Requires semantic representation as a list of lists of the non-zeros entries: [[name, value],[name,value]]
@@ -225,7 +226,7 @@ def distance(sem_w1, sem_w2):
 
 
 	
-def stats_to_file(iter, trial, to_follow, nr_inits, grid_size, png_nr):
+def stats_to_file(iter, trial, to_follow, nr_inits, grid_size, png_nr, nr_swaps):
 	# followers
 	image_name = output_directory + r"\follow_points_init" +str(nr_inits)+  "_tr" +str(trial)+"_it"+ str(iter)+".pdf"
 	fig = plt.figure(figsize=(figure_size, figure_size))	
@@ -280,19 +281,14 @@ def stats_to_file(iter, trial, to_follow, nr_inits, grid_size, png_nr):
 	fig.savefig(image_name, bbox_inches='tight')
 	fig.savefig(output_directory+r"\heat_map_stress_" + four_digit_string(png_nr) +".png")
 	plt.close()
-	# print "figure done"
 	
-	# fig, ax = ppl.subplots(1)
-	# ppl.pcolormesh(fig, ax, np.abs(np.random.randn(10,10)))
-	# fig.savefig('pcolormesh_prettyplotlib_positive.png')
-	# plt.close()
+	avg_stress_value = np.mean(stress_values)
 	
-	# marker='o'
-	# image_name = output_directory + r"\stg_init_plot_blobColoring.pdf"
-	# fig = plt.figure()
-	# plt.scatter( data_space[:,0], data_space[:,1], c=coloring)
-	# fig.savefig(image_name, bbox_inches='tight')	
-	# plt.close()
+	f = open(output_directory + "r\stats.txt", "a")
+	f.write(str(trial) + " , " + str(nr_waps) + " , " + avg_stress_value + "\n")
+	f.close()
+	
+	
 	
 def get_stress_values():	
 	# dit kan je nog faseren bij grotere dataset
@@ -689,17 +685,12 @@ def puzzle(grid_size, old_grid_size, nr_words):
 	print "NR WORDS", nr_words
 	iter = 0
 	png_nr = 0
-	# log_file = open(output_directory + r"\log.txt", "w")
-	#sample words to follow
 	follow_inds = Set()
 	while len(follow_inds) < nr_words_to_follow:
 		follow_inds.add(random.randrange(nr_words))
 	follow_inds = list(follow_inds)
 	
-	# log_file.write("Indexes:")
-	# for key, value in global_index.iteritems():
-		# log_file.write(str(key)+" " + value.name + " " + str(value.id) + "\n")
-		
+	
 	
 	print "\n========\nSTART PUZZLING\n===========\n"
 	log_file = open(log_file_n, 'a')
@@ -707,6 +698,8 @@ def puzzle(grid_size, old_grid_size, nr_words):
 	log_file.close()
 	trial_nr = 0
 	nr_inits = 0
+	nr_swaps = 0
+	total_nr_swaps = 0
 	elem_indexes = range(nr_words)
 	grid_size = int(grid_size)
 	while not stop_condition(trial_nr):
@@ -731,7 +724,7 @@ def puzzle(grid_size, old_grid_size, nr_words):
 				# log_file.write("INITIALIZED\n\n")
 				# print_all_lists(str(trial_nr))
 			if iter == 0:
-				stats_to_file("FIRST", trial_nr , follow_inds, nr_inits, grid_size, png_nr)
+				stats_to_file("FIRST", trial_nr , follow_inds, nr_inits, grid_size, png_nr, nr_swaps)
 				png_nr+=1
 			# pick random element
 			random.shuffle(elem_indexes)
@@ -761,6 +754,7 @@ def puzzle(grid_size, old_grid_size, nr_words):
 								swap_y = y+dy
 								
 				if swap_value > 0:
+					nr_swaps+=1
 					xy = grid_f[x][y]
 					xy_swap = grid_f[swap_x][swap_y]
 					grid_f[x][y] = xy_swap
@@ -776,10 +770,14 @@ def puzzle(grid_size, old_grid_size, nr_words):
 					
 			# figures and stats to file
 			if trial_nr%to_file_trials == 0 and trial_nr != 0:
-				stats_to_file(iter, trial_nr, follow_inds, nr_inits, grid_size, png_nr)
+				stats_to_file(iter, trial_nr, follow_inds, nr_inits, grid_size, png_nr, nr_swaps)
+				total_nr_swaps += nr_swaps
+				nr_swaps = 0
 				png_nr+=1
 			trial_nr+=1
-	stats_to_file("LAST", trial_nr, follow_inds, nr_inits, grid_size, png_nr)
+	stats_to_file("LAST", trial_nr, follow_inds, nr_inits, grid_size, png_nr, nr_swaps)
+	f = open(output_directory + "r\stats.txt", "w")
+	f.write("total number of swaps " + str(total_nr_swaps))
 	
 def build_final_grid(nr_words, process, old_grid_size = -1):
 	if process == "all" or process == "initial_grid":
@@ -835,6 +833,7 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 	kwargs = vars(args)	
 	
+	print "\n\n\n"
 	print kwargs
 	
 	data_case_name = "\\" + kwargs["case_name"]
@@ -857,11 +856,17 @@ if __name__ == "__main__":
 	print dif_output_dir
 	if dif_output_dir == None:
 		output_directory = output_directory + data_case_name
+		grid_input = output_directory
 	else:
-		output_directory = output_directory +  "\\" + dif_output_dir  		
+		grid_input = output_directory + data_case_name
+		output_directory = output_directory +  "\\" + dif_output_dir  
 	if not os.path.exists(output_directory):
 		os.makedirs(output_directory)	
 		print "directory made"
+	
+	f = open(output_directory + r"\stats.txt", "w")
+	f.write("trial_nr , nr of swaps , average stress value\n")
+	f.close()
 	
 	log_file_n = output_directory+r"\log_file.txt"
 	log_file = open(log_file_n, 'w')
