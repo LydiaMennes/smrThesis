@@ -28,13 +28,13 @@ def four_digit_string(i):
 		start = start / 10
 	return s + str(i)
 	
-def grid_to_file(grid_size, suffix):
+def grid_to_file(output_directory, grid_size, suffix, grid):
 	f = open(output_directory + r"\grid_" + suffix +".txt", "w")	
 	grid_size = int(grid_size)
 	for i in range(grid_size):
 		for j in range(grid_size):
-			if grid_f[i][j]!= None:
-				f.write(grid_f[i][j].name + " ; " )
+			if grid[i][j]!= None:
+				f.write(grid[i][j].name + " ; " )
 			else:
 				f.write("-EMPTY- ; ")
 		f.write("\n")
@@ -50,19 +50,14 @@ def get_colors():
 def grid_from_file(landscape_file):
 	grid = defaultdict(lambda: defaultdict(lambda: None) )
 	f = open(landscape_file)
-	colors = get_colors()
 	row = 0
 	column = 0
-	nr_words = 0
-	id = 0
 	for line in f:
 		line = line.replace(" ; \n", "")
 		line = line.split(" ; ")
 		for w in line:
 			if w != "-EMPTY-":
-				grid[row][column] = GridElem(id, [row,column], w, colors[id%len(colors)])				
-				id+=1
-				nr_words+=1
+				grid[row][column] = w	
 			column += 1
 		column = 0
 		row+= 1	

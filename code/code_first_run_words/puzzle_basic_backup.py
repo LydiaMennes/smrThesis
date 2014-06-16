@@ -37,7 +37,7 @@ blob_neighbors = []
 init_type = "probabilistic" # can be probabilistic or deterministic
 log_file_n = ""
 
-stress_cutoff = 2.5
+stress_cutoff = 1.1
 figure_size = 8
 
 class GridElem:
@@ -740,8 +740,6 @@ def puzzle(grid_size, old_grid_size, nr_words):
 				log_file = open(log_file_n, 'a')
 				log_file.write("stop init closest at "+str(datetime.datetime.now())+"\n")
 				log_file.close()
-				# log_file.write("INITIALIZED\n\n")
-				print_all_lists(str(trial_nr))
 			if iter == 0:
 				stats_to_file("FIRST", trial_nr , follow_inds, nr_inits, grid_size, png_nr)
 				png_nr+=1
@@ -753,29 +751,6 @@ def puzzle(grid_size, old_grid_size, nr_words):
 				if iter%5000 == 0:
 					print "iter", iter,
 				
-				'''
-				# check whole grid
-				for i in range(grid_size):
-					for j in range(grid_size):
-						# log_file.write("index " + str(i)+" " + str(j) + "\n")
-						if grid_f[i][j] != None:								
-							foll = grid_f[i][j].get_followers()
-							# log_file.write("followers of " + grid_f[i][j].name + "\n")
-							for blaat, blaatPos in foll.iteritems():
-								# log_file.write(indexes[blaat].name + ": ")
-								lijst = global_index[blaat].get_closest()
-								lijst = [aap for [aap,hoi] in lijst]
-								# log_file.write("list of " + str(blaat))
-								# for element in lijst:
-									# log_file.write(" ("+str(element)+ " " + indexes[element].name + ") ")
-								# log_file.write("\n")
-								if grid_f[i][j].id not in lijst:
-									print "Follower not in closest list!\n"									
-									# log_file.write("\n\nFollower not in closest list!\n")
-									# log_file.write(indexes[blaat].name + " in list of followers of " + grid_f[i][j].name + "\n")
-									# log_file.write("but "  + grid_f[i][j].name + " not in list of closest of " + indexes[blaat].name + "\n")
-									sys.exit()
-				'''
 				
 				swap_value = float("-inf")
 				# check with which neighbor it wants to swap
