@@ -39,8 +39,6 @@ init_type = "probabilistic" # can be probabilistic or deterministic
 log_file_n = ""
 grid_input = ""
 encounter = True
-use_followers = False
-follower_weight = 0.2
 
 stress_cutoff = 1.2
 figure_size = 8
@@ -149,14 +147,6 @@ class GridElem:
 		for c in self.closest:	 
 			old += np.dot(self.pos-c[1], self.pos-c[1])
 			new += np.dot(new_pos-c[1], new_pos-c[1])
-			
-		if use_followers:
-			old_f, new_f = 0,0
-			for f_pos in self.followers.itervalues():
-				old_f += np.dot(self.pos-f_pos, self.pos-f_pos)
-				new_f += np.dot(new_pos-f_pos, new_pos-f_pos)
-			old = (1-follower_weight)*old + follower_weight * old_f 	
-			new = (1-follower_weight)*new + follower_weight * new_f 				
 		return old-new
 		
 	def change_pos(self, pos_x, pos_y):
@@ -847,7 +837,6 @@ if __name__ == "__main__":
 	parser.add_argument("--old_grid_size", type=int , nargs='*',default=[-1] , help = "If you do only puzzle you have to provide the grid_size of the sample input")
 	parser.add_argument("--dif_output_dir", nargs='*', default=[None])
 	parser.add_argument("--encounter", nargs='*', default=[True])
-	parser.add_argument("--use_followers", nargs='*', default=[True])
 	
 	args = parser.parse_args()
 	kwargs = vars(args)	
@@ -871,8 +860,6 @@ if __name__ == "__main__":
 	dif_output_dir = kwargs["dif_output_dir"][0]
 	if kwargs["encounter"] == "no":
 		encounter = False
-	if kwargs["use_followers"] == "no":
-		use_followers = False
 	
 	input_directory_landscape = input_directory_landscape + data_case_name
 	input_directory_cooc = input_directory_cooc + data_case_name
