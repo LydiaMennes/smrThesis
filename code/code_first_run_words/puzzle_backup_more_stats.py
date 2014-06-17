@@ -32,13 +32,11 @@ data_portion = 0
 nr_words_to_follow = 0
 to_file_trials = 0
 global_index = {}
-global_name = {}
 stop_nr_trials = 0
 blob_neighbors = []
 init_type = "probabilistic" # can be probabilistic or deterministic
 log_file_n = ""
 grid_input = ""
-encounter = True
 
 stress_cutoff = 1.2
 figure_size = 8
@@ -54,78 +52,71 @@ class GridElem:
 		self.name = name
 		self.blob_nr = blob_nr
 		self.nr_swaps = 0
+		self.followers2 = {}
+		self.closest_copy = []
 		self.sem_rep = None
 	
 	# n = [dist, id, x pos, y pos]
-	def check_neighbor(self, n, init):
-		# print "-",
+	def check_neighbor(self, n):
 		if self.id == n[1]:
-			"compared to self"					
+			"compared to self"
+					
 		if len(self.dists) == 0:
-			self.dists.append(n[0])			
+			self.dists.append(n[0])
 			self.closest.append([n[1], np.array(n[2:len(n)])] )
-		elif n[0] < self.dists[-1] or len(self.dists) < max_closest:
+		if len(self.dists)!= 0 and (len(self.dists) < max_closest or n[0] < self.dists[-1]):
 			i = bis.bisect(self.dists, n[0])
+			self.dists.insert(i, n[0])
+			self.closest.insert( i, [n[1], np.array(n[2:len(n)])] )
 			if grid_f[n[2]][n[3]].id != n[1]:
 				print "WRONG CLOSEST ADDED"
-				print
 				sys.exit()
 			if np.array(n[2:len(n)])[0]  == self.pos[0] and np.array(n[2:len(n)])[1]==self.pos[1]:
-				print "closest added with own position"
-				print
+				"closest added with own position", self.name, self.pos, "id to be added" ,n[0]
 				sys.exit()
-			if  not init and n[1] not in self.get_closest_ids(): 
-				self.dists.insert(i, n[0])
-				self.closest.insert( i, [n[1], np.array(n[2:len(n)])] )
-				global_index[n[1]].add_follower(self.id, self.pos)
-				global_index[self.closest[-1][0]].follower_unsubscribe(self.id)
+			if len(self.dists) > max_closest:
 				del self.dists[-1]
 				del self.closest[-1]
-			elif init:				
-				self.dists.insert(i, n[0])
-				self.closest.insert( i, [n[1], np.array(n[2:len(n)])] )
-				if len(self.dists) > max_closest:
-					del self.dists[-1]
-					del self.closest[-1]
-		# print "|",
-		
-		
-	def has_closest(self, id_c):
-		ids = [x for (x,y) in self.closest]
-		return id_c in ids
 			
 	def get_closest(self):
 		return self.closest
 		
-	def get_closest_ids(self):
-		return [x for (x,y) in self.closest]
-	
-	def has_follower(self, id_f):
-		return id_f in self.followers
-		
 	def get_followers(self):
 		return self.followers
-		
-	def get_followers_ids(self):
-		return self.followers.keys()
 	
 	def get_optimal(self):
 		return np.mean(np.array(self.dists))
 	
 	def add_follower(self, id_f, pos_f):
+		# if id_f == self.id:
+			# print "self added as follower"
+			# print closest
+			# sys.exit()
+		# if grid_f[pos_f[0]][pos_f[1]].id != id_f:
+			# print "WRONG FOLLOWER ADDED"
+			# sys.exit()
 		self.followers[id_f] = pos_f
-		
-	def follower_unsubscribe(self, id_f):
-		del self.followers[id_f] 
+		self.followers2[id_f] = pos_f
 	
 	def add_cooc(self, sem):
 		self.sem_rep = sem
 	
-	def init_as_follower(self):	
-		for (id_c, pos_c) in self.closest:		
-			global_index[id_c].add_follower(self.id, self.pos)
+	def init_as_follower(self):
+		for c in self.closest:
+			self.closest_copy.append(copy.deepcopy(c))		
+		for (x, c) in self.closest:		
+			grid_f[int(c[0])][int(c[1])].add_follower(self.id, self.pos)
 		
 	def follower_pos_update(self, id_f, pos_f):
+		# if grid_f[pos_f[0]][pos_f[1]] == None:
+			# print "Hier wordt een None positie follower doorgegeven", id_f, pos_f
+			# sys.exit()
+		# elif grid_f[pos_f[0]][pos_f[1]].id != id_f:
+			# print "Hier wordt een verkeerde follower positie doorgegeven", id_f, pos_f
+			# sys.exit()
+		# if id_f == self.id:
+			# print "adds itself as follower in update function", self.name
+			# sys.exit()
 		self.followers[id_f] = pos_f
 		
 	def closest_pos_update(self, id_c, pos_c):
@@ -153,7 +144,12 @@ class GridElem:
 		self.nr_swaps +=1		
 		old_pos = np.array(self.pos)
 		self.pos = np.array([pos_x, pos_y])
-		for idX, posX in self.closest:		
+		for idX, posX in self.closest:
+			# if idX == self.id:
+				# print "found itself in list with closest"
+			# if grid_f[posX[0]][posX[1]].id == self.id and grid_f[old_pos[0]][old_pos[1]].id != idX:
+				# print "ID position combination does not make sense"
+				# print self.pos, self.name, global_index[idX]			
 			global_index[idX].follower_pos_update(self.id, self.pos)
 		for idX, posX in self.followers.iteritems():
 			global_index[idX].closest_pos_update(self.id, self.pos)
@@ -162,38 +158,25 @@ class GridElem:
 		self.closest = []
 		self.dists = []
 		self.followers = {}
-
-
-def check_all_lists(iter):
-	print_all_lists(iter)
-	for elem_ci in global_index.keys():
-		elem_c = global_index[elem_ci]
-		followers = elem_c.get_followers_ids()
-		closest = elem_c.get_closest_ids()
-		for cc in closest:
-			if not global_index[cc].has_follower(elem_ci):
-				print "Problem closest elem:", elem_c.name, "closest:", global_index[cc].name
-				print "list of follower ids of", global_index[cc].name, global_index[cc].get_followers_ids()
-				sys.exit()
-		for cf in followers:
-			if not global_index[cf].has_closest(elem_ci):
-				print "Problem follower elem:", elem_c.name, "follower:", global_index[cf].name
-				print "list of closest ids of",global_index[cf].name, global_index[cf].get_closest_ids()
-				sys.exit()
 		
+
+def print_something():
+	print "hoi"
+
 def print_all_lists(x):
 	f = open(output_directory+r"\lists of closest.txt","a")
-	f.write("=========" + str(x) + "========\n")
+	f.write("=========" + str(x) + "========\n\n")
 	for i in range(len(grid_f)):
 		for j in range(len(grid_f)):
 			if grid_f[i][j] != None:
-				f.write(grid_f[i][j].name + ";" + str(grid_f[i][j].id) + " ; Closest")
-				for id1 in grid_f[i][j].get_closest_ids():
-					f.write(" ; " + global_index[id1].name + "-" + str(global_index[id1].id))
-				f.write(" ; Followers")
-				for id2 in grid_f[i][j].get_followers_ids():
-					f.write(" ; " + global_index[id2].name + "-" + str(global_index[id2].id))
+				f.write(grid_f[i][j].name + " at position "+str(i)+" "+str(j)+" thinks at position "+str(grid_f[i][j].pos)+ ":\nClosest:")
+				for id1, pos1 in grid_f[i][j].get_closest():
+					f.write(" " + grid_f[pos1[0]][pos1[1]].name + "(" + str(pos1) + ")")
+				f.write("\nFollowers:")
+				for id2, pos2 in grid_f[i][j].get_followers().iteritems():
+					f.write(" " + grid_f[pos2[0]][pos2[1]].name + "(" + str(pos2) + ")")
 				f.write("\n")
+	f.write("\n\n")
 	f.close()
 
 def grid_and_blob_from_file():
@@ -217,11 +200,12 @@ def grid_and_blob_from_file():
 	nr_words = 0
 	for x, inDict in grid.iteritems():
 		for y, elem in inDict.iteritems():
+			# if elem.pos[0] != x or elem.pos[1]!=y:
+				# print "x", x, elem.pos[0], "y", y, elem.pos[1]
 			if elem != None:
 				# i, pos, name, blob_color, blob_nr=None
 				grid_f[x][y] = GridElem(id, [x,y], elem, colors[id%len(colors)], blob_nrs[elem])				
 				global_index[id] = grid_f[x][y]
-				global_name[elem] = grid_f[x][y]
 				id+=1
 				nr_words+=1
 	print "\n====\nFile read\n===="
@@ -338,7 +322,7 @@ def get_stress_values():
 
 def add_all_cooc_data():
 	template = input_directory_cooc + r"\complete_cooc\_"
-	letters = "abcdefghijklmnopqrstuvwxyz"
+	letters = "abcdefghijklmnopqrstuvwqyz"
 	for l in letters:
 		try:
 			f = open(template+l+".txt", 'r')
@@ -354,17 +338,11 @@ def add_all_cooc_data():
 						elem = elem.split(" ")
 						repr.append([elem[0], float(elem[1])])
 					try:
-						global_name[word].add_cooc(repr)					
+						global_index[word].add_cooc(repr)					
 					except KeyError:
-						None
+						print "word not found when adding cooc"
 		except IOError:
-			print "file for letter", l, "not found!!! " + template+l+".txt"
-	
-	# CHECK
-	# for id, elem in global_index.iteritems():
-		# if elem.sem_rep == None:
-			# print "for elem", elem.name, "no sem repr added"
-		
+			print "file for letter", l, "not found!!!"
 	
 def get_sem_data():
 	file = open(input_directory_landscape +  r"\semantic_landscape.txt",'r')
@@ -425,7 +403,7 @@ def add_to_sim_word(w1, sem_w1, data_sample, grid):
 		for index, w2 in enumerate(k):		
 			sem_w2 = data_sample[w2]
 			dis = distance(sem_w1, sem_w2)
-			if dis < best[-1][0]:
+			if dis < best[len(best)-1][0]:
 				del best[-1]
 				best.append( [dis,index])
 				best.sort()
@@ -541,7 +519,6 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 	for elem in assignment:
 		grid_f[elem[0]][elem[1]] =  GridElem(elem[2], elem[0:2], global_index[elem[2]][0], color_index[elem[2]], global_index[elem[2]][1] )
 		global_index[elem[2]] = grid_f[elem[0]][elem[1]]
-		global_name[grid_f[elem[0]][elem[1]].name] = grid_f[elem[0]][elem[1]]
 		prop_plot = plt.scatter(elem[1], new_grid_size-1-elem[0], c=color_index[elem[2]] , marker=used_marker)
 		if nr_words > 1000:
 			prop_plot.set_edgecolor("none")
@@ -595,17 +572,26 @@ def init_closest(grid_size, old_grid_size, first):
 	grid_size = int(grid_size)
 	print "grid size", grid_size, "old_grid_size", old_grid_size
 	print "calculated blob size", blob_size, "nr_blobs", nr_blobs, "data_size", data_size,"data_portion", data_portion,  "grid_size", grid_size
-	
-	if not first and not encounter:
+	if not first:
 		for i in range(grid_size):
 			for j in range(grid_size):
 				if grid_f[i][j] != None:
 					grid_f[i][j].reset()
-
+	
 	blobs = defaultdict(lambda: defaultdict(lambda: [[],[]]))
 	r_b = 0
 	c_b = 0
+	data_names = []
+	# print "\n"
+	# for r in range(grid_size):
+		# for c in range(grid_size):
+			# if grid_f[r][c]!= None:
+				# print grid_f[r][c].name,
+			# else:
+				# print "xx",
+		# print "\n"
 	
+	# print "grid_size", grid_size
 	for r in range(grid_size):
 		if r%blob_size == 0 and r+blob_size <= grid_size and r!=0:
 			r_b += 1
@@ -617,16 +603,26 @@ def init_closest(grid_size, old_grid_size, first):
 				blobs[r_b][c_b][1].append( (r, c, grid_f[r][c].id) )	
 		c_b = 0
 		
+	# print "\n\nnr of blobs per side: ", len(blobs), nr_blobs
+	# print "blobs:"
+	# for i1, d in blobs.iteritems():
+		# for i2, v in d.iteritems():
+			# print "blob", i1, i2, ":",
+			# for n in v[0]:
+				# print n,
+			# print ""
+	# print "==============\n\n"
 	d_beg = 0
 	d_end = 1		
-	init_bool = first or not encounter
 	for r_b in range(nr_blobs):
 		for c_b in range(nr_blobs):
-		
-			if (r_b == d_end-1 or d_end == 1) and not encounter:
+			# print "pairwise distances blob", r_b, c_b
+			if r_b == d_end-1 or d_end == 1:
 				d_beg = d_end-1
-				d_end = min(d_end+data_size, nr_blobs)	
-				words = []				
+				d_end = min(d_end+data_size, nr_blobs)				
+				# print "new data slice pairwise distances", datetime.datetime.now(), r_b, d_beg, d_end
+				words = []
+				# print d_beg, d_end
 				for rb_i in range(d_beg, d_end):
 					for cb_i in range(nr_blobs):
 						words.extend(blobs[rb_i][cb_i][0])
@@ -637,18 +633,20 @@ def init_closest(grid_size, old_grid_size, first):
 					print "data of 0 words requested\n!!!!!!!!!!!!!!!"
 				k = data.keys()
 				k.sort()
-				
+				# print "got data" , datetime.datetime.now(), "\ndata\n", k
+			# inside blob
+			# print "blob", r_b, c_b, "\n within"
 			for i in range(len(blobs[r_b][c_b][0])-1):
 				for j in range(i+1, len(blobs[r_b][c_b][0])):
+					d = distance(data[blobs[r_b][c_b][0][i]], data[blobs[r_b][c_b][0][j]] )
+					# print "comp", blobs[r_b][c_b][0][i], "id" ,blobs[r_b][c_b][1][i][2], blobs[r_b][c_b][0][j], d
 					(r1,c1, id1) = blobs[r_b][c_b][1][i]
 					(r2,c2, id2) = blobs[r_b][c_b][1][j]
-					if encounter:
-						d = distance(global_index[id1].sem_rep, global_index[id2].sem_rep)
-					else:
-						d = distance(data[blobs[r_b][c_b][0][i]], data[blobs[r_b][c_b][0][j]] )
-					grid_f[r1][c1].check_neighbor([d, id2, r2, c2], init_bool)
-					grid_f[r2][c2].check_neighbor([d, id1, r1, c1], init_bool)
-					
+					grid_f[r1][c1].check_neighbor([d, id2, r2, c2])
+					grid_f[r2][c2].check_neighbor([d, id1, r1, c1])
+			# print "pairwise distances with neighboring blob"		
+			# other blobs
+			# print "\nwith other blobs\n"
 			for n in blob_neighbors:
 				r_b2 = n[0]+r_b
 				c_b2 = n[1]+c_b
@@ -656,14 +654,19 @@ def init_closest(grid_size, old_grid_size, first):
 				if r_b2 > 0 and r_b2 < nr_blobs and c_b2 < nr_blobs:
 					for i in range(len(blobs[r_b][c_b][0])):
 						for j in range(len(blobs[r_b2][c_b2][0])):
+							# print r_b, c_b, i, r_b2, c_b2, j
+							# print blobs[r_b][c_b][0][i]
+							# print blobs[r_b2][c_b2][0][j]
+							d = distance(data[blobs[r_b][c_b][0][i]], data[blobs[r_b2][c_b2][0][j]] )
+							# print "comp", blobs[r_b][c_b][0][i], "id" ,blobs[r_b][c_b][1][i][2], blobs[r_b2][c_b2][0][j], d					
 							(r1,c1, id1) = blobs[r_b][c_b][1][i]
 							(r2,c2, id2) = blobs[r_b2][c_b2][1][j]
-							if encounter:
-								d = distance(global_index[id1].sem_rep, global_index[id2].sem_rep)
-							else:
-								d = distance(data[blobs[r_b][c_b][0][i]], data[blobs[r_b2][c_b2][0][j]] )
-							grid_f[r1][c1].check_neighbor([d, id2, r2, c2], init_bool)
-							grid_f[r2][c2].check_neighbor([d, id1, r1, c1], init_bool)	
+							grid_f[r1][c1].check_neighbor([d, id2, r2, c2])
+							grid_f[r2][c2].check_neighbor([d, id1, r1, c1])
+			
+						
+			# if c_b == 1:
+				# sys.exit()
 				
 	# let all elements set themselves as followers
 	for i in range(grid_size):
@@ -712,6 +715,8 @@ def puzzle(grid_size, old_grid_size, nr_words):
 				log_file = open(log_file_n, 'a')
 				log_file.write("stop init closest at "+str(datetime.datetime.now())+"\n")
 				log_file.close()
+				# log_file.write("INITIALIZED\n\n")
+				# print_all_lists(str(trial_nr))
 			if iter == 0:
 				stats_to_file("FIRST", trial_nr , follow_inds, nr_inits, grid_size, png_nr, nr_swaps)
 				png_nr+=1
@@ -721,35 +726,27 @@ def puzzle(grid_size, old_grid_size, nr_words):
 				[x,y] = list(global_index[elem_i].pos)
 								
 				if iter%5000 == 0:
-					print "iter", iter,					
-					
-				# print "iter", iter
-				# check_all_lists(iter)						
+					print "iter", iter,
+				
 							
 				swap_value = float("-inf")
 				# check with which neighbor it wants to swap
-				
-				# print "check", grid_f[x][y].name, "with",
-				for nx in range( max(0,neighbor_range_swap[0]+x) , min(neighbor_range_swap[1]+x, grid_size-1)):
-					for ny in range( max(0,neighbor_range_swap[0]+y) , min(neighbor_range_swap[1]+y, grid_size-1)):
-						if x!=nx or y!=ny:
-							# print nx, ny,							
-							if grid_f[nx][ny] != None:
-								# print grid_f[nx][ny].name,
-								v = grid_f[x][y].get_improvement(nx, ny) + grid_f[nx][ny].get_improvement(x, y)
-								# Check if they are closest neighbors: n = [dist, id, x pos, y pos]
-								d = distance(grid_f[x][y].sem_rep, grid_f[nx][ny].sem_rep)
-								repl1 = grid_f[nx][ny].check_neighbor([d, grid_f[x][y].id, x, y], False)
-								repl2 = grid_f[x][y].check_neighbor([d, grid_f[nx][ny].id, nx, ny], False)
+				for dx in range(neighbor_range_swap[0],neighbor_range_swap[1]):
+					for dy in range(neighbor_range_swap[0],neighbor_range_swap[1]):
+						# print x, dx, y, dy
+						if x+dx >= 0 and x+dx < grid_size and y+dy >= 0 and y+dy < grid_size:
+							# check grid elem != none
+							# print "in check"
+							if grid_f[x+dx][y+dy] != None:
+								v = grid_f[x][y].get_improvement(x+dx, y+dy) + grid_f[x+dx][y+dy].get_improvement(x, y)
 							else:
-								v = grid_f[x][y].get_improvement(nx, ny)
+								v = grid_f[x][y].get_improvement(x+dx, y+dy)
 							if v > swap_value:
 								# process swap value
 								swap_value = v
-								swap_x = nx
-								swap_y = ny
-				# print
-				
+								swap_x = x+dx
+								swap_y = y+dy
+								
 				if swap_value > 0:
 					nr_swaps+=1
 					xy = grid_f[x][y]
@@ -764,7 +761,7 @@ def puzzle(grid_size, old_grid_size, nr_words):
 					
 						
 				iter+=1
-			
+					
 			# figures and stats to file
 			if trial_nr%to_file_trials == 0 and trial_nr != 0:
 				stats_to_file(iter, trial_nr, follow_inds, nr_inits, grid_size, png_nr, nr_swaps)
@@ -802,12 +799,6 @@ def build_final_grid(nr_words, process, old_grid_size = -1):
 		log_file.write("unrecognized process type\n")
 		log_file.close()
 	if process == "all" or process == "only_puzzle":
-		if encounter:
-			add_all_cooc_data()
-			print "all cooc data added"
-			log_file = open(log_file_n, 'a')		
-			log_file.write("all coocs added to grid elems " + str(datetime.datetime.now()) + "\n")
-			log_file.close()
 		puzzle(new_grid_size, old_grid_size, nr_words)
 			
 			
@@ -832,7 +823,6 @@ if __name__ == "__main__":
 	parser.add_argument("--to_file_trials", type=int ,default=[20] ,nargs='*',help="bla")
 	parser.add_argument("--old_grid_size", type=int , nargs='*',default=[-1] , help = "If you do only puzzle you have to provide the grid_size of the sample input")
 	parser.add_argument("--dif_output_dir", nargs='*', default=[None])
-	parser.add_argument("--encounter", nargs='*', default=[True])
 	
 	args = parser.parse_args()
 	kwargs = vars(args)	
@@ -854,8 +844,6 @@ if __name__ == "__main__":
 	to_file_trials = kwargs["to_file_trials"][0]
 	old_grid_size = kwargs["old_grid_size"][0]
 	dif_output_dir = kwargs["dif_output_dir"][0]
-	if kwargs["encounter"] == "no":
-		encounter = False
 	
 	input_directory_landscape = input_directory_landscape + data_case_name
 	input_directory_cooc = input_directory_cooc + data_case_name

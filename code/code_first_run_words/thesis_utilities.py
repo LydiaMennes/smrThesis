@@ -1,5 +1,4 @@
 from collections import defaultdict
-from puzzle import GridElem
 import numpy as np
 import string
 import re

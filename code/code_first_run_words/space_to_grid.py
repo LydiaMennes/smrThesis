@@ -241,9 +241,8 @@ def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper
 
 			if not sufficient_gradient and iternr%20!=0:
 				print "insuf grad",
-				
-			if iternr%20!=0:
-				print "i:",iternr,"ass",len(assigned), "mo:", nr_movements
+			
+			print "i:",iternr,"ass",len(assigned), "mo:", nr_movements
 		
 			if nr_movements < 300:
 				neighborhood_size += 5
