@@ -6,6 +6,12 @@ import math
 import datetime
 from thesis_utilities import *
 
+import sys
+# lib_path = r"D:\Users\Lydia\code stuff\memory usage\guppy"
+# print lib_path
+# sys.path.append(lib_path)
+from guppy import hpy
+
 figure_size = 8
 
 class TypeKeeper:	
@@ -112,18 +118,17 @@ class GridPoint:
 				self.steps[self.assignments[min_ind][1] ] = self.get_step(p[1], self.assignments[min_ind][0], min_dist)
 			
 	
-def getColors(data):
-	nr_items = data.shape[0]
-	max_y = data.max(axis=0)[1] * 1.2
-	max_x = data.max(axis=0)[0] * 1.2
-	colors = []
-	for i in range(nr_items):
-		colors.append( (data[i,0]/max_x, 0.1, data[i,1]/max_y) )	
-		if colors[-1][0] <0 or  colors[-1][0] > 1:
-			print "wrong", data[i,0], max_x
-		if colors[-1][1] <0 or  colors[-1][1] > 1:
-			print "wrong", data[i,1], max_y
-	return colors
+def print_memory():
+	# w = WMI('.')
+	# result =  w.query("SELECT WorkingSet FROM Win32_PerfRawData_PerfProc_Process WHERE IDProcess=%d" % os.getpid())
+	# result2 = int(result[0]['WorkingSet'])
+	# print type(result2)
+	# print "memory:\n", result2
+	# return result2
+	
+	h = hpy()
+	print h.heap()	
+	return None
 
 	
 def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper = None):
@@ -148,7 +153,7 @@ def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper
 	data = data - (data.min(axis=0) * move_scale)
 	scaling = (float(grid_size)-1)/ (data.max(axis=0) * 1.2 )
 	data = np.multiply(data, np.tile(scaling, (nr_items, 1) ) )	
-	colors = getColors(data)	
+	colors = get_colors(data)	
 	
 	# Show initial data
 	# print "INITIAL DATA"
@@ -274,6 +279,7 @@ def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper
 				fig.savefig(result_path + r"\intermediate_grid_"+four_digit_string(fig_nr)+".png")
 				plt.close()		
 				print "iter", iternr, "nr assigned", len(assigned), "from", nr_items, "at", datetime.datetime.now()
+				print_memory()
 				
 		old_len = len(assigned)
 				
