@@ -903,3 +903,7 @@ if __name__ == "__main__":
 	f = open(output_directory+r"\lists of closest.txt","w")
 	f.close()	
 	build_final_grid(nr_words, process, old_grid_size)
+	
+	
+	
+	

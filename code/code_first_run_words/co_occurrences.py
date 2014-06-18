@@ -11,6 +11,7 @@ import os
 import sys
 import unicodedata
 from thesis_utilities import *
+import argparse
 
 window_size = 8
 query = "SELECT itemText FROM newsitems WHERE sourceType = 2"
@@ -303,86 +304,30 @@ def get_cooccurrences(folder):
 			
 if __name__ == "__main__":
 	
-	# print "limited"
-	# query = "SELECT itemText FROM newsitems WHERE sourceType = 2 LIMIT 1000"
-	# data_directory = r"\limit1000_nolog"
-	# result_path = resultfolder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print "directory made"	
-	# freq_cut_off = 1
-	# get_cooccurrences(data_directory)
+	parser = argparse.ArgumentParser(description='Run puzzle algorithm')
+	# '''parser.add_argument(<naam>, type=<type>, default=<default>, help=<help message>)'''
+	parser.add_argument("case_name", help="Name of the data case that you want to process")
+	parser.add_argument("--freq_cutoff", type=int, default=1, help="Name of the data case that you want to process")
+	parser.add_argument("--query_limit", default=None)
+		
+	args = parser.parse_args()
+	kwargs = vars(args)	
 	
+	print "\n\n\n"
+	print kwargs
 	
-	# query = "SELECT itemText FROM newsitems WHERE sourceType = 2"
-	# print "cut off 3"
-	# data_directory = r"\cutoff_3_nolog"	
-	# result_path = resultfolder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print "directory made"	
-	# freq_cut_off = 3
-	# get_cooccurrences(data_directory)
-	
-	
-	
-	query = "SELECT itemText FROM newsitems WHERE sourceType = 2"
-	print "cut off 10"
-	data_directory = r"\cutoff_10_nolog"	
+	data_directory = "\\" + kwargs["case_name"]
+	if kwargs["query_limit"]!=None
+		query = "SELECT itemText FROM newsitems WHERE sourceType = 2 LIMIT " + kwargs["query_limit"]
+	freq_cut_off = kwargs["freq_cutoff"]
+		
+	print data_directory
+	print "cutoff", freq_cutoff
 	result_path = resultfolder + data_directory
 	if not os.path.exists(result_path):
 		os.makedirs(result_path)	
 		print "directory made"	
-	freq_cut_off = 10
 	get_cooccurrences(data_directory)
-	
-	
-	# query = "SELECT itemText FROM newsitems WHERE sourceType = 2"
-	# print "cut off 2"
-	# data_directory = r"\cutoff_2"	
-	# result_path = resultfolder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print "directory made"	
-	# freq_cut_off = 2
-	# get_cooccurrences(data_directory)
-
-	
-	# query = "SELECT itemText FROM newsitems WHERE sourceType = 2"
-	# print "cut off 1"
-	# data_directory = r"\cutoff_1"	
-	# result_path = resultfolder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print "directory made"	
-	# freq_cut_off = 1
-	# get_cooccurrences(data_directory)
-	
-	
-	# data_directory = r"\test"	
-	# result_path = resultfolder + data_directory
-	# c = defaultdict(lambda: defaultdict(int))
-	# c["blaat"]["blub"] = 4
-	# c["blaat"]["hoi"] = 2
-	# c["hoi"]["jam"] = 3
-	# c["blub"]["jam"] = 6
-	# t = {}
-	# t["blaat"] = (0,0,0,4)
-	# t["blub"] = (0,0,0,4)
-	# t["hoi"] = (0,0,0,4)
-	# t["jam"] = (0,0,0,4)
-	# coocs_to_file_complete(c, t)
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
