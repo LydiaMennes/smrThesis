@@ -8,7 +8,6 @@ def log_addition(a,b, subtraction=False):
 		x = math.exp(a) + math.exp(b)
 	if x == 0.0:
 		return 0.0
-	# print "log addition:",x
 	return math.log( x )
 	
 def euclid_distance(sem_w1, sem_w2):
@@ -33,7 +32,7 @@ def euclid_distance(sem_w1, sem_w2):
 		elif i_e1 > len(sem_w1) :
 			dis += e2[1]**2
 		else:
-			print "something wrong", e1[0], e2[0]
+			print("something wrong", e1[0], e2[0])
 	while i_e1 <= len(sem_w1):
 		dis += e1[1]**2
 		if i_e1 < len(sem_w1):
@@ -63,7 +62,7 @@ def euclid_distance_log(sem_w1, sem_w2):
 		elif i_e1 > len(sem_w1) :
 			dis = log_addition(dis, e2[1]*2) # + e2^2
 		else:
-			print "something wrong", e1[0], e2[0]
+			print("something wrong", e1[0], e2[0])
 	while i_e1 <= len(sem_w1):
 		dis = log_addition(dis, e1[1]*2) # + e1^2
 		if i_e1 < len(sem_w1):
@@ -99,7 +98,7 @@ def cosine_distance(sem_w1, sem_w2):
 		elif i_e1 > len(sem_w1) :
 			len_2 += e2[1]**2
 		else:
-			print "something wrong", e1[0], e2[0]
+			print("something wrong", e1[0], e2[0])
 	while i_e1 <= len(sem_w1):
 		len_1 += e1[1]**2
 		if i_e1 < len(sem_w1):
@@ -135,7 +134,7 @@ def cosine_distance_log(sem_w1, sem_w2):
 		elif i_e1 > len(sem_w1) :
 			len_2 += math.exp(e2[1])**2
 		else:
-			print "something wrong", e1[0], e2[0]
+			print("something wrong", e1[0], e2[0])
 	while i_e1 <= len(sem_w1):
 		len_1 += math.exp(e1[1])**2
 		if i_e1 < len(sem_w1):
@@ -144,7 +143,7 @@ def cosine_distance_log(sem_w1, sem_w2):
 	return 1- (dot_product / (math.sqrt(len_1) * math.sqrt(len_2)))
 	
 def cosine_distance_log2(sem_w1, sem_w2):
-	print "DO NOT USE, CONTAINS ERROR"
+	print("DO NOT USE, CONTAINS ERROR")
 	dot_product = 0
 	len_1 = 0
 	len_2 = 0
@@ -170,7 +169,7 @@ def cosine_distance_log2(sem_w1, sem_w2):
 		elif i_e1 > len(sem_w1) :
 			len_2 = log_addition(len_2, e2[1]*2) # + e2^2
 		else:
-			print "something wrong", e1[0], e2[0]
+			print("something wrong", e1[0], e2[0])
 	while i_e1 <= len(sem_w1):
 		len_1 = log_addition(len_1, e1[1]*2) # + e1^2
 		if i_e1 < len(sem_w1):
@@ -183,18 +182,18 @@ def cosine_distance_log2(sem_w1, sem_w2):
 	
 	
 if __name__ == "__main__":
-	print "cosine"
+	print("cosine")
 	w1 = [["a", -6.45],["b", -6.19],["e", -2.1],["f", -1.8],["i", -2.2]]
 	w2 = [["a", -3.55],["c", -6.14],["f", -2.15],["g", -1.8],["j", -2.14]]
-	print cosine_distance_log(w1,w2)
-	print cosine_distance_log2(w1,w2)
-	print "non log"
-	print cosine_distance( [ [w,math.exp(x)] for [w,x] in w1], [ [w,math.exp(x)] for [w,x] in w2])
+	print( cosine_distance_log(w1,w2))
+	print( cosine_distance_log2(w1,w2))
+	print( "non log")
+	print( cosine_distance( [ [w,math.exp(x)] for [w,x] in w1], [ [w,math.exp(x)] for [w,x] in w2]))
 	
-	print "\neuclidean"
-	print euclid_distance_log(w1, w2)
-	print "non log"
-	print euclid_distance([ [w,math.exp(x)] for [w,x] in w1], [ [w,math.exp(x)] for [w,x] in w2])
+	print( "\neuclidean")
+	print( euclid_distance_log(w1, w2))
+	print( "non log")
+	print( euclid_distance([ [w,math.exp(x)] for [w,x] in w1], [ [w,math.exp(x)] for [w,x] in w2]))
 	
 	w1_norm = [-6.45,-6.19, 0.0, -2.1, -1.8, 0.0, -2.2, 0.0]
 	w2_norm = [-3.55,0.0, -6.14, 0.0, -2.15, -1.8, 0.0, -2.14]
@@ -206,18 +205,18 @@ if __name__ == "__main__":
 			w2_norm[i] = math.exp(w2_norm[i])
 		
 	
-	print "\n\n normal:\n", w1_norm, "\n", w2_norm, "\n"
+	print( "\n\n normal:\n", w1_norm, "\n", w2_norm, "\n")
 	w1_norm = np.array(w1_norm)
 	w2_norm = np.array(w2_norm)
 	
-	print "cosine = ", 1- ( np.dot(w1_norm, w2_norm) / (np.linalg.norm(w1_norm) * np.linalg.norm(w2_norm)))
+	print( "cosine = ", 1- ( np.dot(w1_norm, w2_norm) / (np.linalg.norm(w1_norm) * np.linalg.norm(w2_norm))))
 	a = w1_norm-w2_norm
-	print "euclid = ", np.dot(a,a), "\n\n"
+	print( "euclid = ", np.dot(a,a), "\n\n")
 	
 	x = 0.16
 	y = 0.12
-	print x-y
+	print( x-y)
 	z = log_addition(math.log(x), math.log(y), subtraction = True)
-	print z, math.exp(z) 
+	print( z, math.exp(z) )
 	
 	

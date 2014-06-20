@@ -6,8 +6,6 @@ import math
 import datetime
 from thesis_utilities import *
 import sys
-import copy
-import random
 
 figure_size = 8
 
@@ -22,31 +20,20 @@ class GridPoint:
 	
 	stepsize = 0.6 # before: 0.4
 	
-	def __init__(self, x, y, grid):
+	def __init__(self, x, y):
 		self.pos = np.array([float(x), float(y)])
 		self.assignments = []
 		self.lonely_points = []
 		self.steps = {}
-		self.providers = []
-		self.prev_providers = []
-		self.grid = grid
 				
 	def reset(self):
 		self.assignments = []
 		self.lonely_points = []
-		self.steps = {}		
-		self.prev_providers = [copy.deepcopy(x) for x in self.providers]
-		self.providers = []
+		self.steps = {}
 		
 	# assignment 0 = numpy array with position, 1 = index of point
 	def add_assignment(self, assignment):			
 		self.assignments.append(assignment)
-		
-	def add_provider(self, prov):
-		self.providers.append(prov)
-		
-	def get_prev_providers(self):
-		return self.prev_providers
 		
 	def add_lonely_gridpoint(self, x, y):
 		# implement processing of grid points
@@ -73,9 +60,6 @@ class GridPoint:
 		# return np.sqrt(np.sum(p-p0- gamma_q*np.power(p1-p0,2)))
 	
 	def get_step(self, gp, p, d):
-		# Next part makes direction slightly more random		
-		# q = np.array([p[0]+(random.random()-0.5)/3, p[1]+(random.random()-0.5)/3])
-		# d1 = np.sqrt(np.dot(q-gp, q-gp))
 		alpha = math.asin( abs(gp[0]-p[0]) / d )
 		step = np.array([math.sin(alpha), math.cos(alpha)]) * self.stepsize
 		if gp[0] < p[0]:
@@ -107,15 +91,26 @@ class GridPoint:
 							dist_lgp = np.sqrt(np.dot(p[1]-pos, p[1]-pos))
 							if dist_lgp < min_dist_lgp:
 								min_dist_lgp=dist_lgp
-								min_ind = index	
-				# to_pos = p[1]
-				# self.grid[int(round(to_pos[0]))][int(round(to_pos[1]))].add_provider(self.pos)
-				# if len(self.grid[int(round(to_pos[0]))][int(round(to_pos[1]))].assignments) != 0:
-					# print("wrong provider added")
-				# print("provider added")
+								min_ind = index						
+							
 				self.steps[self.assignments[min_ind][1] ] = self.get_step(p[1], self.assignments[min_ind][0], min_dist_lgp)
 	
-	
+	def calc_assignments_old(self):
+		self.lonely_points.sort(key=lambda x: x[0])	
+		for i in range(len(self.assignments)-1):
+			if i < len(self.lonely_points):
+				min_dist = float("inf")
+				min_ind = -1
+				p = self.lonely_points[i]			
+				for index in range(len(self.assignments)):
+					a = self.assignments[index]
+					if not a[1] in self.steps.keys():
+						dist = np.sqrt(np.inner(p[1]-a[0], p[1]-a[0]))
+						if dist< min_dist:
+							min_dist = dist
+							min_ind = index
+				self.steps[self.assignments[min_ind][1] ] = self.get_step(p[1], self.assignments[min_ind][0], min_dist)
+			
 	
 def print_memory():
 	# w = WMI('.')
@@ -134,6 +129,7 @@ def print_memory():
 def restart(data_folder, last_iter_nr, last_fig_nr):
 	blob_colors = {}
 	colors = get_colors()
+	# DIT ANDERS INLEZEN
 	f = open(data_folder+r"\color_file.txt")
 	for line in f:
 		line = line.replace("\n", "")
@@ -156,128 +152,82 @@ def restart(data_folder, last_iter_nr, last_fig_nr):
 	for i in range(grid_size):
 		grid.append([])
 		for j in range(grid_size):
-			grid[i].append(GridPoint(i,j, grid))
-	
-	orig_data = space_from_file(data_folder + r"\data_orig.txt")
-	
-	iter_nr, assignment = iterate(data, orig_data, grid, last_fig_nr+1, nr_items, grid_size, data_folder+r"\intermediate_grids", last_iter_nr+1, blob_colors) 
+			grid[i].append(GridPoint(i,j))
+			
+	iter_nr, assignment = iterate(data, grid, last_fig_nr+1, nr_items, grid_size, data_folder+r"\intermediate_grids", last_iter_nr+1, blob_colors) 
 	
 	f = open(data_folder+r"\init_grid_assignment.txt", "w")
 	for elem in assignment:
 		f.write(str(assignment[0]) +";"+ str(assignment[1]) +";"+ str(assignment[2]) + "\n") 
 	f.close()
 
-def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, iternr, blob_nr_keeper=None):
+def iterate(data, grid, fig_nr, nr_items, grid_size, result_path, iternr, blob_nr_keeper=None):
 	#iteratively move to grid points
+	orig_data = np.copy(data)
 	assigned = set()
 	assignment = []
 	sufficient_gradient =True
 	neighborhood_size = 10
-	first = True
 	print("start conversion to grid", datetime.datetime.now())
-	neighborhood_size_changed = True
 	
-	#find intial lonely gridpoints 
-	lonely_points = []
-	assigned = set()	
-	assignment = []
-	for i in range(nr_items):			
-		nearest = [min(max(int(round(data[i,0])),0),grid_size-1), min(max(int(round(data[i,1])),0),grid_size-1)]
-		grid[nearest[0]][nearest[1]].add_assignment( (data[i,:], i, orig_data[i,:]) )
-		assigned.add((nearest[0], nearest[1]))
-		assignment.append((nearest[0], nearest[1], i))
-	for i in range(grid_size):
-		for j in range(grid_size):
-			if len(grid[i][j].assignments) == 0:
-				lonely_points.append(grid[i][j])
-	
-	print("\n\nNr lonely points at start:", len(lonely_points), "with grid size", grid_size, "and", nr_items, "elems")
 	while len(assigned)<nr_items:
 		
 		iternr+=1
-		if not first:
-			assigned = set()	
-			assignment = []
-			
-			# Assign each data point to the nearest grid point
-			for i in range(nr_items):			
-				nearest = [min(max(int(round(data[i,0])),0),grid_size-1), min(max(int(round(data[i,1])),0),grid_size-1)]				
-				grid[nearest[0]][nearest[1]].add_assignment( (data[i,:], i, orig_data[i,:]) )
-				assigned.add((nearest[0], nearest[1]))
-				assignment.append((nearest[0], nearest[1], i))
-		if first:
-			first = False
+		assigned = set()	
+		assignment = []
+		
+		# Assign each data point to the nearest grid point
+		for i in range(nr_items):			
+			nearest = [int(round(data[i,0])), int(round(data[i,1]))]
+			grid[nearest[0]][nearest[1]].add_assignment( (data[i,:], i, orig_data[i,:]) )
+			assigned.add((nearest[0], nearest[1]))
+			assignment.append((nearest[0], nearest[1], i))
 				
 		if len(assigned)<nr_items:	
-			# VERVANG DIT MET DOOR LONELY POINTS HEEN LOPEN
-			for lpi in reversed(range(len(lonely_points))) :
-				lonely_p = lonely_points[lpi]
-				if len(lonely_p.assignments)==0:
-					i = int(lonely_p.pos[0])
-					j = int(lonely_p.pos[1])
-					if sufficient_gradient:
-						no_providers = True
-						if not neighborhood_size_changed:
-							# DOOR VORIGE PUNTEN HEEN LOPEN
-							prev_providers = lonely_p.get_prev_providers()
-							no_providers = len(prev_providers)==0
-							nr_additions = 0
-							checked = set()
-							for [px,py] in prev_providers:
-								from_pi, to_pi = max(0, px-2), min(grid_size, px+4)
-								from_pj, to_pj = max(0, py-2), min(grid_size, py+4)
-								for ii in range(from_pi,to_pi):
-									for jj in range(from_pj,to_pj):
-										if (ii,jj) not in checked and len(grid[ii][jj].assignments) > 1:
-											grid[ii][jj].add_lonely_gridpoint(i,j)
-											lonely_p.add_provider([ii,jj])
-											nr_additions +=1
-											checked.add((ii,jj))
-						else:
+			for i in range(grid_size):
+				for j in range(grid_size):
+											
+					# if has no assignments
+					if len(grid[i][j].assignments)==0:
+						
+						if sufficient_gradient:
 							from_i, to_i = max(0, i-neighborhood_size), min(grid_size, i+neighborhood_size+1)
 							from_j, to_j = max(0, j-neighborhood_size), min(grid_size, j+neighborhood_size+1)
 							for ii in range(from_i,to_i):
 								for jj in range(from_j,to_j):
-									if len(grid[ii][jj].assignments) > 1:
+									if len(grid[ii][jj].assignments) > 0:
 											grid[ii][jj].add_lonely_gridpoint(i,j)
-											lonely_p.add_provider([ii,jj])
-					else:
-						for elem in assigned:
-							if len(grid[elem[0]][elem[1]].assignments) > 0:
-								grid[elem[0]][elem[1]].add_lonely_gridpoint(i,j)
-				else:
-					del lonely_points[lpi]
-			
+						else:
+							for elem in assigned:
+								if len(grid[elem[0]][elem[1]].assignments) > 0:
+									grid[elem[0]][elem[1]].add_lonely_gridpoint(i,j)
+														
 			nr_movements = 0
 			for i in range(nr_items):
-								
-				nearest = [min(max(int(round(data[i,0])),0),grid_size-1), min(max(int(round(data[i,1])),0),grid_size-1)]
+				nearest = [int(round(data[i,0])), int(round(data[i,1]))]
 				m = grid[nearest[0]][nearest[1]].get_movement(i)
 				if m[0] != 0 or m[1] != 0:
 					nr_movements+=1
 				data[i,:] = np.add(data[i,:] , m)
+				
 			for i in range(grid_size):
 				for j in range(grid_size):
 					grid[i][j].reset()
 		
 		
-		neighborhood_size_changed = False
+		
 		if iternr%5 == 0:
-			sufficient_gradient = True
-			sufficient_gradient = nr_movements > 50 or len(assigned)+nr_movements==nr_items
+			sufficient_gradient = nr_movements > 50
+
 			if not sufficient_gradient and iternr%20!=0:
 				print("insuf grad")			
-			print("i:",iternr,"ass",len(assigned), "mo:", nr_movements, "nr lonely points:", len(lonely_points))
+			print("i:",iternr,"ass",len(assigned), "mo:", nr_movements)
 		
-			if nr_movements < 300 and len(assigned)+nr_movements!=nr_items:
-				neighborhood_size_changed = True
+			if nr_movements < 300:
 				neighborhood_size += 5
-				print("neigh size upgraded", neighborhood_size)
+				print("neigh size upgraded")
 		
-		if iternr%10 == 0 and len(assigned)+nr_movements!=nr_items:
-			neighborhood_size_changed = True
-		
-		if iternr%20 == 0 or len(assigned) == nr_items:
+		if iternr%20 == 0 or len(assigned) == nr_items :
 			print("")
 			if blob_nr_keeper!=None:
 				used_marker = "o"
@@ -291,19 +241,19 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, ite
 					prop_plot=plt.scatter( data[i,1], grid_size-1-data[i,0], c=blob_nr_keeper.get_color(i), marker=used_marker)
 					if nr_items > 1000:
 						prop_plot.set_edgecolor("none")
-				# for i in range(grid_size):
-					# for j in range(grid_size):
-						# if len(grid[i][j].assignments) == 0:
-							# prop_plot = plt.scatter(j, grid_size-1-i, c = "k", marker = used_marker)
-							# if nr_items > 1000:
-								# prop_plot.set_edgecolor("none")
+				for i in range(grid_size):
+					for j in range(grid_size):
+						if grid[i][j].assignments == 0:
+							prop_plot = plt.scatter(j, grid_size-1-i, c = "k", marker = used_marker)
+							if nr_items > 1000:
+								prop_plot.set_edgecolor("none")
 				plt.axis([-1, grid_size, -1, grid_size])
 				plt.title("Result at iteration " + str(iternr))
 				fig.savefig(image_name, bbox_inches='tight')
 				fig.savefig(result_path + r"\intermediate_grid_"+four_digit_string(fig_nr)+".png")
 				plt.close()		
 				fig_nr+=1
-				print( "iter", iternr, "nr assigned", len(assigned), "from", nr_items, "mo:", nr_movements, "at", datetime.datetime.now())
+				print( "iter", iternr, "nr assigned", len(assigned), "from", nr_items, "at", datetime.datetime.now())
 				# print_memory()
 			
 		# if iternr == 26:
@@ -316,14 +266,13 @@ def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper
 	
 	nr_items = data.shape[0]
 	grid_size = int(np.ceil(np.sqrt(nr_items)))
-	space_to_file(data, result_path + r"\data_orig.txt")	
-	orig_data = np.copy(data)
+	
 	# Prepare grid
 	grid = []
 	for i in range(grid_size):
 		grid.append([])
 		for j in range(grid_size):
-			grid[i].append(GridPoint(i,j, grid))
+			grid[i].append(GridPoint(i,j))
 			
 	# Rescale and move data
 	print("scale data")
@@ -359,7 +308,7 @@ def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper
 	fig_nr = 1
 	
 	iternr = 0
-	iternr, assignment = iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, iternr, blob_nr_keeper)
+	iternr, assignment = iterate(data, grid, fig_nr, nr_items, grid_size, result_path, iternr, blob_nr_keeper)
 	
 	print("needed ", iternr, "iterations for", len(assignment), "points")
 	print("\n=============\nDONE\n=============\n")
@@ -422,8 +371,8 @@ if __name__ == "__main__":
 	# plt.scatter(x, y, c=l);
 	# plt.show()
 	
-	data_case = "\cutoff_10_new_stg"
-	restart(r"D:\Users\Lydia\results puzzle" + data_case, 860, 43)
+	data_case = "\cutoff_10_nolog"
+	restart(r"D:\Users\Lydia\results puzzle" + data_case, 180, 9)
 	
 	
 	

@@ -2,6 +2,7 @@ from collections import defaultdict
 import numpy as np
 import string
 import re
+from bisect import bisect_left
 
 def has_digits (word):
 	hd = re.compile('\d')
@@ -45,6 +46,24 @@ def get_colors():
 	q = q*0.5
 	r.extend(map(list,list(q)))
 	return r
+	
+def space_to_file(data, filename):
+	f = open(filename, "w")
+	for i in range(data.shape[0]):
+		f.write(str(data[i,0]) + "," + str(data[i,1])+"\n")
+	f.close()
+
+def space_from_file(filename):
+	print(filename)
+	f = open(filename, "r")
+	d = []
+	for line in f:
+		line = line.replace("\n","")
+		line = line.split(",")
+		d.append([float(line[0]), float(line[1])])
+	f.close()
+	print("d", len(d))
+	return np.array(d)
 	
 def grid_from_file(landscape_file):
 	grid = defaultdict(lambda: defaultdict(lambda: None) )
