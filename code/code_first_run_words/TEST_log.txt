@@ -1,0 +1,42 @@
+
+
+=====
+                               types |   # objects |   total size
+==================================== | =========== | ============
+                         <class 'str |        8820 |    996.39 KB
+                        <class 'dict |        1226 |    982.56 KB
+                        <class 'type |         439 |    418.17 KB
+                        <class 'code |        2783 |    391.50 KB
+                         <class 'set |         259 |    124.16 KB
+          <class 'wrapper_descriptor |        1057 |     82.58 KB
+                       <class 'tuple |        1036 |     69.25 KB
+                     <class 'weakref |         856 |     66.88 KB
+           <class 'method_descriptor |         732 |     51.47 KB
+                        <class 'list |         342 |     47.27 KB
+  <class 'builtin_function_or_method |         652 |     40.75 KB
+                         <class 'int |        1227 |     34.50 KB
+           <class 'getset_descriptor |         447 |     31.43 KB
+                 <class 'abc.ABCMeta |          34 |     31.06 KB
+          <class '_io.BufferedWriter |           3 |     24.52 KB
+<class 'NoneType'>
+
+
+=====
+                               types |   # objects |   total size
+==================================== | =========== | ============
+                         <class 'str |       10730 |      1.10 MB
+                        <class 'dict |        1226 |    982.56 KB
+                        <class 'list |        2754 |    470.59 KB
+                        <class 'type |         439 |    418.17 KB
+                        <class 'code |        2783 |    391.50 KB
+                         <class 'set |         259 |    124.16 KB
+          <class 'wrapper_descriptor |        1057 |     82.58 KB
+                       <class 'tuple |        1035 |     69.14 KB
+                     <class 'weakref |         856 |     66.88 KB
+           <class 'method_descriptor |         732 |     51.47 KB
+                         <class 'int |        1556 |     43.50 KB
+  <class 'builtin_function_or_method |         652 |     40.75 KB
+           <class 'getset_descriptor |         447 |     31.43 KB
+                 <class 'abc.ABCMeta |          34 |     31.06 KB
+          <class '_io.BufferedWriter |           3 |     24.52 KB
+<class 'NoneType'>

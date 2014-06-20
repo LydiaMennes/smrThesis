@@ -97,6 +97,10 @@ class GridElem:
 			self.seen.add(n[1])
 		return added
 	
+	def reset_enc_stats(self):
+		self.seen = set()
+		self.new_closest = 0
+	
 	def nr_seen(self):
 		return len(self.seen)
 	
@@ -355,6 +359,32 @@ def stats_to_file(iter, trial, to_follow, nr_inits, grid_size, png_nr, nr_swaps,
 	#"trial_nr;nr of swaps;avg stress value;sd stress value;avg optimal sem dist;sd optimal sem dist;avg neigh sem dist;sd neigh sem dist;avg nr enc;sd nr enc;avg best match refresh;sd best match refresh\n"
 	f.write(str(trial)+";"+str(nr_swaps)+";"+str(avg_sv)+";"+str(sd_sv)+";"+str(avg_opt)+";"+str(sd_opt)+";"+str(avg_ndist)+";"+str(sd_ndist)+";"+str(avg_enc)+";"+str(sd_enc)+";"+str(avg_bmr)+";"+str(sd_bmr)+"\n")
 	f.close()
+
+def plot_line(stats, x, ys, labels, colors, title, y_label, name, sds=[], sd_colors=None):
+	print("plot line" , name)
+	fig, ax = plt.subplots(1)
+	nr = 0	
+	for y in ys:
+		ax.plot(stats[x], stats[y], color=colors[nr], linestyle='-', label=labels[y])	
+		nr+=1
+	box = ax.get_position()
+	ax.set_position([box.x0, box.y0 + box.height * 0.2, box.width, box.height * 0.8])
+	ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=5)
+	
+	nr=0
+	for sd in sds:
+		y=ys[nr]
+		up, do =  np.array(stats[y])+np.array(stats[sd]),  np.array(stats[y])-np.array(stats[sd])	
+		ax.fill_between(stats[x], up, do, facecolor=sd_colors[nr],  alpha=0.2)
+		nr+=1
+		
+	ax.set_xlabel(labels[x])
+	ax.set_ylabel(y_label)
+	ax.set_title(title)
+	image_name = output_directory + r"\_" + name + ".pdf"
+	fig.savefig(image_name, bbox_inches='tight')
+	plt.close()
+	
 	
 def process_final_stats():
 	nr_stats = 12
@@ -388,89 +418,81 @@ def process_final_stats():
 	
 	plt.rc('legend',**{'fontsize':10})
 	
-	x,y = 0,1
-	fig, ax = plt.subplots(1)
-	ax.plot(stats[x], stats[y], color='blue')
-	ax.set_xlabel(labels[x])
-	ax.set_ylabel(labels[y])
-	ax.set_title("Nr of swaps over trials")
-	box = ax.get_position()
-	ax.set_position([box.x0, box.y0 + box.height * 0.2, box.width, box.height * 0.8])
-	ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=5)
-	image_name = output_directory + r"\swaps_over_time.pdf"
-	fig.savefig(image_name, bbox_inches='tight')
-	plt.close()
+	x=0
+	ys = [1]
+	colors = ['blue']
+	title = "Nr of swaps over trials"
+	y_label = labels[1]
+	name = "swaps_over_time"
+	plot_line(stats, x, ys, labels, colors, title, y_label, name)
+		
+	ys = [2,4,6]
+	colors = [[1,0,0], [0,1,0],[0,0,1]]
+	title = "Stress values and semantic distances"
+	y_label = "Stress or semantic distance"
+	name = "stress_and_semantic_distance_no_sd"
+	plot_line(stats, x, ys, labels, colors, title, y_label, name)
+		
+	ys = [2,4,6]
+	colors = [[1,0,0], [0,1,0],[0,0,1]]
+	title = "Stress values and semantic distances"
+	y_label = "Stress or semantic distance"
+	name = "stress_and_semantic_distance"
+	sds = [3,5,7]
+	sd_colors = [[1,0.75,0.75], [0.75,1,0.75], [0.75,0.75,1]]
+	plot_line(stats, x, ys, labels, colors, title, y_label, name, sds, sd_colors)
 	
-	y1, y2, y3 = 2,4,6
-	fig, ax = plt.subplots(1)
-	ax.plot(stats[x], stats[y1], color=[1,0,0], linestyle='-', label=labels[y1])
-	ax.plot(stats[x], stats[y2], color=[0,1,0], linestyle='-', label=labels[y2])
-	ax.plot(stats[x], stats[y3], color=[0,0,1], linestyle='-', label=labels[y3])
-	box = ax.get_position()
-	ax.set_position([box.x0, box.y0 + box.height * 0.2, box.width, box.height * 0.8])
-	ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=5)
-	ax.set_xlabel(labels[x])
-	ax.set_ylabel("Stress or semantic distance")
-	ax.set_title("Nr of swaps over trials")
-	image_name = output_directory + r"\stress_and_semantic_distance_no_sd.pdf"
-	fig.savefig(image_name, bbox_inches='tight')
-	plt.close()
+		
+	ys = [8]
+	colors = [[0,0,1]]
+	title = "Nr of encounters over trials"
+	y_label = labels[8]
+	name = "encounters_no_sd"
+	plot_line(stats, x, ys, labels, colors, title, y_label, name)
 	
-	y1, y2, y3 = 2,4,6
-	sd1, sd2, sd3= 3,5,7
-	fig, ax = plt.subplots(1)
-	ax.plot(stats[x], stats[y1], color=[1,0,0], linestyle='-', label=labels[y1])
-	ax.plot(stats[x], stats[y2], color=[0,1,0], linestyle='-', label=labels[y2])
-	ax.plot(stats[x], stats[y3], color=[0,0,1], linestyle='-', label=labels[y3])
-	box = ax.get_position()
-	ax.set_position([box.x0, box.y0 + box.height * 0.2, box.width, box.height * 0.8])
-	ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=5)
-	up1, do1 =  np.array(stats[y1])+np.array(stats[sd1]),  np.array(stats[y1])-np.array(stats[sd1])
-	up2, do2 =  np.array(stats[y2])+np.array(stats[sd2]),  np.array(stats[y2])-np.array(stats[sd2])
-	up3, do3 =  np.array(stats[y3])+np.array(stats[sd3]),  np.array(stats[y3])-np.array(stats[sd3])
-	ax.fill_between(stats[x], up1, do1, facecolor=[1,0.75,0.75],  alpha=0.2)
-	ax.fill_between(stats[x], up2, do2, facecolor=[0.75,1,0.75],  alpha=0.2)
-	ax.fill_between(stats[x], up3, do3, facecolor=[0.75,0.75,1],  alpha=0.2)	
-	ax.set_xlabel(labels[x])
-	ax.set_ylabel("Stress or semantic distance")
-	ax.set_title("Nr of swaps over trials")
-	image_name = output_directory + r"\stress_and_semantic_distance.pdf"
-	fig.savefig(image_name, bbox_inches='tight')
-	plt.close()
+	ys = [8]
+	colors = [[0,0,1]]
+	title = "Nr of encounters over trials"
+	y_label = labels[8]
+	name = "new_closest"
+	sds = [9]
+	sd_colors = [[0.75,0.75,1]]
+	plot_line(stats, x, ys, labels, colors, title, y_label, name, sds, sd_colors)
 	
-	y1, y2 = 8, 10
-	sd1, sd2 = 9, 11
-	fig, ax = plt.subplots(1)
-	ax.plot(stats[x], stats[y1], color=[1,0,1], linestyle='-', label=labels[y1])
-	ax.plot(stats[x], stats[y2], color=[0,1,1], linestyle='-', label=labels[y2])
-	box = ax.get_position()
-	ax.set_position([box.x0, box.y0 + box.height * 0.2, box.width, box.height * 0.8])
-	ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=5)
-	ax.set_xlabel(labels[x])
-	ax.set_ylabel("Number of times")
-	ax.set_title("Encountered words and number of closest words updates")
-	image_name = output_directory + r"\encounters_no_sd.pdf"
-	fig.savefig(image_name, bbox_inches='tight')
-	plt.close()
+	ys = [10]
+	colors = [[0,0,1]]
+	title = "Nr of new closest matches added over trials"
+	y_label = labels[10]
+	name = "new_closest_no_sd"
+	plot_line(stats, x, ys, labels, colors, title, y_label, name)
 	
-	y1, y2 = 8, 10
-	sd1, sd2 = 9, 11
-	fig, ax = plt.subplots(1)
-	ax.plot(stats[x], stats[y1], color=[1,0,1], linestyle='-', label=labels[y1])
-	ax.plot(stats[x], stats[y2], color=[0,1,1], linestyle='-', label=labels[y2])
-	box = ax.get_position()
-	ax.set_position([box.x0, box.y0 + box.height * 0.2, box.width, box.height * 0.8])
-	ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1), fancybox=True, shadow=True, ncol=5)
-	up1, do1 =  np.array(stats[y1])+np.array(stats[sd1]),  np.array(stats[y1])-np.array(stats[sd1])
-	up2, do2 =  np.array(stats[y2])+np.array(stats[sd2]),  np.array(stats[y2])-np.array(stats[sd2])
-	ax.fill_between(stats[x], up1, do1, facecolor=[1,0.75,1],  alpha=0.2)
-	ax.fill_between(stats[x], up2, do2, facecolor=[0.75,1,1],  alpha=0.2)
-	ax.set_xlabel(labels[x])
-	ax.set_ylabel("Number of times")
-	ax.set_title("Encountered words and number of closest words updates")
-	image_name = output_directory + r"\encounters.pdf"
-	fig.savefig(image_name, bbox_inches='tight')
-	plt.close()
+	ys = [10]
+	colors = [[0,0,1]]
+	title = "Nr of new closest matches added over trials"
+	y_label = labels[10]
+	name = "new_closest"
+	sds = [11]
+	sd_colors = [[0.75,0.75,1]]
+	plot_line(stats, x, ys, labels, colors, title, y_label, name, sds, sd_colors)
+	
+	stats[8] = list(np.array(stats[8])/10)
+	stats[9] = list(np.array(stats[9])/10)
+	
+	ys = [8,10]
+	colors = [[0,0,1], [0,1,0]]
+	title = "Nr of new closest matches added over trials"
+	y_label = "Number of occurrences (encounters \\10)"
+	name = "new_closest_and_new_matches_no_sd"
+	plot_line(stats, x, ys, labels, colors, title, y_label, name)
+		
+	ys = [8,10]
+	colors = [[0,0,1], [0,1,0]]
+	title = "Nr of encounters over trials"
+	y_label = "Number of occurrences (encounters \\10)"
+	name = "new_closest_and_new_matches"
+	sds = [9,11]
+	sd_colors = [[0.75,0.75,1], [0.75,1,0.75]]
+	plot_line(stats, x, ys, labels, colors, title, y_label, name, sds, sd_colors)
 	
 		
 def get_stat_values(nr_words):	
@@ -710,7 +732,7 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 	if not os.path.exists(intermediate_grids):
 		os.makedirs(intermediate_grids)	
 		print("directory made")
-	assignment, gz = stg.space_to_grid_iterative(data_space, intermediate_grids, with_figures=False, blob_nr_keeper=stg.TypeKeeper(color_index))
+	assignment, gz = stg.space_to_grid_iterative(data_space, intermediate_grids,  log_memory, with_figures=False, blob_nr_keeper=stg.TypeKeeper(color_index))
 	del data_space
 	
 	print("init final grid and make figure of grid")
@@ -850,9 +872,9 @@ def init_closest(grid_size, old_grid_size, first):
 			if grid_f[i][j]!= None:
 				grid_f[i][j].init_as_follower()		
 				if len(grid_f[i][j].dists)==0:
-					print("fault", i, j)
 					fault = True
 	if fault:
+		print("Somethin in initialization went wrong")
 		sys.exit()
 
 def check_neighbor_on_the_way(elem1, elem2):
@@ -867,7 +889,35 @@ def check_neighbor_on_the_way(elem1, elem2):
 					d = distance(c_elem.sem_rep, elem2.sem_rep)
 					elem2.check_neighbor([d, c_elem.id, int(c_elem.pos[0]), int(c_elem.pos[1])], init)
 
-				
+def init_gold_standard(grid_size):
+	init = True
+	pairwise = open(grid_input+r"\complete_pairwise_dists.txt")
+	for line in pairwise:
+		line = line.replace("\n", "")
+		line = line.split(";")
+		elem1 = global_name[line[0]] 
+		elem2 = global_name[line[1]]
+		d = float(line[2])
+		elem1.check_neighbor([d, elem2.id, int(elem2.pos[0]), int(elem2.pos[1])], init)
+		elem2.check_neighbor([d, elem1.id, int(elem1.pos[0]), int(elem1.pos[1])], init)
+		elem1.reset_enc_stats()
+		elem2.reset_enc_stats()
+	pairwise.close()
+	
+	# let all elements set themselves as followers
+	fault = False
+	for i in range(grid_size):
+		for j in range(grid_size):
+			if grid_f[i][j]!= None:
+				grid_f[i][j].init_as_follower()		
+				if len(grid_f[i][j].dists)==0:
+					fault = True
+	if fault:
+		print("Somethin in initialization went wrong")
+		sys.exit()
+		
+	print_all_lists("gold")
+					
 def puzzle(grid_size, old_grid_size, nr_words):
 	iter = 0
 	png_nr = 0
@@ -897,15 +947,18 @@ def puzzle(grid_size, old_grid_size, nr_words):
 		# check if you need to reinitialize
 		if iter%(nr_words*nr_trials_re_init)==0 or iter ==0:
 			nr_inits+=1
-			print("\ninit closest trial", trial_nr ,"     start:", datetime.datetime.now())
-			log_file = open(log_file_n, 'a')
-			log_file.write("init closest at "+str(datetime.datetime.now())+"\n")
-			log_file.close()
-			init_closest(grid_size, old_grid_size, iter==0)
-			print("init closest stop:", datetime.datetime.now())
-			log_file = open(log_file_n, 'a')
-			log_file.write("stop init closest at "+str(datetime.datetime.now())+"\n")
-			log_file.close()
+			if not gold_standard:
+				print("\ninit closest trial", trial_nr ,"     start:", datetime.datetime.now())
+				log_file = open(log_file_n, 'a')
+				log_file.write("init closest at "+str(datetime.datetime.now())+"\n")
+				log_file.close()
+				init_closest(grid_size, old_grid_size, iter==0)
+				print("init closest stop:", datetime.datetime.now())
+				log_file = open(log_file_n, 'a')
+				log_file.write("stop init closest at "+str(datetime.datetime.now())+"\n")
+				log_file.close()
+			else:
+				init_gold_standard(grid_size)
 		if iter == 0:
 			stats_to_file("FIRST", trial_nr , follow_inds, nr_inits, grid_size, png_nr, nr_swaps, nr_words)
 			png_nr+=1
@@ -1013,43 +1066,44 @@ if __name__ == "__main__":
 	# '''parser.add_argument(<naam>, type=<type>, default=<default>, help=<help message>)'''
 	parser.add_argument("case_name", help="Name of the data case that you want to process")
 	parser.add_argument("nr_words", type=int ,help="The number of words in the data case")
-	parser.add_argument("--process", default=["all"] , nargs='*',help="What parts of the algorithm you want to execute")
-	parser.add_argument("--max_closest", type=int , nargs='*',default=[8] ,help="number of closest words taken into account")
-	parser.add_argument("--nr_trials_re_init", type=int ,nargs='*',default=[-1] ,help="bla")
-	parser.add_argument("--stop_nr_trials", type=int ,nargs='*',default=[-1] ,help="bla")
-	parser.add_argument("--block_ratio", type=int ,default=[2] ,nargs='*',help="bla")
-	parser.add_argument("--data_portion", type=int ,default=[5] ,nargs='*',help="bla")
-	parser.add_argument("--nr_words_to_follow", type=int ,default=[20] ,nargs='*',help="bla")
-	parser.add_argument("--to_file_trials", type=int ,default=[20] ,nargs='*',help="bla")
-	parser.add_argument("--old_grid_size", type=int , nargs='*',default=[-1] , help = "If you do only puzzle you have to provide the grid_size of the sample input")
-	parser.add_argument("--dif_output_dir", nargs='*', default=[None])
-	parser.add_argument("--encounter", nargs='*', default=[True])
-	parser.add_argument("--encounter_deep", nargs='*', default=[True])
-	parser.add_argument("--use_followers", nargs='*', default=[True])
-	parser.add_argument("--gold_standard", nargs='*', default=[False])
-	parser.add_argument("--log_memory", nargs='*', default=[False])
+	parser.add_argument("--process", default="nothing" , help="What parts of the algorithm you want to execute")
+	parser.add_argument("--max_closest", type=int , default=8 ,help="number of closest words taken into account")
+	parser.add_argument("--nr_trials_re_init", type=int ,default=-1 ,help="bla")
+	parser.add_argument("--stop_nr_trials", type=int ,default=-1 ,help="bla")
+	parser.add_argument("--block_ratio", type=int ,default=2 ,help="bla")
+	parser.add_argument("--data_portion", type=int ,default=5,help="bla")
+	parser.add_argument("--nr_words_to_follow", type=int ,default=20 ,help="bla")
+	parser.add_argument("--to_file_trials", type=int ,default=20 ,help="bla")
+	parser.add_argument("--old_grid_size", type=int,default=-1 , help = "If you do only puzzle you have to provide the grid_size of the sample input")
+	parser.add_argument("--dif_output_dir", default=None)
+	parser.add_argument("--encounter", default=True)
+	parser.add_argument("--encounter_deep", default=True)
+	parser.add_argument("--use_followers", default=True)
+	parser.add_argument("--gold_standard", default=False)
+	parser.add_argument("--log_memory", default=False)
 	
 	args = parser.parse_args()
 	kwargs = vars(args)	
 	
 	print("\n\n\n")
 	print(kwargs)
+	print("\n-"+str(kwargs["log_memory"])+"-\n")
 	
 	data_case_name = "\\" + kwargs["case_name"]
 	nr_words = kwargs["nr_words"]
 	
-	process = kwargs["process"][0]
-	max_closest = kwargs["max_closest"][0]
-	stop_nr_trials = kwargs["stop_nr_trials"][0]
-	nr_trials_re_init = kwargs["nr_trials_re_init"][0]
+	process = kwargs["process"]
+	max_closest = kwargs["max_closest"]
+	stop_nr_trials = kwargs["stop_nr_trials"]
+	nr_trials_re_init = kwargs["nr_trials_re_init"]
 	if nr_trials_re_init == -1:
 		nr_trials_re_init = stop_nr_trials+10
-	block_ratio = kwargs["block_ratio"][0]
-	data_portion = kwargs["data_portion"][0]
-	nr_words_to_follow = kwargs["nr_words_to_follow"][0]
-	to_file_trials = kwargs["to_file_trials"][0]
-	old_grid_size = kwargs["old_grid_size"][0]
-	dif_output_dir = kwargs["dif_output_dir"][0]
+	block_ratio = kwargs["block_ratio"]
+	data_portion = kwargs["data_portion"]
+	nr_words_to_follow = kwargs["nr_words_to_follow"]
+	to_file_trials = kwargs["to_file_trials"]
+	old_grid_size = kwargs["old_grid_size"]
+	dif_output_dir = kwargs["dif_output_dir"]
 	if kwargs["encounter"] == "no":
 		encounter = False
 	if kwargs["use_followers"] == "no":
@@ -1102,8 +1156,27 @@ if __name__ == "__main__":
 	
 	f = open(output_directory+r"\lists of closest.txt","w")
 	f.close()	
+
 	build_final_grid(nr_words, process, old_grid_size)
 	
+	
+	
+	
+	'''
+	if log_memory:
+		print("START LOGGING MEMORY")
+		old_stdout = sys.stdout
+		mem_file = open(output_directory+"\memory_log.txt","w")
+		try:
+			sys.stdout = mem_file
+			build_final_grid(nr_words, process, old_grid_size)
+		finally:
+			sys.stdout = old_stdout
+			mem_file.close()
+	else:
+		print( "NO MEMORY LOG")
+		build_final_grid(nr_words, process, old_grid_size) 
+	'''
 	
 	
 	

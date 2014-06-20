@@ -1,43 +1,31 @@
 from __future__ import division
-import MySQLdb
 import datetime
 import string
+import sys
+
+from pympler import summary
+from pympler import muppy
 
 	
 def get_frequencies():
 
-	db = MySQLdb.connect(host="10.0.0.125", # your host, usually localhost
-						 user="Lydia", # your username
-						  passwd="voxpop", # your password
-						  db="voxpop") # name of the data base       
-						  
-	# you must create a Cursor object. It will let
-	#  you execute all the queries you need
-	cur = db.cursor()
-
-	# Columns: 5 = itemText
-	# Use all the SQL you like
-	# Sourcetypes: 1 = algemeen, 2 = politiek, 3 = business
-
-	print "Get items from database"	
-	query = "SELECT itemText, pubDate FROM newsitems WHERE sourceType = 2 LIMIT 100"
-	cur.execute(query)
-	print "selection made"
-		
-	# init dictionary
-	
-	for row in enumerate(cur.fetchall()):
-		s = row[1][0]
-		s = s.replace("\n", "")
-		s = s.translate(None, string.punctuation)
-		text = s.split(" ")
-		
-		print text[1:10]
-		print row[1][1].date(), type(row[1][1])
-		print row[0]
-		
-	return None
+	lists = []
+	for i in range(1000):
+		lists.append([1,2,3])
+		if i%500==0:
+			print("\n\n=====")
+			all_objects = muppy.get_objects()
+			sum1 = summary.summarize(all_objects)
+			s = summary.print_(sum1)
+			print(type(s))
 
 	
 if __name__ == "__main__":
-	get_frequencies()
+	old_stdout = sys.stdout
+	try:
+		mem_file = open("TEST_log.txt","w")
+		sys.stdout = mem_file
+		get_frequencies()
+	finally:
+		sys.stdout = old_stdout
+		mem_file.close()

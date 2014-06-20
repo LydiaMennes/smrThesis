@@ -8,6 +8,8 @@ from thesis_utilities import *
 import sys
 import copy
 import random
+from pympler import summary
+from pympler import muppy
 
 figure_size = 8
 
@@ -131,7 +133,7 @@ def print_memory():
 	print("")
 
 	
-def restart(data_folder, last_iter_nr, last_fig_nr):
+def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
 	blob_colors = {}
 	colors = get_colors()
 	f = open(data_folder+r"\color_file.txt")
@@ -160,14 +162,14 @@ def restart(data_folder, last_iter_nr, last_fig_nr):
 	
 	orig_data = space_from_file(data_folder + r"\data_orig.txt")
 	
-	iter_nr, assignment = iterate(data, orig_data, grid, last_fig_nr+1, nr_items, grid_size, data_folder+r"\intermediate_grids", last_iter_nr+1, blob_colors) 
+	iter_nr, assignment = iterate(data, orig_data, grid, last_fig_nr+1, nr_items, grid_size, data_folder+r"\intermediate_grids", log_memory, last_iter_nr+1, blob_colors) 
 	
 	f = open(data_folder+r"\init_grid_assignment.txt", "w")
 	for elem in assignment:
 		f.write(str(assignment[0]) +";"+ str(assignment[1]) +";"+ str(assignment[2]) + "\n") 
 	f.close()
 
-def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, iternr, blob_nr_keeper=None):
+def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  log_memory, iternr, blob_nr_keeper=None):
 	#iteratively move to grid points
 	assigned = set()
 	assignment = []
@@ -273,12 +275,17 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, ite
 				neighborhood_size_changed = True
 				neighborhood_size += 5
 				print("neigh size upgraded", neighborhood_size)
+				
+			if log_memory:
+				all_objects = muppy.get_objects()
+				sum1 = summary.summarize(all_objects)
+				summary.print_(sum1, limit=25, sort='size')
 		
 		if iternr%10 == 0 and len(assigned)+nr_movements!=nr_items:
 			neighborhood_size_changed = True
 		
 		if iternr%20 == 0 or len(assigned) == nr_items:
-			print("")
+			print("\n\n")
 			if blob_nr_keeper!=None:
 				used_marker = "o"
 				if nr_items > 1000:
@@ -312,7 +319,7 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, ite
 	return iternr, assignment
 
 	
-def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper = None):
+def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, blob_nr_keeper = None):
 	
 	nr_items = data.shape[0]
 	grid_size = int(np.ceil(np.sqrt(nr_items)))
@@ -359,7 +366,7 @@ def space_to_grid_iterative(data, result_path, with_figures=True, blob_nr_keeper
 	fig_nr = 1
 	
 	iternr = 0
-	iternr, assignment = iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, iternr, blob_nr_keeper)
+	iternr, assignment = iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, log_memory, iternr, blob_nr_keeper)
 	
 	print("needed ", iternr, "iterations for", len(assignment), "points")
 	print("\n=============\nDONE\n=============\n")
