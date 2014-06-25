@@ -19,7 +19,7 @@ def read_landscape(landscape_file):
 	# return grid with words and 
 	# defaultdict with true values for landscape words and false as default
 	grid = grid_from_file(landscape_file)
-	
+
 	word_dict = defaultdict(lambda: (False,-1,-1))
 	grid_size = 0
 	for x, grid_d in grid.items():
@@ -28,7 +28,7 @@ def read_landscape(landscape_file):
 			if elem != None:
 				word_dict[elem] = (True, x, y)
 	return grid, word_dict, grid_size
-	
+
 def get_frequencies(word_dict):
 
 	conn = oursql.connect(host="10.0.0.125", # your host, usually localhost
@@ -38,7 +38,7 @@ def get_frequencies(word_dict):
 						  use_unicode=False)
 	curs = conn.cursor(oursql.DictCursor)
 	# result = curs.execute('SELECT * FROM `some_table` WHERE `col1` = ? AND `col2` = ?',(42, -3))
-		
+
 	# Sourcetypes: 1 = algemeen, 2 = politiek, 3 = business
 	stop_words = get_parabots_stopwords()
 	print("Get items from database"	)
@@ -48,7 +48,7 @@ def get_frequencies(word_dict):
 
 	print( "selection made"	)
 	silly_words = get_silly_words()
-	
+
 	# init dictionary
 	freqs = defaultdict(lambda: defaultdict(int))
 	min_date,max_date = 0,0
@@ -76,7 +76,7 @@ def get_frequencies(word_dict):
 					word = word.lower()
 					if word_dict[word][0]:
 						freqs[word][date] += 1
-		
+
 	return freqs, min_date, max_date
 
 def build_freq_vect(f, min_date, max_date):
@@ -106,10 +106,10 @@ def build_freq_vect(f, min_date, max_date):
 			vect[0]=0.1
 			return vect
 		return vect
-			
+
 	return None
-		
-	
+
+
 def calc_correlations(freqs, min_date, max_date, landscape, grid_size):
 	freqs[None] = None
 	neighs = [[0,1],[1,1],[1,0]]	
@@ -155,7 +155,7 @@ def calc_correlations(freqs, min_date, max_date, landscape, grid_size):
 			correlations[landscape[grid_size-1][i]] = correlations[landscape[grid_size-1][i]][0]/correlations[landscape[grid_size-1][i]][1] 
 			avg_corr += correlations[landscape[grid_size-1][i]]
 	return correlations, avg_corr/nr_words
-	
+
 def to_file(folder, corr, avg_corr, word_dict, grid_size):
 	f = open(folder + r"\correlations.txt", "w")
 	f.write("average correlation,"+str(avg_corr)+"\n")
@@ -178,7 +178,7 @@ def to_file(folder, corr, avg_corr, word_dict, grid_size):
 	image_name = folder + r"\Avg_corr_neighs.pdf"
 	fig.savefig(image_name, bbox_inches='tight')
 	plt.close()
-	
+
 def check_freqs(freqs, folder):
 	f =open(folder+r"\check_freq_words.txt", "w")
 	keys = list(freqs.keys())
@@ -193,8 +193,8 @@ def evaluate_sem(folder, landscape_file):
 	check_freqs(freqs, folder)
 	corr, avg_corr = calc_correlations(freqs, min_date, max_date, landscape, grid_size)
 	to_file(folder, corr, avg_corr, word_dict, grid_size)
-	
-	
+
+
 if __name__ == "__main__":	
 
 	# wd=defaultdict(lambda: False)
@@ -210,15 +210,15 @@ if __name__ == "__main__":
 	# '''parser.add_argument(<naam>, type=<type>, default=<default>, help=<help message>)'''
 	parser.add_argument("case_name", help="Name of the data case that you want to process")
 	parser.add_argument("landscape", help="The number of words in the data case")
-	
+
 	args = parser.parse_args()
 	kwargs = vars(args)	
-	
+
 	print( "\n\n\n")
 	print( kwargs)
-	
+
 	data_case = "\\" + kwargs["case_name"]
 	landscape_name = "\\grids\\"+kwargs["landscape"]	
-	
-	
+
+
 	evaluate_sem(folder+data_case, landscape_name)
