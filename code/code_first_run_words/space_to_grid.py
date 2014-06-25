@@ -10,8 +10,10 @@ import copy
 import random
 from pympler import summary
 from pympler import muppy
+import gc
 
 figure_size = 8
+update_neighborhood = 300
 
 class TypeKeeper:	
 	def __init__(self, indexes):
@@ -34,10 +36,10 @@ class GridPoint:
 		self.grid = grid
 				
 	def reset(self):
-		self.assignments = []
-		self.lonely_points = []
-		self.steps = {}		
-		self.prev_providers = [copy.deepcopy(x) for x in self.providers]
+		self.assignments=[]
+		self.lonely_points=[]
+		self.steps = {}	
+		self.prev_providers = self.providers
 		self.providers = []
 		
 	# assignment 0 = numpy array with position, 1 = index of point
@@ -160,7 +162,7 @@ def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
 		for j in range(grid_size):
 			grid[i].append(GridPoint(i,j, grid))
 	
-	orig_data = space_from_file(data_folder + r"\data_orig.txt")
+	orig_data = space_from_file(data_folder + r"\intermediate_grids\data_orig.txt")
 	
 	iter_nr, assignment = iterate(data, orig_data, grid, last_fig_nr+1, nr_items, grid_size, data_folder+r"\intermediate_grids", log_memory, last_iter_nr+1, blob_colors) 
 	
@@ -271,15 +273,13 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 				print("insuf grad")			
 			print("i:",iternr,"ass",len(assigned), "mo:", nr_movements, "nr lonely points:", len(lonely_points))
 		
-			if nr_movements < 300 and len(assigned)+nr_movements!=nr_items:
+			if nr_movements < update_neighborhood and len(assigned)+nr_movements!=nr_items:
 				neighborhood_size_changed = True
 				neighborhood_size += 5
 				print("neigh size upgraded", neighborhood_size)
+			
+			gc.collect()
 				
-			if log_memory:
-				all_objects = muppy.get_objects()
-				sum1 = summary.summarize(all_objects)
-				summary.print_(sum1, limit=25, sort='size')
 		
 		if iternr%10 == 0 and len(assigned)+nr_movements!=nr_items:
 			neighborhood_size_changed = True
@@ -311,8 +311,13 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 				plt.close()		
 				fig_nr+=1
 				print( "iter", iternr, "nr assigned", len(assigned), "from", nr_items, "mo:", nr_movements, "at", datetime.datetime.now())
-				# print_memory()
+
 			
+			if log_memory:
+				all_objects = muppy.get_objects()
+				sum1 = summary.summarize(all_objects)
+				summary.print_(sum1, limit=15, sort='size')
+				print("printed at", datetime.datetime.now())
 		# if iternr == 26:
 			# sys.exit()
 		
@@ -429,8 +434,9 @@ if __name__ == "__main__":
 	# plt.scatter(x, y, c=l);
 	# plt.show()
 	
-	data_case = "\cutoff_10_new_stg"
-	restart(r"D:\Users\Lydia\results puzzle" + data_case, 860, 43)
+	update_neighborhood = 500
+	data_case = "\cutoff_10_nolog"
+	restart(r"D:\Users\Lydia\results puzzle" + data_case, False, 340, 17)
 	
 	
 	

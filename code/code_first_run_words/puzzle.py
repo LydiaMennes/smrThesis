@@ -16,6 +16,7 @@ from matplotlib import cm
 import semantic_distance
 import argparse
 from thesis_utilities import *
+import gc
 
 input_directory_landscape = r"D:\Users\Lydia\results semantic landscape"
 input_directory_cooc = r"D:\Users\Lydia\results word cooc"
@@ -570,7 +571,7 @@ def get_sem_data():
 	j = 0
 	grid_size = -1
 	for line in file:
-		line = line.replace("\n", "")
+		line = line.replace(" ; \n", "")
 		instance = line.split(" ; ")		
 		for elem in instance:
 			if grid_size == -1:
@@ -691,6 +692,8 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 		data_space[index:index+assigned,0].fill(new_pos[0])
 		data_space[index:index+assigned,1].fill(new_pos[1])
 		random_dist = np.random.rand(assigned,2)
+		# print("random", random_dist.shape)
+		# print("data space slice", data_space[index:index+assigned,:].shape)
 		data_space[index:index+assigned,:] = (random_dist-0.5)*ratio_resize + data_space[index:index+assigned,:]
 		blob_file.write(str(i) + " " + grid[2][i] + " " + str(len(grid[3][i]))) 
 		for elem in grid[3][i]:
@@ -967,8 +970,8 @@ def puzzle(grid_size, old_grid_size, nr_words):
 		for elem_i in elem_indexes:
 			[x,y] = list(global_index[elem_i].pos)
 							
-			if iter%5000 == 0:
-				print("iter", iter)
+			# if iter%5000 == 0:
+				# print("iter", iter)
 				
 			# print "iter", iter
 			# check_all_lists(iter)						
@@ -1013,7 +1016,9 @@ def puzzle(grid_size, old_grid_size, nr_words):
 			total_nr_swaps += nr_swaps
 			nr_swaps = 0
 			png_nr+=1
+			
 		trial_nr+=1
+		gc.collect()
 	
 	print_all_lists("final_neighbors")
 	stats_to_file("LAST", trial_nr, follow_inds, nr_inits, grid_size, png_nr, nr_swaps, nr_words)
@@ -1026,7 +1031,7 @@ def build_final_grid(nr_words, process, old_grid_size):
 		log_file.write("get data " + str(datetime.datetime.now()) + "\n")
 		log_file.close()
 		(old_grid_size, data_sample, grid_sample) = get_sem_data()
-		print("get initial grid", datetime.datetime.now())
+		print("get initial grid", datetime.datetime.now(), "with old grid size:", old_grid_size)
 		log_file = open(log_file_n, 'a')
 		log_file.write("get initial grid " + str(datetime.datetime.now()) + "\n")
 		log_file.close()
@@ -1045,9 +1050,21 @@ def build_final_grid(nr_words, process, old_grid_size):
 		log_file.write("unrecognized process type\n")
 		log_file.close()
 	if process == "all" or process == "only_puzzle":
-		if encounter:
+		if encounter:			
+			log_file = open(log_file_n, 'a')		
+			log_file.write("start adding all cooc data " + str(datetime.datetime.now()) + "\n")
+			log_file.close()
+			if log_memory:
+				all_objects = muppy.get_objects()
+				sum1 = summary.summarize(all_objects)
+				summary.print_(sum1, limit=25, sort='size')
+			print("add all cooc data")
 			add_all_cooc_data()
 			print("all cooc data added")
+			if log_memory:
+				all_objects = muppy.get_objects()
+				sum1 = summary.summarize(all_objects)
+				summary.print_(sum1, limit=25, sort='size')
 			log_file = open(log_file_n, 'a')		
 			log_file.write("all coocs added to grid elems " + str(datetime.datetime.now()) + "\n")
 			log_file.close()
@@ -1066,7 +1083,7 @@ if __name__ == "__main__":
 	# '''parser.add_argument(<naam>, type=<type>, default=<default>, help=<help message>)'''
 	parser.add_argument("case_name", help="Name of the data case that you want to process")
 	parser.add_argument("nr_words", type=int ,help="The number of words in the data case")
-	parser.add_argument("--process", default="nothing" , help="What parts of the algorithm you want to execute")
+	parser.add_argument("--process", default="nothing" , help="options: all, initial_grid, only_puzzle, from_restart_stg")
 	parser.add_argument("--max_closest", type=int , default=8 ,help="number of closest words taken into account")
 	parser.add_argument("--nr_trials_re_init", type=int ,default=-1 ,help="bla")
 	parser.add_argument("--stop_nr_trials", type=int ,default=-1 ,help="bla")

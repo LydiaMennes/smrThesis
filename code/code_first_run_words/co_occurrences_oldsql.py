@@ -1,6 +1,8 @@
 from __future__ import division
-import oursql
+import MySQLdb
+import nltk
 import string
+from nltk.corpus import stopwords
 from collections import defaultdict
 import re
 import matplotlib.pyplot as plt
@@ -14,26 +16,27 @@ import argparse
 window_size = 8
 query = "SELECT itemText FROM newsitems WHERE sourceType = 2"
 remove_low_freq = True
+stopwords_type = "parabots"
 freq_cut_off = 0
 data_directory = "default"
 result_path = "default"
 resultfolder = r"D:\Users\Lydia\results word cooc"
-silly_words = []
+silly_words = ["image", "afbeelding", "reageer"]
 
 def coocs_to_file_complete(cooc, tf_idf):
-	print("complete coocs to distributed files")
+	print "complete coocs to distributed files"
 	cooc_path = result_path + r"\complete_cooc"
 	if not os.path.exists(cooc_path):
 		os.makedirs(cooc_path)	
-		print("directory made")
-	words = list(tf_idf.keys())
+		print "directory made"
+	words = tf_idf.keys()
 	words.sort() 
 	
 	if remove_low_freq:
 		for i in range(len(words))[::-1]:
 			if tf_idf[words[i]][3] <= freq_cut_off:
 				del words[i]
-	print( "remaining nr words: ", len(words)	)
+	print "remaining nr words: ", len(words)	
 	filename_out = cooc_path + r"\wordlist.txt" 
 	f = open(filename_out, 'w')
 	for w in words:
@@ -66,7 +69,7 @@ def coocs_to_file_complete(cooc, tf_idf):
 		if w[0] > current_letter and w[0] <= "z":			
 			f.close()
 			current_letter = w[0]
-			print( "letter", current_letter, "size cooc", sys.getsizeof(cooc))
+			print "letter", current_letter, "size cooc", sys.getsizeof(cooc)
 			filename_out = cooc_path + r"\_"+current_letter+".txt" 
 			f = open(filename_out, 'w')
 		f.write(w + ";")
@@ -96,36 +99,36 @@ def coocs_to_file_complete(cooc, tf_idf):
 	
 def cooc_stats_to_file(cooc, tf_idf):
 	non_zeros = defaultdict(lambda: [0,0] )
-	for word1, dict in cooc.items():
-		for word2, freq in dict.items():
+	for word1, dict in cooc.iteritems():
+		for word2, freq in dict.iteritems():
 			if freq == 0:
-				print("zero entry gevonden!")
+				print "zero entry gevonden!"
 			if tf_idf[word1][3] > freq_cut_off:
 				non_zeros[word1][0] += 1
 			if tf_idf[word2][3] > freq_cut_off:
 				non_zeros[word2][0] += 1
 	filename_out = result_path + r"\cooc_stats.txt" 
 	f = open(filename_out, 'w')
-	for word in non_zeros.keys():
+	for word in non_zeros.iterkeys():
 		non_zeros[word][1] = tf_idf[word][3]
 		f.write(word + " " + str(non_zeros[word][0]) + " " + str(non_zeros[word][1]) + "\n")
 	f.close()
 	
-	values = list(zip(*non_zeros.values()))
-	fig = plt.figure()
+	values = zip(*non_zeros.values())
+	fig = plt.figure(1)
 	plt.scatter(np.log(values)[0,:], np.log(values)[1,:], c='r', marker='o')
 	plt.xlabel("number of non-zero cooccurrence entries (log)")
 	plt.ylabel("total word frequency (log)")
 	image_name = result_path + r"\cooc_stats_log.pdf"
 	fig.savefig(image_name, bbox_inches='tight')
-	plt.close()
-	fig = plt.figure()
+	# plt.show()
+	fig = plt.figure(1)
 	plt.scatter(values[0], values[1], c='r', marker='o')
 	plt.xlabel("number of non-zero cooccurrence entries")
 	plt.ylabel("total word frequency")
 	image_name = result_path + r"\cooc_stats_nolog.pdf"
 	fig.savefig(image_name, bbox_inches='tight')
-	plt.close()
+	# plt.show()
 
 def stats_to_file(doc_nr, total_nr_words, nr_words, nr_entries, nr_words_single_freq, nr_included_words):
 	filename_out = result_path+r"\stats.txt" 
@@ -141,6 +144,7 @@ def stats_to_file(doc_nr, total_nr_words, nr_words, nr_entries, nr_words_single_
 		f.write("words with a freq smaller or equal to " + str(freq_cut_off) +" are removed\n")
 	else:
 		f.write("words with all frequencies are included\n")
+	f.write("stopwords type: " + stopwords_type + "\n")
 	f.write("words containing numbers, stopwords and punctuation are removed\n")
 	f.close()	
 	
@@ -151,7 +155,7 @@ def word_stats_to_file(tf_idf):
 	filename_out = result_path + r"\tf_idf.txt" 
 	f = open(filename_out, 'w')
 	# Content file: word - total frequency - nr documents in which it appears - freq per document
-	for word, lst in tf_idf.items():
+	for word, lst in tf_idf.iteritems():
 		nr_words+=1
 		total_freq = sum(lst[1])
 		tf_idf[word].append(total_freq)
@@ -170,7 +174,7 @@ def word_stats_to_file(tf_idf):
 			
 			f.write("\n")
 	f.close()
-	print( "number of words:", nr_words)
+	print "number of words:", nr_words
 	return nr_words, nr_words_low_freq, nr_included_words
 
 def coocs_to_file(cooc, tf_idf):
@@ -178,38 +182,40 @@ def coocs_to_file(cooc, tf_idf):
 	f = open(filename_out, 'w')	
 	nr_entries = 0
 	# Normalize frequencies and write to file	
-	for word1, dict in cooc.items():
-		for word2, freq in dict.items():
+	for word1, dict in cooc.iteritems():
+		for word2, freq in dict.iteritems():
 			if not remove_low_freq:
 				f.write(word1 + " " + word2 + " " + str(freq) + "\n")
 				nr_entries += 1
 			elif remove_low_freq and (tf_idf[word1][3] > freq_cut_off and tf_idf[word2][3] > freq_cut_off):
 				f.write(word1 + " " + word2 + " " + str(freq) + "\n")
 				nr_entries += 1
-	print("nr cooc entries:", nr_entries)
+	print "nr cooc entries:", nr_entries
 	f.close()
 	return nr_entries
 	
 def get_cooccurrences(folder):
-	conn = oursql.connect(host="10.0.0.125", # your host, usually localhost
+	db = MySQLdb.connect(host="10.0.0.125", # your host, usually localhost
 						 user="Lydia", # your username
 						  passwd="voxpop", # your password
-						  db="voxpop",
-						  use_unicode = False) # name of the data base       
+						  db="voxpop") # name of the data base       
 						  
 	# you must create a Cursor object. It will let
 	#  you execute all the queries you need
-	curs = conn.cursor(oursql.DictCursor)
+	cur = db.cursor()
 
 	# Columns: 5 = itemText
 	# Use all the SQL you like
 	# Sourcetypes: 1 = algemeen, 2 = politiek, 3 = business
 
-	print( "Get items from database")
-	curs.execute(query)
-	print("selection made")
+	print "Get items from database"	
+	cur.execute(query)
+	print "selection made"
 	
-	stop_words = get_parabots_stopwords()
+	if stopwords_type == "nltk":
+		stop_words = stopwords.words('dutch')
+	elif stopwords_type == "parabots":
+		stop_words = get_parabots_stopwords()
 	
 	# init dictionary
 	cooc = defaultdict(lambda: defaultdict(int))
@@ -218,16 +224,13 @@ def get_cooccurrences(folder):
 	doc_nr = 1
 	total_nr_words = 0
 	
-	punc_map = str.maketrans("","",string.punctuation)
-	
-	for row in curs:
+	for row in enumerate(cur.fetchall()):
 		window = []
 		current_word = -1;
-		s = row['itemText']
+		s = row[1][0]
 		s = unicodedata.normalize('NFKD', s.decode('unicode-escape')).encode('ascii', 'ignore')
-		s = str(s)
-		s = esc_chars(s)
-		s = s.translate(punc_map)
+		s = s.replace("\n", "")
+		s = s.translate(None, string.punctuation)
 		text = s.split(" ")
 				
 		for word in text:			
@@ -239,7 +242,7 @@ def get_cooccurrences(folder):
 				# Update current word position
 				if len(window) < 2*window_size + 1 and len(window) >= window_size:
 					current_word+=1
-
+					#print "current word =", current_word
 				
 			
 				if current_word != -1:
@@ -278,13 +281,13 @@ def get_cooccurrences(folder):
 			
 			
 		if doc_nr%10000 == 0:
-			print( doc_nr, "files processed")
+			print doc_nr, "files processed"
 		doc_nr +=1	
 	# Counts and list of words to file
 	
-	print("number of documents: " , doc_nr-1)
+	print "number of documents: " , doc_nr-1
 	
-	print( "data processed, write to file")
+	print "data processed, write to file"
 	
 	
 	(nr_words, nr_words_single_freq, nr_included_words) = word_stats_to_file(tf_idf)
@@ -310,21 +313,20 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 	kwargs = vars(args)	
 	
-	print( "\n\n\n")
-	print( kwargs)
+	print "\n\n\n"
+	print kwargs
 	
 	data_directory = "\\" + kwargs["case_name"]
-	if kwargs["query_limit"]!=None:
+	if kwargs["query_limit"]!=None
 		query = "SELECT itemText FROM newsitems WHERE sourceType = 2 LIMIT " + kwargs["query_limit"]
 	freq_cut_off = kwargs["freq_cutoff"]
-	silly_words.extend(get_silly_words())
-	
-	print( data_directory)
-	print( "cutoff", freq_cut_off)
+		
+	print data_directory
+	print "cutoff", freq_cutoff
 	result_path = resultfolder + data_directory
 	if not os.path.exists(result_path):
 		os.makedirs(result_path)	
-		print( "directory made"	)
+		print "directory made"	
 	get_cooccurrences(data_directory)
 	
 	

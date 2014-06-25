@@ -3,6 +3,8 @@ import numpy as np
 import string
 import re
 from bisect import bisect_left
+import random
+import os
 
 def has_digits (word):
 	hd = re.compile('\d')
@@ -82,3 +84,61 @@ def grid_from_file(landscape_file):
 	f.close()
 	
 	return grid
+	
+def esc_chars(s):
+	s = s.replace(r"\a"," ")
+	s = s.replace(r"\b"," ")
+	s = s.replace(r"\f"," ")
+	s = s.replace(r"\n"," ")
+	s = s.replace(r"\x"," ")
+	s = s.replace(r"\v"," ")
+	s = s.replace(r"\r"," ")
+	s = s.replace(r"\t"," ") 
+	return s
+	
+def get_silly_words():
+	f = open("silly_words.txt","r")
+	words = []
+	for line in f:
+		line = line.replace("\n", "")
+		words.append(line)
+	f.close()
+	return words
+	
+def get_word_list(file):
+	f = open(file,"r")
+	words = []
+	for l in f:
+		l = l.replace("\n","")
+		words.append(l)
+	f.close()
+	return words
+
+def build_random_grid(word_file, output_dir):
+	empty = "-EMPTY-"
+	words = get_word_list(word_file)
+	print("nr words:", len(words))
+	grid_size = int(np.ceil(np.sqrt(len(words))))
+	print("grid_size", grid_size)
+	nr_items = grid_size*grid_size
+		
+	if not os.path.exists(output_dir+r"\grids"):
+		os.makedirs(output_dir+r"\grids")
+	f = open(output_dir+r"\grids\random_grid.txt", "w")
+		
+	for i in range(grid_size):
+		for j in range(grid_size):
+			ind = random.randrange(nr_items)
+			if ind<len(words):
+				f.write(words[ind]+" ; ")
+				del words[ind]
+			else:
+				f.write(empty + " ; ")
+			nr_items-=1
+		f.write("\n")
+	f.close()
+		
+	
+	
+	
+	

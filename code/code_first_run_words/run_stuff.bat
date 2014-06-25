@@ -1,3 +1,1 @@
-co_occurrences.py > log_coocs.txt
-words_nse.py > log_words_nse.txt
-puzzle.py > log_puzzle.txt
+puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_normEnc_withF --encounter_deep no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
