@@ -248,7 +248,7 @@ def grid_and_blob_from_file_from_stg_restart():
 	
 	nr_words = 0
 	data_file = open(grid_input+r"\init_grid_assignment.txt","r")
-	for line in f:
+	for line in data_file:
 		line = line.replace("\n", "")
 		line = line.split(";")	
 		x, y, id = int(line[0]), int(line[1]), int(line[2])
@@ -256,6 +256,7 @@ def grid_and_blob_from_file_from_stg_restart():
 		global_index[id] = grid_f[x][y]
 		global_name[blob_nrs[id][1]] = grid_f[x][y]
 		nr_words+=1
+	data_file.close()
 	grid_size = int(math.ceil(math.sqrt(nr_words)))
 	return grid_size, nr_words
 	
@@ -1049,7 +1050,7 @@ def build_final_grid(nr_words, process, old_grid_size):
 		log_file = open(log_file_n, 'a')
 		log_file.write("unrecognized process type\n")
 		log_file.close()
-	if process == "all" or process == "only_puzzle":
+	if process == "all" or process == "only_puzzle" or process == "from_restart_stg":
 		if encounter:			
 			log_file = open(log_file_n, 'a')		
 			log_file.write("start adding all cooc data " + str(datetime.datetime.now()) + "\n")

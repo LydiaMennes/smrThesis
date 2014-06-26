@@ -168,7 +168,7 @@ def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
 	
 	f = open(data_folder+r"\init_grid_assignment.txt", "w")
 	for elem in assignment:
-		f.write(str(assignment[0]) +";"+ str(assignment[1]) +";"+ str(assignment[2]) + "\n") 
+		f.write(str(elem[0]) +";"+ str(elem[1]) +";"+ str(elem[2]) + "\n") 
 	f.close()
 
 def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  log_memory, iternr, blob_nr_keeper=None):
@@ -436,7 +436,7 @@ if __name__ == "__main__":
 	
 	update_neighborhood = 500
 	data_case = "\cutoff_10_nolog"
-	restart(r"D:\Users\Lydia\results puzzle" + data_case, False, 340, 17)
+	restart(r"D:\Users\Lydia\results puzzle" + data_case, False, 2160, 108)
 	
 	
 	
