@@ -215,18 +215,21 @@ def log_daily_freqs(freqs_per_day, landscape, grid_size):
 	fig_nr = 0
 	empty_value = -0.01
 		
-	for d, f_dict in freqs_per_day.items():
-		f = open(log_folder+r"\day"+str(d)+".txt","w")
+	keys = list(freqs_per_day.keys())
+	keys.sort()
+	for date in keys:
+		f_dict = freqs_per_day[date]
+		f = open(log_folder+r"\day"+str(date)+".txt","w")
 		values = np.zeros((grid_size, grid_size))
 		for i in range(grid_size):
 			for j in range(grid_size):
 				elem = landscape[i][j]
 				if elem != None:
 					f.write(str(f_dict[elem])+" ; ")
-					values[i,j]=f_dict[elem]					
+					values[grid_size-1-i,j]=f_dict[elem]					
 				else:
 					f.write(str(empty_value)+" ; ")
-					values[i,j]=empty_value
+					values[grid_size-1-i,j]=empty_value
 			f.write("\n")
 		f.close()
 		
@@ -235,7 +238,7 @@ def log_daily_freqs(freqs_per_day, landscape, grid_size):
 		fig = plt.figure(figsize=(figure_size, figure_size))
 		xp, yp = np.mgrid[slice(0, grid_size, 1), slice(0, grid_size, 1)]
 		plt.pcolor(xp, yp, values, cmap=cmap_v, vmin=empty_value, vmax=0.05)
-		plt.title("Frequencies in grid" + str(d))
+		plt.title("Frequencies in grid" + str(date))
 		plt.axis([0, grid_size-1, 0, grid_size-1])
 		plt.colorbar()	
 		fig_name = log_folder + r"\day" + four_digit_string(fig_nr) + ".png"

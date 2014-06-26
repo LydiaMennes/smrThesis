@@ -1,1 +1,3 @@
-puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_normEnc_withF --encounter_deep no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
+evaluate_semantic_landscape.py limit1000_R_deepEnc_noF grid__init1_tr301_itLAST.txt --doc_limit 5000 --log_day_freqs yes
+evaluate_semantic_landscape.py limit1000_GOLD_deepEnc_noF grid__init1_tr301_itLAST.txt --doc_limit 5000 --log_day_freqs yes
+evaluate_semantic_landscape.py limit1000_nolog_random random_grid.txt --doc_limit 5000 --log_day_freqs yes
