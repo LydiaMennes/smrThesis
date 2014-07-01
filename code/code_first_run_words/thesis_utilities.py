@@ -6,6 +6,8 @@ from bisect import bisect_left
 import random
 import os
 
+empty = "-EMPTY-"
+
 def has_digits (word):
 	hd = re.compile('\d')
 	return bool(hd.search(word))
@@ -38,7 +40,7 @@ def grid_to_file(output_directory, grid_size, suffix, grid):
 			if grid[i][j]!= None:
 				f.write(grid[i][j].name + " ; " )
 			else:
-				f.write("-EMPTY- ; ")
+				f.write(empty+" ; ")
 		f.write("\n")
 	f.close()
 	
@@ -76,7 +78,7 @@ def grid_from_file(landscape_file):
 		line = line.replace(" ; \n", "")
 		line = line.split(" ; ")
 		for w in line:
-			if w != "-EMPTY-":
+			if w != empty:
 				grid[row][column] = w	
 			column += 1
 		column = 0
@@ -114,9 +116,7 @@ def get_word_list(file):
 	f.close()
 	return words
 
-def build_random_grid(word_file, output_dir):
-	empty = "-EMPTY-"
-	words = get_word_list(word_file)
+def build_random_grid(words, output_dir):
 	print("nr words:", len(words))
 	grid_size = int(np.ceil(np.sqrt(len(words))))
 	print("grid_size", grid_size)
@@ -137,8 +137,37 @@ def build_random_grid(word_file, output_dir):
 			nr_items-=1
 		f.write("\n")
 	f.close()
-		
 	
+def build_random_puzzle_result(landscape_file, out_folder):
+	landscape = grid_from_file(landscape_file)
+	grid_size = len(landscape)
+	blob_size = grid_size//2
+	blob_nr = 0
+	freq = 0
+	first = True
+	word_list = []
+	f = open(out_folder+r"\blob_file.txt","w")
+	for i in range(grid_size):
+		for j in range(grid_size):
+			elem = landscape[i][j]
+			if elem != None:
+				word_list.append(elem)
+				if freq==blob_size or first:
+					if not first:
+						f.write("\n")
+					first = False
+					f.write(str(blob_nr) + " " + elem + " " + str(000) )
+					freq = 0
+					blob_nr+=1
+				else:
+					f.write(" " + elem)
+					freq+=1
+	f.close()
+	build_random_grid(word_list, out_folder)
 	
+if __name__ == "__main__":
+	landscape = r"D:\Users\Lydia\results puzzle\limit1000_newsql\grid_initial.txt"
+	destination = r"D:\Users\Lydia\results puzzle\limit1000_nolog_random"
+	build_random_puzzle_result(landscape, destination)
 	
 	

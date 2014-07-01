@@ -11,7 +11,6 @@ import random
 from pympler import summary
 from pympler import muppy
 import gc
-import calc_angle
 
 figure_size = 8
 update_neighborhood = 300
@@ -35,12 +34,10 @@ class GridPoint:
 		self.providers = []
 		self.prev_providers = []
 		self.grid = grid
-		self.prev_steps = {}
 				
 	def reset(self):
 		self.assignments=[]
 		self.lonely_points=[]
-		self.prev_steps = self.steps
 		self.steps = {}	
 		self.prev_providers = self.providers
 		self.providers = []
@@ -79,24 +76,7 @@ class GridPoint:
 		# gamma_q = np.sum(np.multiply(p1-p0, p-p0)) / np.sum(np.power(p1-p0,2))
 		# return np.sqrt(np.sum(p-p0- gamma_q*np.power(p1-p0,2)))
 	
-	def get_step(self, min_max, lt_min):
-		# Next part makes direction slightly more random		
-		# q = np.array([p[0]+(random.random()-0.5)/3, p[1]+(random.random()-0.5)/3])
-		# d1 = np.sqrt(np.dot(q-gp, q-gp))
-		if lt_min:
-			min_a = math.floor(min_max[0]*100)/100
-			max_a = math.ceil(min_max[1]*100)/100
-			alpha = random.uniform(min_a, max_a)
-		else:
-			min_a = math.ceil(min_max[0]*100)/100
-			max_a = math.floor(min_max[1]*100)/100
-			alpha = random.uniform(0, min_a + 2*math.pi-max_a)
-			alpha = min_a - alpha
-			if alpha < 0:
-				alpha = 2*math.pi+alpha
-		return np.array([math.sin(alpha), math.cos(alpha)]) * self.stepsize
-	
-	def get_stepXXX(self, gp, p, d):
+	def get_step(self, gp, p, d):
 		# Next part makes direction slightly more random		
 		# q = np.array([p[0]+(random.random()-0.5)/3, p[1]+(random.random()-0.5)/3])
 		# d1 = np.sqrt(np.dot(q-gp, q-gp))
@@ -110,37 +90,6 @@ class GridPoint:
 	
 	
 	def calc_assignments(self):
-	
-		max_dist_orig = 0.0
-		max_ind = -1			
-		for index in range(len(self.assignments)):
-			[pos, ind, orig_pos] = self.assignments[index]			
-			dist_orig = np.sqrt(np.dot(orig_pos-pos, orig_pos-pos))
-			if dist_orig > max_dist_orig:
-				max_dist_orig = dist_orig
-				max_ind = index
-
-		min_max, lt_min = calc_angle.calc(self.pos, np.array([y for [x,y] in self.lonely_points]))
-		
-		for index in range(len(self.assignments)):
-			if index != max_ind:		
-				found = False
-				if index in self.prev_steps.keys():
-					angle = calc_angle.angle(np.array([0,0]), self.prev_steps[index])
-					if lt_min and angle>min_max[0] and angle<min_max[1]:
-						self.steps[index] = self.prev_steps[index]
-						found = True
-					elif not lt_min and (angle<min_max[0] or angle>min_max[1]):
-						self.steps[index] = self.prev_steps[index]
-						found = True
-					# print("previous step")
-				if not found:
-					step = self.get_step(min_max, lt_min)
-					self.steps[index] = step
-					# print("new step", step)
-		
-		
-	def calc_assignmentsXXX(self):
 		self.lonely_points.sort(key=lambda x: x[0])	
 		# make point move with smallest distance to 'movement line' from grid point to lonely gridpoint
 		
@@ -163,8 +112,27 @@ class GridPoint:
 							if dist_lgp < min_dist_lgp:
 								min_dist_lgp=dist_lgp
 								min_ind = index	
+				# to_pos = p[1]
+				# self.grid[int(round(to_pos[0]))][int(round(to_pos[1]))].add_provider(self.pos)
+				# if len(self.grid[int(round(to_pos[0]))][int(round(to_pos[1]))].assignments) != 0:
+					# print("wrong provider added")
+				# print("provider added")
 				self.steps[self.assignments[min_ind][1] ] = self.get_step(p[1], self.assignments[min_ind][0], min_dist_lgp)
-
+	
+	
+	
+def print_memory():
+	# w = WMI('.')
+	# result =  w.query("SELECT WorkingSet FROM Win32_PerfRawData_PerfProc_Process WHERE IDProcess=%d" % os.getpid())
+	# result2 = int(result[0]['WorkingSet'])
+	# print type(result2)
+	# print "memory:\n", result2
+	# return result2
+	
+	# h = hpy()
+	# print h.heap()	
+	# return None
+	print("")
 
 	
 def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
@@ -466,17 +434,9 @@ if __name__ == "__main__":
 	# plt.scatter(x, y, c=l);
 	# plt.show()
 	
-	# update_neighborhood = 500
-	# data_case = "\cutoff_10_nolog"
-	# iter = 120
-	# fig = 6
-	# restart(r"D:\Users\Lydia\results puzzle" + data_case, False, iter, fig)
-	
-	update_neighborhood = 5
-	data_case = "\test3"
-	iter = 20
-	fig = 1
-	restart(r"D:\Users\Lydia\results puzzle" + data_case, False, iter, fig)
+	update_neighborhood = 500
+	data_case = "\cutoff_10_nolog"
+	restart(r"D:\Users\Lydia\results puzzle" + data_case, False, 2160, 108)
 	
 	
 	

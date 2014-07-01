@@ -11,9 +11,11 @@ import random
 from pympler import summary
 from pympler import muppy
 import gc
+import calc_angle
 
 figure_size = 8
 update_neighborhood = 300
+prev_steps = defaultdict(lambda: np.zeros(2))
 
 class TypeKeeper:	
 	def __init__(self, indexes):
@@ -34,6 +36,7 @@ class GridPoint:
 		self.providers = []
 		self.prev_providers = []
 		self.grid = grid
+		self.arrivals = []
 				
 	def reset(self):
 		self.assignments=[]
@@ -42,9 +45,11 @@ class GridPoint:
 		self.prev_providers = self.providers
 		self.providers = []
 		
-	# assignment 0 = numpy array with position, 1 = index of point
+	# assignment 0 = numpy array with position, 1 = index of point, 2 = orig_pos
 	def add_assignment(self, assignment):			
 		self.assignments.append(assignment)
+		if assignment[1] not in self.arrivals:
+			self.arrivals.append(assignment[1])
 		
 	def add_provider(self, prov):
 		self.providers.append(prov)
@@ -76,7 +81,24 @@ class GridPoint:
 		# gamma_q = np.sum(np.multiply(p1-p0, p-p0)) / np.sum(np.power(p1-p0,2))
 		# return np.sqrt(np.sum(p-p0- gamma_q*np.power(p1-p0,2)))
 	
-	def get_step(self, gp, p, d):
+	def get_step(self, min_max, lt_min):
+		# Next part makes direction slightly more random		
+		# q = np.array([p[0]+(random.random()-0.5)/3, p[1]+(random.random()-0.5)/3])
+		# d1 = np.sqrt(np.dot(q-gp, q-gp))
+		if lt_min:
+			min_a = math.floor(min_max[0]*100)/100
+			max_a = math.ceil(min_max[1]*100)/100
+			alpha = random.uniform(min_a, max_a)
+		else:
+			min_a = math.ceil(min_max[0]*100)/100
+			max_a = math.floor(min_max[1]*100)/100
+			alpha = random.uniform(0, min_a + 2*math.pi-max_a)
+			alpha = min_a - alpha
+			if alpha < 0:
+				alpha = 2*math.pi+alpha
+		return np.array([math.sin(alpha), math.cos(alpha)]) * self.stepsize
+	
+	def get_stepXXX(self, gp, p, d):
 		# Next part makes direction slightly more random		
 		# q = np.array([p[0]+(random.random()-0.5)/3, p[1]+(random.random()-0.5)/3])
 		# d1 = np.sqrt(np.dot(q-gp, q-gp))
@@ -89,7 +111,76 @@ class GridPoint:
 		return step
 	
 	
-	def calc_assignments(self):
+	def calc_assignments(self):	
+		# print(self.assignments[0])
+		# Original position kan verwijderd worden!! als je het op basis van arrival doet
+		assignment_ids = [y for (x,y,z) in self.assignments]
+		for i in reversed(range(len(self.arrivals))):
+			if self.arrivals[i] not in assignment_ids:
+				del self.arrivals[i]			
+
+		if len(self.lonely_points)>2:
+			min_max, lt_min = calc_angle.calc(self.pos, np.array([y for [x,y] in self.lonely_points]))
+		
+		for index in range(len(self.assignments)):
+			if len(self.lonely_points)>2:
+				ass_id = self.assignments[index][1]
+				if ass_id != self.arrivals[-1]:		
+					found = False
+					if not np.array_equal(prev_steps[ass_id] , np.zeros(2)):
+						angle = calc_angle.angle(np.array([0,0]), prev_steps[ass_id])
+						if lt_min and angle>min_max[0] and angle<min_max[1]:
+							self.steps[ass_id] = prev_steps[ass_id]
+							found = True
+							# print("previous step")
+						elif not lt_min and (angle<min_max[0] or angle>min_max[1]):
+							self.steps[ass_id] = prev_steps[ass_id]
+							found = True
+							# print("previous step")
+					if not found:
+						step = self.get_step(min_max, lt_min)
+						self.steps[ass_id] = step
+						# print("new step", step)
+			elif len(self.lonely_points)==1:
+				alpha = calc_angle.angle(self.pos, self.assignments[index][0])
+				self.steps[self.assignments[index][1]] = np.array([math.cos(alpha), math.sin(alpha)])
+		
+	
+	def calc_assignments2(self):		
+		max_dist_orig = 0.0
+		max_ind = -1			
+		for index in range(len(self.assignments)):
+			[pos, ind, orig_pos] = self.assignments[index]			
+			dist_orig = np.sqrt(np.dot(orig_pos-pos, orig_pos-pos))
+			if dist_orig > max_dist_orig:
+				max_dist_orig = dist_orig
+				max_ind = index
+
+		if len(self.lonely_points) > 1:
+			min_max, lt_min = calc_angle.calc(self.pos, np.array([y for [x,y] in self.lonely_points]))
+		
+			for index in range(len(self.assignments)):
+				if index != max_ind:		
+					ass_id = self.assignments[index][1]
+					found = False
+					if not np.array_equal(prev_steps[ass_id] , np.zeros(2)):
+						angle = calc_angle.angle(np.array([0,0]), prev_steps[ass_id])
+						if lt_min and angle>min_max[0] and angle<min_max[1]:
+							self.steps[ass_id] = prev_steps[ass_id]
+							found = True
+							# print("previous step")
+						elif not lt_min and (angle<min_max[0] or angle>min_max[1]):
+							self.steps[ass_id] = prev_steps[ass_id]
+							found = True
+							# print("previous step")
+					if not found:
+						step = self.get_step(min_max, lt_min)
+						self.steps[ass_id] = step
+						# print("new step", step)
+						
+		
+		
+	def calc_assignmentsXXX(self):
 		self.lonely_points.sort(key=lambda x: x[0])	
 		# make point move with smallest distance to 'movement line' from grid point to lonely gridpoint
 		
@@ -112,27 +203,8 @@ class GridPoint:
 							if dist_lgp < min_dist_lgp:
 								min_dist_lgp=dist_lgp
 								min_ind = index	
-				# to_pos = p[1]
-				# self.grid[int(round(to_pos[0]))][int(round(to_pos[1]))].add_provider(self.pos)
-				# if len(self.grid[int(round(to_pos[0]))][int(round(to_pos[1]))].assignments) != 0:
-					# print("wrong provider added")
-				# print("provider added")
 				self.steps[self.assignments[min_ind][1] ] = self.get_step(p[1], self.assignments[min_ind][0], min_dist_lgp)
-	
-	
-	
-def print_memory():
-	# w = WMI('.')
-	# result =  w.query("SELECT WorkingSet FROM Win32_PerfRawData_PerfProc_Process WHERE IDProcess=%d" % os.getpid())
-	# result2 = int(result[0]['WorkingSet'])
-	# print type(result2)
-	# print "memory:\n", result2
-	# return result2
-	
-	# h = hpy()
-	# print h.heap()	
-	# return None
-	print("")
+
 
 	
 def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
@@ -176,7 +248,7 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 	assigned = set()
 	assignment = []
 	sufficient_gradient =True
-	neighborhood_size = 10
+	neighborhood_size = 5
 	first = True
 	print("start conversion to grid", datetime.datetime.now())
 	neighborhood_size_changed = True
@@ -259,6 +331,7 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 				m = grid[nearest[0]][nearest[1]].get_movement(i)
 				if m[0] != 0 or m[1] != 0:
 					nr_movements+=1
+					prev_steps[i] = m
 				data[i,:] = np.add(data[i,:] , m)
 			for i in range(grid_size):
 				for j in range(grid_size):
@@ -284,7 +357,7 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 		if iternr%10 == 0 and len(assigned)+nr_movements!=nr_items:
 			neighborhood_size_changed = True
 		
-		if iternr%20 == 0 or len(assigned) == nr_items:
+		if iternr%2 == 0 or len(assigned) == nr_items:
 			print("\n\n")
 			if blob_nr_keeper!=None:
 				used_marker = "o"
@@ -295,7 +368,7 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 				image_name = result_path + r"\intermediate_grid_formed_"+str(fig_nr)+".pdf"
 				fig = plt.figure(figsize=(figure_size, figure_size))
 				for i in range(nr_items):
-					prop_plot=plt.scatter( data[i,1], grid_size-1-data[i,0], c=blob_nr_keeper.get_color(i), marker=used_marker)
+					prop_plot=plt.scatter(data[i,0],  data[i,1], c=blob_nr_keeper.get_color(i), marker=used_marker)
 					if nr_items > 1000:
 						prop_plot.set_edgecolor("none")
 				# for i in range(grid_size):
@@ -324,7 +397,7 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 	return iternr, assignment
 
 	
-def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, blob_nr_keeper = None):
+def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, blob_nr_keeper = None, scale = True):
 	
 	nr_items = data.shape[0]
 	grid_size = int(np.ceil(np.sqrt(nr_items)))
@@ -336,17 +409,21 @@ def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, bl
 		grid.append([])
 		for j in range(grid_size):
 			grid[i].append(GridPoint(i,j, grid))
-			
+	
+
 	# Rescale and move data
-	print("scale data")
-	move_scale = np.array([0.9 , 0.9])
-	if data.min(axis=0)[0] < 0:
-		move_scale[0] = 1.1
-	if data.min(axis=0)[1] < 0:
-		move_scale[1] = 1.1
-	data = data - (data.min(axis=0) * move_scale)
-	scaling = (float(grid_size)-1)/ (data.max(axis=0) * 1.2 )
-	data = np.multiply(data, np.tile(scaling, (nr_items, 1) ) )	
+	if(scale):
+		print("scale data")	
+		move = 0.9
+		move_scale = np.array([move , move])
+		if data.min(axis=0)[0] < 0:
+			move_scale[0] = 2-move
+		if data.min(axis=0)[1] < 0:
+			move_scale[1] = 2-move
+		data = data - (data.min(axis=0) * move_scale)
+		scaling = (float(grid_size)-1)/ (data.max(axis=0) * 1.2)
+		data = np.multiply(data, np.tile(scaling, (nr_items, 1) ) )	
+	
 	colors = get_colors()	
 	
 	# Show initial data
@@ -434,9 +511,17 @@ if __name__ == "__main__":
 	# plt.scatter(x, y, c=l);
 	# plt.show()
 	
-	update_neighborhood = 500
-	data_case = "\cutoff_10_nolog"
-	restart(r"D:\Users\Lydia\results puzzle" + data_case, False, 2160, 108)
+	# update_neighborhood = 500
+	# data_case = "\cutoff_10_nolog"
+	# iter = 120
+	# fig = 6
+	# restart(r"D:\Users\Lydia\results puzzle" + data_case, False, iter, fig)
+	
+	update_neighborhood = 5
+	data_case = "\test3"
+	iter = 20
+	fig = 1
+	restart(r"D:\Users\Lydia\results puzzle" + data_case, False, iter, fig)
 	
 	
 	

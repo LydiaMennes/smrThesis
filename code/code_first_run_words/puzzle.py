@@ -671,21 +671,22 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 						grid[3][best_index].append(word)
 			f.close()
 		except IOError:
-			print( letter)
+			print("file", letter, "not found")
 	print("\n New nr words:", nr_words)
 	del data_sample
 		
 		
 	new_grid_size = math.ceil(math.sqrt(nr_words))
 	ratio = new_grid_size/float(grid_size)	
-	ratio_resize = ratio/1.2
-	shift_resize_x = (new_grid_size - grid_size*ratio_resize)/2 + ratio_resize
-	shift_resize_y = (new_grid_size - grid_size*ratio_resize)/2 + ratio_resize
+	ratio_resize = ratio/3
+	# shift_resize = (new_grid_size - grid_size*ratio_resize)/2 + ratio_resize
+	shift_resize = (new_grid_size - grid_size*ratio_resize)/2 + ratio_resize/2
+	print("shift", shift_resize)
 	data_space = np.zeros((nr_words,2))
 	index = 0
 	blob_file = open(output_directory + r"\blob_file.txt", "w")
 	for i in range(len(grid[0])):
-		new_pos = np.array([ round(grid[0][i] * ratio_resize + shift_resize_x),round(grid[1][i] * ratio_resize + shift_resize_y)])
+		new_pos = np.array([ round(grid[0][i] * ratio_resize)+shift_resize,round(grid[1][i] * ratio_resize)+shift_resize])
 		data_space[index,:] = new_pos
 		global_index[index] = [grid[2][i],i]
 		index+=1		
@@ -695,7 +696,7 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 		random_dist = np.random.rand(assigned,2)
 		# print("random", random_dist.shape)
 		# print("data space slice", data_space[index:index+assigned,:].shape)
-		data_space[index:index+assigned,:] = (random_dist-0.5)*ratio_resize + data_space[index:index+assigned,:]
+		data_space[index:index+assigned,:] = (random_dist-0.5)*(ratio_resize/1) + data_space[index:index+assigned,:]
 		blob_file.write(str(i) + " " + grid[2][i] + " " + str(len(grid[3][i]))) 
 		for elem in grid[3][i]:
 			global_index[index] = [elem, i]
@@ -723,7 +724,7 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 	image_name = output_directory + r"\stg_init_plot_blobColoring.pdf"	
 	fig = plt.figure(figsize=(figure_size, figure_size))
 	# fig = plt.figure(figsize=(figure_size, figure_size), dpi=figure_dpi)
-	prop_plot = plt.scatter( data_space[:,1], new_grid_size-1-data_space[:,0], c=coloring, marker=used_marker)
+	prop_plot = plt.scatter( data_space[:,0], data_space[:,1], c=coloring, marker=used_marker)
 	if nr_words > 1000:
 		prop_plot.set_edgecolor("none")
 	plt.axis([-1,new_grid_size+1, -1, new_grid_size+1])
@@ -732,11 +733,12 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 	plt.close()
 	
 	print("new grid size", new_grid_size)
+	print("old grid size", old_grid_size)
 	intermediate_grids = output_directory + "\intermediate_grids" 
 	if not os.path.exists(intermediate_grids):
 		os.makedirs(intermediate_grids)	
 		print("directory made")
-	assignment, gz = stg.space_to_grid_iterative(data_space, intermediate_grids,  log_memory, with_figures=False, blob_nr_keeper=stg.TypeKeeper(color_index))
+	assignment, gz = stg.space_to_grid_iterative(data_space, intermediate_grids,  log_memory, with_figures=False, blob_nr_keeper=stg.TypeKeeper(color_index), scale=False)
 	del data_space
 	
 	print("init final grid and make figure of grid")
@@ -744,10 +746,12 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 	# fig = plt.figure(figsize=(figure_size, figure_size), dpi=figure_dpi)
 	fig = plt.figure(figsize=(figure_size, figure_size))
 	for elem in assignment:
-		grid_f[elem[0]][elem[1]] =  GridElem(elem[2], elem[0:2], global_index[elem[2]][0], color_index[elem[2]], global_index[elem[2]][1] )
-		global_index[elem[2]] = grid_f[elem[0]][elem[1]]
-		global_name[grid_f[elem[0]][elem[1]].name] = grid_f[elem[0]][elem[1]]
-		prop_plot = plt.scatter(elem[1], new_grid_size-1-elem[0], c=color_index[elem[2]] , marker=used_marker)
+		row = int(new_grid_size)-1-elem[1]
+		column = elem[0]
+		grid_f[row][column] =  GridElem(elem[2],[row,column], global_index[elem[2]][0], color_index[elem[2]], global_index[elem[2]][1] )
+		global_index[elem[2]] = grid_f[row][column]
+		global_name[grid_f[row][column].name] = grid_f[row][column]
+		prop_plot = plt.scatter(elem[0], elem[1], c=color_index[elem[2]] , marker=used_marker)
 		if nr_words > 1000:
 			prop_plot.set_edgecolor("none")
 	plt.axis([-1,new_grid_size, -1, new_grid_size])
