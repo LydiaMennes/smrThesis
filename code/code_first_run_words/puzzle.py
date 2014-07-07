@@ -3,6 +3,7 @@ import math
 import numpy as np
 import random
 import space_to_grid as stg
+import space_to_grid_nice_try as stg_nice_try
 # import space_to_grid_old as stg
 import bisect as bis
 import datetime
@@ -43,6 +44,8 @@ encounter_deep = True
 gold_standard = False
 log_memory = False
 follower_weight = 0.2
+space_to_grid_type = ""
+noise = 0
 
 stress_cutoff = 1.2
 figure_size = 8
@@ -674,11 +677,14 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 			print("file", letter, "not found")
 	print("\n New nr words:", nr_words)
 	del data_sample
+	
 		
 		
 	new_grid_size = math.ceil(math.sqrt(nr_words))
+	# if space_to_grid_type == "stripy" or space_to_grid_type=="balls":
+	
 	ratio = new_grid_size/float(grid_size)	
-	ratio_resize = ratio/3
+	ratio_resize = ratio/1.2
 	# shift_resize = (new_grid_size - grid_size*ratio_resize)/2 + ratio_resize
 	shift_resize = (new_grid_size - grid_size*ratio_resize)/2 + ratio_resize/2
 	print("shift", shift_resize)
@@ -703,8 +709,8 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 			index+=1
 			blob_file.write(" " + elem)
 		blob_file.write("\n")
-	blob_file.close()		
-	
+	blob_file.close()	
+
 	print( "data space shape", data_space.shape)
 	print("last index = ", index-1 )
 	used_marker = "o"
@@ -719,8 +725,8 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 		coloring.append( colors[global_index[i][1]%len(colors)] )	
 		color_index[i] = colors[global_index[i][1]%len(colors)]
 		color_file.write(str(i) + ";" + str(color_index[i])+"\n")
-	color_file.close()	
-		
+	color_file.close()
+				
 	image_name = output_directory + r"\stg_init_plot_blobColoring.pdf"	
 	fig = plt.figure(figsize=(figure_size, figure_size))
 	# fig = plt.figure(figsize=(figure_size, figure_size), dpi=figure_dpi)
@@ -738,8 +744,16 @@ def get_grid(grid_size, data_sample, grid, nr_words):
 	if not os.path.exists(intermediate_grids):
 		os.makedirs(intermediate_grids)	
 		print("directory made")
-	assignment, gz = stg.space_to_grid_iterative(data_space, intermediate_grids,  log_memory, with_figures=False, blob_nr_keeper=stg.TypeKeeper(color_index), scale=False)
+	if space_to_grid_type == "stripy":
+		assignment, gz = stg.space_to_grid_iterative(data_space, intermediate_grids,  log_memory, with_figures=False, blob_nr_keeper=stg.TypeKeeper(color_index), scale=False, grid_enlarge = 5)
+	else:
+		assignment, gz = stg_nice_try.space_to_grid_iterative(data_space, intermediate_grids,  log_memory, with_figures=False, blob_nr_keeper=stg.TypeKeeper(color_index), scale=False)
 	del data_space
+	# elif space_to_grid_type == "new":
+		# print("not yet implemented")
+	# else:
+		# print("unrecognized grid to space type")
+		# sys.exit()
 	
 	print("init final grid and make figure of grid")
 	image_name = output_directory + r"\stg_result_plot_blobColoring.pdf"
@@ -1103,6 +1117,9 @@ if __name__ == "__main__":
 	parser.add_argument("--use_followers", default=True)
 	parser.add_argument("--gold_standard", default=False)
 	parser.add_argument("--log_memory", default=False)
+	parser.add_argument("--space_to_grid_type", default="stripy", help = "available options: stripy, balls, new")
+	parser.add_argument("--noise", type=int, default=0)
+	
 	
 	args = parser.parse_args()
 	kwargs = vars(args)	
@@ -1126,6 +1143,8 @@ if __name__ == "__main__":
 	to_file_trials = kwargs["to_file_trials"]
 	old_grid_size = kwargs["old_grid_size"]
 	dif_output_dir = kwargs["dif_output_dir"]
+	space_to_grid_type = kwargs["space_to_grid_type"]
+	noise = kwargs["noise"]/100
 	if kwargs["encounter"] == "no":
 		encounter = False
 	if kwargs["use_followers"] == "no":
@@ -1157,7 +1176,7 @@ if __name__ == "__main__":
 		print("points directory made")
 	if not os.path.exists(output_directory + r"\grids"):
 		os.makedirs(output_directory + r"\grids")	
-		print("grid directory made")	
+		print("grid directory made")
 	
 	if old_grid_size == -1 and process == "only_puzzle":
 		print("\n\nIf you want to run only puzzle you have to initialize the old_grid_size")

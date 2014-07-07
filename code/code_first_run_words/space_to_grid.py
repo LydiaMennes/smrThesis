@@ -14,6 +14,7 @@ import gc
 
 figure_size = 8
 update_neighborhood = 300
+grid_param = []
 
 class TypeKeeper:	
 	def __init__(self, indexes):
@@ -135,7 +136,7 @@ def print_memory():
 	print("")
 
 	
-def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
+def restart(data_folder, log_memory, last_iter_nr, last_fig_nr, grid_enlarge=0):
 	blob_colors = {}
 	colors = get_colors()
 	f = open(data_folder+r"\color_file.txt")
@@ -154,7 +155,7 @@ def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
 	data = space_from_file(data_folder+r"\intermediate_grids\data_"+str(last_fig_nr)+"_it"+str(last_iter_nr)+".txt")
 	print("data shape",data.shape[0])
 	nr_items = data.shape[0]
-	grid_size = int(math.ceil(math.sqrt(nr_items)))
+	grid_size = int(math.ceil(math.sqrt(nr_items)))+grid_enlarge
 	
 	grid = []
 	for i in range(grid_size):
@@ -324,10 +325,9 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 	return iternr, assignment
 
 	
-def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, blob_nr_keeper = None):
-	
+def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, blob_nr_keeper = None, grid_enlarge = 0, scale = True): 
 	nr_items = data.shape[0]
-	grid_size = int(np.ceil(np.sqrt(nr_items)))
+	grid_size = int(np.ceil(np.sqrt(nr_items)))+grid_enlarge
 	space_to_file(data, result_path + r"\data_orig.txt")	
 	orig_data = np.copy(data)
 	# Prepare grid
@@ -338,15 +338,16 @@ def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, bl
 			grid[i].append(GridPoint(i,j, grid))
 			
 	# Rescale and move data
-	print("scale data")
-	move_scale = np.array([0.9 , 0.9])
-	if data.min(axis=0)[0] < 0:
-		move_scale[0] = 1.1
-	if data.min(axis=0)[1] < 0:
-		move_scale[1] = 1.1
-	data = data - (data.min(axis=0) * move_scale)
-	scaling = (float(grid_size)-1)/ (data.max(axis=0) * 1.2 )
-	data = np.multiply(data, np.tile(scaling, (nr_items, 1) ) )	
+	if scale:
+		print("scale data")
+		move_scale = np.array([0.9 , 0.9])
+		if data.min(axis=0)[0] < 0:
+			move_scale[0] = 1.1
+		if data.min(axis=0)[1] < 0:
+			move_scale[1] = 1.1
+		data = data - (data.min(axis=0) * move_scale)
+		scaling = (float(grid_size)-1)/ (data.max(axis=0) * 1.2 )
+		data = np.multiply(data, np.tile(scaling, (nr_items, 1) ) )	
 	colors = get_colors()	
 	
 	# Show initial data

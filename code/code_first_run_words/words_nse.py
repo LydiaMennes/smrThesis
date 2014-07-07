@@ -1,4 +1,3 @@
-from __future__ import division
 import sys
 lib_path = r"K:\Lydia\smrThesis\code\tsne_python"
 print( lib_path)

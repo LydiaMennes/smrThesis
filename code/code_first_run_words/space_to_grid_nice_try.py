@@ -16,6 +16,7 @@ import calc_angle
 figure_size = 8
 update_neighborhood = 300
 prev_steps = defaultdict(lambda: np.zeros(2))
+grid_size_global = []
 
 class TypeKeeper:	
 	def __init__(self, indexes):
@@ -110,40 +111,53 @@ class GridPoint:
 			step[1]*=-1.0
 		return step
 	
-	
+	# ZORGEN DAT DEZE NIET BUITEN HET GRID WANDELEN!!!
 	def calc_assignments(self):	
 		# print(self.assignments[0])
 		# Original position kan verwijderd worden!! als je het op basis van arrival doet
+		grid_size = grid_size_global[0]
+		if grid_size == -1:
+			print("shizzle with grid_size")
+			sys.exit()
+		
 		assignment_ids = [y for (x,y,z) in self.assignments]
 		for i in reversed(range(len(self.arrivals))):
 			if self.arrivals[i] not in assignment_ids:
 				del self.arrivals[i]			
-
-		if len(self.lonely_points)>2:
-			min_max, lt_min = calc_angle.calc(self.pos, np.array([y for [x,y] in self.lonely_points]))
 		
 		for index in range(len(self.assignments)):
 			if len(self.lonely_points)>2:
+				min_max, lt_min = calc_angle.calc(self.pos, np.array([y for [x,y] in self.lonely_points]))
 				ass_id = self.assignments[index][1]
 				if ass_id != self.arrivals[-1]:		
 					found = False
 					if not np.array_equal(prev_steps[ass_id] , np.zeros(2)):
 						angle = calc_angle.angle(np.array([0,0]), prev_steps[ass_id])
-						if lt_min and angle>min_max[0] and angle<min_max[1]:
-							self.steps[ass_id] = prev_steps[ass_id]
-							found = True
-							# print("previous step")
-						elif not lt_min and (angle<min_max[0] or angle>min_max[1]):
-							self.steps[ass_id] = prev_steps[ass_id]
-							found = True
-							# print("previous step")
+						if (lt_min and angle>min_max[0] and angle<min_max[1]) or (not lt_min and (angle<min_max[0] or angle>min_max[1])):
+							step = prev_steps[ass_id]
+							newpos = step+self.assignments[index][0]
+							if not (newpos[0] < 0 or newpos[0] > grid_size or newpos[1]<0 or newpos[1]>grid_size):
+								self.steps[ass_id] = step
+								found = True
+								# if newpos[0] < 0 or newpos[0] > grid_size or newpos[1]<0 or newpos[1]>grid_size:
+									# print( "walking out of grid")
 					if not found:
-						step = self.get_step(min_max, lt_min)
-						self.steps[ass_id] = step
-						# print("new step", step)
+						step = self.get_step(min_max, lt_min)						
+						newpos = step+self.assignments[index][0]						
+						if not (newpos[0] < 0 or newpos[0] > grid_size or newpos[1]<0 or newpos[1]>grid_size):						
+							self.steps[ass_id] = step	
+						# if newpos[0] < 0 or newpos[0] > grid_size or newpos[1]<0 or newpos[1]>grid_size:
+							# print( "walking out of grid")
 			elif len(self.lonely_points)==1:
 				alpha = calc_angle.angle(self.pos, self.assignments[index][0])
-				self.steps[self.assignments[index][1]] = np.array([math.cos(alpha), math.sin(alpha)])
+				step = np.array([math.cos(alpha), math.sin(alpha)])	
+				newpos = step+self.assignments[index][0]
+				# newpos[0] = max(min(grid_size, newpos[0]),0)
+				# newpos[1] = max(min(grid_size, newpos[1]),0)
+				# if newpos[0] < 0 or newpos[0] > grid_size or newpos[1]<0 or newpos[1]>grid_size:
+					# print( "walking out of grid")
+				if not (newpos[0] < 0 or newpos[0] > grid_size or newpos[1]<0 or newpos[1]>grid_size):						
+					self.steps[self.assignments[index][1]] = step
 		
 	
 	def calc_assignments2(self):		
@@ -226,8 +240,8 @@ def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
 	data = space_from_file(data_folder+r"\intermediate_grids\data_"+str(last_fig_nr)+"_it"+str(last_iter_nr)+".txt")
 	print("data shape",data.shape[0])
 	nr_items = data.shape[0]
-	grid_size = int(math.ceil(math.sqrt(nr_items)))
-	
+	grid_size_global.append( int(math.ceil(math.sqrt(nr_items))))
+	grid_size = grid_size_global[0]
 	grid = []
 	for i in range(grid_size):
 		grid.append([])
@@ -236,14 +250,16 @@ def restart(data_folder, log_memory, last_iter_nr, last_fig_nr):
 	
 	orig_data = space_from_file(data_folder + r"\intermediate_grids\data_orig.txt")
 	
-	iter_nr, assignment = iterate(data, orig_data, grid, last_fig_nr+1, nr_items, grid_size, data_folder+r"\intermediate_grids", log_memory, last_iter_nr+1, blob_colors) 
+	iter_nr, assignment = iterate(data, orig_data, grid, last_fig_nr+1, nr_items, data_folder+r"\intermediate_grids", log_memory, last_iter_nr+1, blob_colors) 
 	
 	f = open(data_folder+r"\init_grid_assignment.txt", "w")
 	for elem in assignment:
 		f.write(str(elem[0]) +";"+ str(elem[1]) +";"+ str(elem[2]) + "\n") 
 	f.close()
 
-def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  log_memory, iternr, blob_nr_keeper=None):
+def iterate(data, orig_data, grid, fig_nr, nr_items, result_path,  log_memory, iternr, blob_nr_keeper=None):
+	grid_size = grid_size_global[0]
+	print("grid size in iterate =", grid_size)
 	#iteratively move to grid points
 	assigned = set()
 	assignment = []
@@ -342,11 +358,13 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 		if iternr%5 == 0:
 			sufficient_gradient = True
 			sufficient_gradient = nr_movements > 50 or len(assigned)+nr_movements==nr_items
-			if not sufficient_gradient and iternr%20!=0:
+			# sufficient_gradient = nr_movements > 50 or len(assigned)+nr_movements==nr_items
+			if not sufficient_gradient:
 				print("insuf grad")			
 			print("i:",iternr,"ass",len(assigned), "mo:", nr_movements, "nr lonely points:", len(lonely_points))
 		
 			if nr_movements < update_neighborhood and len(assigned)+nr_movements!=nr_items:
+			# if nr_movements < update_neighborhood:
 				neighborhood_size_changed = True
 				neighborhood_size += 5
 				print("neigh size upgraded", neighborhood_size)
@@ -357,7 +375,7 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 		if iternr%10 == 0 and len(assigned)+nr_movements!=nr_items:
 			neighborhood_size_changed = True
 		
-		if iternr%2 == 0 or len(assigned) == nr_items:
+		if iternr%15 == 0 or len(assigned) == nr_items:
 			print("\n\n")
 			if blob_nr_keeper!=None:
 				used_marker = "o"
@@ -400,7 +418,8 @@ def iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path,  lo
 def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, blob_nr_keeper = None, scale = True):
 	
 	nr_items = data.shape[0]
-	grid_size = int(np.ceil(np.sqrt(nr_items)))
+	grid_size_global.append( int(np.ceil(np.sqrt(nr_items))))
+	grid_size = grid_size_global[0]
 	space_to_file(data, result_path + r"\data_orig.txt")	
 	orig_data = np.copy(data)
 	# Prepare grid
@@ -448,7 +467,7 @@ def space_to_grid_iterative(data, result_path, log_memory, with_figures=True, bl
 	fig_nr = 1
 	
 	iternr = 0
-	iternr, assignment = iterate(data, orig_data, grid, fig_nr, nr_items, grid_size, result_path, log_memory, iternr, blob_nr_keeper)
+	iternr, assignment = iterate(data, orig_data, grid, fig_nr, nr_items, result_path, log_memory, iternr, blob_nr_keeper)
 	
 	print("needed ", iternr, "iterations for", len(assignment), "points")
 	print("\n=============\nDONE\n=============\n")

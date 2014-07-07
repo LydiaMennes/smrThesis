@@ -71,14 +71,24 @@ def make_comparison(case_list, name):
 	
 		
 if __name__ == "__main__":
-	cases = ["limit1000_R_deepEnc_noF", "limit1000_R_deepEnc_withF", "limit1000_R_normEnc_noF", "limit1000_R_normEnc_withF","limit1000_GOLD_deepEnc_noF", "limit1000_GOLD_deepEnc_withF", "limit1000_GOLD_normEnc_noF", "limit1000_GOLD_normEnc_withF"]
-	make_comparison(cases, "all")
+	# cases = ["limit1000_R_deepEnc_noF", "limit1000_R_deepEnc_withF", "limit1000_R_normEnc_noF", "limit1000_R_normEnc_withF","limit1000_GOLD_deepEnc_noF", "limit1000_GOLD_deepEnc_withF", "limit1000_GOLD_normEnc_noF", "limit1000_GOLD_normEnc_withF"]
+	# make_comparison(cases, "all")
 	
-	cases = ["limit1000_R_deepEnc_noF", "limit1000_R_deepEnc_withF", "limit1000_R_normEnc_noF", "limit1000_R_normEnc_withF"]
-	make_comparison(cases, "settings_test")
+	# cases = ["limit1000_R_deepEnc_noF", "limit1000_R_deepEnc_withF", "limit1000_R_normEnc_noF", "limit1000_R_normEnc_withF"]
+	# make_comparison(cases, "settings_test")
 	
-	cases = ["limit1000_GOLD_deepEnc_noF", "limit1000_GOLD_deepEnc_withF", "limit1000_GOLD_normEnc_noF", "limit1000_GOLD_normEnc_withF"]
-	make_comparison(cases, "settings_gold")
+	# cases = ["limit1000_GOLD_deepEnc_noF", "limit1000_GOLD_deepEnc_withF", "limit1000_GOLD_normEnc_noF", "limit1000_GOLD_normEnc_withF"]
+	# make_comparison(cases, "settings_gold")
 	
-	cases = ["limit1000_R_deepEnc_noF","limit1000_GOLD_deepEnc_noF"]
-	make_comparison(cases, "Gold vs Test")
+	# cases = ["limit1000_R_deepEnc_noF","limit1000_GOLD_deepEnc_noF"]
+	# make_comparison(cases, "Gold vs Test")
+	
+	cases = ["puzzle_on_random","limit1000_R_deepEnc_noF"]
+	make_comparison(cases, "Preprocessing vs puzzle on random")
+	
+	
+	
+	
+	
+	
+	
