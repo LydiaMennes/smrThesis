@@ -1,0 +1,210 @@
+K:\Lydia\smrThesis\code\tsne_python
+
+
+
+
+{'nr_words_sample': 2500, 'dif_output_dir': None, 'create_reduced': 'yes', 'build_coocs': 'yes', 'case_name': 'politics_big_stem'}
+======
+nr of words: 29317 
+=====
+directory made
+Begin process building/reading coocs  2014-08-11 16:54:35.418785
+get sampled words and build cooc file
+P(add)= 0.0852747552614524
+current word aangeduid
+
+
+number of nonzero columns: 29086
+Begin dimensionality reduction 2014-08-11 16:54:43.304118
+n= 2500 d= 29086 k= 30 l= 32 q= 96 i= 2 
+
+step 1
+create H(0)
+H 1 transpose
+H 1 final
+H 2 transpose
+H 2 final
+size H (2500, 96)
+step 2
+Q (2500, 96)
+step 3
+T size (29086, 96)
+step 4
+begin SVD 2014-08-11 16:59:10.756561
+end SVD 2014-08-11 17:01:02.123912 
+V (29086, 29086) S (96,) W (96, 96)
+step 6
+
+PCA done!!!
+
+run nse at 2014-08-11 17:01:02.817970
+run nse with perplexity 30.0
+x2p computations
+Computing pairwise distances...
+Computing P-values for point  0  of  2500 ...
+Computing P-values for point  500  of  2500 ...
+Computing P-values for point  1000  of  2500 ...
+Computing P-values for point  1500  of  2500 ...
+Computing P-values for point  2000  of  2500 ...
+start nse iterations
+Iteration  100 : error is  21.1845156406
+Iteration  200 : error is  2.15114925046
+Iteration  300 : error is  1.91951326576
+Iteration  400 : error is  1.82920204969
+Iteration  500 : error is  1.78092847908
+Iteration  1000 : error is  1.69906225462
+Iteration  2000 : error is  1.66749253817
+Iteration  3000 : error is  1.65851924269
+Iteration  4000 : error is  1.65437700672
+Iteration  5000 : error is  1.65179378999
+data 2 file at 2014-08-11 17:52:50.992457
+make grid from space at 2014-08-11 17:52:51.011475
+nr items: 2500
+scale data
+start conversion to grid 2014-08-11 17:52:57.348577
+
+
+Nr lonely points at start: 1946 with grid size 50 and 2500 elems
+check neighborhood
+i: 5 ass 839 mo: 1661 nr lonely points: 1661
+i: 10 ass 990 mo: 1510 nr lonely points: 1510
+check neighborhood
+i: 15 ass 1126 mo: 1373 nr lonely points: 1374
+i: 20 ass 1287 mo: 1212 nr lonely points: 1213
+
+
+
+check neighborhood
+i: 25 ass 1451 mo: 1048 nr lonely points: 1049
+i: 30 ass 1596 mo: 903 nr lonely points: 904
+check neighborhood
+i: 35 ass 1730 mo: 769 nr lonely points: 770
+i: 40 ass 1862 mo: 637 nr lonely points: 638
+
+
+
+check neighborhood
+i: 45 ass 1970 mo: 520 nr lonely points: 530
+i: 50 ass 2079 mo: 287 nr lonely points: 421
+neigh size upgraded 15
+check neighborhood
+i: 55 ass 2167 mo: 162 nr lonely points: 333
+neigh size upgraded 20
+check neighborhood
+i: 60 ass 2219 mo: 111 nr lonely points: 281
+neigh size upgraded 25
+
+
+
+check neighborhood
+i: 65 ass 2254 mo: 76 nr lonely points: 246
+neigh size upgraded 30
+check neighborhood
+i: 70 ass 2278 mo: 52 nr lonely points: 222
+neigh size upgraded 35
+check neighborhood
+i: 75 ass 2296 mo: 65 nr lonely points: 204
+neigh size upgraded 40
+check neighborhood
+i: 80 ass 2307 mo: 193 nr lonely points: 193
+
+
+
+check neighborhood
+i: 85 ass 2308 mo: 192 nr lonely points: 192
+i: 90 ass 2311 mo: 189 nr lonely points: 189
+check neighborhood
+i: 95 ass 2316 mo: 184 nr lonely points: 184
+i: 100 ass 2323 mo: 177 nr lonely points: 177
+
+
+
+check neighborhood
+i: 105 ass 2328 mo: 172 nr lonely points: 172
+i: 110 ass 2330 mo: 170 nr lonely points: 170
+check neighborhood
+i: 115 ass 2330 mo: 170 nr lonely points: 170
+i: 120 ass 2330 mo: 170 nr lonely points: 170
+
+
+
+check neighborhood
+i: 125 ass 2330 mo: 170 nr lonely points: 170
+i: 130 ass 2331 mo: 169 nr lonely points: 169
+check neighborhood
+i: 135 ass 2333 mo: 167 nr lonely points: 167
+i: 140 ass 2341 mo: 159 nr lonely points: 159
+
+
+
+check neighborhood
+i: 145 ass 2352 mo: 148 nr lonely points: 148
+i: 150 ass 2367 mo: 133 nr lonely points: 133
+check neighborhood
+i: 155 ass 2383 mo: 117 nr lonely points: 117
+i: 160 ass 2396 mo: 104 nr lonely points: 104
+
+
+
+check neighborhood
+i: 165 ass 2402 mo: 98 nr lonely points: 98
+i: 170 ass 2403 mo: 97 nr lonely points: 97
+check neighborhood
+i: 175 ass 2403 mo: 97 nr lonely points: 97
+i: 180 ass 2403 mo: 97 nr lonely points: 97
+
+
+
+check neighborhood
+i: 185 ass 2404 mo: 96 nr lonely points: 96
+i: 190 ass 2404 mo: 96 nr lonely points: 96
+check neighborhood
+i: 195 ass 2404 mo: 96 nr lonely points: 96
+i: 200 ass 2407 mo: 93 nr lonely points: 93
+
+
+
+check neighborhood
+i: 205 ass 2415 mo: 85 nr lonely points: 85
+i: 210 ass 2430 mo: 70 nr lonely points: 70
+check neighborhood
+i: 215 ass 2448 mo: 52 nr lonely points: 52
+i: 220 ass 2459 mo: 41 nr lonely points: 41
+
+
+
+check neighborhood
+i: 225 ass 2466 mo: 34 nr lonely points: 34
+i: 230 ass 2469 mo: 31 nr lonely points: 31
+check neighborhood
+i: 235 ass 2476 mo: 24 nr lonely points: 24
+i: 240 ass 2486 mo: 14 nr lonely points: 14
+
+
+
+check neighborhood
+i: 245 ass 2495 mo: 5 nr lonely points: 5
+i: 250 ass 2497 mo: 3 nr lonely points: 3
+check neighborhood
+i: 255 ass 2497 mo: 3 nr lonely points: 3
+i: 260 ass 2499 mo: 1 nr lonely points: 1
+
+
+
+check neighborhood
+
+
+
+needed  262 iterations for 2500 points
+
+=============
+DONE
+=============
+
+results to file at 2014-08-11 17:54:24.925937
+gridsize =  50
++++++++++ DONE +++++++++++
+ 2014-08-11 17:54:24.930936
+==============
+DONE
+==============

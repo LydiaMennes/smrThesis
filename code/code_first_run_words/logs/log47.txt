@@ -1,0 +1,7 @@
+
+
+
+
+{'article_type': 'football', 'doc_limit': '500000', 'dif_output_dir': None, 'landscape': None, 'case_name': 'football_limit1000_stem_gold', 'log_day_freqs': None}
+Get items from database
+selection made

@@ -1,0 +1,33 @@
+K:\Lydia\smrThesis\code\tsne_python
+
+
+
+
+{'nr_words_sample': 2500, 'build_coocs': 'yes', 'dif_output_dir': None, 'create_reduced': 'yes', 'case_name': 'football_big_stem'}
+======
+nr of words: 274729 
+=====
+directory made
+Begin process building/reading coocs  2014-08-11 16:22:12.761387
+get sampled words and build cooc file
+P(add)= 0.009099876605673227
+current word aakstrat
+
+
+number of nonzero columns: 219940
+Begin dimensionality reduction 2014-08-11 16:23:10.322522
+n= 2500 d= 219940 k= 30 l= 32 q= 96 i= 2 
+
+step 1
+create H(0)
+H 1 transpose
+H 1 final
+H 2 transpose
+H 2 final
+size H (2500, 96)
+step 2
+Q (2500, 96)
+step 3
+T size (219940, 96)
+step 4
+begin SVD 2014-08-11 16:54:34.298880

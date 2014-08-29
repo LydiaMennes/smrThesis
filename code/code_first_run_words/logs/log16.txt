@@ -1,0 +1,251 @@
+
+
+
+
+{'max_closest': 8, 'nr_trials_re_init': -1, 'use_followers': False, 'encounter': True, 'nr_words_to_follow': 20, 'dif_output_dir': 'politics_limit1000_no_stem_stripy', 'to_file_trials': 20, 'block_ratio': 2, 'old_grid_size': -1, 'case_name': 'politics_limit1000_no_stem', 'process': 'initial_grid', 'stop_nr_trials': -1, 'use_noise': True, 'data_portion': 5, 'log_memory': False, 'encounter_deep': True, 'dif_landscape_dir': None, 'space_to_grid_type': 'stripy', 'gold_standard': False}
+
+-False-
+
+======
+nr of words: 8018 
+=====
+directory made
+stress directory made
+points directory made
+grid directory made
+get data 2014-07-17 13:47:15.439551
+get initial grid 2014-07-17 13:47:15.450555 with old grid size: 10
+at file
+a
+b
+c
+d
+denim at line 0 in file d
+e
+f
+g
+h
+hot at line 0 in file h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+
+ New nr words: 8016
+nr non blob words actually encountered 7916 all actually seen words 8018
+shift 19.000000000000004
+data space shape (8016, 2)
+last index =  8015
+COLOR FILE
+new grid size 95
+old grid size -1
+directory made
+nr items: 8016
+start conversion to grid 2014-07-17 13:48:07.473502
+
+
+Nr lonely points at start: 5636 with grid size 95 and 8016 elems
+check neighborhood
+i: 5 ass 4236 mo: 3521 nr lonely points: 4789
+i: 10 ass 4506 mo: 3097 nr lonely points: 4519
+check neighborhood
+i: 15 ass 4807 mo: 2153 nr lonely points: 4218
+i: 20 ass 5083 mo: 2309 nr lonely points: 3942
+
+
+
+im1
+iter 20 nr assigned 5083 from 8016 mo: 2309 at 2014-07-17 13:50:31.361314
+check neighborhood
+i: 25 ass 5339 mo: 1627 nr lonely points: 3686
+i: 30 ass 5598 mo: 1665 nr lonely points: 3427
+check neighborhood
+i: 35 ass 5853 mo: 1126 nr lonely points: 3172
+i: 40 ass 6090 mo: 1093 nr lonely points: 2935
+
+
+
+im2
+iter 40 nr assigned 6090 from 8016 mo: 1093 at 2014-07-17 13:52:16.281014
+check neighborhood
+i: 45 ass 6300 mo: 715 nr lonely points: 2725
+i: 50 ass 6457 mo: 671 nr lonely points: 2568
+check neighborhood
+i: 55 ass 6587 mo: 424 nr lonely points: 2438
+i: 60 ass 6680 mo: 383 nr lonely points: 2345
+
+
+
+im3
+iter 60 nr assigned 6680 from 8016 mo: 383 at 2014-07-17 13:53:17.549146
+check neighborhood
+i: 65 ass 6755 mo: 265 nr lonely points: 2270
+neigh size upgraded 15
+check neighborhood
+i: 70 ass 6802 mo: 325 nr lonely points: 2223
+check neighborhood
+i: 75 ass 6841 mo: 281 nr lonely points: 2184
+neigh size upgraded 20
+check neighborhood
+i: 80 ass 6866 mo: 588 nr lonely points: 2159
+
+
+
+im4
+iter 80 nr assigned 6866 from 8016 mo: 588 at 2014-07-17 13:54:09.751537
+check neighborhood
+i: 85 ass 6880 mo: 574 nr lonely points: 2145
+i: 90 ass 6898 mo: 825 nr lonely points: 2127
+check neighborhood
+i: 95 ass 6918 mo: 660 nr lonely points: 2107
+i: 100 ass 6940 mo: 825 nr lonely points: 2085
+
+
+
+im5
+iter 100 nr assigned 6940 from 8016 mo: 825 at 2014-07-17 13:55:17.373208
+check neighborhood
+i: 105 ass 6970 mo: 684 nr lonely points: 2055
+i: 110 ass 7019 mo: 757 nr lonely points: 2006
+check neighborhood
+i: 115 ass 7076 mo: 588 nr lonely points: 1949
+i: 120 ass 7147 mo: 541 nr lonely points: 1878
+
+
+
+im6
+iter 120 nr assigned 7147 from 8016 mo: 541 at 2014-07-17 13:56:42.991049
+check neighborhood
+i: 125 ass 7207 mo: 461 nr lonely points: 1818
+i: 130 ass 7263 mo: 411 nr lonely points: 1762
+check neighborhood
+i: 135 ass 7309 mo: 359 nr lonely points: 1716
+i: 140 ass 7362 mo: 305 nr lonely points: 1663
+
+
+
+im7
+iter 140 nr assigned 7362 from 8016 mo: 305 at 2014-07-17 13:58:04.394892
+check neighborhood
+i: 145 ass 7412 mo: 255 nr lonely points: 1613
+neigh size upgraded 25
+check neighborhood
+i: 150 ass 7457 mo: 426 nr lonely points: 1568
+check neighborhood
+i: 155 ass 7495 mo: 416 nr lonely points: 1530
+i: 160 ass 7541 mo: 460 nr lonely points: 1484
+
+
+
+im8
+iter 160 nr assigned 7541 from 8016 mo: 460 at 2014-07-17 13:59:10.450443
+check neighborhood
+i: 165 ass 7573 mo: 377 nr lonely points: 1452
+i: 170 ass 7602 mo: 371 nr lonely points: 1423
+check neighborhood
+i: 175 ass 7624 mo: 332 nr lonely points: 1401
+i: 180 ass 7644 mo: 317 nr lonely points: 1381
+
+
+
+im9
+iter 180 nr assigned 7644 from 8016 mo: 317 at 2014-07-17 14:00:14.073047
+check neighborhood
+i: 185 ass 7655 mo: 300 nr lonely points: 1370
+i: 190 ass 7662 mo: 295 nr lonely points: 1363
+neigh size upgraded 30
+check neighborhood
+i: 195 ass 7671 mo: 338 nr lonely points: 1354
+i: 200 ass 7686 mo: 323 nr lonely points: 1339
+
+
+
+im10
+iter 200 nr assigned 7686 from 8016 mo: 323 at 2014-07-17 14:01:20.915660
+check neighborhood
+i: 205 ass 7704 mo: 305 nr lonely points: 1321
+i: 210 ass 7721 mo: 288 nr lonely points: 1304
+neigh size upgraded 35
+check neighborhood
+i: 215 ass 7746 mo: 270 nr lonely points: 1279
+i: 220 ass 7771 mo: 245 nr lonely points: 1254
+
+
+
+im11
+iter 220 nr assigned 7771 from 8016 mo: 245 at 2014-07-17 14:02:27.762267
+check neighborhood
+i: 225 ass 7801 mo: 215 nr lonely points: 1224
+i: 230 ass 7828 mo: 188 nr lonely points: 1197
+check neighborhood
+i: 235 ass 7855 mo: 161 nr lonely points: 1170
+i: 240 ass 7879 mo: 137 nr lonely points: 1146
+
+
+
+im12
+iter 240 nr assigned 7879 from 8016 mo: 137 at 2014-07-17 14:03:27.106256
+check neighborhood
+i: 245 ass 7895 mo: 121 nr lonely points: 1130
+i: 250 ass 7921 mo: 95 nr lonely points: 1104
+check neighborhood
+i: 255 ass 7954 mo: 62 nr lonely points: 1071
+i: 260 ass 7974 mo: 42 nr lonely points: 1051
+
+
+
+im13
+iter 260 nr assigned 7974 from 8016 mo: 42 at 2014-07-17 14:04:19.129624
+check neighborhood
+i: 265 ass 7993 mo: 23 nr lonely points: 1032
+i: 270 ass 7999 mo: 17 nr lonely points: 1026
+check neighborhood
+i: 275 ass 8006 mo: 10 nr lonely points: 1019
+i: 280 ass 8007 mo: 9 nr lonely points: 1018
+
+
+
+im14
+iter 280 nr assigned 8007 from 8016 mo: 9 at 2014-07-17 14:05:05.589526
+check neighborhood
+i: 285 ass 8010 mo: 6 nr lonely points: 1015
+i: 290 ass 8011 mo: 5 nr lonely points: 1014
+check neighborhood
+i: 295 ass 8012 mo: 4 nr lonely points: 1013
+i: 300 ass 8014 mo: 2 nr lonely points: 1011
+
+
+
+im15
+iter 300 nr assigned 8014 from 8016 mo: 2 at 2014-07-17 14:05:51.770387
+check neighborhood
+
+
+
+im16
+iter 302 nr assigned 8016 from 8016 mo: 1 at 2014-07-17 14:06:32.166784
+needed  302 iterations for 8016 points
+
+=============
+DONE
+=============
+
+init final grid and make figure of grid
+Initial grid returns
+==============
+DONE
+==============

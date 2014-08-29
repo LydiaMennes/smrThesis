@@ -12,13 +12,18 @@ import matplotlib.pyplot as plt
 import copy
 import sys
 import os
+lib_path = r"K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src"
+print( lib_path)
+sys.path.append(lib_path)
+import snowballstemmer
 
 input_folder = r"D:\Users\Lydia\results puzzle"
 output_folder = r"D:\Users\Lydia\results_freqs"
 no_date = datetime.date(1,1,1)
-query = "SELECT itemText, pubDate FROM newsitems WHERE sourceType = 2"
+query = "SELECT itemText, pubDate FROM newsitems WHERE sourceType = "
 log_day_freqs = False
 figure_size = 8
+use_stemmer = False
 
 def read_landscape(landscape_file):
 	# return grid with words and 
@@ -35,56 +40,69 @@ def read_landscape(landscape_file):
 	return grid, word_dict, grid_size
 
 def get_frequencies(word_dict):
+    stemmer = snowballstemmer.stemmer('dutch');	
+    conn = oursql.connect(host="10.0.0.125", # your host, usually localhost
+                         user="Lydia", # your username
+                          passwd="voxpop", # your password
+                          db="voxpop",
+                          use_unicode=False)
+    curs = conn.cursor(oursql.DictCursor)
+    # result = curs.execute('SELECT * FROM `some_table` WHERE `col1` = ? AND `col2` = ?',(42, -3))
 
-	conn = oursql.connect(host="10.0.0.125", # your host, usually localhost
-						 user="Lydia", # your username
-						  passwd="voxpop", # your password
-						  db="voxpop",
-						  use_unicode=False)
-	curs = conn.cursor(oursql.DictCursor)
-	# result = curs.execute('SELECT * FROM `some_table` WHERE `col1` = ? AND `col2` = ?',(42, -3))
+    # Sourcetypes: 1 = algemeen, 2 = politiek, 3 = business
+    stop_words = get_parabots_stopwords()
+    print("Get items from database"	)
+    # query = "SELECT itemText, pubDate FROM newsitems WHERE sourceType = 2"
+    # query = "SELECT itemText, pubDate FROM newsitems WHERE sourceType = 2 LIMIT 1000"
+    curs.execute(query)
 
-	# Sourcetypes: 1 = algemeen, 2 = politiek, 3 = business
-	stop_words = get_parabots_stopwords()
-	print("Get items from database"	)
-	# query = "SELECT itemText, pubDate FROM newsitems WHERE sourceType = 2"
-	# query = "SELECT itemText, pubDate FROM newsitems WHERE sourceType = 2 LIMIT 1000"
-	curs.execute(query)
+    print( "selection made"	)
+    silly_words = get_silly_words()
 
-	print( "selection made"	)
-	silly_words = get_silly_words()
+    # init dictionary
+    freqs = defaultdict(lambda: defaultdict(int))
+    freqs_per_day = defaultdict(lambda: defaultdict(int))
+    min_date,max_date = 0,0
+    first = True
+    punc_map = str.maketrans("","",string.punctuation)
+    exceptions = 0
+    counter = 0
+    
+    for row in curs:
+        counter+=1
+        if row['pubDate']!= None:
+            date = row['pubDate'].date()
+            if date != no_date:
+                s = row['itemText']
+                try: 
+                    s = unicodedata.normalize('NFKD', s.decode('unicode-escape')).encode('ascii', 'ignore')
+                    s = str(s)
+                    s = esc_chars(s)
+                    s = s.translate(punc_map)
+                    text = s.split(" ")
+                    if first:
+                        first = False
+                        min_date = date
+                        max_date = date
+                    if date > max_date:
+                        max_date = date
+                    if date < min_date:
+                        min_date = date
+                    for word in text:	
+                        word = word.lower()
+                        if len(word)!=1 and word != "" and word not in stop_words and not has_digits(word) and word not in silly_words:
+                            if use_stemmer:
+                                word = stemmer.stemWord(word)
+                            if word_dict[word][0]:
+                                freqs[word][date] += 1
+                                freqs_per_day[date][word]+=1
+                except UnicodeDecodeError:
+                    exceptions+=1
+            if counter%10000 == 0:
+                print(counter, "files processed", datetime.datetime.now())
 
-	# init dictionary
-	freqs = defaultdict(lambda: defaultdict(int))
-	freqs_per_day = defaultdict(lambda: defaultdict(int))
-	min_date,max_date = 0,0
-	first = True
-	punc_map = str.maketrans("","",string.punctuation)
-	for row in curs:
-		date = row['pubDate'].date()
-		if date != no_date:
-			s = row['itemText']
-			s = unicodedata.normalize('NFKD', s.decode('unicode-escape')).encode('ascii', 'ignore')
-			s = str(s)
-			s = esc_chars(s)
-			s = s.translate(punc_map)
-			text = s.split(" ")
-			if first:
-				first = False
-				min_date = date
-				max_date = date
-			if date > max_date:
-				max_date = date
-			if date < min_date:
-				min_date = date
-			for word in text:	
-				if len(word)!=1 and word != "" and word not in stop_words and not has_digits(word) and word not in silly_words:				
-					word = word.lower()
-					if word_dict[word][0]:
-						freqs[word][date] += 1
-						freqs_per_day[date][word]+=1
-
-	return freqs, freqs_per_day, min_date, max_date
+    print("nr of exceptions", exceptions)
+    return freqs, freqs_per_day, min_date, max_date
 
 def build_freq_vect(f, min_date, max_date):
 	dt = datetime.timedelta(1)
@@ -106,7 +124,7 @@ def build_freq_vect(f, min_date, max_date):
 			cur_date=cur_date+dt
 			index+=1
 		if any([math.isnan(x) for x in vect]):
-			print( "vect contains nan")
+			print("vect contains nan")
 			sys.exit()
 		if np.sum(vect)== 0.0:
 			# print("vector with only zeros")
@@ -233,7 +251,6 @@ def log_daily_freqs(freqs_per_day, landscape, grid_size):
 			f.write("\n")
 		f.close()
 		
-		
 		values = (values/np.sum(values))*10
 		fig = plt.figure(figsize=(figure_size, figure_size))
 		xp, yp = np.mgrid[slice(0, grid_size, 1), slice(0, grid_size, 1)]
@@ -251,7 +268,7 @@ def evaluate_sem(landscape_file):
 	landscape, word_dict, grid_size = read_landscape(landscape_file)
 	freqs, freqs_per_day, min_date, max_date = get_frequencies(word_dict)
 	if log_day_freqs:
-		check_freqs(freqs, freqs_per_day)
+		# check_freqs(freqs, freqs_per_day)
 		log_daily_freqs(freqs_per_day, landscape, grid_size)
 	corr, avg_corr = calc_correlations(freqs, min_date, max_date, landscape, grid_size)
 	to_file(corr, avg_corr, word_dict, grid_size)
@@ -270,10 +287,12 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='Run puzzle algorithm')
 	# '''parser.add_argument(<naam>, type=<type>, default=<default>, help=<help message>)'''
 	parser.add_argument("case_name", help="Name of the data case that you want to process")
-	parser.add_argument("landscape", help="The number of words in the data case")
-	parser.add_argument("--doc_limit", default=None, help="The number of words in the data case")
-	parser.add_argument("--log_day_freqs", default=None, help="The number of words in the data case")
-	parser.add_argument("--dif_output_dir", default=None, help="The number of words in the data case")
+	parser.add_argument("article_type", help="Types: politics or football")
+	parser.add_argument("--landscape", default=None)
+	parser.add_argument("--doc_limit", default=None)
+	parser.add_argument("--log_day_freqs", default=None)
+	parser.add_argument("--dif_output_dir", default=None)
+	parser.add_argument("--use_stemmer", default=None)
 
 	args = parser.parse_args()
 	kwargs = vars(args)	
@@ -282,17 +301,32 @@ if __name__ == "__main__":
 	print( kwargs)
 
 	data_case = "\\" + kwargs["case_name"]
-	landscape_name = input_folder+data_case+ "\\grids\\"+kwargs["landscape"]	
+	
+	if kwargs["article_type"]=="politics": 
+		query = query + "2"
+	elif kwargs["article_type"]=="football":
+		query = query + "1"
+	else:
+		print("Unrecognized article type")
+		sys.exit()
+	
+	if kwargs["landscape"]!=None:
+		landscape_name = input_folder+data_case+ "\\grids\\"+kwargs["landscape"]	
+	else:
+		landscape_name = input_folder+data_case+ r"\grid_final.txt"
 	if kwargs["doc_limit"]!=None:
 		query = query +  " LIMIT " + kwargs["doc_limit"]
-	if kwargs["log_day_freqs"]=="yes":
-		log_day_freqs = True
+	log_day_freqs = True
+	if kwargs["log_day_freqs"]=="no":
+		log_day_freqs = False
 	if kwargs["dif_output_dir"]==None:
 		output_folder = output_folder+data_case
 	else:
 		output_folder = output_folder+kwargs["dif_output_dir"]
 	if not os.path.exists(output_folder):
 		os.makedirs(output_folder)
-	 
-
+	
+    if kwargs["use_stemmer"]!=None:
+        use_stemmer=True
+    
 	evaluate_sem(landscape_name)

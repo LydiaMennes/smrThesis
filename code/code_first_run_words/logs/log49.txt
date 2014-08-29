@@ -1,0 +1,7 @@
+
+
+
+
+{'case_name': 'politics_limit1000_stem_gold', 'landscape': None, 'log_day_freqs': None, 'article_type': 'politics', 'dif_output_dir': None, 'doc_limit': '500000'}
+Get items from database
+selection made

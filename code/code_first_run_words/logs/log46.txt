@@ -1,0 +1,8 @@
+
+
+
+
+{'landscape': None, 'doc_limit': '500', 'article_type': 'politics', 'dif_output_dir': None, 'case_name': 'test3', 'log_day_freqs': None}
+Get items from database
+selection made
+nr of exceptions 0

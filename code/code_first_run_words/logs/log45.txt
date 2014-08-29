@@ -1,0 +1,11 @@
+
+
+
+
+{'log_day_freqs': None, 'article_type': 'politics', 'dif_output_dir': None, 'case_name': 'politics_limit1000_stem', 'doc_limit': '500000', 'landscape': None}
+Get items from database
+selection made
+10000 files processed 2014-08-11 12:56:11.318149
+20000 files processed 2014-08-11 12:56:26.628635
+30000 files processed 2014-08-11 12:56:42.368161
+nr of exceptions 0

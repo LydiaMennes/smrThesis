@@ -1,0 +1,86 @@
+
+
+
+
+{'block_ratio': 2, 'stop_nr_trials': -1, 'dif_output_dir': None, 'use_noise': True, 'old_grid_size': -1, 'max_closest': 8, 'to_file_trials': 20, 'nr_words_to_follow': 20, 'nr_trials_re_init': -1, 'encounter_deep': True, 'log_memory': False, 'dif_landscape_dir': None, 'encounter': True, 'space_to_grid_type': 'new', 'use_followers': False, 'process': 'initial_grid', 'data_portion': 5, 'case_name': 'football_limit1000_no_stem', 'gold_standard': False}
+
+-False-
+
+======
+nr of words: 14265 
+=====
+directory made
+stress directory made
+points directory made
+grid directory made
+get data 2014-07-11 15:29:26.246275
+get initial grid 2014-07-11 15:29:26.261897 with old grid size: 10
+at file
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+
+ New nr words: 14265
+nr non blob words actually encountered 14165 all actually seen words 14265
+directory made
+old_grid_size 10 grid_size 120
+old_nr_words 100 new nr words 14265
+nr of blobs 100 2b added 14165 nr actually found 14165
+1 2014-07-11 15:31:44.520565
+500 2014-07-11 15:31:45.082977
+1000 2014-07-11 15:31:47.145125
+1500 2014-07-11 15:31:50.800777
+2000 2014-07-11 15:31:56.096787
+2500 2014-07-11 15:32:03.064411
+3000 2014-07-11 15:32:11.531783
+3500 2014-07-11 15:32:21.811338
+4000 2014-07-11 15:32:33.606415
+4500 2014-07-11 15:32:47.199691
+5000 2014-07-11 15:33:02.449152
+5500 2014-07-11 15:33:19.261056
+6000 2014-07-11 15:33:37.838527
+6500 2014-07-11 15:33:58.040938
+7000 2014-07-11 15:34:19.977648
+7500 2014-07-11 15:34:43.445570
+8000 2014-07-11 15:35:08.554069
+8500 2014-07-11 15:35:35.287500
+9000 2014-07-11 15:36:03.536503
+9500 2014-07-11 15:36:33.504188
+10000 2014-07-11 15:37:05.346818
+10500 2014-07-11 15:37:38.845913
+11000 2014-07-11 15:38:14.268125
+11500 2014-07-11 15:38:51.112223
+12000 2014-07-11 15:39:29.550094
+12500 2014-07-11 15:40:09.691113
+13000 2014-07-11 15:40:51.391475
+13500 2014-07-11 15:41:34.766898
+14000 2014-07-11 15:42:19.954834
+transform final grid
+DONE
+Initial grid returns
+==============
+DONE
+==============

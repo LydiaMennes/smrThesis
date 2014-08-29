@@ -1,0 +1,15 @@
+
+
+
+
+{'use_followers': False, 'data_portion': 5, 'dif_output_dir': None, 'log_memory': False, 'nr_trials_re_init': -1, 'encounter': True, 'space_to_grid_type': 'new', 'old_grid_size': 50, 'process': 'all', 'dif_landscape_dir': None, 'gold_standard': False, 'max_closest': 8, 'encounter_deep': True, 'case_name': 'politics_big_stem', 'to_file_trials': 5, 'nr_words_to_follow': 20, 'stop_nr_trials': 5000, 'use_noise': True, 'block_ratio': 2}
+
+-False-
+
+======
+nr of words: 29317 
+=====
+get data 2014-08-18 10:43:30.783433
+get initial grid 2014-08-18 10:43:32.448555 with old grid size: 50
+at file
+a

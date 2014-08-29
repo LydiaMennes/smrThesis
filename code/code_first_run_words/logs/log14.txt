@@ -1,0 +1,440 @@
+
+
+
+
+{'use_followers': False, 'space_to_grid_type': 'stripy', 'use_noise': True, 'nr_words_to_follow': 20, 'nr_trials_re_init': -1, 'dif_output_dir': 'football_limit1000_no_stem_stripy', 'dif_landscape_dir': None, 'data_portion': 5, 'process': 'initial_grid', 'block_ratio': 2, 'old_grid_size': -1, 'case_name': 'football_limit1000_no_stem', 'log_memory': False, 'max_closest': 8, 'encounter_deep': True, 'to_file_trials': 20, 'gold_standard': False, 'encounter': True, 'stop_nr_trials': -1}
+
+-False-
+
+======
+nr of words: 14265 
+=====
+directory made
+stress directory made
+points directory made
+grid directory made
+get data 2014-07-17 12:26:26.571288
+get initial grid 2014-07-17 12:26:26.589097 with old grid size: 10
+at file
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+
+ New nr words: 14265
+nr non blob words actually encountered 14165 all actually seen words 14265
+shift 24.999999999999996
+data space shape (14265, 2)
+last index =  14264
+COLOR FILE
+new grid size 125
+old grid size -1
+directory made
+nr items: 14265
+start conversion to grid 2014-07-17 12:28:54.741001
+
+
+Nr lonely points at start: 9939 with grid size 125 and 14265 elems
+check neighborhood
+i: 5 ass 7160 mo: 7100 nr lonely points: 8465
+i: 10 ass 7630 mo: 6027 nr lonely points: 7995
+check neighborhood
+i: 15 ass 8041 mo: 2951 nr lonely points: 7584
+i: 20 ass 8413 mo: 3087 nr lonely points: 7212
+
+
+
+im1
+iter 20 nr assigned 8413 from 14265 mo: 3087 at 2014-07-17 12:32:16.726956
+check neighborhood
+i: 25 ass 8759 mo: 2327 nr lonely points: 6866
+i: 30 ass 9067 mo: 2365 nr lonely points: 6558
+check neighborhood
+i: 35 ass 9363 mo: 1779 nr lonely points: 6262
+i: 40 ass 9636 mo: 1703 nr lonely points: 5989
+
+
+
+im2
+iter 40 nr assigned 9636 from 14265 mo: 1703 at 2014-07-17 12:34:44.883405
+check neighborhood
+i: 45 ass 9872 mo: 1287 nr lonely points: 5753
+i: 50 ass 10108 mo: 1133 nr lonely points: 5517
+check neighborhood
+i: 55 ass 10326 mo: 836 nr lonely points: 5299
+i: 60 ass 10508 mo: 687 nr lonely points: 5117
+
+
+
+im3
+iter 60 nr assigned 10508 from 14265 mo: 687 at 2014-07-17 12:36:40.566500
+check neighborhood
+i: 65 ass 10652 mo: 508 nr lonely points: 4973
+i: 70 ass 10774 mo: 406 nr lonely points: 4851
+check neighborhood
+i: 75 ass 10879 mo: 288 nr lonely points: 4746
+neigh size upgraded 15
+check neighborhood
+i: 80 ass 10958 mo: 544 nr lonely points: 4667
+
+
+
+im4
+iter 80 nr assigned 10958 from 14265 mo: 544 at 2014-07-17 12:38:11.912183
+check neighborhood
+i: 85 ass 11018 mo: 509 nr lonely points: 4607
+i: 90 ass 11065 mo: 1084 nr lonely points: 4560
+check neighborhood
+i: 95 ass 11103 mo: 603 nr lonely points: 4522
+i: 100 ass 11122 mo: 1013 nr lonely points: 4503
+
+
+
+im5
+iter 100 nr assigned 11122 from 14265 mo: 1013 at 2014-07-17 12:39:47.152167
+check neighborhood
+i: 105 ass 11151 mo: 680 nr lonely points: 4474
+i: 110 ass 11187 mo: 956 nr lonely points: 4438
+check neighborhood
+i: 115 ass 11226 mo: 633 nr lonely points: 4399
+i: 120 ass 11264 mo: 830 nr lonely points: 4361
+
+
+
+im6
+iter 120 nr assigned 11264 from 14265 mo: 830 at 2014-07-17 12:41:40.729705
+check neighborhood
+i: 125 ass 11307 mo: 581 nr lonely points: 4318
+i: 130 ass 11355 mo: 734 nr lonely points: 4270
+check neighborhood
+i: 135 ass 11411 mo: 494 nr lonely points: 4214
+i: 140 ass 11471 mo: 593 nr lonely points: 4154
+
+
+
+im7
+iter 140 nr assigned 11471 from 14265 mo: 593 at 2014-07-17 12:43:35.734375
+check neighborhood
+i: 145 ass 11538 mo: 408 nr lonely points: 4087
+i: 150 ass 11595 mo: 479 nr lonely points: 4030
+check neighborhood
+i: 155 ass 11653 mo: 339 nr lonely points: 3972
+i: 160 ass 11717 mo: 368 nr lonely points: 3908
+
+
+
+im8
+iter 160 nr assigned 11717 from 14265 mo: 368 at 2014-07-17 12:45:16.281813
+check neighborhood
+i: 165 ass 11764 mo: 269 nr lonely points: 3861
+neigh size upgraded 20
+check neighborhood
+i: 170 ass 11812 mo: 508 nr lonely points: 3813
+check neighborhood
+i: 175 ass 11840 mo: 436 nr lonely points: 3785
+i: 180 ass 11859 mo: 483 nr lonely points: 3766
+
+
+
+im9
+iter 180 nr assigned 11859 from 14265 mo: 483 at 2014-07-17 12:46:53.922009
+check neighborhood
+i: 185 ass 11870 mo: 420 nr lonely points: 3755
+i: 190 ass 11877 mo: 451 nr lonely points: 3748
+check neighborhood
+i: 195 ass 11892 mo: 397 nr lonely points: 3733
+i: 200 ass 11910 mo: 379 nr lonely points: 3715
+
+
+
+im10
+iter 200 nr assigned 11910 from 14265 mo: 379 at 2014-07-17 12:48:45.354374
+check neighborhood
+i: 205 ass 11955 mo: 334 nr lonely points: 3670
+i: 210 ass 12009 mo: 280 nr lonely points: 3616
+neigh size upgraded 25
+check neighborhood
+i: 215 ass 12068 mo: 687 nr lonely points: 3557
+i: 220 ass 12132 mo: 1049 nr lonely points: 3493
+
+
+
+im11
+iter 220 nr assigned 12132 from 14265 mo: 1049 at 2014-07-17 12:50:38.882320
+check neighborhood
+i: 225 ass 12180 mo: 744 nr lonely points: 3445
+i: 230 ass 12210 mo: 1002 nr lonely points: 3415
+check neighborhood
+i: 235 ass 12231 mo: 786 nr lonely points: 3394
+i: 240 ass 12251 mo: 906 nr lonely points: 3374
+
+
+
+im12
+iter 240 nr assigned 12251 from 14265 mo: 906 at 2014-07-17 12:52:41.331867
+check neighborhood
+i: 245 ass 12267 mo: 790 nr lonely points: 3358
+i: 250 ass 12277 mo: 856 nr lonely points: 3348
+check neighborhood
+i: 255 ass 12288 mo: 779 nr lonely points: 3337
+i: 260 ass 12314 mo: 804 nr lonely points: 3311
+
+
+
+im13
+iter 260 nr assigned 12314 from 14265 mo: 804 at 2014-07-17 12:55:10.270374
+check neighborhood
+i: 265 ass 12358 mo: 700 nr lonely points: 3267
+i: 270 ass 12428 mo: 634 nr lonely points: 3197
+check neighborhood
+i: 275 ass 12495 mo: 567 nr lonely points: 3130
+i: 280 ass 12568 mo: 494 nr lonely points: 3057
+
+
+
+im14
+iter 280 nr assigned 12568 from 14265 mo: 494 at 2014-07-17 12:57:38.326599
+check neighborhood
+i: 285 ass 12651 mo: 411 nr lonely points: 2974
+i: 290 ass 12734 mo: 328 nr lonely points: 2891
+check neighborhood
+i: 295 ass 12804 mo: 258 nr lonely points: 2821
+neigh size upgraded 30
+check neighborhood
+i: 300 ass 12850 mo: 741 nr lonely points: 2775
+
+
+
+im15
+iter 300 nr assigned 12850 from 14265 mo: 741 at 2014-07-17 12:59:37.557107
+check neighborhood
+i: 305 ass 12900 mo: 706 nr lonely points: 2725
+i: 310 ass 12938 mo: 1019 nr lonely points: 2687
+check neighborhood
+i: 315 ass 12977 mo: 695 nr lonely points: 2648
+i: 320 ass 13011 mo: 950 nr lonely points: 2614
+
+
+
+im16
+iter 320 nr assigned 13011 from 14265 mo: 950 at 2014-07-17 13:01:27.002284
+check neighborhood
+i: 325 ass 13036 mo: 688 nr lonely points: 2589
+i: 330 ass 13049 mo: 905 nr lonely points: 2576
+check neighborhood
+i: 335 ass 13056 mo: 716 nr lonely points: 2569
+i: 340 ass 13059 mo: 887 nr lonely points: 2566
+
+
+
+im17
+iter 340 nr assigned 13059 from 14265 mo: 887 at 2014-07-17 13:03:20.545445
+check neighborhood
+i: 345 ass 13064 mo: 779 nr lonely points: 2561
+i: 350 ass 13072 mo: 886 nr lonely points: 2553
+check neighborhood
+i: 355 ass 13092 mo: 760 nr lonely points: 2533
+i: 360 ass 13116 mo: 841 nr lonely points: 2509
+
+
+
+im18
+iter 360 nr assigned 13116 from 14265 mo: 841 at 2014-07-17 13:05:18.431343
+check neighborhood
+i: 365 ass 13156 mo: 720 nr lonely points: 2469
+i: 370 ass 13191 mo: 732 nr lonely points: 2434
+check neighborhood
+i: 375 ass 13210 mo: 679 nr lonely points: 2415
+i: 380 ass 13227 mo: 691 nr lonely points: 2398
+
+
+
+im19
+iter 380 nr assigned 13227 from 14265 mo: 691 at 2014-07-17 13:07:12.873958
+check neighborhood
+i: 385 ass 13238 mo: 658 nr lonely points: 2387
+i: 390 ass 13250 mo: 662 nr lonely points: 2375
+check neighborhood
+i: 395 ass 13263 mo: 632 nr lonely points: 2362
+i: 400 ass 13279 mo: 632 nr lonely points: 2346
+
+
+
+im20
+iter 400 nr assigned 13279 from 14265 mo: 632 at 2014-07-17 13:09:03.165232
+check neighborhood
+i: 405 ass 13285 mo: 612 nr lonely points: 2340
+i: 410 ass 13297 mo: 612 nr lonely points: 2328
+check neighborhood
+i: 415 ass 13318 mo: 592 nr lonely points: 2307
+i: 420 ass 13347 mo: 565 nr lonely points: 2278
+
+
+
+im21
+iter 420 nr assigned 13347 from 14265 mo: 565 at 2014-07-17 13:10:51.066282
+check neighborhood
+i: 425 ass 13381 mo: 531 nr lonely points: 2244
+i: 430 ass 13426 mo: 486 nr lonely points: 2199
+check neighborhood
+i: 435 ass 13473 mo: 439 nr lonely points: 2152
+i: 440 ass 13522 mo: 390 nr lonely points: 2103
+
+
+
+im22
+iter 440 nr assigned 13522 from 14265 mo: 390 at 2014-07-17 13:12:33.500896
+check neighborhood
+i: 445 ass 13572 mo: 340 nr lonely points: 2053
+i: 450 ass 13627 mo: 285 nr lonely points: 1998
+neigh size upgraded 35
+check neighborhood
+i: 455 ass 13677 mo: 413 nr lonely points: 1948
+i: 460 ass 13735 mo: 410 nr lonely points: 1890
+
+
+
+im23
+iter 460 nr assigned 13735 from 14265 mo: 410 at 2014-07-17 13:14:08.591876
+check neighborhood
+i: 465 ass 13787 mo: 327 nr lonely points: 1838
+i: 470 ass 13840 mo: 292 nr lonely points: 1785
+neigh size upgraded 40
+check neighborhood
+i: 475 ass 13871 mo: 313 nr lonely points: 1754
+i: 480 ass 13885 mo: 293 nr lonely points: 1740
+neigh size upgraded 45
+
+
+
+im24
+iter 480 nr assigned 13885 from 14265 mo: 293 at 2014-07-17 13:15:48.423250
+check neighborhood
+i: 485 ass 13894 mo: 360 nr lonely points: 1731
+i: 490 ass 13901 mo: 353 nr lonely points: 1724
+check neighborhood
+i: 495 ass 13903 mo: 351 nr lonely points: 1722
+i: 500 ass 13907 mo: 347 nr lonely points: 1718
+
+
+
+im25
+iter 500 nr assigned 13907 from 14265 mo: 347 at 2014-07-17 13:17:47.075602
+check neighborhood
+i: 505 ass 13910 mo: 344 nr lonely points: 1715
+i: 510 ass 13915 mo: 339 nr lonely points: 1710
+check neighborhood
+i: 515 ass 13921 mo: 333 nr lonely points: 1704
+i: 520 ass 13928 mo: 326 nr lonely points: 1697
+
+
+
+im26
+iter 520 nr assigned 13928 from 14265 mo: 326 at 2014-07-17 13:19:50.505985
+check neighborhood
+i: 525 ass 13946 mo: 308 nr lonely points: 1679
+i: 530 ass 13974 mo: 280 nr lonely points: 1651
+neigh size upgraded 50
+check neighborhood
+i: 535 ass 14021 mo: 244 nr lonely points: 1604
+i: 540 ass 14055 mo: 210 nr lonely points: 1570
+
+
+
+im27
+iter 540 nr assigned 14055 from 14265 mo: 210 at 2014-07-17 13:21:44.431551
+check neighborhood
+i: 545 ass 14084 mo: 181 nr lonely points: 1541
+i: 550 ass 14106 mo: 159 nr lonely points: 1519
+check neighborhood
+i: 555 ass 14119 mo: 146 nr lonely points: 1506
+i: 560 ass 14130 mo: 135 nr lonely points: 1495
+
+
+
+im28
+iter 560 nr assigned 14130 from 14265 mo: 135 at 2014-07-17 13:23:22.180747
+check neighborhood
+i: 565 ass 14142 mo: 123 nr lonely points: 1483
+i: 570 ass 14168 mo: 97 nr lonely points: 1457
+check neighborhood
+i: 575 ass 14183 mo: 82 nr lonely points: 1442
+i: 580 ass 14196 mo: 69 nr lonely points: 1429
+
+
+
+im29
+iter 580 nr assigned 14196 from 14265 mo: 69 at 2014-07-17 13:24:53.257395
+check neighborhood
+i: 585 ass 14206 mo: 59 nr lonely points: 1419
+i: 590 ass 14220 mo: 45 nr lonely points: 1405
+check neighborhood
+i: 595 ass 14234 mo: 31 nr lonely points: 1391
+i: 600 ass 14244 mo: 21 nr lonely points: 1381
+
+
+
+im30
+iter 600 nr assigned 14244 from 14265 mo: 21 at 2014-07-17 13:26:17.454477
+check neighborhood
+i: 605 ass 14248 mo: 17 nr lonely points: 1377
+i: 610 ass 14249 mo: 16 nr lonely points: 1376
+check neighborhood
+i: 615 ass 14253 mo: 12 nr lonely points: 1372
+i: 620 ass 14254 mo: 11 nr lonely points: 1371
+
+
+
+im31
+iter 620 nr assigned 14254 from 14265 mo: 11 at 2014-07-17 13:27:38.658278
+check neighborhood
+i: 625 ass 14254 mo: 11 nr lonely points: 1371
+i: 630 ass 14255 mo: 10 nr lonely points: 1370
+check neighborhood
+i: 635 ass 14256 mo: 9 nr lonely points: 1369
+i: 640 ass 14262 mo: 3 nr lonely points: 1363
+
+
+
+im32
+iter 640 nr assigned 14262 from 14265 mo: 3 at 2014-07-17 13:28:59.456081
+check neighborhood
+i: 645 ass 14264 mo: 1 nr lonely points: 1361
+
+
+
+im33
+iter 647 nr assigned 14265 from 14265 mo: 1 at 2014-07-17 13:30:12.660217
+needed  647 iterations for 14265 points
+
+=============
+DONE
+=============
+
+init final grid and make figure of grid
+Initial grid returns
+==============
+DONE
+==============

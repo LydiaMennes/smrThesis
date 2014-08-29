@@ -1,0 +1,92 @@
+K:\Lydia\smrThesis\code\tsne_python
+
+
+
+
+{'build_coocs': 'yes', 'nr_words_sample': 100, 'dif_output_dir': None, 'create_reduced': 'yes', 'case_name': 'football_limit1000_stem'}
+======
+nr of words: 12726 
+=====
+directory made
+Begin process building/reading coocs  2014-07-11 15:16:04.452806
+get sampled words and build cooc file
+P(add)= 0.007857928650007858
+current word aandeelhouder
+
+
+number of nonzero columns: 5171
+Begin dimensionality reduction 2014-07-11 15:16:04.734065
+n= 100 d= 5171 k= 30 l= 32 q= 96 i= 2 
+
+step 1
+create H(0)
+H 1 transpose
+H 1 final
+H 2 transpose
+H 2 final
+size H (100, 96)
+step 2
+Q (100, 96)
+step 3
+T size (5171, 96)
+step 4
+begin SVD 2014-07-11 15:16:08.093546
+end SVD 2014-07-11 15:16:11.296813 
+V (5171, 5171) S (96,) W (96, 96)
+step 6
+
+PCA done!!!
+
+run nse at 2014-07-11 15:16:11.328054
+run nse with perplexity 30.0
+x2p computations
+Computing pairwise distances...
+Computing P-values for point  0  of  100 ...
+start nse iterations
+Iteration  100 : error is  13.7866855104
+Iteration  200 : error is  1.05322259946
+Iteration  300 : error is  0.793202984799
+Iteration  400 : error is  0.841638727385
+Iteration  500 : error is  0.721733293947
+Iteration  1000 : error is  0.654467873757
+Iteration  2000 : error is  0.539858735645
+Iteration  3000 : error is  0.539500997623
+Iteration  4000 : error is  0.539493963144
+Iteration  5000 : error is  0.539493850534
+data 2 file at 2014-07-11 15:16:26.531710
+make grid from space at 2014-07-11 15:16:26.531710
+nr items: 100
+scale data
+start conversion to grid 2014-07-11 15:16:26.984851
+
+
+Nr lonely points at start: 65 with grid size 10 and 100 elems
+check neighborhood
+i: 5 ass 60 mo: 40 nr lonely points: 40
+i: 10 ass 81 mo: 19 nr lonely points: 19
+check neighborhood
+i: 15 ass 91 mo: 9 nr lonely points: 9
+i: 20 ass 94 mo: 6 nr lonely points: 6
+
+
+
+check neighborhood
+i: 25 ass 96 mo: 4 nr lonely points: 4
+i: 30 ass 99 mo: 1 nr lonely points: 1
+check neighborhood
+
+
+
+needed  34 iterations for 100 points
+
+=============
+DONE
+=============
+
+results to file at 2014-07-11 15:16:27.375491
+gridsize =  10
++++++++++ DONE +++++++++++
+ 2014-07-11 15:16:27.375491
+==============
+DONE
+==============

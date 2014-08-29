@@ -1,3 +1,3 @@
-evaluate_semantic_landscape.py limit1000_R_deepEnc_noF grid__init1_tr301_itLAST.txt --doc_limit 5000 --log_day_freqs yes
-evaluate_semantic_landscape.py limit1000_GOLD_deepEnc_noF grid__init1_tr301_itLAST.txt --doc_limit 5000 --log_day_freqs yes
-evaluate_semantic_landscape.py limit1000_nolog_random random_grid.txt --doc_limit 5000 --log_day_freqs yes
+C:\python34\python.exe puzzle.py politics_big_stem --process all --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 > logs\log61.txt
+C:\python34\python.exe puzzle.py politics_big_stem --process only_puzzle --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 --use_noise no --dif_output_dir politics_big_stem_noNoise.txt
+C:\python34\python.exe evaluate_semantic_landscape.py politics_big_stem politics --doc_limit 500000

@@ -1,0 +1,241 @@
+
+
+
+
+{'stop_nr_trials': -1, 'dif_output_dir': 'politics_limit1000_stem_stripy', 'process': 'initial_grid', 'encounter_deep': True, 'log_memory': False, 'use_noise': True, 'gold_standard': False, 'nr_words_to_follow': 20, 'space_to_grid_type': 'stripy', 'case_name': 'politics_limit1000_stem', 'old_grid_size': -1, 'encounter': True, 'dif_landscape_dir': None, 'data_portion': 5, 'max_closest': 8, 'block_ratio': 2, 'nr_trials_re_init': -1, 'use_followers': False, 'to_file_trials': 20}
+
+-False-
+
+======
+nr of words: 7253 
+=====
+directory made
+stress directory made
+points directory made
+grid directory made
+get data 2014-07-17 13:31:23.657314
+get initial grid 2014-07-17 13:31:23.668328 with old grid size: 10
+at file
+a
+b
+c
+d
+denim at line 0 in file d
+e
+f
+g
+h
+hot at line 0 in file h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+
+ New nr words: 7251
+nr non blob words actually encountered 7151 all actually seen words 7253
+shift 18.200000000000003
+data space shape (7251, 2)
+last index =  7250
+COLOR FILE
+new grid size 91
+old grid size -1
+directory made
+nr items: 7251
+start conversion to grid 2014-07-17 13:32:17.836885
+
+
+Nr lonely points at start: 5289 with grid size 91 and 7251 elems
+check neighborhood
+i: 5 ass 3848 mo: 3346 nr lonely points: 4433
+i: 10 ass 4123 mo: 3043 nr lonely points: 4158
+check neighborhood
+i: 15 ass 4379 mo: 1902 nr lonely points: 3902
+i: 20 ass 4594 mo: 2380 nr lonely points: 3687
+
+
+
+im1
+iter 20 nr assigned 4594 from 7251 mo: 2380 at 2014-07-17 13:34:19.473107
+check neighborhood
+i: 25 ass 4821 mo: 1487 nr lonely points: 3460
+i: 30 ass 5047 mo: 1761 nr lonely points: 3234
+check neighborhood
+i: 35 ass 5263 mo: 1048 nr lonely points: 3018
+i: 40 ass 5496 mo: 901 nr lonely points: 2785
+
+
+
+im2
+iter 40 nr assigned 5496 from 7251 mo: 901 at 2014-07-17 13:35:44.366220
+check neighborhood
+i: 45 ass 5679 mo: 615 nr lonely points: 2602
+i: 50 ass 5824 mo: 535 nr lonely points: 2457
+check neighborhood
+i: 55 ass 5952 mo: 366 nr lonely points: 2329
+i: 60 ass 6025 mo: 393 nr lonely points: 2256
+
+
+
+im3
+iter 60 nr assigned 6025 from 7251 mo: 393 at 2014-07-17 13:36:33.738312
+check neighborhood
+i: 65 ass 6086 mo: 288 nr lonely points: 2195
+neigh size upgraded 15
+check neighborhood
+i: 70 ass 6133 mo: 447 nr lonely points: 2148
+check neighborhood
+i: 75 ass 6169 mo: 399 nr lonely points: 2112
+i: 80 ass 6206 mo: 682 nr lonely points: 2075
+
+
+
+im4
+iter 80 nr assigned 6206 from 7251 mo: 682 at 2014-07-17 13:37:18.711076
+check neighborhood
+i: 85 ass 6241 mo: 411 nr lonely points: 2040
+i: 90 ass 6261 mo: 667 nr lonely points: 2020
+check neighborhood
+i: 95 ass 6295 mo: 460 nr lonely points: 1986
+i: 100 ass 6336 mo: 605 nr lonely points: 1945
+
+
+
+im5
+iter 100 nr assigned 6336 from 7251 mo: 605 at 2014-07-17 13:38:08.380259
+check neighborhood
+i: 105 ass 6373 mo: 439 nr lonely points: 1908
+i: 110 ass 6408 mo: 504 nr lonely points: 1873
+check neighborhood
+i: 115 ass 6436 mo: 388 nr lonely points: 1845
+i: 120 ass 6459 mo: 423 nr lonely points: 1822
+
+
+
+im6
+iter 120 nr assigned 6459 from 7251 mo: 423 at 2014-07-17 13:38:59.437534
+check neighborhood
+i: 125 ass 6486 mo: 341 nr lonely points: 1795
+i: 130 ass 6513 mo: 359 nr lonely points: 1768
+check neighborhood
+i: 135 ass 6538 mo: 289 nr lonely points: 1743
+neigh size upgraded 20
+check neighborhood
+i: 140 ass 6566 mo: 384 nr lonely points: 1715
+
+
+
+im7
+iter 140 nr assigned 6566 from 7251 mo: 384 at 2014-07-17 13:39:51.824099
+check neighborhood
+i: 145 ass 6595 mo: 325 nr lonely points: 1686
+i: 150 ass 6623 mo: 297 nr lonely points: 1658
+neigh size upgraded 25
+check neighborhood
+i: 155 ass 6658 mo: 530 nr lonely points: 1623
+i: 160 ass 6687 mo: 559 nr lonely points: 1594
+
+
+
+im8
+iter 160 nr assigned 6687 from 7251 mo: 559 at 2014-07-17 13:40:47.662783
+check neighborhood
+i: 165 ass 6711 mo: 516 nr lonely points: 1570
+i: 170 ass 6737 mo: 511 nr lonely points: 1544
+check neighborhood
+i: 175 ass 6775 mo: 460 nr lonely points: 1506
+i: 180 ass 6820 mo: 415 nr lonely points: 1461
+
+
+
+im9
+iter 180 nr assigned 6820 from 7251 mo: 415 at 2014-07-17 13:41:49.492996
+check neighborhood
+i: 185 ass 6855 mo: 373 nr lonely points: 1426
+i: 190 ass 6883 mo: 345 nr lonely points: 1398
+check neighborhood
+i: 195 ass 6899 mo: 329 nr lonely points: 1382
+i: 200 ass 6911 mo: 317 nr lonely points: 1370
+
+
+
+im10
+iter 200 nr assigned 6911 from 7251 mo: 317 at 2014-07-17 13:42:52.427276
+check neighborhood
+i: 205 ass 6948 mo: 280 nr lonely points: 1333
+neigh size upgraded 30
+check neighborhood
+i: 210 ass 6991 mo: 253 nr lonely points: 1290
+neigh size upgraded 35
+check neighborhood
+i: 215 ass 7035 mo: 216 nr lonely points: 1246
+i: 220 ass 7071 mo: 180 nr lonely points: 1210
+
+
+
+im11
+iter 220 nr assigned 7071 from 7251 mo: 180 at 2014-07-17 13:43:52.764344
+check neighborhood
+i: 225 ass 7104 mo: 147 nr lonely points: 1177
+i: 230 ass 7141 mo: 110 nr lonely points: 1140
+check neighborhood
+i: 235 ass 7171 mo: 80 nr lonely points: 1110
+i: 240 ass 7196 mo: 55 nr lonely points: 1085
+
+
+
+im12
+iter 240 nr assigned 7196 from 7251 mo: 55 at 2014-07-17 13:44:41.502436
+check neighborhood
+i: 245 ass 7205 mo: 46 nr lonely points: 1076
+i: 250 ass 7216 mo: 35 nr lonely points: 1065
+check neighborhood
+i: 255 ass 7224 mo: 27 nr lonely points: 1057
+i: 260 ass 7228 mo: 23 nr lonely points: 1053
+
+
+
+im13
+iter 260 nr assigned 7228 from 7251 mo: 23 at 2014-07-17 13:45:23.584233
+check neighborhood
+i: 265 ass 7230 mo: 21 nr lonely points: 1051
+i: 270 ass 7237 mo: 14 nr lonely points: 1044
+check neighborhood
+i: 275 ass 7243 mo: 8 nr lonely points: 1038
+i: 280 ass 7248 mo: 3 nr lonely points: 1033
+
+
+
+im14
+iter 280 nr assigned 7248 from 7251 mo: 3 at 2014-07-17 13:46:03.990614
+check neighborhood
+i: 285 ass 7250 mo: 1 nr lonely points: 1031
+
+
+
+im15
+iter 287 nr assigned 7251 from 7251 mo: 1 at 2014-07-17 13:46:40.441687
+needed  287 iterations for 7251 points
+
+=============
+DONE
+=============
+
+init final grid and make figure of grid
+Initial grid returns
+==============
+DONE
+==============

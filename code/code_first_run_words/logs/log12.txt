@@ -1,0 +1,75 @@
+
+
+
+
+{'stop_nr_trials': -1, 'log_memory': False, 'use_followers': False, 'use_noise': True, 'space_to_grid_type': 'new', 'gold_standard': False, 'nr_trials_re_init': -1, 'encounter': True, 'data_portion': 5, 'case_name': 'politics_limit1000_no_stem', 'max_closest': 8, 'process': 'initial_grid', 'nr_words_to_follow': 20, 'old_grid_size': -1, 'dif_landscape_dir': None, 'encounter_deep': True, 'block_ratio': 2, 'dif_output_dir': None, 'to_file_trials': 20}
+
+-False-
+
+======
+nr of words: 8018 
+=====
+directory made
+stress directory made
+points directory made
+grid directory made
+get data 2014-07-11 15:48:17.475733
+get initial grid 2014-07-11 15:48:17.491359 with old grid size: 10
+at file
+a
+b
+c
+d
+denim at line 0 in file d
+e
+f
+g
+h
+hot at line 0 in file h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+
+ New nr words: 8016
+nr non blob words actually encountered 7916 all actually seen words 8018
+directory made
+old_grid_size 10 grid_size 90
+old_nr_words 100 new nr words 8016
+nr of blobs 100 2b added 7916 nr actually found 7916
+1 2014-07-11 15:49:08.055642
+500 2014-07-11 15:49:08.602539
+1000 2014-07-11 15:49:10.665098
+1500 2014-07-11 15:49:14.321476
+2000 2014-07-11 15:49:19.634164
+2500 2014-07-11 15:49:26.634423
+3000 2014-07-11 15:49:35.181588
+3500 2014-07-11 15:49:45.510077
+4000 2014-07-11 15:49:57.369883
+4500 2014-07-11 15:50:11.073480
+5000 2014-07-11 15:50:26.355281
+5500 2014-07-11 15:50:43.340243
+6000 2014-07-11 15:51:02.278425
+6500 2014-07-11 15:51:22.622881
+7000 2014-07-11 15:51:44.639295
+7500 2014-07-11 15:52:08.233865
+transform final grid
+DONE
+Initial grid returns
+==============
+DONE
+==============

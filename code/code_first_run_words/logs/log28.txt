@@ -1,0 +1,12 @@
+nr words: 14265
+grid_size 120
+nr words: 12726
+grid_size 113
+ENCOUNTERED
+nr words: 8016
+grid_size 90
+nr words: 7251
+grid_size 86
+==============
+DONE
+==============

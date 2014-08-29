@@ -1,0 +1,49 @@
+K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src
+
+
+
+
+{'use_stemmer': 'no', 'case_name': 'politics_limit1000_no_stem', 'article_type': 'politics', 'query_limit': '1000', 'freq_cutoff': 2}
+\politics_limit1000_no_stem
+cutoff 2
+directory made
+Get items from database
+selection made
+number of documents:  1000
+data processed, write to file
+nr of exceptions: 0
+number of words: 20420
+nr cooc entries: 381482
+complete coocs to distributed files
+directory made
+remaining nr words:  8018 words to file at 2014-07-11 15:14:58.350810
+normalize coocs 2014-07-11 15:14:58.350810
+coocs to file 2014-07-11 15:15:28.179984
+letter b size cooc 786528
+letter c size cooc 786528
+letter d size cooc 786528
+letter e size cooc 786528
+letter f size cooc 786528
+letter g size cooc 786528
+letter h size cooc 786528
+letter i size cooc 786528
+letter j size cooc 786528
+letter k size cooc 786528
+letter l size cooc 786528
+letter m size cooc 786528
+letter n size cooc 786528
+letter o size cooc 786528
+letter p size cooc 786528
+letter q size cooc 786528
+letter r size cooc 786528
+letter s size cooc 786528
+letter t size cooc 786528
+letter u size cooc 786528
+letter v size cooc 786528
+letter w size cooc 786528
+letter x size cooc 786528
+letter y size cooc 786528
+letter z size cooc 786528
+==============
+DONE
+==============

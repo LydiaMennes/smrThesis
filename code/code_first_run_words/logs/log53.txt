@@ -1,0 +1,53 @@
+K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src
+
+
+
+
+{'case_name': 'politics_big_stem', 'article_type': 'politics', 'query_limit': '400000', 'freq_cutoff': 10, 'use_stemmer': ''}
+final query -SELECT itemText FROM newsitems WHERE sourceType = 2 LIMIT 400000-
+\politics_big_stem
+cutoff 10
+directory made
+Get items from database
+selection made
+10000 files processed at 2014-08-11 15:58:13.549572
+20000 files processed at 2014-08-11 15:59:30.073575
+30000 files processed at 2014-08-11 16:00:51.818337
+number of documents:  31755
+data processed, write to file
+nr of exceptions: 0
+number of words: 153752
+nr cooc entries: 8910391
+complete coocs to distributed files
+directory made
+remaining nr words:  29317 words to file at 2014-08-11 16:01:29.766856
+normalize coocs 2014-08-11 16:01:29.766856
+coocs to file 2014-08-11 16:11:07.340354
+letter b size cooc 6291552
+letter c size cooc 6291552
+letter d size cooc 6291552
+letter e size cooc 6291552
+letter f size cooc 6291552
+letter g size cooc 6291552
+letter h size cooc 6291552
+letter i size cooc 6291552
+letter j size cooc 6291552
+letter k size cooc 6291552
+letter l size cooc 6291552
+letter m size cooc 6291552
+letter n size cooc 6291552
+letter o size cooc 6291552
+letter p size cooc 6291552
+letter q size cooc 6291552
+letter r size cooc 6291552
+letter s size cooc 6291552
+letter t size cooc 6291552
+letter u size cooc 6291552
+letter v size cooc 6291552
+letter w size cooc 6291552
+letter x size cooc 6291552
+letter y size cooc 6291552
+letter z size cooc 6291552
+==============
+DONE
+==============

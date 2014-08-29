@@ -10,9 +10,17 @@ import sys
 import unicodedata
 from thesis_utilities import *
 import argparse
+lib_path = r"K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src"
+print( lib_path)
+sys.path.append(lib_path)
+import snowballstemmer
+import datetime
+import bisect
+
+	
 
 window_size = 8
-query = "SELECT itemText FROM newsitems WHERE sourceType = 2"
+query = "SELECT itemText FROM newsitems WHERE sourceType = "
 remove_low_freq = True
 freq_cut_off = 0
 data_directory = "default"
@@ -20,7 +28,7 @@ result_path = "default"
 resultfolder = r"D:\Users\Lydia\results word cooc"
 silly_words = []
 
-def coocs_to_file_complete(cooc, tf_idf):
+def coocs_to_file_complete(cooc, tf_idf, top_freq_cutoff):
 	print("complete coocs to distributed files")
 	cooc_path = result_path + r"\complete_cooc"
 	if not os.path.exists(cooc_path):
@@ -29,17 +37,26 @@ def coocs_to_file_complete(cooc, tf_idf):
 	words = list(tf_idf.keys())
 	words.sort() 
 	
+	f_top = open(result_path+r"\removed_top_freq_words.txt","w")
+	nr_removed_top_freq_words = 0
 	if remove_low_freq:
-		for i in range(len(words))[::-1]:
-			if tf_idf[words[i]][3] <= freq_cut_off:
+		for i in reversed(range(len(words))):
+			word_freq = tf_idf[words[i]][3]
+			if word_freq <= freq_cut_off or word_freq >= top_freq_cutoff:
+				if word_freq >= top_freq_cutoff:
+					f_top.write(words[i] + " "+ str(word_freq)+ "\n")
 				del words[i]
-	print( "remaining nr words: ", len(words)	)
+	f_top.close()
+	
 	filename_out = cooc_path + r"\wordlist.txt" 
 	f = open(filename_out, 'w')
 	for w in words:
 		f.write(w + "\n")
 	f.close()
-	
+	nr_words = len(words)
+	print( "remaining nr words: ", len(words), "words to file at", datetime.datetime.now()	)
+		
+	print("normalize coocs",datetime.datetime.now())
 	# calculate row sums 
 	row_sums = defaultdict(int)
 	for w in words:
@@ -59,6 +76,7 @@ def coocs_to_file_complete(cooc, tf_idf):
 				else:
 					row_sums[w] += cooc[w2][w]
 	
+	print("coocs to file", datetime.datetime.now())
 	current_letter = "a"
 	filename_out = cooc_path + r"\_"+current_letter+".txt" 
 	f = open(filename_out, 'w')
@@ -69,6 +87,7 @@ def coocs_to_file_complete(cooc, tf_idf):
 			print( "letter", current_letter, "size cooc", sys.getsizeof(cooc))
 			filename_out = cooc_path + r"\_"+current_letter+".txt" 
 			f = open(filename_out, 'w')
+			
 		f.write(w + ";")
 		for w2 in words:
 			if w < w2:
@@ -92,6 +111,8 @@ def coocs_to_file_complete(cooc, tf_idf):
 		f.write("\n")
 	f.close()
 	del cooc
+	
+	return nr_words
 
 	
 def cooc_stats_to_file(cooc, tf_idf):
@@ -127,7 +148,7 @@ def cooc_stats_to_file(cooc, tf_idf):
 	fig.savefig(image_name, bbox_inches='tight')
 	plt.close()
 
-def stats_to_file(doc_nr, total_nr_words, nr_words, nr_entries, nr_words_single_freq, nr_included_words):
+def stats_to_file(doc_nr, total_nr_words, nr_words, nr_entries, nr_words_single_freq, nr_included_words, use_stemmer):
 	filename_out = result_path+r"\stats.txt" 
 	f = open(filename_out, 'w')
 	f.write("window size: " + str(window_size) + "\n")
@@ -141,6 +162,10 @@ def stats_to_file(doc_nr, total_nr_words, nr_words, nr_entries, nr_words_single_
 		f.write("words with a freq smaller or equal to " + str(freq_cut_off) +" are removed\n")
 	else:
 		f.write("words with all frequencies are included\n")
+	if use_stemmer:
+		f.write("Stemmer used\n")
+	else:
+		f.write("No stemmer used\n")
 	f.write("words containing numbers, stopwords and punctuation are removed\n")
 	f.close()	
 	
@@ -151,10 +176,18 @@ def word_stats_to_file(tf_idf):
 	filename_out = result_path + r"\tf_idf.txt" 
 	f = open(filename_out, 'w')
 	# Content file: word - total frequency - nr documents in which it appears - freq per document
+	top_fifty = []
 	for word, lst in tf_idf.items():
 		nr_words+=1
 		total_freq = sum(lst[1])
 		tf_idf[word].append(total_freq)
+		if len(top_fifty)<50:
+			top_fifty.append(total_freq)
+			top_fifty.sort()
+		elif top_fifty[0]<total_freq and total_freq not in top_fifty:
+			del top_fifty[0]
+			i = bisect.bisect(top_fifty, total_freq)
+			top_fifty.insert(i,total_freq)
 		if total_freq <= freq_cut_off:
 			nr_words_low_freq += 1
 		if remove_low_freq and tf_idf[word][3] > freq_cut_off:
@@ -171,7 +204,7 @@ def word_stats_to_file(tf_idf):
 			f.write("\n")
 	f.close()
 	print( "number of words:", nr_words)
-	return nr_words, nr_words_low_freq, nr_included_words
+	return nr_words, nr_words_low_freq, nr_included_words, top_fifty[0]
 
 def coocs_to_file(cooc, tf_idf):
 	filename_out = result_path + r"\coocs.txt" 
@@ -189,8 +222,13 @@ def coocs_to_file(cooc, tf_idf):
 	print("nr cooc entries:", nr_entries)
 	f.close()
 	return nr_entries
+
+def isStupid(word):
+	if len(word) >= 3:
+		return word[0]==word[1] and word[1]==word[2]
+	return False
 	
-def get_cooccurrences(folder):
+def get_cooccurrences(folder, use_stemmer):
 	conn = oursql.connect(host="10.0.0.125", # your host, usually localhost
 						 user="Lydia", # your username
 						  passwd="voxpop", # your password
@@ -210,6 +248,7 @@ def get_cooccurrences(folder):
 	print("selection made")
 	
 	stop_words = get_parabots_stopwords()
+	stop_words.extend(get_english_stopwords())
 	
 	# init dictionary
 	cooc = defaultdict(lambda: defaultdict(int))
@@ -219,49 +258,57 @@ def get_cooccurrences(folder):
 	total_nr_words = 0
 	
 	punc_map = str.maketrans("","",string.punctuation)
-	
+	exceptions = 0
+	stemmer = snowballstemmer.stemmer('dutch');	
+
 	for row in curs:
 		window = []
 		current_word = -1;
 		s = row['itemText']
-		s = unicodedata.normalize('NFKD', s.decode('unicode-escape')).encode('ascii', 'ignore')
-		s = str(s)
-		s = esc_chars(s)
-		s = s.translate(punc_map)
-		text = s.split(" ")
-				
-		for word in text:			
-			word = word.lower()
-			if len(word)!=1 and word != "" and word not in stop_words and not has_digits(word) and word not in silly_words:				
-				window.append(word)	
-				total_nr_words+=1
-		
-				# Update current word position
-				if len(window) < 2*window_size + 1 and len(window) >= window_size:
-					current_word+=1
-
-				
+		try:
+			s = unicodedata.normalize('NFKD', s.decode('unicode-escape')).encode('ascii', 'ignore')
+			s = str(s)
+			s = esc_chars(s)
+			s = s.translate(punc_map)
+			text = s.split(" ")
+					
+			for word in text:			
+				word = word.lower()
+				if len(word)!=1 and word != "" and word not in stop_words and not has_digits(word) and word not in silly_words and not isStupid(word):				
+					
+					if use_stemmer:
+						word = stemmer.stemWord(word)
+					window.append(word)	
+					total_nr_words+=1
 			
-				if current_word != -1:
-					if len(window) > 2*window_size + 1:
-						# Remove item from window
-						window.pop(0)			
-																	
-					# Update counts
-					for index, element in enumerate(window):
-						if index != window_size:
-							if window[current_word] < element:
-								cooc[window[current_word]][element] += 1
-							else:
-								cooc[element][window[current_word]] += 1
+					# Update current word position
+					if len(window) < 2*window_size + 1 and len(window) >= window_size:
+						current_word+=1
+
+					
 				
-				# Process tf-idf statistics
-				if tf_idf[word][2] == doc_nr:							
-					tf_idf[word][1][-1] += 1						
-				else:
-					tf_idf[word][0] += 1
-					tf_idf[word][1].append(1) 
-					tf_idf[word][2] = doc_nr
+					if current_word != -1:
+						if len(window) > 2*window_size + 1:
+							# Remove item from window
+							window.pop(0)			
+																		
+						# Update counts
+						for index, element in enumerate(window):
+							if index != window_size:
+								if window[current_word] < element:
+									cooc[window[current_word]][element] += 1
+								else:
+									cooc[element][window[current_word]] += 1
+					
+					# Process tf-idf statistics
+					if tf_idf[word][2] == doc_nr:							
+						tf_idf[word][1][-1] += 1						
+					else:
+						tf_idf[word][0] += 1
+						tf_idf[word][1].append(1) 
+						tf_idf[word][2] = doc_nr
+		except UnicodeDecodeError:
+			exceptions+=1
 						
 		# Process final bits of window		
 		while len(window) > window_size+1:
@@ -278,24 +325,26 @@ def get_cooccurrences(folder):
 			
 			
 		if doc_nr%10000 == 0:
-			print( doc_nr, "files processed")
+			print( doc_nr, "files processed at", datetime.datetime.now())
 		doc_nr +=1	
 	# Counts and list of words to file
 	
 	print("number of documents: " , doc_nr-1)
 	
 	print( "data processed, write to file")
+	print( "nr of exceptions:", exceptions)
 	
 	
-	(nr_words, nr_words_single_freq, nr_included_words) = word_stats_to_file(tf_idf)
+	(nr_words, nr_words_single_freq, nr_included_words, top_freq_cutoff) = word_stats_to_file(tf_idf)
 	
 	nr_entries = coocs_to_file(cooc, tf_idf)
 	
-	stats_to_file(doc_nr, total_nr_words, nr_words, nr_entries, nr_words_single_freq, nr_included_words)	
+	nr_included_words = coocs_to_file_complete(cooc, tf_idf, top_freq_cutoff)
+	
+	stats_to_file(doc_nr, total_nr_words, nr_words, nr_entries, nr_words_single_freq, nr_included_words, use_stemmer)	
 	
 	cooc_stats_to_file(cooc, tf_idf)	
 	
-	coocs_to_file_complete(cooc, tf_idf)
 	
 	del cooc
 			
@@ -304,8 +353,10 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='Run puzzle algorithm')
 	# '''parser.add_argument(<naam>, type=<type>, default=<default>, help=<help message>)'''
 	parser.add_argument("case_name", help="Name of the data case that you want to process")
+	parser.add_argument("article_type", help="Options: football or politics")
 	parser.add_argument("--freq_cutoff", type=int, default=1, help="Name of the data case that you want to process")
 	parser.add_argument("--query_limit", default=None)
+	parser.add_argument("--use_stemmer", default="")
 		
 	args = parser.parse_args()
 	kwargs = vars(args)	
@@ -314,10 +365,24 @@ if __name__ == "__main__":
 	print( kwargs)
 	
 	data_directory = "\\" + kwargs["case_name"]
+	if kwargs["article_type"]=="football":
+		query = query + "1"
+	elif kwargs["article_type"]=="politics":
+		query = query + "2"
+	else:
+		print("UNRECOGNIZED ARTICLE TYPE")
+		sys.exit()
+		
+	use_stemmer = True
+	if kwargs["use_stemmer"]=="no":
+		use_stemmer = False
+	
 	if kwargs["query_limit"]!=None:
-		query = "SELECT itemText FROM newsitems WHERE sourceType = 2 LIMIT " + kwargs["query_limit"]
+		query = query + " LIMIT " + kwargs["query_limit"]
 	freq_cut_off = kwargs["freq_cutoff"]
 	silly_words.extend(get_silly_words())
+	
+	print("final query", "-"+query+"-")
 	
 	print( data_directory)
 	print( "cutoff", freq_cut_off)
@@ -325,7 +390,7 @@ if __name__ == "__main__":
 	if not os.path.exists(result_path):
 		os.makedirs(result_path)	
 		print( "directory made"	)
-	get_cooccurrences(data_directory)
+	get_cooccurrences(data_directory, use_stemmer)
 	
-	
+	print("==============\nDONE\n==============")
 	

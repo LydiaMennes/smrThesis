@@ -1,0 +1,93 @@
+K:\Lydia\smrThesis\code\tsne_python
+
+
+
+
+{'nr_words_sample': 100, 'build_coocs': 'yes', 'dif_output_dir': None, 'create_reduced': 'yes', 'case_name': 'football_limit1000_no_stem'}
+======
+nr of words: 14265 
+=====
+directory made
+Begin process building/reading coocs  2014-07-11 15:16:27.828630
+get sampled words and build cooc file
+P(add)= 0.0070101647388713636
+current word aangepakt
+
+
+number of nonzero columns: 6146
+Begin dimensionality reduction 2014-07-11 15:16:28.141142
+n= 100 d= 6146 k= 30 l= 32 q= 96 i= 2 
+
+step 1
+create H(0)
+H 1 transpose
+H 1 final
+H 2 transpose
+H 2 final
+size H (100, 96)
+step 2
+Q (100, 96)
+step 3
+T size (6146, 96)
+step 4
+begin SVD 2014-07-11 15:16:32.141283
+end SVD 2014-07-11 15:16:36.703956 
+V (6146, 6146) S (96,) W (96, 96)
+step 6
+
+PCA done!!!
+
+run nse at 2014-07-11 15:16:36.750808
+run nse with perplexity 30.0
+x2p computations
+Computing pairwise distances...
+Computing P-values for point  0  of  100 ...
+start nse iterations
+Iteration  100 : error is  13.4144149263
+Iteration  200 : error is  0.93707613239
+Iteration  300 : error is  0.671079203717
+Iteration  400 : error is  0.611877915224
+Iteration  500 : error is  0.597709365038
+Iteration  1000 : error is  0.524736711037
+Iteration  2000 : error is  0.524339582579
+Iteration  3000 : error is  0.524336653847
+Iteration  4000 : error is  0.524336653847
+Iteration  5000 : error is  0.524336653847
+data 2 file at 2014-07-11 15:16:51.923231
+make grid from space at 2014-07-11 15:16:51.923231
+nr items: 100
+scale data
+start conversion to grid 2014-07-11 15:16:52.360736
+
+
+Nr lonely points at start: 63 with grid size 10 and 100 elems
+check neighborhood
+i: 5 ass 61 mo: 39 nr lonely points: 39
+i: 10 ass 80 mo: 20 nr lonely points: 20
+check neighborhood
+i: 15 ass 85 mo: 15 nr lonely points: 15
+i: 20 ass 90 mo: 10 nr lonely points: 10
+
+
+
+check neighborhood
+i: 25 ass 97 mo: 3 nr lonely points: 3
+insuf grad
+i: 30 ass 100 mo: 1 nr lonely points: 1
+neigh size upgraded 15
+
+
+
+needed  30 iterations for 100 points
+
+=============
+DONE
+=============
+
+results to file at 2014-07-11 15:16:52.767016
+gridsize =  10
++++++++++ DONE +++++++++++
+ 2014-07-11 15:16:52.767016
+==============
+DONE
+==============

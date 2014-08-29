@@ -1,0 +1,7 @@
+
+
+
+
+{'log_day_freqs': None, 'doc_limit': '500000', 'landscape': None, 'article_type': 'politics', 'case_name': 'politics_limit1000_no_stem_gold', 'dif_output_dir': None}
+Get items from database
+selection made

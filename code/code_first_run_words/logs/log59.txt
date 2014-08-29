@@ -1,0 +1,12 @@
+
+
+
+
+{'dif_landscape_dir': None, 'gold_standard': False, 'use_noise': True, 'old_grid_size': 50, 'nr_trials_re_init': -1, 'encounter_deep': True, 'max_closest': 8, 'block_ratio': 2, 'nr_words_to_follow': 20, 'space_to_grid_type': 'new', 'to_file_trials': 5, 'case_name': 'football_big_stem', 'data_portion': 5, 'encounter': True, 'log_memory': False, 'process': 'all', 'stop_nr_trials': 5000, 'use_followers': False, 'dif_output_dir': None}
+
+-False-
+
+======
+nr of words: 274729 
+=====
+get data 2014-08-11 17:54:25.429283

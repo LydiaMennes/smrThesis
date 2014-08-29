@@ -1,0 +1,49 @@
+K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src
+
+
+
+
+{'use_stemmer': '', 'query_limit': '1000', 'case_name': 'football_limit1000_stem', 'freq_cutoff': 2, 'article_type': 'football'}
+\football_limit1000_stem
+cutoff 2
+directory made
+Get items from database
+selection made
+number of documents:  1000
+data processed, write to file
+nr of exceptions: 0
+number of words: 34539
+nr cooc entries: 866473
+complete coocs to distributed files
+directory made
+remaining nr words:  12726 words to file at 2014-07-11 15:07:23.836339
+normalize coocs 2014-07-11 15:07:23.836339
+coocs to file 2014-07-11 15:08:40.760929
+letter b size cooc 1572960
+letter c size cooc 1572960
+letter d size cooc 1572960
+letter e size cooc 1572960
+letter f size cooc 1572960
+letter g size cooc 1572960
+letter h size cooc 1572960
+letter i size cooc 1572960
+letter j size cooc 1572960
+letter k size cooc 1572960
+letter l size cooc 1572960
+letter m size cooc 1572960
+letter n size cooc 1572960
+letter o size cooc 1572960
+letter p size cooc 1572960
+letter q size cooc 1572960
+letter r size cooc 1572960
+letter s size cooc 1572960
+letter t size cooc 1572960
+letter u size cooc 1572960
+letter v size cooc 1572960
+letter w size cooc 1572960
+letter x size cooc 1572960
+letter y size cooc 1572960
+letter z size cooc 1572960
+==============
+DONE
+==============

@@ -1,15 +1,62 @@
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --process initial_grid
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_normEnc_withF --encounter_deep no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_normEnc_noF --encounter_deep no --use_followers no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_deepEnc_noF --use_followers no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_deepEnc_withF --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
+C:\python34\python.exe puzzle.py limit1000_nolog  --process initial_grid
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_normEnc_withF --encounter_deep no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_normEnc_noF --encounter_deep no --use_followers no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_deepEnc_noF --use_followers no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_deepEnc_withF --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
 
 C:\python34\python.exe all_pairwise_distances.py
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_GOLD_normEnc_withF --encounter_deep no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10 --gold_standard yes
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_GOLD_normEnc_noF --encounter_deep no --use_followers no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10 --gold_standard yes
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_GOLD_deepEnc_noF --use_followers no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10 --gold_standard yes
-C:\python34\python.exe puzzle.py limit1000_nolog 11756 --dif_output_dir limit1000_GOLD_deepEnc_withF --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10 --gold_standard yes
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_GOLD_normEnc_withF --encounter_deep no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10 --gold_standard yes
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_GOLD_normEnc_noF --encounter_deep no --use_followers no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10 --gold_standard yes
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_GOLD_deepEnc_noF --use_followers no --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10 --gold_standard yes
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_GOLD_deepEnc_withF --process only_puzzle --max_closest 8 --nr_trials_re_init 500 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10 --gold_standard yes
 
-C:\python34\python.exe puzzle.py cutoff_10_nolog 30888 --process initial_grid --log_memory yes
+C:\python34\python.exe puzzle.py cutoff_10_nolog --process initial_grid --log_memory yes
 
-C:\python34\python.exe puzzle.py limit1000_newsql 12174 --process initial_grid
+C:\python34\python.exe puzzle.py limit1000_newsql  --process initial_grid
+
+C:\python34\python.exe puzzle.py test3 --process initial_grid
+
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_TEST --use_followers no --process only_puzzle --max_closest 8 --stop_nr_trials 50 --to_file_trials 3 --old_grid_size 10 
+
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_with_noise --encounter_deep no --process only_puzzle --max_closest 8 --stop_nr_trials 300 --to_file_trials 3 --old_grid_size 10
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_supernew_stg --process initial_grid --space_to_grid_type new
+C:\python34\python.exe puzzle.py limit1000_newsql  --process initial_grid --dif_output_dir limit1000_new_stg --space_to_grid_type balls
+
+
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_with_noise --process only_puzzle --max_closest 8 --stop_nr_trials 500 --to_file_trials 3 --old_grid_size 10
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_with_noise_newstg --process only_puzzle --max_closest 8 --stop_nr_trials 500 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir limit1000_supernew_stg
+C:\python34\python.exe puzzle.py limit1000_nolog  --dif_output_dir limit1000_with_noise_random --process only_puzzle --max_closest 8 --stop_nr_trials 500 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir limit1000_nolog_random
+
+C:\python34\python.exe co_occurrences.py football_big_stem football --freq_cutoff 10 --query_limit 500000
+C:\python34\python.exe co_occurrences.py football_big_no_stem football --freq_cutoff 10 --use_stemmer no --query_limit 500000
+C:\python34\python.exe co_occurrences.py politics_big_no_stem politics --freq_cutoff 10 --use_stemmer no --query_limit 500000
+C:\python34\python.exe co_occurrences.py politics_big_stem politics --freq_cutoff 10 --query_limit 500000
+
+C:\python34\python.exe co_occurrences.py football_limit1000_stem football --freq_cutoff 2 --query_limit 1000 >log1.txt
+C:\python34\python.exe co_occurrences.py football_limit1000_no_stem football --freq_cutoff 2 --query_limit 1000 --use_stemmer no >log2.txt
+C:\python34\python.exe co_occurrences.py politics_limit1000_stem politics --freq_cutoff 2 --query_limit 1000 >log3.txt
+C:\python34\python.exe co_occurrences.py politics_limit1000_no_stem politics --freq_cutoff 2 --query_limit 1000 --use_stemmer no>log4.txt
+
+
+C:\python34\python.exe all_pairwise_distances.py > log_pairwise_distances.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --dif_output_dir football_limit1000_no_stem_stripy --process initial_grid --space_to_grid_type stripy
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --dif_output_dir football_limit1000_stem_stripy --process initial_grid --space_to_grid_type stripy
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --dif_output_dir --process initial_grid politics_limit1000_no_stem_stripy --space_to_grid_type stripy
+C:\python34\python.exe puzzle.py politics_limit1000_stem --dif_output_dir politics_limit1000_stem_stripy --process initial_grid --space_to_grid_type stripy
+
+C:\python34\python.exe words_nse.py football_limit1000_no_stem --nr_words_sample 100 --build_coocs yes --create_reduced yes >log5.txt
+C:\python34\python.exe words_nse.py football_limit1000_stem --nr_words_sample 100 --build_coocs yes --create_reduced yes >log6.txt
+C:\python34\python.exe words_nse.py politics_limit1000_no_stem --nr_words_sample 100 --build_coocs yes --create_reduced yes >log7.txt
+C:\python34\python.exe words_nse.py politics_limit1000_stem --nr_words_sample 100 --build_coocs yes --create_reduced yes >log8.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --process initial_grid
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --process initial_grid
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --process initial_grid
+C:\python34\python.exe puzzle.py politics_limit1000_stem --process initial_grid
+
+
+
+
+
+

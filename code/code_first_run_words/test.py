@@ -6,9 +6,29 @@ import oursql
 import unicodedata
 from collections import defaultdict
 from thesis_utilities import *
+from matplotlib import pyplot as plt
+import numpy as np
+import all_pairwise_distances as pwd
 
-from pympler import summary
-from pympler import muppy
+# lib_path = r"K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src\snowballstemmer"
+lib_path = r"K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src"
+print( lib_path)
+sys.path.append(lib_path)
+import snowballstemmer
+
+def pairwise_dists():
+	input = "football_small"
+	output = "football_small"
+	
+	input_dir = r"D:\Users\Lydia\results word cooc" + "\\" + input + r"\complete_cooc"
+	output_dir = r"D:\Users\Lydia\pairwise_dists" + "\\" + output
+	
+	pwd.all_differences_to_csv(output_dir, input_dir)
+	
+
+def test_stemmer():
+	stemmer = snowballstemmer.stemmer('dutch');
+	print(stemmer.stemWords("aanbevelen aanbeveling aanbevelingen".split()))
 
 def test_wordlists():
 	dir = r"D:\Users\Lydia\results word cooc"
@@ -86,26 +106,48 @@ def new_sql():
 		f.write(k+" "+str(a[k])+"\n")
 	f.close()
 	
-def memory_log_test():
-	lists = []
-	for i in range(1000):
-		lists.append([1,2,3])
-		if i%500==0:
-			print("\n\n=====")
-			all_objects = muppy.get_objects()
-			sum1 = summary.summarize(all_objects)
-			s = summary.print_(sum1)
-			print(type(s))
+def test_related_colors():
+	# 6 vars in 5 conditions
+	nr_vars = 6
+	nr_conds = 3
+	colors = get_related_colors(nr_conds, nr_vars)
+	fig = plt.figure()
+	x = np.array(list(range(100)))
+	nr=0
+	for i in range(nr_vars):
+		nr+=1
+		for j in range(nr_conds):
+			plt.plot(x, x*nr, c=colors[i][j])
+			nr+=1
+	plt.show()
+      
+def print_n_lines(f_in, f_out, n):
+    f = open(f_in, 'r')
+    f2 = open(f_out,'w')
+    for i in range(n):
+        line = f.readline()
+        f2.write(line)
+    f.close()
+    f2.close()
+  
 
 	
 if __name__ == "__main__":
 
+    print_n_lines(r"D:\Users\Lydia\results_freqs\nn_data\politics_limit1000_no_stem.csv",r"D:\Users\Lydia\results_freqs\nn_data\check_politics.txt", 2)
+
+	# test_stemmer()
+	# test_related_colors()
+	# print("hoi")
+	# pairwise_dists()
+	# print("doei")
+
 	# test_wordlists()
 	# get_silly_words()
 	
-	word_file = r"D:\Users\Lydia\results word cooc\limit1000_nolog\complete_cooc\wordlist.txt"
-	output_dir = r"D:\Users\Lydia\results puzzle\limit1000_nolog_random"
-	build_random_grid(word_file, output_dir)
+	# word_file = r"D:\Users\Lydia\results word cooc\limit1000_nolog\complete_cooc\wordlist.txt"
+	# output_dir = r"D:\Users\Lydia\results puzzle\limit1000_nolog_random"
+	# build_random_grid(word_file, output_dir)
 
 	# old_stdout = sys.stdout
 	# try:

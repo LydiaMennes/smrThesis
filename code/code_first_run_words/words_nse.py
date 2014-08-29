@@ -11,6 +11,7 @@ from collections import defaultdict
 import os
 import datetime
 import argparse
+from thesis_utilities import *
 
 input_folder = r"D:\Users\Lydia\results word cooc"
 result_folder = r"D:\Users\Lydia\results semantic landscape"
@@ -180,7 +181,7 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='Run puzzle algorithm')
 	# '''parser.add_argument(<naam>, type=<type>, default=<default>, help=<help message>)'''
 	parser.add_argument("case_name", help="Name of the data case that you want to process")
-	parser.add_argument("nr_words", type=int ,help="The number of words in the data case")
+	# parser.add_argument("nr_words", type=int ,help="The number of words in the data case")
 	parser.add_argument("--nr_words_sample", type=int ,help="The number of words in the data case")
 	parser.add_argument("--dif_output_dir", default=None)
 	parser.add_argument("--build_coocs", default=False)
@@ -193,10 +194,11 @@ if __name__ == "__main__":
 	print(kwargs)
 	
 	data_case_name = "\\" + kwargs["case_name"]
-	nr_words = kwargs["nr_words"]
 	nr_words_sample = kwargs["nr_words_sample"]
 		
 	input_path = input_folder + data_case_name
+	nr_words = get_nr_words_from_stats(input_path)
+	print("======\nnr of words:", nr_words, "\n=====")
 	if kwargs["dif_output_dir"]!=None:	
 		result_path = result_folder + "\\" + kwargs["dif_output_dir"]
 	else:
@@ -210,107 +212,4 @@ if __name__ == "__main__":
 	create_reduced = kwargs["create_reduced"] == "yes"
 	
 	get_semantic_landscape(nr_words, nr_words_sample, build_coocs, create_reduced)
-	
-	# print( "test data set")
-	# build_coocs = True
-	# create_reduced = True	
-	# nr_words = 11756
-	# nr_words_sample = 3000
-	# input_directory = r"\limit1000_freq1"
-	# data_directory = r"\limit1000_freq1"
-	
-	# input_path = input_folder + input_directory
-	# result_path = result_folder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print( "directory made"		
-	
-	# get_semantic_landscape(nr_words, nr_words_sample, build_coocs, create_reduced)
-
-	#==============================================================
-	
-	# print( "==============test data set no log=============="
-	# build_coocs = True
-	# create_reduced = True	
-	# nr_words = 11756
-	# nr_words_sample = 100
-	# input_directory = r"\limit1000_nolog"
-	# data_directory = r"\limit1000_nolog"
-	
-	# input_path = input_folder + input_directory
-	# result_path = result_folder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print( "directory made"		
-	
-	# get_semantic_landscape(nr_words, nr_words_sample, build_coocs, create_reduced)
-	
-	#==============================================================
-	
-	# print( "==============cutoff 10 dataset=============="
-	# build_coocs = True
-	# create_reduced = True
-	# nr_words = 30348
-	# nr_words_sample = 2500
-	# input_directory = r"\cutoff_10_nolog"	
-	# data_directory = r"\cutoff_10_nolog"	
-	
-	# input_path = input_folder + input_directory
-	# result_path = result_folder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print( "directory made"		
-	
-	# get_semantic_landscape(nr_words, nr_words_sample, build_coocs, create_reduced)
-	
-	#==============================================================
-	
-	# print( "==============cutoff 3 dataset=============="
-	# build_coocs = True
-	# create_reduced = True
-	# nr_words = 57457
-	# nr_words_sample = 5000
-	# input_directory = r"\cutoff_3_nolog"	
-	# data_directory = r"\cutoff_3_nolog"	
-	
-	# input_path = input_folder + input_directory
-	# result_path = result_folder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print( "directory made"		
-	
-	# get_semantic_landscape(nr_words, nr_words_sample, build_coocs, create_reduced)
-	
-	
-		
-	#==============================================================
-	
-	
-	# input_directory = r"\test"
-	# data_directory = r"\test"
-	
-	# input_path = input_folder + input_directory
-	# result_path = result_folder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print( "directory made"
-	# build_cooc_file(["blaat", "blub", "hoi", "jam"])
-	
-	#==============================================================
-	
-	# print( "test 3 dataset"
-	# build_coocs = True
-	# create_reduced = True
-	# nr_words = 40
-	# nr_words_sample = 20
-	# input_directory = r"\test3"
-	# data_directory = r"\test3"	
-	# red_k = 3
-	
-	# input_path = input_folder + input_directory
-	# result_path = result_folder + data_directory
-	# if not os.path.exists(result_path):
-		# os.makedirs(result_path)	
-		# print( "directory made"		
-	
-	# get_semantic_landscape(nr_words, nr_words_sample, build_coocs, create_reduced)
+	print("==============\nDONE\n==============")

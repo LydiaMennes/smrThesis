@@ -1,0 +1,140 @@
+﻿a lot of changes
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   code/code_first_run_words/all_pairwise_distances.py
+#	modified:   code/code_first_run_words/co_occurrences.py
+#	modified:   code/code_first_run_words/commands.txt
+#	modified:   code/code_first_run_words/compare_results.py
+#	new file:   code/code_first_run_words/daily_word_freqs.py
+#	new file:   code/code_first_run_words/dutchStopwords.txt
+#	new file:   code/code_first_run_words/english_stop_words.txt
+#	modified:   code/code_first_run_words/evaluate_semantic_landscape.py
+#	new file:   code/code_first_run_words/freqs_landscape.py
+#	renamed:    code/code_first_run_words/run_puzzle.bat -> code/code_first_run_words/log_pairwise_distances.txt
+#	new file:   code/code_first_run_words/logs/log politics big stem all puzzle.txt
+#	new file:   code/code_first_run_words/logs/log1.txt
+#	new file:   code/code_first_run_words/logs/log10.txt
+#	new file:   code/code_first_run_words/logs/log11.txt
+#	new file:   code/code_first_run_words/logs/log12.txt
+#	new file:   code/code_first_run_words/logs/log13.txt
+#	new file:   code/code_first_run_words/logs/log14.txt
+#	new file:   code/code_first_run_words/logs/log15.txt
+#	new file:   code/code_first_run_words/logs/log16.txt
+#	new file:   code/code_first_run_words/logs/log17.txt
+#	new file:   code/code_first_run_words/logs/log18.txt
+#	new file:   code/code_first_run_words/logs/log19.txt
+#	new file:   code/code_first_run_words/logs/log2.txt
+#	new file:   code/code_first_run_words/logs/log20.txt
+#	new file:   code/code_first_run_words/logs/log20a.txt
+#	new file:   code/code_first_run_words/logs/log21.txt
+#	new file:   code/code_first_run_words/logs/log22.txt
+#	new file:   code/code_first_run_words/logs/log23.txt
+#	new file:   code/code_first_run_words/logs/log24.txt
+#	new file:   code/code_first_run_words/logs/log25.txt
+#	new file:   code/code_first_run_words/logs/log26.txt
+#	new file:   code/code_first_run_words/logs/log27.txt
+#	new file:   code/code_first_run_words/logs/log28.txt
+#	new file:   code/code_first_run_words/logs/log29.txt
+#	new file:   code/code_first_run_words/logs/log3.txt
+#	new file:   code/code_first_run_words/logs/log30.txt
+#	new file:   code/code_first_run_words/logs/log31.txt
+#	new file:   code/code_first_run_words/logs/log32.txt
+#	new file:   code/code_first_run_words/logs/log33.txt
+#	new file:   code/code_first_run_words/logs/log34.txt
+#	new file:   code/code_first_run_words/logs/log35.txt
+#	new file:   code/code_first_run_words/logs/log36.txt
+#	new file:   code/code_first_run_words/logs/log37.txt
+#	new file:   code/code_first_run_words/logs/log38.txt
+#	new file:   code/code_first_run_words/logs/log39.txt
+#	new file:   code/code_first_run_words/logs/log4.txt
+#	new file:   code/code_first_run_words/logs/log40.txt
+#	new file:   code/code_first_run_words/logs/log41.txt
+#	new file:   code/code_first_run_words/logs/log42.txt
+#	new file:   code/code_first_run_words/logs/log43.txt
+#	new file:   code/code_first_run_words/logs/log44.txt
+#	new file:   code/code_first_run_words/logs/log45.txt
+#	new file:   code/code_first_run_words/logs/log46.txt
+#	new file:   code/code_first_run_words/logs/log47.txt
+#	new file:   code/code_first_run_words/logs/log48.txt
+#	new file:   code/code_first_run_words/logs/log49.txt
+#	new file:   code/code_first_run_words/logs/log5.txt
+#	new file:   code/code_first_run_words/logs/log50.txt
+#	new file:   code/code_first_run_words/logs/log51.txt
+#	new file:   code/code_first_run_words/logs/log53.txt
+#	new file:   code/code_first_run_words/logs/log55.txt
+#	new file:   code/code_first_run_words/logs/log57.txt
+#	new file:   code/code_first_run_words/logs/log59.txt
+#	new file:   code/code_first_run_words/logs/log6.txt
+#	new file:   code/code_first_run_words/logs/log61.txt
+#	new file:   code/code_first_run_words/logs/log7.txt
+#	new file:   code/code_first_run_words/logs/log8.txt
+#	new file:   code/code_first_run_words/logs/log9.txt
+#	renamed:    code/code_first_run_words/puzzle_backup_more_stats.py -> code/code_first_run_words/old stuff/puzzle_backup_more_stats.py
+#	renamed:    code/code_first_run_words/puzzle_backup_with_encounter.py -> code/code_first_run_words/old stuff/puzzle_backup_with_encounter.py
+#	renamed:    code/code_first_run_words/puzzle_basic_backup.py -> code/code_first_run_words/old stuff/puzzle_basic_backup.py
+#	renamed:    code/code_first_run_words/puzzle_basic_backup2.py -> code/code_first_run_words/old stuff/puzzle_basic_backup2.py
+#	modified:   code/code_first_run_words/puzzle.py
+#	new file:   code/code_first_run_words/puzzle_grid.py
+#	new file:   code/code_first_run_words/removed_top_freq_words
+#	new file:   code/code_first_run_words/replace_tabs.py
+#	new file:   code/code_first_run_words/rewrite_daily_freqs.py
+#	new file:   code/code_first_run_words/run_daily_freqs.bat
+#	modified:   code/code_first_run_words/run_stuff.bat
+#	new file:   code/code_first_run_words/run_stuff_final.txt
+#	new file:   code/code_first_run_words/run_test.bat
+#	modified:   code/code_first_run_words/silly_words.txt
+#	modified:   code/code_first_run_words/space_to_grid.py
+#	modified:   code/code_first_run_words/space_to_grid_nice_try.py
+#	renamed:    code/code_first_run_words/space_to_grid_nice_try.py -> code/code_first_run_words/space_to_grid_nice_tryX.py
+#	deleted:    code/code_first_run_words/space_to_grid_old.py
+#	new file:   code/code_first_run_words/stats_dists.py
+#	modified:   code/code_first_run_words/test.py
+#	modified:   code/code_first_run_words/thesis_utilities.py
+#	modified:   code/code_first_run_words/words_nse.py
+#	new file:   code/mm_tsne/__MACOSX/._association1000.mat
+#	new file:   code/mm_tsne/__MACOSX/._mult_maps_tsne.m
+#	new file:   code/mm_tsne/__MACOSX/._nips_1-22.mat
+#	new file:   code/mm_tsne/__MACOSX/._nips_experiment.m
+#	new file:   code/mm_tsne/__MACOSX/._word_experiment.m
+#	new file:   code/mm_tsne/association1000.mat
+#	new file:   code/mm_tsne/association5000.mat
+#	new file:   code/mm_tsne/mult_maps_tsne.m
+#	new file:   code/mm_tsne/nips_1-22.mat
+#	new file:   code/mm_tsne/nips_experiment.m
+#	new file:   code/mm_tsne/word_cooc_experiment.m
+#	new file:   code/mm_tsne/word_experiment.m
+#	new file:   code/snowballstemmer-1.1.0/LICENSE.rst
+#	new file:   code/snowballstemmer-1.1.0/MANIFEST.in
+#	new file:   code/snowballstemmer-1.1.0/PKG-INFO
+#	new file:   code/snowballstemmer-1.1.0/README.rst
+#	new file:   code/snowballstemmer-1.1.0/setup.py
+#	new file:   code/snowballstemmer-1.1.0/src/sample/stemwords.py
+#	new file:   code/snowballstemmer-1.1.0/src/sample/testapp.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/__init__.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/among.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/basestemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/danish_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/dutch_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/english_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/finnish_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/french_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/german_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/hungarian_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/italian_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/norwegian_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/porter_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/portuguese_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/romanian_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/russian_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/spanish_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/swedish_stemmer.py
+#	new file:   code/snowballstemmer-1.1.0/src/snowballstemmer/turkish_stemmer.py
+#	new file:   from amogh/VVAam_4SAliFliNorGCND1118L0005M6_UTSx.yaml
+#	new file:   from amogh/test.yaml
+#	new file:   from amogh/vv_aam.py
+#
+

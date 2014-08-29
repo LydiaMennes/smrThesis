@@ -1,0 +1,88 @@
+K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src
+
+
+
+
+{'use_stemmer': '', 'article_type': 'football', 'freq_cutoff': 10, 'query_limit': '400000', 'case_name': 'football_big_stem'}
+final query -SELECT itemText FROM newsitems WHERE sourceType = 1 LIMIT 400000-
+\football_big_stem
+cutoff 10
+Get items from database
+selection made
+10000 files processed at 2014-07-25 06:27:33.661424
+20000 files processed at 2014-07-25 06:29:35.411113
+30000 files processed at 2014-07-25 06:31:40.108458
+40000 files processed at 2014-07-25 06:34:05.008898
+50000 files processed at 2014-07-25 06:36:36.431437
+60000 files processed at 2014-07-25 06:38:48.415983
+70000 files processed at 2014-07-25 06:41:13.065922
+80000 files processed at 2014-07-25 06:43:37.581350
+90000 files processed at 2014-07-25 06:46:02.900046
+100000 files processed at 2014-07-25 06:48:17.890919
+110000 files processed at 2014-07-25 06:50:46.537796
+120000 files processed at 2014-07-25 06:53:06.292848
+130000 files processed at 2014-07-25 06:55:46.720536
+140000 files processed at 2014-07-25 06:58:21.994329
+150000 files processed at 2014-07-25 07:00:39.374812
+160000 files processed at 2014-07-25 07:03:12.961000
+170000 files processed at 2014-07-25 07:05:43.686705
+180000 files processed at 2014-07-25 07:08:25.086207
+190000 files processed at 2014-07-25 07:11:04.516339
+200000 files processed at 2014-07-25 07:13:31.052768
+210000 files processed at 2014-07-25 07:15:57.372395
+220000 files processed at 2014-07-25 07:18:19.736794
+230000 files processed at 2014-07-25 07:21:01.602522
+240000 files processed at 2014-07-25 07:23:29.842488
+250000 files processed at 2014-07-25 07:25:54.285763
+260000 files processed at 2014-07-25 07:28:21.620796
+270000 files processed at 2014-07-25 07:31:06.925812
+280000 files processed at 2014-07-25 07:33:38.384284
+290000 files processed at 2014-07-25 07:36:04.717796
+300000 files processed at 2014-07-25 07:38:45.443877
+310000 files processed at 2014-07-25 07:41:30.168448
+320000 files processed at 2014-07-25 07:44:04.832100
+330000 files processed at 2014-07-25 07:46:31.415530
+340000 files processed at 2014-07-25 07:49:00.159262
+350000 files processed at 2014-07-25 07:51:29.540996
+360000 files processed at 2014-07-25 07:54:09.734440
+370000 files processed at 2014-07-25 07:56:41.005665
+380000 files processed at 2014-07-25 07:59:06.354564
+390000 files processed at 2014-07-25 08:01:33.625396
+400000 files processed at 2014-07-25 08:04:15.243799
+number of documents:  400000
+data processed, write to file
+nr of exceptions: 182
+number of words: 3849389
+nr cooc entries: 110746374
+complete coocs to distributed files
+remaining nr words:  274729 words to file at 2014-07-25 08:14:56.313493
+normalize coocs 2014-07-25 08:14:56.313493
+coocs to file 2014-07-28 14:46:35.908625
+letter b size cooc 201326688
+letter c size cooc 201326688
+letter d size cooc 201326688
+letter e size cooc 201326688
+letter f size cooc 201326688
+letter g size cooc 201326688
+letter h size cooc 201326688
+letter i size cooc 201326688
+letter j size cooc 201326688
+letter k size cooc 201326688
+letter l size cooc 201326688
+letter m size cooc 201326688
+letter n size cooc 201326688
+letter o size cooc 201326688
+letter p size cooc 201326688
+letter q size cooc 201326688
+letter r size cooc 201326688
+letter s size cooc 201326688
+letter t size cooc 201326688
+letter u size cooc 201326688
+letter v size cooc 201326688
+letter w size cooc 201326688
+letter x size cooc 201326688
+letter y size cooc 201326688
+letter z size cooc 201326688
+==============
+DONE
+==============

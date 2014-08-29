@@ -1,0 +1,167 @@
+    !obj:pylearn2.train.Train 
+{
+    # Here we specify the dataset to train on. We train on only the first 25k of the examples, so
+    # that the rest may be used as a validation set.
+    # The "&train" syntax lets us refer back to this object as "*train" elsewhere in the yaml file
+    dataset: &train !obj:pylearn2.scripts.vv_dataset.vv_aam.VVAam 
+    {
+        which_set: 'train',
+        start: 0,
+        stop: 8860,
+        # We preprocess the data with global contrast normalization
+        preprocessor: &prepro !obj:pylearn2.datasets.preprocessing.GlobalContrastNormalization 
+        {
+            sqrt_bias: 10,
+            use_std: 1
+        }
+        #preprocessor: none
+    },
+    # Here we specify the model to train as being an MLP
+    model: !obj:pylearn2.models.mlp.MLP 
+    {
+        layers : 
+        [
+            # To make this baseline simple to run, we use a very small and cheap convolutional
+            # network. It only has one hidden layer, consisting of rectifier units with spatial
+            # max pooling.
+            !obj:pylearn2.models.mlp.ConvRectifiedLinear 
+            {
+                layer_name: 'convh0',
+                kernel_shape: [5, 5],
+                pool_shape: [3, 3],
+                pool_stride: [2, 2],
+                output_channels: 64,
+                irange: .05,
+                # Rather than using weight decay, we constrain the norms of the convolution kernels
+                # to be at most this value
+                max_kernel_norm: .9
+            },
+            
+            !obj:pylearn2.models.mlp.ConvRectifiedLinear
+            {
+                layer_name: 'convh1',
+                kernel_shape: [5, 5],
+                pool_shape: [1, 1],
+                pool_stride: [1, 1],
+                output_channels: 64,
+                irange: .05,
+                # Rather than using weight decay, we constrain the norms of the convolution kernels
+                # to be at most this value
+                max_kernel_norm: .9
+            },
+            
+            !obj:pylearn2.models.mlp.ConvRectifiedLinear 
+            { 
+                layer_name: 'convh2',
+                kernel_shape: [4, 4],
+                pool_shape: [1, 1],
+                pool_stride: [1, 1],
+                output_channels: 128,
+                irange: .05,
+                # Rather than using weight decay, we constrain the norms of the convolution kernels
+                # to be at most this value
+                max_kernel_norm: .9
+            },
+            
+            !obj:pylearn2.models.mlp.RectifiedLinear 
+            {
+                layer_name: 'fch3',
+                dim: 3072,
+                sparse_init: 15,
+            },
+            #UPDATE PYLEARN2 BECAUSE COSTS FOR THIS LAYER IS NOT IMPLEMENTED!!!!!
+            !obj:pylearn2.models.mlp.LinearGaussian 
+            {
+                layer_name: 'y',
+                init_bias: !obj:pylearn2.models.mlp.mean_of_targets { dataset: *train },
+                init_beta: !obj:pylearn2.models.mlp.beta_from_targets { dataset: *train },
+                min_beta: 1.,
+                max_beta: 100.,
+                beta_lr_scale: 1.,
+                dim: 89,
+                #sparse_init: 15,
+                irange: .005,
+            },    
+            
+            # !obj:pylearn2.models.mlp.Softmax 
+            # {
+                # layer_name: 'y',
+                # # The classes are unbalanced. Set the bias parameters of the softmax regression
+                # # to make the model start with the right marginals. This should speed convergence
+                # # of the training algorithm.
+                # #init_bias_target_marginals: *train,
+                # irange: .0,
+                # # There are seven different emotions to learn to recognize, i.e., 7 class labels
+                # n_classes: 5
+            # }
+        ],
+        # The inputs are 48x48 pixel images
+        input_space: !obj:pylearn2.space.Conv2DSpace 
+        {
+            shape: [48, 48],
+            num_channels: 1
+        }
+    },
+    # We train using SGD and momentum
+    algorithm: !obj:pylearn2.training_algorithms.sgd.SGD 
+    {
+        batch_size: 100,
+        learning_rate: .0005,
+        learning_rule: !obj:pylearn2.training_algorithms.learning_rule.Momentum 
+        {
+            init_momentum: .6,
+        },
+                # !obj:pylearn2.training_algorithms.learning_rule.AdaDelta {
+                # },
+        cost: !obj:pylearn2.costs.mlp.dropout.Dropout 
+        {
+            default_input_include_prob: 1.0,
+            input_include_probs: {'convh0': 1.0, 'convh1': 1.0,'convh2': 1.0, 'fch3': 0.8},
+            default_input_scale: 1.0,
+            input_scales: {'convh0': 1.0, 'convh1': 1.0,'convh2': 1.0, 'fch3': 1.25},
+            per_example : true,
+        },
+        # We monitor how well we're doing during training on a validation set
+        monitoring_dataset:
+        {
+            'train' : *train,
+            'valid' : !obj:pylearn2.scripts.vv_dataset.vv_aam.VVAam
+            {
+                which_set: 'train',
+                start: 8860,
+                stop: 9967,
+                preprocessor: *prepro,
+                # fit_preprocessor: true
+            },
+        },
+        # We stop when validation set classification error hasn't decreased for 15 epochs
+        termination_criterion: !obj:pylearn2.termination_criteria.MonitorBased 
+        {
+            channel_name: "valid_y_mse",
+            prop_decrease: 0.,
+            N: 30
+        },
+        # update_callbacks: [
+             # # this callback makes the learning rate shrink by dividing it by decay_factor after
+             # # each sgd step.
+            # !obj:pylearn2.training_algorithms.sgd.ExponentialDecay {
+                # decay_factor: 1.04,
+                # min_lr:       0.001
+            # }
+        # ]
+    },
+    # We save the model whenever we improve on the validation set classification error
+    extensions: 
+    [
+        # !obj:pylearn2.training_algorithms.learning_rule.MomentumAdjustor {
+            # final_momentum: .9,
+            # start: 5,
+            # saturate: 50
+        # },
+        !obj:pylearn2.train_extensions.best_params.MonitorBasedSaveBest 
+        {
+            channel_name: 'valid_y_mse',
+            save_path: "${PYLEARN2_TRAIN_FILE_FULL_STEM}_best.pkl"
+        }
+    ],
+}

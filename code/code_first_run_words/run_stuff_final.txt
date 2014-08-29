@@ -1,0 +1,116 @@
+C:\python34\python.exe co_occurrences.py football_limit1000_stem football --freq_cutoff 2 --query_limit 1000  > logs\log1.txt
+C:\python34\python.exe co_occurrences.py football_limit1000_no_stem football --freq_cutoff 2 --query_limit 1000 --use_stemmer no > logs\log2.txt
+C:\python34\python.exe co_occurrences.py politics_limit1000_stem politics --freq_cutoff 2 --query_limit 1000 > logs\log3.txt
+C:\python34\python.exe co_occurrences.py politics_limit1000_no_stem politics --freq_cutoff 2 --query_limit 1000 --use_stemmer no > logs\log4.txt
+
+C:\python34\python.exe words_nse.py football_limit1000_stem --nr_words_sample 100 --build_coocs yes --create_reduced yes > logs\log5.txt
+C:\python34\python.exe words_nse.py football_limit1000_no_stem --nr_words_sample 100 --build_coocs yes --create_reduced yes > logs\log6.txt
+C:\python34\python.exe words_nse.py politics_limit1000_stem --nr_words_sample 100 --build_coocs yes --create_reduced yes > logs\log7.txt
+C:\python34\python.exe words_nse.py politics_limit1000_no_stem --nr_words_sample 100 --build_coocs yes --create_reduced yes > logs\log8.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --process initial_grid > logs\log9.txt
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --process initial_grid > logs\log10.txt
+C:\python34\python.exe puzzle.py politics_limit1000_stem --process initial_grid > logs\log11.txt
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --process initial_grid > logs\log12.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --dif_output_dir football_limit1000_stem_stripy --process initial_grid --space_to_grid_type stripy > logs\log13.txt
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --dif_output_dir football_limit1000_no_stem_stripy --process initial_grid --space_to_grid_type stripy > logs\log14.txt
+C:\python34\python.exe puzzle.py politics_limit1000_stem --dif_output_dir politics_limit1000_stem_stripy --process initial_grid --space_to_grid_type stripy > logs\log15.txt
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --dif_output_dir politics_limit1000_no_stem_stripy --process initial_grid --space_to_grid_type stripy > logs\log16.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 > logs\log17.txt
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 > logs\log18.txt
+C:\python34\python.exe puzzle.py politics_limit1000_stem --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 > logs\log19.txt
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 > logs\log20.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir football_limit1000_stem_stripy --dif_output_dir football_limit1000_stem_stripy > logs\log20a.txt
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir football_limit1000_no_stem_stripy --dif_output_dir football_limit1000_no_stem_stripy > logs\log21.txt
+C:\python34\python.exe puzzle.py politics_limit1000_stem --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir politics_limit1000_stem_stripy --dif_output_dir politics_limit1000_stem_stripy > logs\log22.txt
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir politics_limit1000_no_stem_stripy --dif_output_dir politics_limit1000_no_stem_stripy > logs\log23.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --dif_output_dir football_limit1000_stem_noNoise --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --use_noise no > logs\log24.txt
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --dif_output_dir football_limit1000_no_stem_noNoise --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --use_noise no > logs\log25.txt
+C:\python34\python.exe puzzle.py politics_limit1000_stem --dif_output_dir politics_limit1000_stem_noNoise --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --use_noise no > logs\log26.txt
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --dif_output_dir politics_limit1000_no_stem_noNoise --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --use_noise no > logs\log27.txt
+
+C:\python34\python.exe thesis_utilities.py > logs\log28.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --dif_output_dir football_limit1000_stem_random --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir football_limit1000_stem_random > logs\log29.txt
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --dif_output_dir football_limit1000_no_stem_random --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir football_limit1000_no_stem_random  > logs\log30.txt
+C:\python34\python.exe puzzle.py politics_limit1000_stem --dif_output_dir politics_limit1000_stem_random --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir politics_limit1000_stem_random > logs\log31.txt
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --dif_output_dir politics_limit1000_no_stem_random --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --dif_landscape_dir politics_limit1000_no_stem_random > logs\log32.txt
+
+C:\python34\python.exe all_pairwise_distances.py > log_pairwise_distances.txt > logs\log33.txt
+
+echo GOLD STUFF
+C:\python34\python.exe puzzle.py football_limit1000_stem --dif_output_dir football_limit1000_stem_gold --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --gold_standard yes > logs\log34.txt
+C:\python34\python.exe puzzle.py football_limit1000_no_stem  --dif_output_dir football_limit1000_no_stem_gold --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --gold_standard yes > logs\log35.txt
+C:\python34\python.exe puzzle.py politics_limit1000_stem --dif_output_dir politics_limit1000_stem_gold --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --gold_standard yes > logs\log36.txt
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --dif_output_dir politics_limit1000_no_stem_gold --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --gold_standard yes > logs\log37.txt
+
+C:\python34\python.exe puzzle.py football_limit1000_stem --dif_output_dir football_limit1000_stem_gold_noNoise --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --use_noise no --gold_standard yes > logs\log38.txt
+C:\python34\python.exe puzzle.py football_limit1000_no_stem --dif_output_dir football_limit1000_no_stem_gold_noNoise --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --use_noise no --gold_standard yes > logs\log39.txt
+C:\python34\python.exe puzzle.py politics_limit1000_stem --dif_output_dir politics_limit1000_stem_gold_noNoise --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --use_noise no --gold_standard yes > logs\log40.txt
+C:\python34\python.exe puzzle.py politics_limit1000_no_stem --dif_output_dir politics_limit1000_no_stem_gold_noNoise --process only_puzzle --max_closest 8 --stop_nr_trials 1000 --to_file_trials 3 --old_grid_size 10 --use_noise no --gold_standard yes > logs\log41.txt
+
+echo COMPARISONS
+C:\python34\python.exe compare_results.py small > logs\log42.txt
+
+Data freqs ============================================
+C:\python34\python.exe evaluate_semantic_landscape.py football_limit1000_stem --doc_limit 500000 > logs\log43.txt
+C:\python34\python.exe evaluate_semantic_landscape.py football_limit1000_no_stem --doc_limit 500000 > logs\log44.txt
+C:\python34\python.exe evaluate_semantic_landscape.py politics_limit1000_stem --doc_limit 500000 > logs\log45.txt
+C:\python34\python.exe evaluate_semantic_landscape.py politics_limit1000_no_stem --doc_limit 500000 > logs\log46.txt
+
+C:\python34\python.exe evaluate_semantic_landscape.py football_limit1000_stem_gold --doc_limit 500000 > logs\log47.txt
+C:\python34\python.exe evaluate_semantic_landscape.py football_limit1000_no_stem_gold --doc_limit 500000 > logs\log48.txt
+C:\python34\python.exe evaluate_semantic_landscape.py politics_limit1000_stem_gold --doc_limit 500000 > logs\log49.txt
+C:\python34\python.exe evaluate_semantic_landscape.py politics_limit1000_no_stem_gold --doc_limit 500000 > logs\log50.txt
+
+echo BIGGER DATA
+
+C:\python34\python.exe co_occurrences.py football_big_stem football --freq_cutoff 10 --query_limit 400000  > logs\log51.txt
+C:\python34\python.exe co_occurrences.py football_big_no_stem football --freq_cutoff 10 --use_stemmer no --query_limit 400000 > logs\log52.txt
+C:\python34\python.exe co_occurrences.py politics_big_stem politics --freq_cutoff 10 --query_limit 400000 > logs\log53.txt
+C:\python34\python.exe co_occurrences.py politics_big_no_stem politics --freq_cutoff 10 --use_stemmer no --query_limit 400000 > logs\log54.txt
+
+C:\python34\python.exe words_nse.py football_big_stem --nr_words_sample 2500 --build_coocs yes --create_reduced yes  > logs\log55.txt
+C:\python34\python.exe words_nse.py football_big_no_stem --nr_words_sample 2500 --build_coocs yes --create_reduced yes  > logs\log56.txt
+C:\python34\python.exe words_nse.py politics_big_stem --nr_words_sample 2500 --build_coocs yes --create_reduced yes > logs\log57.txt
+C:\python34\python.exe words_nse.py politics_big_no_stem --nr_words_sample 2500 --build_coocs yes --create_reduced yes > logs\log58.txt
+
+C:\python34\python.exe puzzle.py football_big_stem --process all --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50  > logs\log59.txt
+C:\python34\python.exe puzzle.py football_big_no_stem --process all --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 > logs\log60.txt
+C:\python34\python.exe puzzle.py politics_big_stem --process all --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 > logs\log61.txt
+C:\python34\python.exe puzzle.py politics_big_no_stem --process all --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 > logs\log62.txt
+
+C:\python34\python.exe puzzle.py football_big_stem --process only_puzzle --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 --use_noise no --dif_output_dir football_big_stem_noNoise.txt
+C:\python34\python.exe puzzle.py football_big_no_stem --process only_puzzle --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 --use_noise no --dif_output_dir football_big_no_stem_noNoise.txt
+C:\python34\python.exe puzzle.py politics_big_stem --process only_puzzle --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 --use_noise no --dif_output_dir politics_big_stem_noNoise.txt
+C:\python34\python.exe puzzle.py politics_big_no_stem --process only_puzzle --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 --use_noise no --dif_output_dir politics_big_no_stem_noNoise.txt
+
+C:\python34\python.exe compare_results.py big
+
+C:\python34\python.exe evaluate_semantic_landscape.py football_big_stem --doc_limit 500000
+C:\python34\python.exe evaluate_semantic_landscape.py football_big_no_stem --doc_limit 500000
+C:\python34\python.exe evaluate_semantic_landscape.py politics_big_stem --doc_limit 500000
+C:\python34\python.exe evaluate_semantic_landscape.py politics_big_no_stem --doc_limit 500000
+
+
+
+TO RUN STILL:
+
+
+C:\python34\python.exe co_occurrences.py politics_big_stem politics --freq_cutoff 10 --query_limit 400000 > logs\log53.txt
+
+C:\python34\python.exe words_nse.py football_big_stem --nr_words_sample 2500 --build_coocs yes --create_reduced yes  > logs\log55.txt
+C:\python34\python.exe words_nse.py politics_big_stem --nr_words_sample 2500 --build_coocs yes --create_reduced yes > logs\log57.txt
+
+C:\python34\python.exe puzzle.py football_big_stem --process all --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50  > logs\log59.txt
+C:\python34\python.exe puzzle.py politics_big_stem --process all --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 > logs\log61.txt
+
+C:\python34\python.exe puzzle.py football_big_stem --process only_puzzle --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 --use_noise no --dif_output_dir football_big_stem_noNoise.txt
+C:\python34\python.exe puzzle.py politics_big_stem --process only_puzzle --max_closest 8 --stop_nr_trials 5000 --to_file_trials 5 --old_grid_size 50 --use_noise no --dif_output_dir politics_big_stem_noNoise.txt
+
+C:\python34\python.exe evaluate_semantic_landscape.py football_big_stem football --doc_limit 500000
+C:\python34\python.exe evaluate_semantic_landscape.py politics_big_stem politics --doc_limit 500000

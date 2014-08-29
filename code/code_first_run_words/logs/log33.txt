@@ -1,0 +1,9 @@
+all pairwise distances for football_limit1000_no_stem 2014-07-21 03:40:37.690167
+all pairwise distances for football_limit1000_stem 2014-07-21 06:37:53.973992
+all pairwise distances for politics_limit1000_no_stem 2014-07-21 09:14:14.541053
+word with no elements denim
+word with no elements hot
+all pairwise distances for politics_limit1000_stem 2014-07-21 09:56:04.031828
+word with no elements denim
+word with no elements hot
+DONE
