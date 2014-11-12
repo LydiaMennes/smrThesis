@@ -1,0 +1,12 @@
+K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src
+directory made
+current year 2007
+current year 2008
+current year 2009
+current year 2010
+current year 2011
+current year 2012
+current year 2013
+current year 2014
+log daily freqs
+nr of days 1955

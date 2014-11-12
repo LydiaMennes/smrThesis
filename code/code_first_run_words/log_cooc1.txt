@@ -1,0 +1,29 @@
+K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src
+
+
+
+
+{'use_stemmer': 'no', 'case_name': 'new_politics_lim30000', 'max_nr_docs': 30000, 'freq_cutoff': 10, 'article_type': 'politics'}
+final query -SELECT itemText, pubDate FROM mergednewsitems WHERE sourceType = 2-
+\new_politics_lim30000
+cutoff 10
+directory made
+Database after2011
+Get items from database
+selection made
+20000 files, max files 30000 processed at 2014-11-12 14:48:47.919341
+Database before2011
+number of documents:  30000
+data processed, write to file
+nr of exceptions: 0
+number of words: 122077
+nr cooc entries: 4768313
+complete coocs to distributed files
+directory made
+remaining nr words:  18611 words to file at 2014-11-12 14:49:20.553721
+normalize coocs 2014-11-12 14:49:20.554720
+coocs to file 2014-11-12 14:52:58.677775
+min date 2011-01-02 maxdate 2013-04-25
+==============
+DONE
+==============

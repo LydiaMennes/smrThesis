@@ -1,0 +1,1 @@
+java -jar "K:\Lydia\smrThesis\code\thesis_NN\dist\thesis_NN.jar"

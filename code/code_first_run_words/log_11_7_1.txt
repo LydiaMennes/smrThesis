@@ -1,0 +1,5 @@
+start 2014-11-07 16:07:57.424032
+nr words: 111
+grid_size 11
+nr words: 111
+grid_size 11

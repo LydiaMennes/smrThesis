@@ -1,4 +1,0 @@
-Gaal**Louis;1;0;1
-Beckham**David;4;6;1
-Persie**Robin;0;2;1
-Bussemaker**Jet;10;3;2

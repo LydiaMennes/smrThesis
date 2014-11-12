@@ -1,0 +1,22 @@
+optimize2_politics_o2_0.005_0.03 40
+optimize2_politics_o2_0.005_0.03 60
+optimize2_politics_o2_0.005_0.03 80
+optimize2_politics_o2_5.0E-4_0.03 40
+optimize2_politics_o2_5.0E-4_0.03 60
+optimize2_politics_o2_5.0E-4_0.03 80
+optimize2_politics_o2_5.0E-4_0.005 40
+optimize2_politics_o2_5.0E-4_0.005 60
+optimize2_politics_o2_5.0E-4_0.005 80
+9 9 9
+0
+1
+2
+optimize2_politics_o2_0.005_0.03 40 best:  0
+optimize2_politics_o2_0.005_0.03 60 best:  0
+optimize2_politics_o2_0.005_0.03 80 best:  0
+optimize2_politics_o2_5.0E-4_0.03 40 best:  11
+optimize2_politics_o2_5.0E-4_0.03 60 best:  0
+optimize2_politics_o2_5.0E-4_0.03 80 best:  0
+optimize2_politics_o2_5.0E-4_0.005 40 best:  10
+optimize2_politics_o2_5.0E-4_0.005 60 best:  0
+optimize2_politics_o2_5.0E-4_0.005 80 best:  0

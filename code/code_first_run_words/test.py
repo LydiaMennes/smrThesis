@@ -12,7 +12,6 @@ import all_pairwise_distances as pwd
 
 # lib_path = r"K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src\snowballstemmer"
 lib_path = r"K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src"
-print( lib_path)
 sys.path.append(lib_path)
 import snowballstemmer
 
@@ -129,12 +128,22 @@ def print_n_lines(f_in, f_out, n):
         f2.write(line)
     f.close()
     f2.close()
-  
+ 
+def file_contains(fname, cont):
+    f = open(fname, "r")
+    k = 0
+    for l in f:
+        if cont in l:
+            print("contains "+cont+"in line", k)
+        k+=1
+    f.close()
+    print("DONE")
 
 	
 if __name__ == "__main__":
 
-    print_n_lines(r"D:\Users\Lydia\results_freqs\nn_data\politics_limit1000_no_stem.csv",r"D:\Users\Lydia\results_freqs\nn_data\check_politics.txt", 2)
+    # print_n_lines(r"D:\Users\Lydia\results_freqs\nn_data\politics_limit1000_no_stem.csv",r"D:\Users\Lydia\results_freqs\nn_data\check_politics.txt", 2)
+    file_contains(r"D:\Users\Lydia\results_freqs\nn_data\patches_politics_limit_ns_patch_ndp5\patch_0_0\input\sample_in0000.txt", ";")
 
 	# test_stemmer()
 	# test_related_colors()

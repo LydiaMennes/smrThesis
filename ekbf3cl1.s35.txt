@@ -1,0 +1,957 @@
+﻿added loads of stuff
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   .gitignore
+#	deleted:    code/Code_first_run/eigennamen_freq.py
+#	deleted:    code/Code_first_run/eigennamen_generate_temporal_data.py
+#	deleted:    code/Code_first_run/eigennamen_nse.py
+#	deleted:    code/Code_first_run/eigennamen_visualizeGrid.py
+#	deleted:    code/Code_first_run/neuralNet.py
+#	deleted:    code/Code_first_run/results/eigennamen_grid_eigennamen_6000docs.png
+#	deleted:    code/Code_first_run/results/eigennamen_grid_eigennamen_all.png
+#	deleted:    code/Code_first_run/results/eigennamen_space_eigennamen_6000docs.png
+#	deleted:    code/Code_first_run/results/eigennamen_space_eigennamen_all.png
+#	deleted:    code/Code_first_run/results/person_coocs_6000docs.txt
+#	deleted:    code/Code_first_run/results/person_coocs_all.txt
+#	deleted:    code/Code_first_run/results/person_coocs_all_all.txt
+#	deleted:    code/Code_first_run/results/person_coocs_all_test.txt
+#	deleted:    code/Code_first_run/results/person_frequencies_6000docs.txt
+#	deleted:    code/Code_first_run/results/person_frequencies_all.txt
+#	deleted:    code/Code_first_run/results/person_frequencies_all_all.txt
+#	deleted:    code/Code_first_run/results/person_frequencies_all_test.txt
+#	deleted:    code/Code_first_run/results/semantic_landscape_eigennamen_6000docs.txt
+#	deleted:    code/Code_first_run/results/semantic_landscape_eigennamen_all.txt
+#	deleted:    code/Code_first_run/results/semantic_landscape_latex_eigennamen_6000docs.txt
+#	deleted:    code/Code_first_run/results/semantic_landscape_latex_eigennamen_all.txt
+#	deleted:    code/Code_first_run/results/semantic_landscape_latex_test150names6000docs.txt
+#	deleted:    code/Code_first_run/results/semantic_landscape_test150names6000docs.txt
+#	deleted:    code/Code_first_run/results/tsne_result_2d_eigennamen_6000docs.txt
+#	deleted:    code/Code_first_run/results/tsne_result_2d_eigennamen_all.txt
+#	deleted:    code/Code_first_run/results/tsne_result_2d_test150names6000docs.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-02-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-03-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-03-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-04-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-05-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-06-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-07-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-08-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-09-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-10-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-11-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2013-12-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-01-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-02-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-03-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-04-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-05-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-05-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-05-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-05-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-05-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs/file2014-05-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-02-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-03-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-03-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-04-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-05-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-06-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-07-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-08-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-09-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-10-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-11-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2013-12-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-01-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-02-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-03-31.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-08.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-09.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-10.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-11.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-12.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-13.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-14.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-15.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-16.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-17.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-18.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-19.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-20.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-21.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-22.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-23.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-24.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-25.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-26.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-27.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-28.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-29.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-04-30.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-05-01.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-05-02.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-05-03.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-05-04.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-05-05.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-05-06.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/file2014-05-07.txt
+#	deleted:    code/Code_first_run/temporal_data/timeseries_1day_alldocs_withStats/stats.txt
+#	deleted:    code/Code_first_run/test_results.py
+#	new file:   code/code_first_run_words/check_results_ed.py
+#	modified:   code/code_first_run_words/co_occurrences.py
+#	deleted:    code/code_first_run_words/co_occurrences_oldsql.py
+#	modified:   code/code_first_run_words/compare_results.py
+#	modified:   code/code_first_run_words/daily_word_freqs.py
+#	new file:   code/code_first_run_words/eds_stuff_cleanup_output.py
+#	modified:   code/code_first_run_words/freqs_landscape.py
+#	new file:   code/code_first_run_words/get_tha_peepz.py
+#	new file:   code/code_first_run_words/inspect_data_patterns.py
+#	new file:   code/code_first_run_words/inspect_results_names.py
+#	new file:   code/code_first_run_words/inspect_results_nn.py
+#	new file:   code/code_first_run_words/libsvm-3.19/COPYRIGHT
+#	new file:   code/code_first_run_words/libsvm-3.19/FAQ.html
+#	new file:   code/code_first_run_words/libsvm-3.19/Makefile
+#	new file:   code/code_first_run_words/libsvm-3.19/Makefile.win
+#	new file:   code/code_first_run_words/libsvm-3.19/README
+#	new file:   code/code_first_run_words/libsvm-3.19/heart_scale
+#	new file:   code/code_first_run_words/libsvm-3.19/java/Makefile
+#	new file:   code/code_first_run_words/libsvm-3.19/java/libsvm.jar
+#	new file:   code/code_first_run_words/libsvm-3.19/java/libsvm/svm.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/libsvm/svm.m4
+#	new file:   code/code_first_run_words/libsvm-3.19/java/libsvm/svm_model.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/libsvm/svm_node.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/libsvm/svm_parameter.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/libsvm/svm_print_interface.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/libsvm/svm_problem.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/svm_predict.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/svm_scale.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/svm_toy.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/svm_train.java
+#	new file:   code/code_first_run_words/libsvm-3.19/java/test_applet.html
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/Makefile
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/README
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/libsvmread.c
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/libsvmwrite.c
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/make.m
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/svm_model_matlab.c
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/svm_model_matlab.h
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/svmpredict.c
+#	new file:   code/code_first_run_words/libsvm-3.19/matlab/svmtrain.c
+#	new file:   code/code_first_run_words/libsvm-3.19/python/Makefile
+#	new file:   code/code_first_run_words/libsvm-3.19/python/README
+#	new file:   code/code_first_run_words/libsvm-3.19/python/svm.py
+#	new file:   code/code_first_run_words/libsvm-3.19/python/svm_bef_repl_tabs.py
+#	new file:   code/code_first_run_words/libsvm-3.19/python/svm_test.py
+#	new file:   code/code_first_run_words/libsvm-3.19/python/svmutil.py
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-predict.c
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-scale.c
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/gtk/Makefile
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/gtk/callbacks.cpp
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/gtk/callbacks.h
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/gtk/interface.c
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/gtk/interface.h
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/gtk/main.c
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/gtk/svm-toy.glade
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/qt/Makefile
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/qt/svm-toy.cpp
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-toy/windows/svm-toy.cpp
+#	new file:   code/code_first_run_words/libsvm-3.19/svm-train.c
+#	new file:   code/code_first_run_words/libsvm-3.19/svm.cpp
+#	new file:   code/code_first_run_words/libsvm-3.19/svm.def
+#	new file:   code/code_first_run_words/libsvm-3.19/svm.h
+#	new file:   code/code_first_run_words/libsvm-3.19/tools/README
+#	new file:   code/code_first_run_words/libsvm-3.19/tools/checkdata.py
+#	new file:   code/code_first_run_words/libsvm-3.19/tools/easy.py
+#	new file:   code/code_first_run_words/libsvm-3.19/tools/grid.py
+#	new file:   code/code_first_run_words/libsvm-3.19/tools/subset.py
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/libsvm.dll
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/libsvmread.mexw64
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/libsvmwrite.mexw64
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/svm-predict.exe
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/svm-scale.exe
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/svm-toy.exe
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/svm-train.exe
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/svmpredict.mexw64
+#	new file:   code/code_first_run_words/libsvm-3.19/windows/svmtrain.mexw64
+#	new file:   code/code_first_run_words/log_11_7_1.txt
+#	new file:   code/code_first_run_words/log_11_7_2.txt
+#	new file:   code/code_first_run_words/log_11_7_3.txt
+#	new file:   code/code_first_run_words/log_11_7_4.txt
+#	new file:   code/code_first_run_words/log_11_7_5.txt
+#	new file:   code/code_first_run_words/log_cooc1.txt
+#	new file:   code/code_first_run_words/log_cooc2.txt
+#	renamed:    code/Code_first_run/eigennamen_train_network.py -> code/code_first_run_words/log_cooc3.txt
+#	new file:   code/code_first_run_words/log_experiments_nn_11_5.txt
+#	new file:   code/code_first_run_words/log_gen_comparison_optimize2.txt
+#	new file:   code/code_first_run_words/log_gen_comparison_settings2.txt
+#	new file:   code/code_first_run_words/log_running_experiments_nn.txt
+#	new file:   code/code_first_run_words/make_test_data.py
+#	new file:   code/code_first_run_words/plot_grid_blobs_afterward.py
+#	deleted:    code/code_first_run_words/removed_top_freq_words
+#	modified:   code/code_first_run_words/replace_tabs.py
+#	modified:   code/code_first_run_words/rewrite_daily_freqs.py
+#	new file:   code/code_first_run_words/rewrite_daily_freqs_final.py
+#	new file:   code/code_first_run_words/rewrite_daily_freqs_simplest.py
+#	deleted:    code/code_first_run_words/run_daily_freqs.bat
+#	new file:   code/code_first_run_words/run_java.bat
+#	modified:   code/code_first_run_words/run_stuff.bat
+#	new file:   code/code_first_run_words/run_stuff_rewrite.bat
+#	deleted:    code/code_first_run_words/run_test.bat
+#	modified:   code/code_first_run_words/semantic_distance.py
+#	new file:   code/code_first_run_words/sillywords_sequal.txt
+#	deleted:    code/code_first_run_words/space_to_grid_nice_tryX.py
+#	new file:   code/code_first_run_words/svm_test.py
+#	modified:   code/code_first_run_words/test.py
+#	deleted:    code/code_first_run_words/test_data_max.py
+#	modified:   code/code_first_run_words/thesis_utilities.py
+#	new file:   code/code_first_run_words/write_train_script.py
+#	new file:   code/thesis_NN/build.xml
+#	new file:   code/thesis_NN/manifest.mf
+#	new file:   code/thesis_NN/nbproject/build-impl.xml
+#	new file:   code/thesis_NN/nbproject/genfiles.properties
+#	new file:   code/thesis_NN/nbproject/project.properties
+#	new file:   code/thesis_NN/nbproject/project.xml
+#	new file:   code/thesis_NN/src/thesis_nn/DataKeeper.java
+#	new file:   code/thesis_NN/src/thesis_nn/SMR_networks.java
+#	new file:   code/thesis_NN/src/thesis_nn/SVM_on_data.java
+#	new file:   code/thesis_NN/src/thesis_nn/Thesis_NN.java
+#	new file:   code/thesis_NN/test.nnet
+#	new file:   example_nn_java.java
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	ne5iq2v4.omd.txt
+

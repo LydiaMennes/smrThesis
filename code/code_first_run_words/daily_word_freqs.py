@@ -6,7 +6,36 @@ from collections import defaultdict
 import unicodedata
 from thesis_utilities import *
 import gc
+
 output_path = r"D:\Users\Lydia\results_freqs\freqs_per_day"
+database = ""
+
+def check_date_nr_docs(article_type, lim=None):
+    conn = get_connection_old()
+    curs = conn.cursor(oursql.DictCursor)
+    
+    mindate = datetime.datetime(2014,12,1)
+    maxdate = datetime.datetime(2007,1,1)
+    
+    curquery = "SELECT pubDate FROM newsitems where sourceType = "+ str(article_type)
+    if lim != None:
+        curquery+= " LIMIT " + str(lim)
+    curs.execute(curquery)
+    nr_docs = 0
+        
+    for row in curs:
+        nr_docs +=1
+        x = row['pubDate']
+        if x !=None:
+            if x < mindate:
+                mindate=x
+            if x > maxdate:
+                maxdate = x
+                
+    print("nr docs", nr_docs)
+    print("mindate", mindate)
+    print("maxdate", maxdate)
+    
 
 # connection data as received in beginnig
 def get_connection_old():
@@ -18,7 +47,7 @@ def get_connection_old():
     return conn
     
 # connection merged items !!!! tabel is mergednewsitems instead of newsitems!!!!
-def get_connection():
+def get_connection_afterjan2011():
     conn = oursql.connect(host="10.0.0.124", # your host, usually localhost
                          user="lydia", # your username
                           passwd="voxpop", # your password
@@ -27,7 +56,7 @@ def get_connection():
     return conn
 
 # connection items before jan 5 2011
-def get_connection_until_jan():
+def get_connection_beforerjan2011():
     conn = oursql.connect(host="10.0.0.124", # your host, usually localhost
                          user="lydia", # your username
                           passwd="voxpop", # your password
@@ -53,11 +82,16 @@ def run_freqs(article_type, output_path, curdate, maxdate):
     
     # change tabelname is newsitems voor tot 5 jan of oude versie en voor merged is het mergednewsitems
     query = "SELECT itemText FROM mergednewsitems where sourceType = "+article_type+" and date(pubDate) = \"PD\" ;"
+    if database == "old":
+        query = "SELECT itemText FROM newsitems where sourceType = "+article_type+" and date(pubDate) = \"PD\" ;"
     stop_words = get_parabots_stopwords()
     silly_words = get_silly_words()
     punc_map = str.maketrans("","",string.punctuation)
     
-    conn = get_connection()
+    if database == "new":
+        conn = get_connection_afterjan2011()
+    if database == "old":
+        conn = get_connection_beforerjan2011()
     curs = conn.cursor(oursql.DictCursor)
     first = True
     
@@ -97,6 +131,12 @@ def run_freqs(article_type, output_path, curdate, maxdate):
         gc.collect()
 
 if __name__ == "__main__":
+
+    # print("lim = 1 mil")
+    # check_date_nr_docs(2, 1000000)
+    # print("no lim")    
+    # check_date_nr_docs(2)
+
     parser = argparse.ArgumentParser(description='Run puzzle algorithm')
     # '''parser.add_argument(<naam>, type=<type>, default=<default>, help=<help message>)'''
     parser.add_argument("article_type", help="Types: politics or football")
@@ -107,6 +147,7 @@ if __name__ == "__main__":
     parser.add_argument("max_day", type=int)
     parser.add_argument("max_month", type=int)
     parser.add_argument("max_year", type=int)
+    parser.add_argument("--database", default="new", help="options are old or new")
     
     args = parser.parse_args()
     kwargs = vars(args)    
@@ -125,9 +166,19 @@ if __name__ == "__main__":
     if kwargs["article_type"]=="politics": 
         article_type = "2"
     elif kwargs["article_type"]=="football":
-        article_type = "1"
+        article_type = "5"
     else:
         print("Unrecognized article type")
         sys.exit()
+       
     
-    run_freqs(article_type, output_path, mindate, maxdate)
+    if kwargs["database"]== "old": 
+        database = "old"
+        run_freqs(article_type, output_path, mindate, maxdate)
+    elif kwargs["database"]== "new": 
+        database = "new"
+        run_freqs(article_type, output_path, mindate, maxdate)        
+    else:
+        print("invalid database type")
+        sys.exit()
+        

@@ -1,0 +1,2894 @@
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run0
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run0
+start learning
+05/11 19:03:10 iteration: 001 error: 0.38845 acc val: 0.22000 acc train 0.20177
+05/11 19:03:10 iteration: 002 error: 0.38111 acc val: 0.22000 acc train 0.20177
+05/11 19:03:10 iteration: 003 error: 0.36945 acc val: 0.22000 acc train 0.20177
+05/11 19:03:11 iteration: 004 error: 0.34226 acc val: 0.38667 acc train 0.38998
+05/11 19:03:11 iteration: 005 error: 0.31014 acc val: 0.38667 acc train 0.39293
+05/11 19:03:11 iteration: 006 error: 0.29095 acc val: 0.38667 acc train 0.39273
+05/11 19:03:12 iteration: 007 error: 0.28163 acc val: 0.39333 acc train 0.39411
+05/11 19:03:12 iteration: 008 error: 0.27614 acc val: 0.39333 acc train 0.39686
+05/11 19:03:12 iteration: 009 error: 0.27211 acc val: 0.40000 acc train 0.39902
+05/11 19:03:13 iteration: 010 error: 0.26885 acc val: 0.41333 acc train 0.39980
+05/11 19:03:16 iteration: 020 error: 0.25500 acc val: 0.40667 acc train 0.39902
+05/11 19:03:20 iteration: 030 error: 0.24882 acc val: 0.39333 acc train 0.39862
+05/11 19:03:23 iteration: 040 error: 0.24460 acc val: 0.40000 acc train 0.40138
+05/11 19:03:27 iteration: 050 error: 0.24163 acc val: 0.39333 acc train 0.40904
+05/11 19:03:30 iteration: 060 error: 0.23959 acc val: 0.39333 acc train 0.42004
+05/11 19:03:34 iteration: 070 error: 0.23817 acc val: 0.39333 acc train 0.42495
+05/11 19:03:37 iteration: 080 error: 0.23714 acc val: 0.39333 acc train 0.42809
+05/11 19:03:41 iteration: 090 error: 0.23634 acc val: 0.39333 acc train 0.43222
+05/11 19:03:44 iteration: 100 error: 0.23569 acc val: 0.39333 acc train 0.43360
+05/11 19:03:48 iteration: 110 error: 0.23512 acc val: 0.39333 acc train 0.43360
+05/11 19:03:51 iteration: 120 error: 0.23461 acc val: 0.38667 acc train 0.43360
+05/11 19:03:55 iteration: 130 error: 0.23414 acc val: 0.38667 acc train 0.43399
+05/11 19:03:58 iteration: 140 error: 0.23369 acc val: 0.39333 acc train 0.43497
+05/11 19:04:02 iteration: 150 error: 0.23332 acc val: 0.39333 acc train 0.43556
+To file
+
+0.0,2,0.861363244826,3,4
+itemnr0
+0.0,2,0.615209164551,2,14
+0.0,3,0.65380967909,2,20
+0.0,0,0.0,0,51
+0.0,2,0.60986816222,2,58
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run0
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run0
+start learning
+05/11 19:04:03 iteration: 001 error: 0.38841 acc val: 0.16000 acc train 0.20216
+05/11 19:04:03 iteration: 002 error: 0.38128 acc val: 0.16000 acc train 0.20216
+05/11 19:04:03 iteration: 003 error: 0.37079 acc val: 0.16000 acc train 0.20216
+05/11 19:04:04 iteration: 004 error: 0.34559 acc val: 0.38000 acc train 0.39725
+05/11 19:04:04 iteration: 005 error: 0.31360 acc val: 0.38000 acc train 0.39332
+05/11 19:04:04 iteration: 006 error: 0.29373 acc val: 0.38000 acc train 0.39293
+05/11 19:04:05 iteration: 007 error: 0.28453 acc val: 0.38000 acc train 0.39352
+05/11 19:04:05 iteration: 008 error: 0.27971 acc val: 0.38000 acc train 0.39411
+05/11 19:04:06 iteration: 009 error: 0.27657 acc val: 0.38000 acc train 0.39587
+05/11 19:04:06 iteration: 010 error: 0.27416 acc val: 0.38000 acc train 0.39607
+05/11 19:04:09 iteration: 020 error: 0.25599 acc val: 0.41333 acc train 0.41257
+05/11 19:04:13 iteration: 030 error: 0.24831 acc val: 0.41333 acc train 0.41965
+05/11 19:04:16 iteration: 040 error: 0.24442 acc val: 0.42000 acc train 0.40943
+05/11 19:04:20 iteration: 050 error: 0.24186 acc val: 0.42000 acc train 0.40668
+05/11 19:04:23 iteration: 060 error: 0.24008 acc val: 0.42000 acc train 0.40295
+05/11 19:04:26 iteration: 070 error: 0.23884 acc val: 0.42000 acc train 0.39980
+05/11 19:04:30 iteration: 080 error: 0.23794 acc val: 0.42000 acc train 0.39745
+05/11 19:04:33 iteration: 090 error: 0.23726 acc val: 0.41333 acc train 0.39627
+05/11 19:04:37 iteration: 100 error: 0.23672 acc val: 0.41333 acc train 0.39686
+05/11 19:04:40 iteration: 110 error: 0.23629 acc val: 0.42667 acc train 0.39862
+05/11 19:04:44 iteration: 120 error: 0.23592 acc val: 0.42000 acc train 0.39941
+05/11 19:04:47 iteration: 130 error: 0.23560 acc val: 0.42000 acc train 0.40118
+05/11 19:04:51 iteration: 140 error: 0.23532 acc val: 0.42000 acc train 0.40118
+05/11 19:04:54 iteration: 150 error: 0.23509 acc val: 0.42000 acc train 0.40196
+To file
+
+0.0,0,0.861363244826,3,4
+itemnr0
+0.0,0,0.615209164551,2,14
+0.0,3,0.65380967909,2,20
+0.0,3,0.0,0,51
+0.0,0,0.60986816222,2,58
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5091 149 150
+
+
+ exp 3 politics names no context run0
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run0
+start learning
+05/11 19:04:54 iteration: 001 error: 0.38355 acc val: 0.20000 acc train 0.20232
+05/11 19:04:54 iteration: 002 error: 0.36563 acc val: 0.20000 acc train 0.20232
+05/11 19:04:55 iteration: 003 error: 0.33759 acc val: 0.39333 acc train 0.39796
+05/11 19:04:55 iteration: 004 error: 0.30958 acc val: 0.38667 acc train 0.39265
+05/11 19:04:55 iteration: 005 error: 0.29454 acc val: 0.38667 acc train 0.39226
+05/11 19:04:55 iteration: 006 error: 0.28787 acc val: 0.38667 acc train 0.39246
+05/11 19:04:55 iteration: 007 error: 0.28446 acc val: 0.38667 acc train 0.39324
+05/11 19:04:55 iteration: 008 error: 0.28232 acc val: 0.39333 acc train 0.39364
+05/11 19:04:55 iteration: 009 error: 0.28076 acc val: 0.39333 acc train 0.39403
+05/11 19:04:55 iteration: 010 error: 0.27951 acc val: 0.39333 acc train 0.39481
+05/11 19:04:56 iteration: 020 error: 0.27118 acc val: 0.38667 acc train 0.39599
+05/11 19:04:57 iteration: 030 error: 0.26452 acc val: 0.38667 acc train 0.39796
+05/11 19:04:58 iteration: 040 error: 0.25957 acc val: 0.40000 acc train 0.40837
+05/11 19:04:58 iteration: 050 error: 0.25666 acc val: 0.40000 acc train 0.40856
+05/11 19:04:59 iteration: 060 error: 0.25517 acc val: 0.40667 acc train 0.40306
+05/11 19:05:00 iteration: 070 error: 0.25438 acc val: 0.40667 acc train 0.40071
+05/11 19:05:01 iteration: 080 error: 0.25389 acc val: 0.40667 acc train 0.39756
+05/11 19:05:02 iteration: 090 error: 0.25354 acc val: 0.40000 acc train 0.39914
+05/11 19:05:02 iteration: 100 error: 0.25325 acc val: 0.40000 acc train 0.40031
+05/11 19:05:03 iteration: 110 error: 0.25301 acc val: 0.40000 acc train 0.40031
+05/11 19:05:04 iteration: 120 error: 0.25281 acc val: 0.40667 acc train 0.40090
+05/11 19:05:05 iteration: 130 error: 0.25264 acc val: 0.40667 acc train 0.40228
+05/11 19:05:05 iteration: 140 error: 0.25248 acc val: 0.40667 acc train 0.40346
+05/11 19:05:06 iteration: 150 error: 0.25236 acc val: 0.40667 acc train 0.40405
+To file
+
+0.805593500694,3,0.861363244826,3,4
+itemnr0
+0.0,2,0.615209164551,2,14
+0.781437464314,3,0.65380967909,2,20
+1.0,3,0.0,0,51
+0.0,0,0.60986816222,2,58
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5094 150 146
+
+
+ exp 1 politics names run1
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run1
+start learning
+05/11 19:05:07 iteration: 001 error: 0.38832 acc val: 0.23973 acc train 0.19906
+05/11 19:05:07 iteration: 002 error: 0.38200 acc val: 0.23973 acc train 0.19906
+05/11 19:05:07 iteration: 003 error: 0.37077 acc val: 0.23973 acc train 0.19906
+05/11 19:05:08 iteration: 004 error: 0.34425 acc val: 0.36301 acc train 0.38928
+05/11 19:05:08 iteration: 005 error: 0.31218 acc val: 0.34932 acc train 0.39223
+05/11 19:05:09 iteration: 006 error: 0.29254 acc val: 0.34932 acc train 0.39223
+05/11 19:05:09 iteration: 007 error: 0.28309 acc val: 0.35616 acc train 0.39340
+05/11 19:05:09 iteration: 008 error: 0.27777 acc val: 0.35616 acc train 0.39537
+05/11 19:05:10 iteration: 009 error: 0.27397 acc val: 0.36301 acc train 0.39654
+05/11 19:05:10 iteration: 010 error: 0.27079 acc val: 0.36301 acc train 0.39753
+05/11 19:05:14 iteration: 020 error: 0.25570 acc val: 0.36986 acc train 0.39890
+05/11 19:05:17 iteration: 030 error: 0.24938 acc val: 0.34247 acc train 0.39870
+05/11 19:05:21 iteration: 040 error: 0.24509 acc val: 0.36301 acc train 0.39556
+05/11 19:05:24 iteration: 050 error: 0.24208 acc val: 0.37671 acc train 0.40538
+05/11 19:05:28 iteration: 060 error: 0.24001 acc val: 0.38356 acc train 0.41382
+05/11 19:05:31 iteration: 070 error: 0.23858 acc val: 0.38356 acc train 0.42049
+05/11 19:05:35 iteration: 080 error: 0.23755 acc val: 0.39726 acc train 0.42442
+05/11 19:05:38 iteration: 090 error: 0.23675 acc val: 0.41096 acc train 0.42580
+05/11 19:05:42 iteration: 100 error: 0.23610 acc val: 0.40411 acc train 0.42658
+05/11 19:05:45 iteration: 110 error: 0.23555 acc val: 0.40411 acc train 0.42815
+05/11 19:05:49 iteration: 120 error: 0.23505 acc val: 0.41781 acc train 0.42894
+05/11 19:05:52 iteration: 130 error: 0.23459 acc val: 0.41781 acc train 0.42894
+05/11 19:05:56 iteration: 140 error: 0.23416 acc val: 0.41781 acc train 0.42894
+05/11 19:05:59 iteration: 150 error: 0.23380 acc val: 0.41781 acc train 0.43031
+To file
+
+0.714227323079,3,0.716041948003,2,35
+itemnr0
+0.829046830894,3,1.0,5,48
+0.0,3,1.0,5,75
+0.0,3,1.0,5,77
+0.0,3,0.781437464314,3,232
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run1
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run1
+start learning
+05/11 19:06:00 iteration: 001 error: 0.38809 acc val: 0.22000 acc train 0.19804
+05/11 19:06:00 iteration: 002 error: 0.38118 acc val: 0.22000 acc train 0.19804
+05/11 19:06:00 iteration: 003 error: 0.36998 acc val: 0.22000 acc train 0.19804
+05/11 19:06:01 iteration: 004 error: 0.34360 acc val: 0.45333 acc train 0.39391
+05/11 19:06:01 iteration: 005 error: 0.31173 acc val: 0.44667 acc train 0.38900
+05/11 19:06:02 iteration: 006 error: 0.29280 acc val: 0.44667 acc train 0.38861
+05/11 19:06:02 iteration: 007 error: 0.28414 acc val: 0.44667 acc train 0.38900
+05/11 19:06:02 iteration: 008 error: 0.27957 acc val: 0.44667 acc train 0.38959
+05/11 19:06:03 iteration: 009 error: 0.27656 acc val: 0.44667 acc train 0.39155
+05/11 19:06:03 iteration: 010 error: 0.27423 acc val: 0.44667 acc train 0.39194
+05/11 19:06:07 iteration: 020 error: 0.25631 acc val: 0.41333 acc train 0.41257
+05/11 19:06:10 iteration: 030 error: 0.24835 acc val: 0.39333 acc train 0.41906
+05/11 19:06:13 iteration: 040 error: 0.24454 acc val: 0.38000 acc train 0.40766
+05/11 19:06:17 iteration: 050 error: 0.24216 acc val: 0.35333 acc train 0.40432
+05/11 19:06:20 iteration: 060 error: 0.24056 acc val: 0.35333 acc train 0.40059
+05/11 19:06:24 iteration: 070 error: 0.23945 acc val: 0.35333 acc train 0.39882
+05/11 19:06:27 iteration: 080 error: 0.23865 acc val: 0.35333 acc train 0.39804
+05/11 19:06:31 iteration: 090 error: 0.23804 acc val: 0.35333 acc train 0.39902
+05/11 19:06:34 iteration: 100 error: 0.23756 acc val: 0.35333 acc train 0.39843
+05/11 19:06:37 iteration: 110 error: 0.23715 acc val: 0.35333 acc train 0.39921
+05/11 19:06:41 iteration: 120 error: 0.23681 acc val: 0.35333 acc train 0.40039
+05/11 19:06:44 iteration: 130 error: 0.23651 acc val: 0.36000 acc train 0.40020
+05/11 19:06:48 iteration: 140 error: 0.23625 acc val: 0.36000 acc train 0.40138
+05/11 19:06:51 iteration: 150 error: 0.23604 acc val: 0.36000 acc train 0.40255
+To file
+
+0.0,4,0.716041948003,2,35
+itemnr0
+0.0,2,1.0,5,48
+0.0,2,1.0,5,75
+0.0,3,1.0,5,77
+0.0,4,0.781437464314,3,232
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run1
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run1
+start learning
+05/11 19:06:51 iteration: 001 error: 0.38552 acc val: 0.16667 acc train 0.20059
+05/11 19:06:52 iteration: 002 error: 0.36921 acc val: 0.16667 acc train 0.20059
+05/11 19:06:52 iteration: 003 error: 0.34262 acc val: 0.37333 acc train 0.39804
+05/11 19:06:52 iteration: 004 error: 0.31347 acc val: 0.37333 acc train 0.39175
+05/11 19:06:52 iteration: 005 error: 0.29678 acc val: 0.37333 acc train 0.39018
+05/11 19:06:52 iteration: 006 error: 0.28935 acc val: 0.37333 acc train 0.39057
+05/11 19:06:52 iteration: 007 error: 0.28567 acc val: 0.37333 acc train 0.39155
+05/11 19:06:52 iteration: 008 error: 0.28343 acc val: 0.37333 acc train 0.39273
+05/11 19:06:52 iteration: 009 error: 0.28181 acc val: 0.37333 acc train 0.39293
+05/11 19:06:52 iteration: 010 error: 0.28051 acc val: 0.37333 acc train 0.39352
+05/11 19:06:53 iteration: 020 error: 0.27195 acc val: 0.37333 acc train 0.39450
+05/11 19:06:54 iteration: 030 error: 0.26531 acc val: 0.38000 acc train 0.39882
+05/11 19:06:54 iteration: 040 error: 0.26045 acc val: 0.40000 acc train 0.40845
+05/11 19:06:55 iteration: 050 error: 0.25758 acc val: 0.41333 acc train 0.40432
+05/11 19:06:56 iteration: 060 error: 0.25611 acc val: 0.42000 acc train 0.40079
+05/11 19:06:57 iteration: 070 error: 0.25535 acc val: 0.41333 acc train 0.39784
+05/11 19:06:57 iteration: 080 error: 0.25489 acc val: 0.42000 acc train 0.39902
+05/11 19:06:58 iteration: 090 error: 0.25457 acc val: 0.42000 acc train 0.39921
+05/11 19:06:59 iteration: 100 error: 0.25431 acc val: 0.42000 acc train 0.39941
+05/11 19:07:00 iteration: 110 error: 0.25410 acc val: 0.42000 acc train 0.40039
+05/11 19:07:00 iteration: 120 error: 0.25391 acc val: 0.42000 acc train 0.40118
+05/11 19:07:01 iteration: 130 error: 0.25375 acc val: 0.42000 acc train 0.40216
+05/11 19:07:02 iteration: 140 error: 0.25361 acc val: 0.42000 acc train 0.40393
+05/11 19:07:03 iteration: 150 error: 0.25350 acc val: 0.42000 acc train 0.40550
+To file
+
+0.65380967909,3,0.716041948003,2,35
+itemnr0
+0.964387188987,3,1.0,5,48
+1.0,3,1.0,5,75
+1.0,3,1.0,5,77
+0.0,0,0.781437464314,3,232
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5108 132 150
+
+
+ exp 1 politics names run2
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run2
+start learning
+05/11 19:07:03 iteration: 001 error: 0.38846 acc val: 0.18667 acc train 0.20086
+05/11 19:07:03 iteration: 002 error: 0.38186 acc val: 0.18667 acc train 0.20086
+05/11 19:07:04 iteration: 003 error: 0.37118 acc val: 0.18667 acc train 0.20086
+05/11 19:07:04 iteration: 004 error: 0.34471 acc val: 0.34667 acc train 0.39037
+05/11 19:07:05 iteration: 005 error: 0.31152 acc val: 0.34667 acc train 0.39487
+05/11 19:07:05 iteration: 006 error: 0.29100 acc val: 0.35333 acc train 0.39428
+05/11 19:07:05 iteration: 007 error: 0.28096 acc val: 0.35333 acc train 0.39546
+05/11 19:07:06 iteration: 008 error: 0.27507 acc val: 0.35333 acc train 0.39820
+05/11 19:07:06 iteration: 009 error: 0.27077 acc val: 0.35333 acc train 0.39957
+05/11 19:07:06 iteration: 010 error: 0.26731 acc val: 0.35333 acc train 0.40094
+05/11 19:07:10 iteration: 020 error: 0.25333 acc val: 0.36000 acc train 0.39918
+05/11 19:07:13 iteration: 030 error: 0.24722 acc val: 0.35333 acc train 0.39702
+05/11 19:07:17 iteration: 040 error: 0.24312 acc val: 0.36000 acc train 0.39859
+05/11 19:07:20 iteration: 050 error: 0.24030 acc val: 0.38000 acc train 0.40975
+05/11 19:07:24 iteration: 060 error: 0.23841 acc val: 0.38667 acc train 0.41875
+05/11 19:07:27 iteration: 070 error: 0.23712 acc val: 0.40000 acc train 0.42561
+05/11 19:07:31 iteration: 080 error: 0.23619 acc val: 0.42000 acc train 0.42659
+05/11 19:07:35 iteration: 090 error: 0.23547 acc val: 0.40667 acc train 0.42698
+05/11 19:07:38 iteration: 100 error: 0.23486 acc val: 0.40667 acc train 0.42854
+05/11 19:07:42 iteration: 110 error: 0.23433 acc val: 0.41333 acc train 0.43109
+05/11 19:07:45 iteration: 120 error: 0.23385 acc val: 0.41333 acc train 0.43226
+05/11 19:07:49 iteration: 130 error: 0.23339 acc val: 0.41333 acc train 0.43226
+05/11 19:07:52 iteration: 140 error: 0.23297 acc val: 0.40667 acc train 0.43363
+05/11 19:07:56 iteration: 150 error: 0.23260 acc val: 0.40000 acc train 0.43344
+To file
+
+0.531582788011,3,1.0,5,63
+itemnr0
+0.0,3,1.0,5,71
+0.0,3,0.781437464314,3,105
+0.0,3,0.774327938753,3,164
+0.0,3,0.787609656965,3,167
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run2
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run2
+start learning
+05/11 19:07:56 iteration: 001 error: 0.38874 acc val: 0.20667 acc train 0.20000
+05/11 19:07:56 iteration: 002 error: 0.38226 acc val: 0.20667 acc train 0.20000
+05/11 19:07:57 iteration: 003 error: 0.37347 acc val: 0.20667 acc train 0.20000
+05/11 19:07:57 iteration: 004 error: 0.35075 acc val: 0.39333 acc train 0.39293
+05/11 19:07:58 iteration: 005 error: 0.31821 acc val: 0.40667 acc train 0.39253
+05/11 19:07:58 iteration: 006 error: 0.29585 acc val: 0.40667 acc train 0.39194
+05/11 19:07:58 iteration: 007 error: 0.28526 acc val: 0.40667 acc train 0.39194
+05/11 19:07:59 iteration: 008 error: 0.27984 acc val: 0.40667 acc train 0.39312
+05/11 19:07:59 iteration: 009 error: 0.27640 acc val: 0.40000 acc train 0.39450
+05/11 19:07:59 iteration: 010 error: 0.27383 acc val: 0.40000 acc train 0.39489
+05/11 19:08:03 iteration: 020 error: 0.25580 acc val: 0.41333 acc train 0.41179
+05/11 19:08:06 iteration: 030 error: 0.24793 acc val: 0.43333 acc train 0.41984
+05/11 19:08:10 iteration: 040 error: 0.24415 acc val: 0.40000 acc train 0.40904
+05/11 19:08:13 iteration: 050 error: 0.24182 acc val: 0.40000 acc train 0.40511
+05/11 19:08:17 iteration: 060 error: 0.24025 acc val: 0.40000 acc train 0.40196
+05/11 19:08:20 iteration: 070 error: 0.23915 acc val: 0.39333 acc train 0.40138
+05/11 19:08:23 iteration: 080 error: 0.23835 acc val: 0.39333 acc train 0.39980
+05/11 19:08:27 iteration: 090 error: 0.23774 acc val: 0.39333 acc train 0.39921
+05/11 19:08:30 iteration: 100 error: 0.23725 acc val: 0.39333 acc train 0.39941
+05/11 19:08:34 iteration: 110 error: 0.23685 acc val: 0.39333 acc train 0.40177
+05/11 19:08:37 iteration: 120 error: 0.23650 acc val: 0.39333 acc train 0.40334
+05/11 19:08:41 iteration: 130 error: 0.23621 acc val: 0.38667 acc train 0.40354
+05/11 19:08:44 iteration: 140 error: 0.23595 acc val: 0.38667 acc train 0.40511
+05/11 19:08:48 iteration: 150 error: 0.23574 acc val: 0.38667 acc train 0.40472
+To file
+
+0.0,3,1.0,5,63
+itemnr0
+0.0,3,1.0,5,71
+0.0,3,0.781437464314,3,105
+0.0,0,0.774327938753,3,164
+0.0,3,0.787609656965,3,167
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run2
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run2
+start learning
+05/11 19:08:48 iteration: 001 error: 0.38426 acc val: 0.20000 acc train 0.20039
+05/11 19:08:48 iteration: 002 error: 0.36517 acc val: 0.20000 acc train 0.20039
+05/11 19:08:48 iteration: 003 error: 0.33708 acc val: 0.43333 acc train 0.39509
+05/11 19:08:48 iteration: 004 error: 0.30945 acc val: 0.43333 acc train 0.38919
+05/11 19:08:48 iteration: 005 error: 0.29487 acc val: 0.43333 acc train 0.38880
+05/11 19:08:48 iteration: 006 error: 0.28845 acc val: 0.43333 acc train 0.38919
+05/11 19:08:48 iteration: 007 error: 0.28515 acc val: 0.43333 acc train 0.38998
+05/11 19:08:48 iteration: 008 error: 0.28308 acc val: 0.43333 acc train 0.39096
+05/11 19:08:48 iteration: 009 error: 0.28154 acc val: 0.43333 acc train 0.39194
+05/11 19:08:48 iteration: 010 error: 0.28029 acc val: 0.43333 acc train 0.39214
+05/11 19:08:49 iteration: 020 error: 0.27190 acc val: 0.43333 acc train 0.39312
+05/11 19:08:50 iteration: 030 error: 0.26525 acc val: 0.44667 acc train 0.39921
+05/11 19:08:51 iteration: 040 error: 0.26032 acc val: 0.44667 acc train 0.40727
+05/11 19:08:52 iteration: 050 error: 0.25741 acc val: 0.44000 acc train 0.40550
+05/11 19:08:52 iteration: 060 error: 0.25590 acc val: 0.43333 acc train 0.40157
+05/11 19:08:53 iteration: 070 error: 0.25511 acc val: 0.42667 acc train 0.39745
+05/11 19:08:54 iteration: 080 error: 0.25464 acc val: 0.42000 acc train 0.39725
+05/11 19:08:54 iteration: 090 error: 0.25431 acc val: 0.42000 acc train 0.39843
+05/11 19:08:55 iteration: 100 error: 0.25405 acc val: 0.42000 acc train 0.39843
+05/11 19:08:56 iteration: 110 error: 0.25383 acc val: 0.42000 acc train 0.39941
+05/11 19:08:57 iteration: 120 error: 0.25365 acc val: 0.42000 acc train 0.40000
+05/11 19:08:57 iteration: 130 error: 0.25349 acc val: 0.42000 acc train 0.40039
+05/11 19:08:58 iteration: 140 error: 0.25335 acc val: 0.42000 acc train 0.40138
+05/11 19:08:59 iteration: 150 error: 0.25324 acc val: 0.42000 acc train 0.40275
+To file
+
+0.830687678375,2,1.0,5,63
+itemnr0
+0.944490527707,3,1.0,5,71
+0.0,2,0.781437464314,3,105
+0.0,0,0.774327938753,3,164
+0.0,3,0.787609656965,3,167
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run3
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run3
+start learning
+05/11 19:08:59 iteration: 001 error: 0.38812 acc val: 0.21333 acc train 0.20000
+05/11 19:09:00 iteration: 002 error: 0.38020 acc val: 0.21333 acc train 0.20000
+05/11 19:09:00 iteration: 003 error: 0.36565 acc val: 0.21333 acc train 0.20000
+05/11 19:09:01 iteration: 004 error: 0.33532 acc val: 0.39333 acc train 0.39037
+05/11 19:09:01 iteration: 005 error: 0.30526 acc val: 0.39333 acc train 0.39194
+05/11 19:09:01 iteration: 006 error: 0.28910 acc val: 0.39333 acc train 0.39175
+05/11 19:09:02 iteration: 007 error: 0.28112 acc val: 0.39333 acc train 0.39312
+05/11 19:09:02 iteration: 008 error: 0.27617 acc val: 0.39333 acc train 0.39528
+05/11 19:09:02 iteration: 009 error: 0.27238 acc val: 0.40000 acc train 0.39705
+05/11 19:09:03 iteration: 010 error: 0.26922 acc val: 0.40667 acc train 0.39725
+05/11 19:09:06 iteration: 020 error: 0.25543 acc val: 0.40000 acc train 0.39430
+05/11 19:09:10 iteration: 030 error: 0.24931 acc val: 0.40667 acc train 0.39391
+05/11 19:09:13 iteration: 040 error: 0.24516 acc val: 0.40667 acc train 0.39450
+05/11 19:09:17 iteration: 050 error: 0.24225 acc val: 0.42667 acc train 0.40432
+05/11 19:09:20 iteration: 060 error: 0.24025 acc val: 0.44667 acc train 0.41473
+05/11 19:09:24 iteration: 070 error: 0.23886 acc val: 0.43333 acc train 0.41984
+05/11 19:09:27 iteration: 080 error: 0.23784 acc val: 0.44000 acc train 0.42200
+05/11 19:09:31 iteration: 090 error: 0.23705 acc val: 0.44000 acc train 0.42377
+05/11 19:09:34 iteration: 100 error: 0.23640 acc val: 0.44667 acc train 0.42534
+05/11 19:09:38 iteration: 110 error: 0.23584 acc val: 0.45333 acc train 0.42790
+05/11 19:09:41 iteration: 120 error: 0.23534 acc val: 0.45333 acc train 0.42888
+05/11 19:09:45 iteration: 130 error: 0.23488 acc val: 0.45333 acc train 0.42849
+05/11 19:09:48 iteration: 140 error: 0.23445 acc val: 0.45333 acc train 0.42790
+05/11 19:09:52 iteration: 150 error: 0.23408 acc val: 0.44667 acc train 0.42750
+To file
+
+0.0,3,0.922383511345,4,31
+itemnr0
+0.531582788011,3,1.0,5,63
+0.0,2,1.0,5,81
+0.0,3,0.781437464314,3,105
+0.0,0,0.0,0,142
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run3
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run3
+start learning
+05/11 19:09:52 iteration: 001 error: 0.38917 acc val: 0.18667 acc train 0.20020
+05/11 19:09:52 iteration: 002 error: 0.38330 acc val: 0.18667 acc train 0.20020
+05/11 19:09:53 iteration: 003 error: 0.37681 acc val: 0.18667 acc train 0.20020
+05/11 19:09:53 iteration: 004 error: 0.35859 acc val: 0.20667 acc train 0.21238
+05/11 19:09:54 iteration: 005 error: 0.32689 acc val: 0.36000 acc train 0.39607
+05/11 19:09:54 iteration: 006 error: 0.30010 acc val: 0.35333 acc train 0.39391
+05/11 19:09:54 iteration: 007 error: 0.28658 acc val: 0.35333 acc train 0.39391
+05/11 19:09:55 iteration: 008 error: 0.28001 acc val: 0.36000 acc train 0.39470
+05/11 19:09:55 iteration: 009 error: 0.27607 acc val: 0.36667 acc train 0.39666
+05/11 19:09:56 iteration: 010 error: 0.27317 acc val: 0.36667 acc train 0.39784
+05/11 19:09:59 iteration: 020 error: 0.25381 acc val: 0.38000 acc train 0.41729
+05/11 19:10:03 iteration: 030 error: 0.24659 acc val: 0.38667 acc train 0.42102
+05/11 19:10:06 iteration: 040 error: 0.24300 acc val: 0.36000 acc train 0.41179
+05/11 19:10:10 iteration: 050 error: 0.24073 acc val: 0.36667 acc train 0.40786
+05/11 19:10:13 iteration: 060 error: 0.23917 acc val: 0.35333 acc train 0.40727
+05/11 19:10:17 iteration: 070 error: 0.23807 acc val: 0.36000 acc train 0.40491
+05/11 19:10:20 iteration: 080 error: 0.23726 acc val: 0.36000 acc train 0.40472
+05/11 19:10:24 iteration: 090 error: 0.23663 acc val: 0.37333 acc train 0.40354
+05/11 19:10:27 iteration: 100 error: 0.23613 acc val: 0.37333 acc train 0.40668
+05/11 19:10:31 iteration: 110 error: 0.23572 acc val: 0.37333 acc train 0.40825
+05/11 19:10:34 iteration: 120 error: 0.23537 acc val: 0.37333 acc train 0.40825
+05/11 19:10:38 iteration: 130 error: 0.23506 acc val: 0.37333 acc train 0.40904
+05/11 19:10:41 iteration: 140 error: 0.23479 acc val: 0.37333 acc train 0.40904
+05/11 19:10:45 iteration: 150 error: 0.23457 acc val: 0.37333 acc train 0.40982
+To file
+
+0.0,3,0.922383511345,4,31
+itemnr0
+0.0,2,1.0,5,63
+0.0,2,1.0,5,81
+0.0,3,0.781437464314,3,105
+0.0,0,0.0,0,142
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run3
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run3
+start learning
+05/11 19:10:45 iteration: 001 error: 0.38605 acc val: 0.17333 acc train 0.20177
+05/11 19:10:45 iteration: 002 error: 0.37124 acc val: 0.17333 acc train 0.20177
+05/11 19:10:45 iteration: 003 error: 0.34532 acc val: 0.31333 acc train 0.40118
+05/11 19:10:45 iteration: 004 error: 0.31495 acc val: 0.30667 acc train 0.39489
+05/11 19:10:45 iteration: 005 error: 0.29681 acc val: 0.30667 acc train 0.39234
+05/11 19:10:45 iteration: 006 error: 0.28877 acc val: 0.30667 acc train 0.39273
+05/11 19:10:46 iteration: 007 error: 0.28490 acc val: 0.30667 acc train 0.39450
+05/11 19:10:46 iteration: 008 error: 0.28261 acc val: 0.30667 acc train 0.39470
+05/11 19:10:46 iteration: 009 error: 0.28099 acc val: 0.30667 acc train 0.39509
+05/11 19:10:46 iteration: 010 error: 0.27970 acc val: 0.30667 acc train 0.39548
+05/11 19:10:47 iteration: 020 error: 0.27134 acc val: 0.30667 acc train 0.39686
+05/11 19:10:47 iteration: 030 error: 0.26487 acc val: 0.32667 acc train 0.40314
+05/11 19:10:48 iteration: 040 error: 0.26002 acc val: 0.34667 acc train 0.41218
+05/11 19:10:49 iteration: 050 error: 0.25709 acc val: 0.35333 acc train 0.41336
+05/11 19:10:50 iteration: 060 error: 0.25555 acc val: 0.35333 acc train 0.40904
+05/11 19:10:50 iteration: 070 error: 0.25474 acc val: 0.34667 acc train 0.40668
+05/11 19:10:51 iteration: 080 error: 0.25426 acc val: 0.34667 acc train 0.40373
+05/11 19:10:52 iteration: 090 error: 0.25393 acc val: 0.34000 acc train 0.40334
+05/11 19:10:52 iteration: 100 error: 0.25366 acc val: 0.34667 acc train 0.40334
+05/11 19:10:53 iteration: 110 error: 0.25343 acc val: 0.34667 acc train 0.40491
+05/11 19:10:54 iteration: 120 error: 0.25324 acc val: 0.34667 acc train 0.40570
+05/11 19:10:54 iteration: 130 error: 0.25307 acc val: 0.34667 acc train 0.40589
+05/11 19:10:55 iteration: 140 error: 0.25293 acc val: 0.34667 acc train 0.40648
+05/11 19:10:56 iteration: 150 error: 0.25281 acc val: 0.34667 acc train 0.40747
+To file
+
+0.0,2,0.922383511345,4,31
+itemnr0
+1.0,3,1.0,5,63
+1.0,3,1.0,5,81
+0.0,3,0.781437464314,3,105
+1.0,3,0.0,0,142
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run4
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run4
+start learning
+05/11 19:10:56 iteration: 001 error: 0.38868 acc val: 0.21333 acc train 0.19804
+05/11 19:10:57 iteration: 002 error: 0.38154 acc val: 0.21333 acc train 0.19804
+05/11 19:10:57 iteration: 003 error: 0.36946 acc val: 0.21333 acc train 0.19804
+05/11 19:10:58 iteration: 004 error: 0.34135 acc val: 0.38667 acc train 0.38900
+05/11 19:10:58 iteration: 005 error: 0.30923 acc val: 0.38000 acc train 0.39293
+05/11 19:10:58 iteration: 006 error: 0.29037 acc val: 0.38000 acc train 0.39293
+05/11 19:10:59 iteration: 007 error: 0.28109 acc val: 0.38667 acc train 0.39352
+05/11 19:10:59 iteration: 008 error: 0.27554 acc val: 0.38667 acc train 0.39646
+05/11 19:10:59 iteration: 009 error: 0.27137 acc val: 0.38667 acc train 0.39902
+05/11 19:11:00 iteration: 010 error: 0.26788 acc val: 0.38000 acc train 0.39980
+05/11 19:11:03 iteration: 020 error: 0.25289 acc val: 0.39333 acc train 0.39941
+05/11 19:11:07 iteration: 030 error: 0.24694 acc val: 0.38000 acc train 0.39528
+05/11 19:11:10 iteration: 040 error: 0.24316 acc val: 0.34000 acc train 0.39489
+05/11 19:11:14 iteration: 050 error: 0.24058 acc val: 0.34667 acc train 0.40373
+05/11 19:11:17 iteration: 060 error: 0.23884 acc val: 0.35333 acc train 0.41277
+05/11 19:11:21 iteration: 070 error: 0.23763 acc val: 0.36667 acc train 0.42024
+05/11 19:11:25 iteration: 080 error: 0.23676 acc val: 0.36667 acc train 0.42220
+05/11 19:11:28 iteration: 090 error: 0.23607 acc val: 0.36667 acc train 0.42436
+05/11 19:11:32 iteration: 100 error: 0.23550 acc val: 0.36667 acc train 0.42534
+05/11 19:11:35 iteration: 110 error: 0.23499 acc val: 0.36667 acc train 0.42534
+05/11 19:11:39 iteration: 120 error: 0.23453 acc val: 0.37333 acc train 0.42672
+05/11 19:11:42 iteration: 130 error: 0.23410 acc val: 0.38667 acc train 0.42731
+05/11 19:11:46 iteration: 140 error: 0.23369 acc val: 0.38000 acc train 0.42849
+05/11 19:11:50 iteration: 150 error: 0.23335 acc val: 0.38000 acc train 0.42908
+To file
+
+0.527515116722,3,0.659684276199,2,7
+itemnr0
+0.0,4,0.640037280601,2,50
+0.0,3,1.0,5,57
+0.693908631769,3,0.85718377921,3,69
+0.0,3,1.0,5,91
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run4
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run4
+start learning
+05/11 19:11:50 iteration: 001 error: 0.38942 acc val: 0.22000 acc train 0.20059
+05/11 19:11:50 iteration: 002 error: 0.38345 acc val: 0.22000 acc train 0.20059
+05/11 19:11:51 iteration: 003 error: 0.37594 acc val: 0.22000 acc train 0.20059
+05/11 19:11:51 iteration: 004 error: 0.35609 acc val: 0.28667 acc train 0.30255
+05/11 19:11:52 iteration: 005 error: 0.32451 acc val: 0.42667 acc train 0.39430
+05/11 19:11:52 iteration: 006 error: 0.29961 acc val: 0.42667 acc train 0.39253
+05/11 19:11:52 iteration: 007 error: 0.28714 acc val: 0.42667 acc train 0.39253
+05/11 19:11:53 iteration: 008 error: 0.28095 acc val: 0.44000 acc train 0.39293
+05/11 19:11:53 iteration: 009 error: 0.27723 acc val: 0.44000 acc train 0.39489
+05/11 19:11:53 iteration: 010 error: 0.27452 acc val: 0.44000 acc train 0.39548
+05/11 19:11:57 iteration: 020 error: 0.25570 acc val: 0.43333 acc train 0.41375
+05/11 19:12:00 iteration: 030 error: 0.24804 acc val: 0.46000 acc train 0.41650
+05/11 19:12:04 iteration: 040 error: 0.24438 acc val: 0.44000 acc train 0.40629
+05/11 19:12:07 iteration: 050 error: 0.24208 acc val: 0.42667 acc train 0.40295
+05/11 19:12:11 iteration: 060 error: 0.24053 acc val: 0.43333 acc train 0.40000
+05/11 19:12:14 iteration: 070 error: 0.23944 acc val: 0.43333 acc train 0.39862
+05/11 19:12:17 iteration: 080 error: 0.23863 acc val: 0.43333 acc train 0.39843
+05/11 19:12:21 iteration: 090 error: 0.23801 acc val: 0.42667 acc train 0.39804
+05/11 19:12:24 iteration: 100 error: 0.23751 acc val: 0.42667 acc train 0.39823
+05/11 19:12:28 iteration: 110 error: 0.23709 acc val: 0.43333 acc train 0.39941
+05/11 19:12:31 iteration: 120 error: 0.23674 acc val: 0.43333 acc train 0.40157
+05/11 19:12:35 iteration: 130 error: 0.23643 acc val: 0.44000 acc train 0.40255
+05/11 19:12:38 iteration: 140 error: 0.23615 acc val: 0.44000 acc train 0.40354
+05/11 19:12:42 iteration: 150 error: 0.23592 acc val: 0.43333 acc train 0.40432
+To file
+
+0.0,3,0.659684276199,2,7
+itemnr0
+0.0,3,0.640037280601,2,50
+0.0,0,1.0,5,57
+0.0,4,0.85718377921,3,69
+0.0,3,1.0,5,91
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run4
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run4
+start learning
+05/11 19:12:42 iteration: 001 error: 0.38753 acc val: 0.22667 acc train 0.19921
+05/11 19:12:42 iteration: 002 error: 0.36870 acc val: 0.22667 acc train 0.19921
+05/11 19:12:42 iteration: 003 error: 0.34286 acc val: 0.42667 acc train 0.39764
+05/11 19:12:42 iteration: 004 error: 0.31379 acc val: 0.42667 acc train 0.39194
+05/11 19:12:42 iteration: 005 error: 0.29681 acc val: 0.42667 acc train 0.38900
+05/11 19:12:42 iteration: 006 error: 0.28924 acc val: 0.42667 acc train 0.38900
+05/11 19:12:42 iteration: 007 error: 0.28552 acc val: 0.42667 acc train 0.39057
+05/11 19:12:42 iteration: 008 error: 0.28328 acc val: 0.42667 acc train 0.39136
+05/11 19:12:42 iteration: 009 error: 0.28171 acc val: 0.42667 acc train 0.39175
+05/11 19:12:42 iteration: 010 error: 0.28048 acc val: 0.42667 acc train 0.39214
+05/11 19:12:43 iteration: 020 error: 0.27308 acc val: 0.42667 acc train 0.39214
+05/11 19:12:44 iteration: 030 error: 0.26722 acc val: 0.42667 acc train 0.39293
+05/11 19:12:45 iteration: 040 error: 0.26205 acc val: 0.44000 acc train 0.39843
+05/11 19:12:46 iteration: 050 error: 0.25837 acc val: 0.44000 acc train 0.40393
+05/11 19:12:46 iteration: 060 error: 0.25625 acc val: 0.42667 acc train 0.39902
+05/11 19:12:47 iteration: 070 error: 0.25515 acc val: 0.42667 acc train 0.39450
+05/11 19:12:48 iteration: 080 error: 0.25455 acc val: 0.42000 acc train 0.39411
+05/11 19:12:48 iteration: 090 error: 0.25417 acc val: 0.42000 acc train 0.39312
+05/11 19:12:49 iteration: 100 error: 0.25388 acc val: 0.42000 acc train 0.39411
+05/11 19:12:50 iteration: 110 error: 0.25365 acc val: 0.42000 acc train 0.39450
+05/11 19:12:51 iteration: 120 error: 0.25345 acc val: 0.42000 acc train 0.39587
+05/11 19:12:51 iteration: 130 error: 0.25327 acc val: 0.42000 acc train 0.39784
+05/11 19:12:52 iteration: 140 error: 0.25312 acc val: 0.42667 acc train 0.39804
+05/11 19:12:53 iteration: 150 error: 0.25300 acc val: 0.43333 acc train 0.39902
+To file
+
+1.0,3,0.659684276199,2,7
+itemnr0
+0.0,0,0.640037280601,2,50
+0.484544679054,2,1.0,5,57
+0.0,3,0.85718377921,3,69
+0.872884064535,3,1.0,5,91
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5098 142 150
+
+
+ exp 1 politics names run5
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run5
+start learning
+05/11 19:12:53 iteration: 001 error: 0.38869 acc val: 0.21333 acc train 0.20086
+05/11 19:12:54 iteration: 002 error: 0.38077 acc val: 0.21333 acc train 0.20086
+05/11 19:12:54 iteration: 003 error: 0.36777 acc val: 0.21333 acc train 0.20086
+05/11 19:12:54 iteration: 004 error: 0.33872 acc val: 0.36000 acc train 0.39192
+05/11 19:12:55 iteration: 005 error: 0.30721 acc val: 0.35333 acc train 0.39388
+05/11 19:12:55 iteration: 006 error: 0.28938 acc val: 0.36000 acc train 0.39329
+05/11 19:12:56 iteration: 007 error: 0.28053 acc val: 0.36000 acc train 0.39447
+05/11 19:12:56 iteration: 008 error: 0.27509 acc val: 0.36000 acc train 0.39643
+05/11 19:12:56 iteration: 009 error: 0.27104 acc val: 0.36000 acc train 0.39780
+05/11 19:12:57 iteration: 010 error: 0.26782 acc val: 0.36000 acc train 0.39918
+05/11 19:13:00 iteration: 020 error: 0.25465 acc val: 0.34667 acc train 0.39290
+05/11 19:13:04 iteration: 030 error: 0.24866 acc val: 0.34000 acc train 0.39133
+05/11 19:13:07 iteration: 040 error: 0.24449 acc val: 0.35333 acc train 0.39231
+05/11 19:13:11 iteration: 050 error: 0.24147 acc val: 0.36000 acc train 0.40486
+05/11 19:13:14 iteration: 060 error: 0.23936 acc val: 0.36667 acc train 0.41350
+05/11 19:13:18 iteration: 070 error: 0.23788 acc val: 0.36667 acc train 0.42193
+05/11 19:13:21 iteration: 080 error: 0.23682 acc val: 0.37333 acc train 0.42605
+05/11 19:13:25 iteration: 090 error: 0.23601 acc val: 0.36000 acc train 0.42703
+05/11 19:13:28 iteration: 100 error: 0.23535 acc val: 0.36000 acc train 0.42860
+05/11 19:13:31 iteration: 110 error: 0.23478 acc val: 0.36000 acc train 0.42899
+05/11 19:13:35 iteration: 120 error: 0.23426 acc val: 0.36000 acc train 0.42958
+05/11 19:13:38 iteration: 130 error: 0.23377 acc val: 0.36000 acc train 0.43017
+05/11 19:13:42 iteration: 140 error: 0.23332 acc val: 0.36000 acc train 0.43135
+05/11 19:13:45 iteration: 150 error: 0.23294 acc val: 0.36000 acc train 0.43115
+To file
+
+0.0,0,1.0,5,17
+itemnr0
+0.659684276199,3,1.0,5,28
+0.0,3,0.716041948003,2,68
+0.0,3,0.924712687085,4,90
+0.0,0,0.0,0,129
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5093 147 150
+
+
+ exp 2 politics names random run5
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run5
+start learning
+05/11 19:13:46 iteration: 001 error: 0.38903 acc val: 0.16667 acc train 0.20126
+05/11 19:13:46 iteration: 002 error: 0.38136 acc val: 0.16667 acc train 0.20126
+05/11 19:13:47 iteration: 003 error: 0.37009 acc val: 0.16667 acc train 0.20126
+05/11 19:13:47 iteration: 004 error: 0.34404 acc val: 0.41333 acc train 0.39721
+05/11 19:13:47 iteration: 005 error: 0.31245 acc val: 0.40667 acc train 0.39289
+05/11 19:13:48 iteration: 006 error: 0.29321 acc val: 0.40667 acc train 0.39270
+05/11 19:13:48 iteration: 007 error: 0.28426 acc val: 0.41333 acc train 0.39348
+05/11 19:13:48 iteration: 008 error: 0.27955 acc val: 0.41333 acc train 0.39466
+05/11 19:13:49 iteration: 009 error: 0.27650 acc val: 0.42667 acc train 0.39544
+05/11 19:13:49 iteration: 010 error: 0.27416 acc val: 0.42667 acc train 0.39721
+05/11 19:13:52 iteration: 020 error: 0.25630 acc val: 0.43333 acc train 0.41371
+05/11 19:13:56 iteration: 030 error: 0.24809 acc val: 0.46000 acc train 0.41960
+05/11 19:13:59 iteration: 040 error: 0.24411 acc val: 0.42667 acc train 0.41155
+05/11 19:14:03 iteration: 050 error: 0.24161 acc val: 0.42000 acc train 0.40683
+05/11 19:14:06 iteration: 060 error: 0.23993 acc val: 0.42000 acc train 0.40232
+05/11 19:14:10 iteration: 070 error: 0.23876 acc val: 0.42667 acc train 0.40192
+05/11 19:14:13 iteration: 080 error: 0.23792 acc val: 0.44000 acc train 0.40330
+05/11 19:14:17 iteration: 090 error: 0.23728 acc val: 0.43333 acc train 0.40369
+05/11 19:14:20 iteration: 100 error: 0.23677 acc val: 0.44000 acc train 0.40408
+05/11 19:14:23 iteration: 110 error: 0.23635 acc val: 0.44000 acc train 0.40664
+05/11 19:14:27 iteration: 120 error: 0.23600 acc val: 0.44000 acc train 0.40742
+05/11 19:14:30 iteration: 130 error: 0.23569 acc val: 0.44667 acc train 0.40821
+05/11 19:14:34 iteration: 140 error: 0.23542 acc val: 0.44667 acc train 0.40939
+05/11 19:14:37 iteration: 150 error: 0.23520 acc val: 0.44667 acc train 0.41037
+To file
+
+0.0,0,1.0,5,17
+itemnr0
+0.0,3,1.0,5,28
+0.0,3,0.716041948003,2,68
+0.0,3,0.924712687085,4,90
+0.0,2,0.0,0,129
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run5
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run5
+start learning
+05/11 19:14:38 iteration: 001 error: 0.38350 acc val: 0.22000 acc train 0.19961
+05/11 19:14:38 iteration: 002 error: 0.36268 acc val: 0.22000 acc train 0.19961
+05/11 19:14:38 iteration: 003 error: 0.33266 acc val: 0.46667 acc train 0.39136
+05/11 19:14:38 iteration: 004 error: 0.30645 acc val: 0.46000 acc train 0.38743
+05/11 19:14:38 iteration: 005 error: 0.29363 acc val: 0.46000 acc train 0.38703
+05/11 19:14:38 iteration: 006 error: 0.28793 acc val: 0.46000 acc train 0.38743
+05/11 19:14:38 iteration: 007 error: 0.28489 acc val: 0.46667 acc train 0.38841
+05/11 19:14:38 iteration: 008 error: 0.28291 acc val: 0.46667 acc train 0.38880
+05/11 19:14:38 iteration: 009 error: 0.28145 acc val: 0.46667 acc train 0.38978
+05/11 19:14:38 iteration: 010 error: 0.28026 acc val: 0.46667 acc train 0.38998
+05/11 19:14:39 iteration: 020 error: 0.27262 acc val: 0.46000 acc train 0.39077
+05/11 19:14:40 iteration: 030 error: 0.26657 acc val: 0.46000 acc train 0.39430
+05/11 19:14:40 iteration: 040 error: 0.26154 acc val: 0.48000 acc train 0.40491
+05/11 19:14:41 iteration: 050 error: 0.25819 acc val: 0.47333 acc train 0.40629
+05/11 19:14:42 iteration: 060 error: 0.25637 acc val: 0.46667 acc train 0.40098
+05/11 19:14:43 iteration: 070 error: 0.25545 acc val: 0.46000 acc train 0.39745
+05/11 19:14:43 iteration: 080 error: 0.25493 acc val: 0.45333 acc train 0.39450
+05/11 19:14:44 iteration: 090 error: 0.25458 acc val: 0.44667 acc train 0.39568
+05/11 19:14:45 iteration: 100 error: 0.25431 acc val: 0.45333 acc train 0.39686
+05/11 19:14:45 iteration: 110 error: 0.25408 acc val: 0.45333 acc train 0.39764
+05/11 19:14:46 iteration: 120 error: 0.25388 acc val: 0.46000 acc train 0.39823
+05/11 19:14:47 iteration: 130 error: 0.25370 acc val: 0.46000 acc train 0.39882
+05/11 19:14:47 iteration: 140 error: 0.25354 acc val: 0.46000 acc train 0.39980
+05/11 19:14:48 iteration: 150 error: 0.25341 acc val: 0.46000 acc train 0.40079
+To file
+
+0.0,0,1.0,5,17
+itemnr0
+0.0,0,1.0,5,28
+0.964387188987,3,0.716041948003,2,68
+0.0,3,0.924712687085,4,90
+0.0,0,0.0,0,129
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run6
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run6
+start learning
+05/11 19:14:49 iteration: 001 error: 0.38778 acc val: 0.20667 acc train 0.19980
+05/11 19:14:49 iteration: 002 error: 0.38081 acc val: 0.20667 acc train 0.19980
+05/11 19:14:49 iteration: 003 error: 0.36809 acc val: 0.20667 acc train 0.19980
+05/11 19:14:50 iteration: 004 error: 0.33949 acc val: 0.39333 acc train 0.38880
+05/11 19:14:50 iteration: 005 error: 0.30857 acc val: 0.40000 acc train 0.39018
+05/11 19:14:51 iteration: 006 error: 0.29135 acc val: 0.40000 acc train 0.39037
+05/11 19:14:51 iteration: 007 error: 0.28313 acc val: 0.40000 acc train 0.39155
+05/11 19:14:51 iteration: 008 error: 0.27830 acc val: 0.40000 acc train 0.39371
+05/11 19:14:52 iteration: 009 error: 0.27473 acc val: 0.40667 acc train 0.39548
+05/11 19:14:52 iteration: 010 error: 0.27174 acc val: 0.40667 acc train 0.39745
+05/11 19:14:56 iteration: 020 error: 0.25774 acc val: 0.38667 acc train 0.40000
+05/11 19:14:59 iteration: 030 error: 0.25156 acc val: 0.37333 acc train 0.39843
+05/11 19:15:02 iteration: 040 error: 0.24721 acc val: 0.39333 acc train 0.39666
+05/11 19:15:06 iteration: 050 error: 0.24406 acc val: 0.39333 acc train 0.40472
+05/11 19:15:09 iteration: 060 error: 0.24188 acc val: 0.42000 acc train 0.41356
+05/11 19:15:13 iteration: 070 error: 0.24039 acc val: 0.42000 acc train 0.42083
+05/11 19:15:16 iteration: 080 error: 0.23933 acc val: 0.42667 acc train 0.42358
+05/11 19:15:20 iteration: 090 error: 0.23852 acc val: 0.43333 acc train 0.42554
+05/11 19:15:23 iteration: 100 error: 0.23784 acc val: 0.44667 acc train 0.42711
+05/11 19:15:27 iteration: 110 error: 0.23723 acc val: 0.44667 acc train 0.42888
+05/11 19:15:30 iteration: 120 error: 0.23668 acc val: 0.44000 acc train 0.43006
+05/11 19:15:34 iteration: 130 error: 0.23617 acc val: 0.43333 acc train 0.42986
+05/11 19:15:37 iteration: 140 error: 0.23569 acc val: 0.43333 acc train 0.42986
+05/11 19:15:41 iteration: 150 error: 0.23530 acc val: 0.44000 acc train 0.43104
+To file
+
+0.0,0,0.0,0,46
+itemnr0
+0.0,0,0.0,0,47
+0.0,0,0.0,0,56
+0.0,3,0.940587263691,4,70
+0.0,3,1.0,5,94
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run6
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run6
+start learning
+05/11 19:15:41 iteration: 001 error: 0.38776 acc val: 0.20000 acc train 0.20000
+05/11 19:15:41 iteration: 002 error: 0.38163 acc val: 0.20000 acc train 0.20000
+05/11 19:15:42 iteration: 003 error: 0.37244 acc val: 0.20000 acc train 0.20000
+05/11 19:15:42 iteration: 004 error: 0.34871 acc val: 0.42000 acc train 0.39391
+05/11 19:15:43 iteration: 005 error: 0.31582 acc val: 0.40667 acc train 0.39175
+05/11 19:15:43 iteration: 006 error: 0.29431 acc val: 0.40667 acc train 0.39136
+05/11 19:15:43 iteration: 007 error: 0.28445 acc val: 0.40667 acc train 0.39175
+05/11 19:15:44 iteration: 008 error: 0.27944 acc val: 0.42000 acc train 0.39214
+05/11 19:15:44 iteration: 009 error: 0.27624 acc val: 0.42000 acc train 0.39371
+05/11 19:15:44 iteration: 010 error: 0.27378 acc val: 0.42000 acc train 0.39470
+05/11 19:15:48 iteration: 020 error: 0.25564 acc val: 0.41333 acc train 0.41238
+05/11 19:15:51 iteration: 030 error: 0.24802 acc val: 0.39333 acc train 0.41965
+05/11 19:15:55 iteration: 040 error: 0.24408 acc val: 0.38000 acc train 0.41081
+05/11 19:15:58 iteration: 050 error: 0.24148 acc val: 0.36667 acc train 0.40668
+05/11 19:16:01 iteration: 060 error: 0.23966 acc val: 0.36667 acc train 0.40314
+05/11 19:16:05 iteration: 070 error: 0.23838 acc val: 0.36667 acc train 0.40236
+05/11 19:16:08 iteration: 080 error: 0.23745 acc val: 0.36667 acc train 0.40216
+05/11 19:16:12 iteration: 090 error: 0.23674 acc val: 0.36667 acc train 0.40275
+05/11 19:16:15 iteration: 100 error: 0.23618 acc val: 0.36667 acc train 0.40432
+05/11 19:16:19 iteration: 110 error: 0.23571 acc val: 0.37333 acc train 0.40530
+05/11 19:16:22 iteration: 120 error: 0.23532 acc val: 0.37333 acc train 0.40550
+05/11 19:16:26 iteration: 130 error: 0.23499 acc val: 0.38000 acc train 0.40589
+05/11 19:16:29 iteration: 140 error: 0.23470 acc val: 0.38000 acc train 0.40825
+05/11 19:16:33 iteration: 150 error: 0.23447 acc val: 0.38000 acc train 0.40904
+To file
+
+0.0,3,0.0,0,46
+itemnr0
+0.0,3,0.0,0,47
+0.0,3,0.0,0,56
+0.0,0,0.940587263691,4,70
+0.0,0,1.0,5,94
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5093 147 150
+
+
+ exp 3 politics names no context run6
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run6
+start learning
+05/11 19:16:33 iteration: 001 error: 0.38527 acc val: 0.17333 acc train 0.20145
+05/11 19:16:33 iteration: 002 error: 0.36804 acc val: 0.17333 acc train 0.20145
+05/11 19:16:33 iteration: 003 error: 0.34152 acc val: 0.41333 acc train 0.39643
+05/11 19:16:33 iteration: 004 error: 0.31260 acc val: 0.41333 acc train 0.39014
+05/11 19:16:33 iteration: 005 error: 0.29625 acc val: 0.41333 acc train 0.38936
+05/11 19:16:33 iteration: 006 error: 0.28897 acc val: 0.41333 acc train 0.38995
+05/11 19:16:33 iteration: 007 error: 0.28530 acc val: 0.41333 acc train 0.39034
+05/11 19:16:33 iteration: 008 error: 0.28303 acc val: 0.40667 acc train 0.39054
+05/11 19:16:33 iteration: 009 error: 0.28139 acc val: 0.41333 acc train 0.39171
+05/11 19:16:33 iteration: 010 error: 0.28006 acc val: 0.41333 acc train 0.39191
+05/11 19:16:34 iteration: 020 error: 0.27146 acc val: 0.40667 acc train 0.39407
+05/11 19:16:35 iteration: 030 error: 0.26471 acc val: 0.40667 acc train 0.40016
+05/11 19:16:35 iteration: 040 error: 0.25970 acc val: 0.42000 acc train 0.41017
+05/11 19:16:36 iteration: 050 error: 0.25678 acc val: 0.41333 acc train 0.40369
+05/11 19:16:37 iteration: 060 error: 0.25530 acc val: 0.40000 acc train 0.39819
+05/11 19:16:38 iteration: 070 error: 0.25453 acc val: 0.39333 acc train 0.39564
+05/11 19:16:38 iteration: 080 error: 0.25407 acc val: 0.39333 acc train 0.39662
+05/11 19:16:39 iteration: 090 error: 0.25374 acc val: 0.39333 acc train 0.39800
+05/11 19:16:40 iteration: 100 error: 0.25348 acc val: 0.40000 acc train 0.39859
+05/11 19:16:40 iteration: 110 error: 0.25326 acc val: 0.40000 acc train 0.39898
+05/11 19:16:41 iteration: 120 error: 0.25308 acc val: 0.40000 acc train 0.39937
+05/11 19:16:42 iteration: 130 error: 0.25291 acc val: 0.39333 acc train 0.40016
+05/11 19:16:43 iteration: 140 error: 0.25276 acc val: 0.39333 acc train 0.40114
+05/11 19:16:43 iteration: 150 error: 0.25265 acc val: 0.39333 acc train 0.40291
+To file
+
+1.0,3,0.0,0,46
+itemnr0
+0.0,0,0.0,0,47
+0.0,0,0.0,0,56
+0.0,0,0.940587263691,4,70
+0.0,0,1.0,5,94
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run7
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run7
+start learning
+05/11 19:16:44 iteration: 001 error: 0.38792 acc val: 0.19333 acc train 0.20039
+05/11 19:16:44 iteration: 002 error: 0.38073 acc val: 0.19333 acc train 0.20039
+05/11 19:16:45 iteration: 003 error: 0.36744 acc val: 0.19333 acc train 0.20039
+05/11 19:16:45 iteration: 004 error: 0.33806 acc val: 0.33333 acc train 0.39077
+05/11 19:16:45 iteration: 005 error: 0.30706 acc val: 0.34667 acc train 0.39273
+05/11 19:16:46 iteration: 006 error: 0.29002 acc val: 0.34667 acc train 0.39332
+05/11 19:16:46 iteration: 007 error: 0.28172 acc val: 0.34667 acc train 0.39450
+05/11 19:16:46 iteration: 008 error: 0.27664 acc val: 0.34667 acc train 0.39646
+05/11 19:16:47 iteration: 009 error: 0.27275 acc val: 0.34667 acc train 0.39882
+05/11 19:16:47 iteration: 010 error: 0.26947 acc val: 0.34667 acc train 0.40000
+05/11 19:16:50 iteration: 020 error: 0.25546 acc val: 0.32667 acc train 0.39980
+05/11 19:16:54 iteration: 030 error: 0.24945 acc val: 0.31333 acc train 0.39843
+05/11 19:16:57 iteration: 040 error: 0.24519 acc val: 0.30667 acc train 0.39705
+05/11 19:17:01 iteration: 050 error: 0.24205 acc val: 0.30000 acc train 0.40589
+05/11 19:17:04 iteration: 060 error: 0.23981 acc val: 0.29333 acc train 0.41316
+05/11 19:17:08 iteration: 070 error: 0.23823 acc val: 0.30000 acc train 0.42200
+05/11 19:17:11 iteration: 080 error: 0.23707 acc val: 0.30667 acc train 0.42475
+05/11 19:17:15 iteration: 090 error: 0.23618 acc val: 0.31333 acc train 0.42770
+05/11 19:17:18 iteration: 100 error: 0.23545 acc val: 0.31333 acc train 0.43006
+05/11 19:17:22 iteration: 110 error: 0.23482 acc val: 0.32000 acc train 0.43242
+05/11 19:17:25 iteration: 120 error: 0.23425 acc val: 0.32000 acc train 0.43301
+05/11 19:17:29 iteration: 130 error: 0.23374 acc val: 0.30667 acc train 0.43379
+05/11 19:17:32 iteration: 140 error: 0.23326 acc val: 0.31333 acc train 0.43399
+05/11 19:17:36 iteration: 150 error: 0.23286 acc val: 0.31333 acc train 0.43477
+To file
+
+0.0,0,0.0,0,72
+itemnr0
+0.0,3,1.0,5,77
+0.0,2,1.0,5,100
+0.0,3,0.787609656965,3,167
+0.0,3,0.69281093729,2,249
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5104 136 150
+
+
+ exp 2 politics names random run7
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run7
+start learning
+05/11 19:17:36 iteration: 001 error: 0.38868 acc val: 0.16667 acc train 0.20239
+05/11 19:17:37 iteration: 002 error: 0.38215 acc val: 0.16667 acc train 0.20239
+05/11 19:17:37 iteration: 003 error: 0.37502 acc val: 0.16667 acc train 0.20239
+05/11 19:17:37 iteration: 004 error: 0.35600 acc val: 0.19333 acc train 0.21963
+05/11 19:17:38 iteration: 005 error: 0.32488 acc val: 0.45333 acc train 0.39518
+05/11 19:17:38 iteration: 006 error: 0.29973 acc val: 0.44667 acc train 0.39185
+05/11 19:17:38 iteration: 007 error: 0.28719 acc val: 0.44667 acc train 0.39205
+05/11 19:17:39 iteration: 008 error: 0.28105 acc val: 0.45333 acc train 0.39263
+05/11 19:17:39 iteration: 009 error: 0.27739 acc val: 0.45333 acc train 0.39400
+05/11 19:17:39 iteration: 010 error: 0.27475 acc val: 0.45333 acc train 0.39400
+05/11 19:17:43 iteration: 020 error: 0.25640 acc val: 0.46667 acc train 0.40811
+05/11 19:17:46 iteration: 030 error: 0.24849 acc val: 0.48000 acc train 0.41516
+05/11 19:17:50 iteration: 040 error: 0.24470 acc val: 0.46000 acc train 0.40772
+05/11 19:17:53 iteration: 050 error: 0.24232 acc val: 0.46000 acc train 0.40380
+05/11 19:17:57 iteration: 060 error: 0.24072 acc val: 0.45333 acc train 0.40223
+05/11 19:18:00 iteration: 070 error: 0.23960 acc val: 0.45333 acc train 0.40047
+05/11 19:18:04 iteration: 080 error: 0.23879 acc val: 0.44667 acc train 0.39969
+05/11 19:18:07 iteration: 090 error: 0.23816 acc val: 0.44667 acc train 0.40086
+05/11 19:18:11 iteration: 100 error: 0.23766 acc val: 0.44000 acc train 0.40223
+05/11 19:18:14 iteration: 110 error: 0.23724 acc val: 0.44667 acc train 0.40321
+05/11 19:18:18 iteration: 120 error: 0.23689 acc val: 0.44667 acc train 0.40263
+05/11 19:18:21 iteration: 130 error: 0.23658 acc val: 0.44667 acc train 0.40478
+05/11 19:18:24 iteration: 140 error: 0.23631 acc val: 0.44667 acc train 0.40537
+05/11 19:18:28 iteration: 150 error: 0.23609 acc val: 0.44667 acc train 0.40615
+To file
+
+0.0,0,0.0,0,72
+itemnr0
+0.0,3,1.0,5,77
+0.0,0,1.0,5,100
+0.0,4,0.787609656965,3,167
+0.0,4,0.69281093729,2,249
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run7
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run7
+start learning
+05/11 19:18:28 iteration: 001 error: 0.38431 acc val: 0.18667 acc train 0.20020
+05/11 19:18:28 iteration: 002 error: 0.36468 acc val: 0.18667 acc train 0.20020
+05/11 19:18:28 iteration: 003 error: 0.33563 acc val: 0.40667 acc train 0.39489
+05/11 19:18:28 iteration: 004 error: 0.30814 acc val: 0.40667 acc train 0.38998
+05/11 19:18:28 iteration: 005 error: 0.29410 acc val: 0.40667 acc train 0.38978
+05/11 19:18:28 iteration: 006 error: 0.28795 acc val: 0.40667 acc train 0.38978
+05/11 19:18:28 iteration: 007 error: 0.28478 acc val: 0.40667 acc train 0.39077
+05/11 19:18:29 iteration: 008 error: 0.28278 acc val: 0.40667 acc train 0.39096
+05/11 19:18:29 iteration: 009 error: 0.28131 acc val: 0.41333 acc train 0.39175
+05/11 19:18:29 iteration: 010 error: 0.28014 acc val: 0.41333 acc train 0.39155
+05/11 19:18:29 iteration: 020 error: 0.27252 acc val: 0.40667 acc train 0.39293
+05/11 19:18:30 iteration: 030 error: 0.26614 acc val: 0.41333 acc train 0.39568
+05/11 19:18:31 iteration: 040 error: 0.26071 acc val: 0.40667 acc train 0.40668
+05/11 19:18:32 iteration: 050 error: 0.25709 acc val: 0.38667 acc train 0.40864
+05/11 19:18:32 iteration: 060 error: 0.25512 acc val: 0.37333 acc train 0.40452
+05/11 19:18:33 iteration: 070 error: 0.25411 acc val: 0.38000 acc train 0.39941
+05/11 19:18:34 iteration: 080 error: 0.25356 acc val: 0.37333 acc train 0.39961
+05/11 19:18:35 iteration: 090 error: 0.25319 acc val: 0.37333 acc train 0.40039
+05/11 19:18:35 iteration: 100 error: 0.25290 acc val: 0.38000 acc train 0.40157
+05/11 19:18:36 iteration: 110 error: 0.25266 acc val: 0.38000 acc train 0.40196
+05/11 19:18:37 iteration: 120 error: 0.25245 acc val: 0.38000 acc train 0.40354
+05/11 19:18:37 iteration: 130 error: 0.25227 acc val: 0.38000 acc train 0.40432
+05/11 19:18:38 iteration: 140 error: 0.25211 acc val: 0.38667 acc train 0.40511
+05/11 19:18:39 iteration: 150 error: 0.25198 acc val: 0.38667 acc train 0.40570
+To file
+
+0.744073137842,3,0.0,0,72
+itemnr0
+0.0,0,1.0,5,77
+0.0,3,1.0,5,100
+0.0,3,0.787609656965,3,167
+0.545664584661,3,0.69281093729,2,249
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run8
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run8
+start learning
+05/11 19:18:39 iteration: 001 error: 0.38899 acc val: 0.22667 acc train 0.19921
+05/11 19:18:40 iteration: 002 error: 0.38142 acc val: 0.22667 acc train 0.19921
+05/11 19:18:40 iteration: 003 error: 0.36979 acc val: 0.22667 acc train 0.19921
+05/11 19:18:41 iteration: 004 error: 0.34296 acc val: 0.42000 acc train 0.38703
+05/11 19:18:41 iteration: 005 error: 0.31129 acc val: 0.42000 acc train 0.39057
+05/11 19:18:41 iteration: 006 error: 0.29159 acc val: 0.41333 acc train 0.39057
+05/11 19:18:42 iteration: 007 error: 0.28155 acc val: 0.41333 acc train 0.39175
+05/11 19:18:42 iteration: 008 error: 0.27558 acc val: 0.43333 acc train 0.39411
+05/11 19:18:42 iteration: 009 error: 0.27133 acc val: 0.44000 acc train 0.39548
+05/11 19:18:43 iteration: 010 error: 0.26804 acc val: 0.44000 acc train 0.39764
+05/11 19:18:46 iteration: 020 error: 0.25456 acc val: 0.42667 acc train 0.39804
+05/11 19:18:50 iteration: 030 error: 0.24866 acc val: 0.38667 acc train 0.39450
+05/11 19:18:53 iteration: 040 error: 0.24482 acc val: 0.39333 acc train 0.39411
+05/11 19:18:57 iteration: 050 error: 0.24219 acc val: 0.39333 acc train 0.40511
+05/11 19:19:00 iteration: 060 error: 0.24040 acc val: 0.40667 acc train 0.41218
+05/11 19:19:04 iteration: 070 error: 0.23915 acc val: 0.41333 acc train 0.41749
+05/11 19:19:07 iteration: 080 error: 0.23823 acc val: 0.41333 acc train 0.42122
+05/11 19:19:11 iteration: 090 error: 0.23750 acc val: 0.41333 acc train 0.42495
+05/11 19:19:14 iteration: 100 error: 0.23690 acc val: 0.41333 acc train 0.42475
+05/11 19:19:18 iteration: 110 error: 0.23638 acc val: 0.42000 acc train 0.42417
+05/11 19:19:21 iteration: 120 error: 0.23592 acc val: 0.42667 acc train 0.42377
+05/11 19:19:25 iteration: 130 error: 0.23549 acc val: 0.42000 acc train 0.42495
+05/11 19:19:28 iteration: 140 error: 0.23509 acc val: 0.41333 acc train 0.42633
+05/11 19:19:32 iteration: 150 error: 0.23476 acc val: 0.40667 acc train 0.42692
+To file
+
+0.0,2,0.615209164551,2,14
+itemnr0
+0.0,2,1.0,5,25
+0.0,3,0.922383511345,4,31
+0.0,2,0.851944303161,3,171
+0.0,3,1.0,5,181
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run8
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run8
+start learning
+05/11 19:19:32 iteration: 001 error: 0.38847 acc val: 0.22000 acc train 0.19961
+05/11 19:19:32 iteration: 002 error: 0.38139 acc val: 0.22000 acc train 0.19961
+05/11 19:19:33 iteration: 003 error: 0.36942 acc val: 0.22000 acc train 0.19961
+05/11 19:19:33 iteration: 004 error: 0.34273 acc val: 0.43333 acc train 0.39764
+05/11 19:19:34 iteration: 005 error: 0.31149 acc val: 0.43333 acc train 0.39214
+05/11 19:19:34 iteration: 006 error: 0.29284 acc val: 0.43333 acc train 0.39175
+05/11 19:19:34 iteration: 007 error: 0.28408 acc val: 0.43333 acc train 0.39234
+05/11 19:19:35 iteration: 008 error: 0.27936 acc val: 0.43333 acc train 0.39352
+05/11 19:19:35 iteration: 009 error: 0.27620 acc val: 0.43333 acc train 0.39430
+05/11 19:19:35 iteration: 010 error: 0.27370 acc val: 0.43333 acc train 0.39548
+05/11 19:19:39 iteration: 020 error: 0.25465 acc val: 0.41333 acc train 0.41473
+05/11 19:19:42 iteration: 030 error: 0.24727 acc val: 0.41333 acc train 0.42024
+05/11 19:19:46 iteration: 040 error: 0.24371 acc val: 0.39333 acc train 0.41139
+05/11 19:19:49 iteration: 050 error: 0.24146 acc val: 0.38000 acc train 0.40747
+05/11 19:19:52 iteration: 060 error: 0.23992 acc val: 0.37333 acc train 0.40275
+05/11 19:19:56 iteration: 070 error: 0.23882 acc val: 0.38000 acc train 0.40255
+05/11 19:19:59 iteration: 080 error: 0.23800 acc val: 0.37333 acc train 0.40020
+05/11 19:20:03 iteration: 090 error: 0.23736 acc val: 0.37333 acc train 0.40000
+05/11 19:20:06 iteration: 100 error: 0.23684 acc val: 0.37333 acc train 0.40079
+05/11 19:20:09 iteration: 110 error: 0.23641 acc val: 0.37333 acc train 0.40118
+05/11 19:20:13 iteration: 120 error: 0.23605 acc val: 0.37333 acc train 0.40177
+05/11 19:20:16 iteration: 130 error: 0.23573 acc val: 0.37333 acc train 0.40196
+05/11 19:20:20 iteration: 140 error: 0.23545 acc val: 0.37333 acc train 0.40354
+05/11 19:20:23 iteration: 150 error: 0.23523 acc val: 0.37333 acc train 0.40472
+To file
+
+0.0,2,0.615209164551,2,14
+itemnr0
+0.0,2,1.0,5,25
+0.0,3,0.922383511345,4,31
+0.0,3,0.851944303161,3,171
+0.0,2,1.0,5,181
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run8
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run8
+start learning
+05/11 19:20:23 iteration: 001 error: 0.38464 acc val: 0.22000 acc train 0.20059
+05/11 19:20:23 iteration: 002 error: 0.36208 acc val: 0.22000 acc train 0.20059
+05/11 19:20:23 iteration: 003 error: 0.33178 acc val: 0.42000 acc train 0.39312
+05/11 19:20:23 iteration: 004 error: 0.30621 acc val: 0.42000 acc train 0.38841
+05/11 19:20:24 iteration: 005 error: 0.29388 acc val: 0.42000 acc train 0.38880
+05/11 19:20:24 iteration: 006 error: 0.28843 acc val: 0.42000 acc train 0.38861
+05/11 19:20:24 iteration: 007 error: 0.28554 acc val: 0.42667 acc train 0.39037
+05/11 19:20:24 iteration: 008 error: 0.28368 acc val: 0.42667 acc train 0.39057
+05/11 19:20:24 iteration: 009 error: 0.28229 acc val: 0.42667 acc train 0.39057
+05/11 19:20:24 iteration: 010 error: 0.28115 acc val: 0.42667 acc train 0.39077
+05/11 19:20:25 iteration: 020 error: 0.27372 acc val: 0.42667 acc train 0.39175
+05/11 19:20:26 iteration: 030 error: 0.26773 acc val: 0.42667 acc train 0.39470
+05/11 19:20:26 iteration: 040 error: 0.26273 acc val: 0.44000 acc train 0.40589
+05/11 19:20:27 iteration: 050 error: 0.25931 acc val: 0.46000 acc train 0.40825
+05/11 19:20:28 iteration: 060 error: 0.25736 acc val: 0.43333 acc train 0.40550
+05/11 19:20:28 iteration: 070 error: 0.25632 acc val: 0.43333 acc train 0.40373
+05/11 19:20:29 iteration: 080 error: 0.25573 acc val: 0.43333 acc train 0.39980
+05/11 19:20:30 iteration: 090 error: 0.25534 acc val: 0.42000 acc train 0.40138
+05/11 19:20:31 iteration: 100 error: 0.25504 acc val: 0.42000 acc train 0.40157
+05/11 19:20:31 iteration: 110 error: 0.25480 acc val: 0.42000 acc train 0.40255
+05/11 19:20:32 iteration: 120 error: 0.25460 acc val: 0.42000 acc train 0.40295
+05/11 19:20:33 iteration: 130 error: 0.25442 acc val: 0.42000 acc train 0.40432
+05/11 19:20:33 iteration: 140 error: 0.25427 acc val: 0.42667 acc train 0.40491
+05/11 19:20:34 iteration: 150 error: 0.25414 acc val: 0.42667 acc train 0.40609
+To file
+
+0.60986816222,2,0.615209164551,2,14
+itemnr0
+0.85718377921,3,1.0,5,25
+0.0,2,0.922383511345,4,31
+0.0,0,0.851944303161,3,171
+0.645711253135,3,1.0,5,181
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run9
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run9
+start learning
+05/11 19:20:35 iteration: 001 error: 0.38800 acc val: 0.16667 acc train 0.20059
+05/11 19:20:35 iteration: 002 error: 0.38152 acc val: 0.16667 acc train 0.20059
+05/11 19:20:35 iteration: 003 error: 0.37133 acc val: 0.16667 acc train 0.20059
+05/11 19:20:36 iteration: 004 error: 0.34633 acc val: 0.35333 acc train 0.37917
+05/11 19:20:36 iteration: 005 error: 0.31419 acc val: 0.38667 acc train 0.39116
+05/11 19:20:36 iteration: 006 error: 0.29338 acc val: 0.38667 acc train 0.39116
+05/11 19:20:37 iteration: 007 error: 0.28304 acc val: 0.39333 acc train 0.39312
+05/11 19:20:37 iteration: 008 error: 0.27709 acc val: 0.39333 acc train 0.39548
+05/11 19:20:37 iteration: 009 error: 0.27283 acc val: 0.39333 acc train 0.39784
+05/11 19:20:38 iteration: 010 error: 0.26940 acc val: 0.39333 acc train 0.39882
+05/11 19:20:41 iteration: 020 error: 0.25478 acc val: 0.39333 acc train 0.39921
+05/11 19:20:45 iteration: 030 error: 0.24837 acc val: 0.37333 acc train 0.39646
+05/11 19:20:48 iteration: 040 error: 0.24411 acc val: 0.38000 acc train 0.39253
+05/11 19:20:52 iteration: 050 error: 0.24119 acc val: 0.38667 acc train 0.40354
+05/11 19:20:55 iteration: 060 error: 0.23924 acc val: 0.40000 acc train 0.41277
+05/11 19:20:59 iteration: 070 error: 0.23788 acc val: 0.41333 acc train 0.41984
+05/11 19:21:02 iteration: 080 error: 0.23688 acc val: 0.44000 acc train 0.42318
+05/11 19:21:06 iteration: 090 error: 0.23607 acc val: 0.44000 acc train 0.42377
+05/11 19:21:09 iteration: 100 error: 0.23538 acc val: 0.44000 acc train 0.42515
+05/11 19:21:13 iteration: 110 error: 0.23478 acc val: 0.43333 acc train 0.42672
+05/11 19:21:16 iteration: 120 error: 0.23424 acc val: 0.44000 acc train 0.42829
+05/11 19:21:20 iteration: 130 error: 0.23375 acc val: 0.44000 acc train 0.43026
+05/11 19:21:23 iteration: 140 error: 0.23330 acc val: 0.44000 acc train 0.43104
+05/11 19:21:27 iteration: 150 error: 0.23292 acc val: 0.44000 acc train 0.43124
+To file
+
+0.0,3,0.964387188987,4,29
+itemnr0
+0.0,0,0.0,0,46
+0.0,3,0.944490527707,4,64
+0.744073137842,3,0.698283112315,2,80
+0.756338920476,3,0.85718377921,3,151
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run9
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run9
+start learning
+05/11 19:21:27 iteration: 001 error: 0.38806 acc val: 0.17333 acc train 0.20157
+05/11 19:21:28 iteration: 002 error: 0.38188 acc val: 0.17333 acc train 0.20157
+05/11 19:21:28 iteration: 003 error: 0.37232 acc val: 0.17333 acc train 0.20157
+05/11 19:21:28 iteration: 004 error: 0.34891 acc val: 0.38000 acc train 0.39450
+05/11 19:21:29 iteration: 005 error: 0.31708 acc val: 0.37333 acc train 0.39332
+05/11 19:21:29 iteration: 006 error: 0.29554 acc val: 0.37333 acc train 0.39273
+05/11 19:21:30 iteration: 007 error: 0.28524 acc val: 0.37333 acc train 0.39293
+05/11 19:21:30 iteration: 008 error: 0.27992 acc val: 0.38000 acc train 0.39352
+05/11 19:21:30 iteration: 009 error: 0.27654 acc val: 0.38000 acc train 0.39489
+05/11 19:21:31 iteration: 010 error: 0.27400 acc val: 0.38000 acc train 0.39528
+05/11 19:21:34 iteration: 020 error: 0.25546 acc val: 0.39333 acc train 0.41591
+05/11 19:21:37 iteration: 030 error: 0.24757 acc val: 0.41333 acc train 0.42122
+05/11 19:21:41 iteration: 040 error: 0.24398 acc val: 0.38667 acc train 0.41120
+05/11 19:21:44 iteration: 050 error: 0.24178 acc val: 0.38667 acc train 0.40668
+05/11 19:21:48 iteration: 060 error: 0.24029 acc val: 0.38000 acc train 0.40452
+05/11 19:21:51 iteration: 070 error: 0.23924 acc val: 0.38667 acc train 0.40393
+05/11 19:21:55 iteration: 080 error: 0.23847 acc val: 0.39333 acc train 0.40255
+05/11 19:21:58 iteration: 090 error: 0.23787 acc val: 0.38667 acc train 0.40138
+05/11 19:22:02 iteration: 100 error: 0.23739 acc val: 0.38667 acc train 0.40157
+05/11 19:22:05 iteration: 110 error: 0.23700 acc val: 0.38667 acc train 0.40275
+05/11 19:22:09 iteration: 120 error: 0.23667 acc val: 0.39333 acc train 0.40334
+05/11 19:22:12 iteration: 130 error: 0.23638 acc val: 0.41333 acc train 0.40334
+05/11 19:22:15 iteration: 140 error: 0.23612 acc val: 0.42000 acc train 0.40393
+05/11 19:22:19 iteration: 150 error: 0.23591 acc val: 0.42000 acc train 0.40452
+To file
+
+0.0,0,0.964387188987,4,29
+itemnr0
+0.0,3,0.0,0,46
+0.0,2,0.944490527707,4,64
+0.0,0,0.698283112315,2,80
+0.0,2,0.85718377921,3,151
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run9
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run9
+start learning
+05/11 19:22:19 iteration: 001 error: 0.38262 acc val: 0.25333 acc train 0.19902
+05/11 19:22:19 iteration: 002 error: 0.36259 acc val: 0.25333 acc train 0.19902
+05/11 19:22:19 iteration: 003 error: 0.33241 acc val: 0.42000 acc train 0.39273
+05/11 19:22:19 iteration: 004 error: 0.30655 acc val: 0.42000 acc train 0.38880
+05/11 19:22:19 iteration: 005 error: 0.29379 acc val: 0.42000 acc train 0.38821
+05/11 19:22:19 iteration: 006 error: 0.28812 acc val: 0.42000 acc train 0.38880
+05/11 19:22:19 iteration: 007 error: 0.28514 acc val: 0.42000 acc train 0.39018
+05/11 19:22:19 iteration: 008 error: 0.28323 acc val: 0.42000 acc train 0.39057
+05/11 19:22:20 iteration: 009 error: 0.28182 acc val: 0.42000 acc train 0.39136
+05/11 19:22:20 iteration: 010 error: 0.28066 acc val: 0.42000 acc train 0.39136
+05/11 19:22:20 iteration: 020 error: 0.27297 acc val: 0.42000 acc train 0.39234
+05/11 19:22:21 iteration: 030 error: 0.26666 acc val: 0.42667 acc train 0.39450
+05/11 19:22:22 iteration: 040 error: 0.26150 acc val: 0.44000 acc train 0.40334
+05/11 19:22:23 iteration: 050 error: 0.25814 acc val: 0.43333 acc train 0.40432
+05/11 19:22:23 iteration: 060 error: 0.25634 acc val: 0.42667 acc train 0.39921
+05/11 19:22:24 iteration: 070 error: 0.25542 acc val: 0.42667 acc train 0.39587
+05/11 19:22:25 iteration: 080 error: 0.25491 acc val: 0.43333 acc train 0.39686
+05/11 19:22:25 iteration: 090 error: 0.25456 acc val: 0.42667 acc train 0.39745
+05/11 19:22:26 iteration: 100 error: 0.25430 acc val: 0.42667 acc train 0.39784
+05/11 19:22:27 iteration: 110 error: 0.25407 acc val: 0.43333 acc train 0.39902
+05/11 19:22:27 iteration: 120 error: 0.25388 acc val: 0.43333 acc train 0.39941
+05/11 19:22:28 iteration: 130 error: 0.25371 acc val: 0.43333 acc train 0.40059
+05/11 19:22:29 iteration: 140 error: 0.25356 acc val: 0.43333 acc train 0.40118
+05/11 19:22:29 iteration: 150 error: 0.25344 acc val: 0.43333 acc train 0.40177
+To file
+
+0.0,1,0.964387188987,4,29
+itemnr0
+0.0,0,0.0,0,46
+0.83534239141,3,0.944490527707,4,64
+0.932581216117,3,0.698283112315,2,80
+1.0,3,0.85718377921,3,151
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run10
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run10
+start learning
+05/11 19:22:30 iteration: 001 error: 0.38880 acc val: 0.24000 acc train 0.20157
+05/11 19:22:30 iteration: 002 error: 0.38136 acc val: 0.24000 acc train 0.20157
+05/11 19:22:31 iteration: 003 error: 0.36929 acc val: 0.24000 acc train 0.20157
+05/11 19:22:31 iteration: 004 error: 0.34186 acc val: 0.40667 acc train 0.38841
+05/11 19:22:31 iteration: 005 error: 0.31049 acc val: 0.42667 acc train 0.39214
+05/11 19:22:32 iteration: 006 error: 0.29180 acc val: 0.42667 acc train 0.39234
+05/11 19:22:32 iteration: 007 error: 0.28253 acc val: 0.42667 acc train 0.39293
+05/11 19:22:33 iteration: 008 error: 0.27697 acc val: 0.43333 acc train 0.39470
+05/11 19:22:33 iteration: 009 error: 0.27286 acc val: 0.43333 acc train 0.39587
+05/11 19:22:33 iteration: 010 error: 0.26950 acc val: 0.44000 acc train 0.39705
+05/11 19:22:37 iteration: 020 error: 0.25496 acc val: 0.42667 acc train 0.39509
+05/11 19:22:40 iteration: 030 error: 0.24870 acc val: 0.42000 acc train 0.39352
+05/11 19:22:44 iteration: 040 error: 0.24459 acc val: 0.42000 acc train 0.39312
+05/11 19:22:47 iteration: 050 error: 0.24180 acc val: 0.42000 acc train 0.40177
+05/11 19:22:51 iteration: 060 error: 0.23992 acc val: 0.43333 acc train 0.40963
+05/11 19:22:54 iteration: 070 error: 0.23864 acc val: 0.44000 acc train 0.41316
+05/11 19:22:58 iteration: 080 error: 0.23770 acc val: 0.45333 acc train 0.41631
+05/11 19:23:01 iteration: 090 error: 0.23696 acc val: 0.45333 acc train 0.41827
+05/11 19:23:05 iteration: 100 error: 0.23635 acc val: 0.45333 acc train 0.42083
+05/11 19:23:08 iteration: 110 error: 0.23582 acc val: 0.44000 acc train 0.42220
+05/11 19:23:12 iteration: 120 error: 0.23534 acc val: 0.44000 acc train 0.42338
+05/11 19:23:15 iteration: 130 error: 0.23489 acc val: 0.44000 acc train 0.42554
+05/11 19:23:19 iteration: 140 error: 0.23447 acc val: 0.44000 acc train 0.42692
+05/11 19:23:22 iteration: 150 error: 0.23411 acc val: 0.44000 acc train 0.42692
+To file
+
+0.0,2,0.774339919852,3,34
+itemnr0
+0.484544679054,3,1.0,5,83
+0.563992344445,3,0.615209164551,2,139
+0.0,3,1.0,5,147
+0.0,2,0.774327938753,3,159
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run10
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run10
+start learning
+05/11 19:23:22 iteration: 001 error: 0.38796 acc val: 0.23333 acc train 0.19921
+05/11 19:23:23 iteration: 002 error: 0.38312 acc val: 0.23333 acc train 0.19921
+05/11 19:23:23 iteration: 003 error: 0.37645 acc val: 0.23333 acc train 0.19921
+05/11 19:23:24 iteration: 004 error: 0.35795 acc val: 0.24667 acc train 0.21375
+05/11 19:23:24 iteration: 005 error: 0.32651 acc val: 0.42667 acc train 0.39293
+05/11 19:23:24 iteration: 006 error: 0.30056 acc val: 0.42000 acc train 0.39037
+05/11 19:23:25 iteration: 007 error: 0.28751 acc val: 0.42000 acc train 0.39077
+05/11 19:23:25 iteration: 008 error: 0.28109 acc val: 0.42000 acc train 0.39136
+05/11 19:23:25 iteration: 009 error: 0.27723 acc val: 0.42000 acc train 0.39214
+05/11 19:23:26 iteration: 010 error: 0.27440 acc val: 0.42667 acc train 0.39312
+05/11 19:23:29 iteration: 020 error: 0.25535 acc val: 0.47333 acc train 0.40884
+05/11 19:23:33 iteration: 030 error: 0.24768 acc val: 0.48000 acc train 0.41415
+05/11 19:23:36 iteration: 040 error: 0.24395 acc val: 0.44000 acc train 0.40511
+05/11 19:23:40 iteration: 050 error: 0.24166 acc val: 0.42000 acc train 0.39961
+05/11 19:23:43 iteration: 060 error: 0.24014 acc val: 0.41333 acc train 0.39686
+05/11 19:23:46 iteration: 070 error: 0.23908 acc val: 0.42000 acc train 0.39882
+05/11 19:23:50 iteration: 080 error: 0.23831 acc val: 0.42000 acc train 0.39705
+05/11 19:23:53 iteration: 090 error: 0.23772 acc val: 0.42000 acc train 0.39843
+05/11 19:23:57 iteration: 100 error: 0.23724 acc val: 0.42667 acc train 0.40177
+05/11 19:24:00 iteration: 110 error: 0.23684 acc val: 0.43333 acc train 0.40413
+05/11 19:24:04 iteration: 120 error: 0.23650 acc val: 0.43333 acc train 0.40550
+05/11 19:24:07 iteration: 130 error: 0.23621 acc val: 0.43333 acc train 0.40648
+05/11 19:24:11 iteration: 140 error: 0.23595 acc val: 0.43333 acc train 0.40766
+05/11 19:24:14 iteration: 150 error: 0.23573 acc val: 0.43333 acc train 0.40864
+To file
+
+0.0,3,0.774339919852,3,34
+itemnr0
+0.0,2,1.0,5,83
+0.0,4,0.615209164551,2,139
+0.0,3,1.0,5,147
+0.0,0,0.774327938753,3,159
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run10
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run10
+start learning
+05/11 19:24:14 iteration: 001 error: 0.38714 acc val: 0.23333 acc train 0.19882
+05/11 19:24:14 iteration: 002 error: 0.37350 acc val: 0.23333 acc train 0.19882
+05/11 19:24:14 iteration: 003 error: 0.35053 acc val: 0.47333 acc train 0.39646
+05/11 19:24:14 iteration: 004 error: 0.31999 acc val: 0.46000 acc train 0.38959
+05/11 19:24:14 iteration: 005 error: 0.29983 acc val: 0.44667 acc train 0.38782
+05/11 19:24:14 iteration: 006 error: 0.29074 acc val: 0.46000 acc train 0.38802
+05/11 19:24:14 iteration: 007 error: 0.28639 acc val: 0.46000 acc train 0.38880
+05/11 19:24:15 iteration: 008 error: 0.28384 acc val: 0.46000 acc train 0.38959
+05/11 19:24:15 iteration: 009 error: 0.28204 acc val: 0.46000 acc train 0.38998
+05/11 19:24:15 iteration: 010 error: 0.28061 acc val: 0.46000 acc train 0.39077
+05/11 19:24:15 iteration: 020 error: 0.27164 acc val: 0.46000 acc train 0.39293
+05/11 19:24:16 iteration: 030 error: 0.26513 acc val: 0.46667 acc train 0.39725
+05/11 19:24:17 iteration: 040 error: 0.26041 acc val: 0.47333 acc train 0.40491
+05/11 19:24:18 iteration: 050 error: 0.25748 acc val: 0.46667 acc train 0.40923
+05/11 19:24:18 iteration: 060 error: 0.25584 acc val: 0.46667 acc train 0.40511
+05/11 19:24:19 iteration: 070 error: 0.25492 acc val: 0.47333 acc train 0.40334
+05/11 19:24:20 iteration: 080 error: 0.25436 acc val: 0.47333 acc train 0.40118
+05/11 19:24:20 iteration: 090 error: 0.25399 acc val: 0.46667 acc train 0.40098
+05/11 19:24:21 iteration: 100 error: 0.25371 acc val: 0.46667 acc train 0.40177
+05/11 19:24:22 iteration: 110 error: 0.25350 acc val: 0.46667 acc train 0.40275
+05/11 19:24:22 iteration: 120 error: 0.25332 acc val: 0.46000 acc train 0.40334
+05/11 19:24:23 iteration: 130 error: 0.25317 acc val: 0.46000 acc train 0.40491
+05/11 19:24:24 iteration: 140 error: 0.25305 acc val: 0.46000 acc train 0.40589
+05/11 19:24:25 iteration: 150 error: 0.25295 acc val: 0.46000 acc train 0.40609
+To file
+
+0.911513107615,3,0.774339919852,3,34
+itemnr0
+0.0,2,1.0,5,83
+0.0,0,0.615209164551,2,139
+1.0,3,1.0,5,147
+0.0,2,0.774327938753,3,159
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run11
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run11
+start learning
+05/11 19:24:25 iteration: 001 error: 0.38916 acc val: 0.18667 acc train 0.20000
+05/11 19:24:25 iteration: 002 error: 0.38099 acc val: 0.18667 acc train 0.20000
+05/11 19:24:26 iteration: 003 error: 0.36857 acc val: 0.18667 acc train 0.20000
+05/11 19:24:26 iteration: 004 error: 0.34040 acc val: 0.40000 acc train 0.38900
+05/11 19:24:27 iteration: 005 error: 0.30837 acc val: 0.40667 acc train 0.39096
+05/11 19:24:27 iteration: 006 error: 0.28929 acc val: 0.40667 acc train 0.39214
+05/11 19:24:27 iteration: 007 error: 0.27964 acc val: 0.41333 acc train 0.39332
+05/11 19:24:28 iteration: 008 error: 0.27384 acc val: 0.41333 acc train 0.39666
+05/11 19:24:28 iteration: 009 error: 0.26979 acc val: 0.42000 acc train 0.39862
+05/11 19:24:29 iteration: 010 error: 0.26677 acc val: 0.42667 acc train 0.39764
+05/11 19:24:32 iteration: 020 error: 0.25436 acc val: 0.43333 acc train 0.39411
+05/11 19:24:35 iteration: 030 error: 0.24857 acc val: 0.40667 acc train 0.38959
+05/11 19:24:39 iteration: 040 error: 0.24471 acc val: 0.40000 acc train 0.39686
+05/11 19:24:42 iteration: 050 error: 0.24204 acc val: 0.41333 acc train 0.40904
+05/11 19:24:46 iteration: 060 error: 0.24022 acc val: 0.41333 acc train 0.41572
+05/11 19:24:49 iteration: 070 error: 0.23896 acc val: 0.42667 acc train 0.41925
+05/11 19:24:53 iteration: 080 error: 0.23805 acc val: 0.42667 acc train 0.42240
+05/11 19:24:56 iteration: 090 error: 0.23733 acc val: 0.42000 acc train 0.42358
+05/11 19:25:00 iteration: 100 error: 0.23673 acc val: 0.42000 acc train 0.42534
+05/11 19:25:03 iteration: 110 error: 0.23619 acc val: 0.43333 acc train 0.42534
+05/11 19:25:07 iteration: 120 error: 0.23571 acc val: 0.42667 acc train 0.42456
+05/11 19:25:11 iteration: 130 error: 0.23525 acc val: 0.42667 acc train 0.42652
+05/11 19:25:14 iteration: 140 error: 0.23482 acc val: 0.43333 acc train 0.42633
+05/11 19:25:17 iteration: 150 error: 0.23446 acc val: 0.43333 acc train 0.42770
+To file
+
+0.0,3,0.861363244826,3,2
+itemnr0
+0.0,0,0.0,0,56
+0.484544679054,3,1.0,5,83
+0.0,3,0.646459903129,2,122
+1.0,3,0.774327938753,3,161
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run11
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run11
+start learning
+05/11 19:25:18 iteration: 001 error: 0.38775 acc val: 0.24000 acc train 0.20059
+05/11 19:25:18 iteration: 002 error: 0.38168 acc val: 0.24000 acc train 0.20059
+05/11 19:25:19 iteration: 003 error: 0.37324 acc val: 0.24000 acc train 0.20059
+05/11 19:25:19 iteration: 004 error: 0.35131 acc val: 0.42667 acc train 0.37348
+05/11 19:25:19 iteration: 005 error: 0.31907 acc val: 0.47333 acc train 0.39312
+05/11 19:25:20 iteration: 006 error: 0.29621 acc val: 0.47333 acc train 0.39037
+05/11 19:25:20 iteration: 007 error: 0.28536 acc val: 0.47333 acc train 0.39096
+05/11 19:25:20 iteration: 008 error: 0.27995 acc val: 0.47333 acc train 0.39194
+05/11 19:25:21 iteration: 009 error: 0.27662 acc val: 0.47333 acc train 0.39234
+05/11 19:25:21 iteration: 010 error: 0.27418 acc val: 0.48000 acc train 0.39293
+05/11 19:25:25 iteration: 020 error: 0.25598 acc val: 0.50667 acc train 0.40963
+05/11 19:25:28 iteration: 030 error: 0.24788 acc val: 0.52000 acc train 0.41591
+05/11 19:25:31 iteration: 040 error: 0.24419 acc val: 0.49333 acc train 0.40432
+05/11 19:25:35 iteration: 050 error: 0.24193 acc val: 0.49333 acc train 0.40020
+05/11 19:25:38 iteration: 060 error: 0.24041 acc val: 0.49333 acc train 0.39686
+05/11 19:25:42 iteration: 070 error: 0.23933 acc val: 0.48667 acc train 0.39745
+05/11 19:25:45 iteration: 080 error: 0.23853 acc val: 0.48000 acc train 0.39804
+05/11 19:25:48 iteration: 090 error: 0.23790 acc val: 0.47333 acc train 0.39843
+05/11 19:25:52 iteration: 100 error: 0.23739 acc val: 0.47333 acc train 0.39902
+05/11 19:25:55 iteration: 110 error: 0.23697 acc val: 0.48000 acc train 0.39921
+05/11 19:25:59 iteration: 120 error: 0.23661 acc val: 0.48667 acc train 0.39921
+05/11 19:26:02 iteration: 130 error: 0.23630 acc val: 0.49333 acc train 0.39961
+05/11 19:26:05 iteration: 140 error: 0.23602 acc val: 0.49333 acc train 0.40196
+05/11 19:26:09 iteration: 150 error: 0.23580 acc val: 0.50000 acc train 0.40334
+To file
+
+0.0,0,0.861363244826,3,2
+itemnr0
+0.0,3,0.0,0,56
+0.0,0,1.0,5,83
+0.0,3,0.646459903129,2,122
+0.0,0,0.774327938753,3,161
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5095 145 150
+
+
+ exp 3 politics names no context run11
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run11
+start learning
+05/11 19:26:09 iteration: 001 error: 0.38472 acc val: 0.16667 acc train 0.20098
+05/11 19:26:09 iteration: 002 error: 0.36525 acc val: 0.16667 acc train 0.20137
+05/11 19:26:09 iteration: 003 error: 0.37794 acc val: 0.32667 acc train 0.24848
+05/11 19:26:09 iteration: 004 error: 0.37919 acc val: 0.28000 acc train 0.37213
+05/11 19:26:09 iteration: 005 error: 0.37910 acc val: 0.32000 acc train 0.35231
+05/11 19:26:09 iteration: 006 error: 0.38307 acc val: 0.29333 acc train 0.30010
+05/11 19:26:09 iteration: 007 error: 0.40526 acc val: 0.28667 acc train 0.35702
+05/11 19:26:09 iteration: 008 error: 0.43431 acc val: 0.28667 acc train 0.35015
+05/11 19:26:09 iteration: 009 error: 0.46595 acc val: 0.30667 acc train 0.36487
+05/11 19:26:09 iteration: 010 error: 0.45750 acc val: 0.29333 acc train 0.34073
+05/11 19:26:10 iteration: 020 error: 0.47444 acc val: 0.22667 acc train 0.36860
+05/11 19:26:11 iteration: 030 error: 0.49394 acc val: 0.32000 acc train 0.34033
+05/11 19:26:11 iteration: 040 error: 0.46877 acc val: 0.34000 acc train 0.35505
+05/11 19:26:12 iteration: 050 error: 0.49365 acc val: 0.29333 acc train 0.33052
+05/11 19:26:12 iteration: 060 error: 0.51731 acc val: 0.32000 acc train 0.34818
+05/11 19:26:13 iteration: 070 error: 0.47155 acc val: 0.32000 acc train 0.36349
+05/11 19:26:14 iteration: 080 error: 0.38992 acc val: 0.32667 acc train 0.38744
+05/11 19:26:14 iteration: 090 error: 0.41918 acc val: 0.34000 acc train 0.37095
+05/11 19:26:15 iteration: 100 error: 0.41075 acc val: 0.31333 acc train 0.37331
+05/11 19:26:15 iteration: 110 error: 0.39600 acc val: 0.33333 acc train 0.37488
+05/11 19:26:16 iteration: 120 error: 0.40091 acc val: 0.30000 acc train 0.33543
+05/11 19:26:17 iteration: 130 error: 0.38517 acc val: 0.32667 acc train 0.37978
+05/11 19:26:17 iteration: 140 error: 0.38789 acc val: 0.34667 acc train 0.38253
+05/11 19:26:18 iteration: 150 error: 0.37843 acc val: 0.37333 acc train 0.41786
+To file
+
+0.0,3,0.861363244826,3,2
+itemnr0
+0.0,0,0.0,0,56
+1.0,3,1.0,5,83
+0.783656834102,3,0.646459903129,2,122
+0.0,0,0.774327938753,3,161
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run12
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run12
+start learning
+05/11 19:26:18 iteration: 001 error: 0.38850 acc val: 0.21333 acc train 0.20039
+05/11 19:26:19 iteration: 002 error: 0.39032 acc val: 0.21333 acc train 0.20059
+05/11 19:26:19 iteration: 003 error: 0.38734 acc val: 0.21333 acc train 0.20039
+05/11 19:26:19 iteration: 004 error: 0.38540 acc val: 0.21333 acc train 0.20039
+05/11 19:26:19 iteration: 005 error: 0.38124 acc val: 0.21333 acc train 0.20236
+05/11 19:26:20 iteration: 006 error: 0.37603 acc val: 0.21333 acc train 0.20393
+05/11 19:26:20 iteration: 007 error: 0.37148 acc val: 0.21333 acc train 0.25501
+05/11 19:26:20 iteration: 008 error: 0.36511 acc val: 0.41333 acc train 0.32358
+05/11 19:26:20 iteration: 009 error: 0.36068 acc val: 0.41333 acc train 0.34342
+05/11 19:26:21 iteration: 010 error: 0.35856 acc val: 0.35333 acc train 0.34499
+05/11 19:26:23 iteration: 020 error: 0.34957 acc val: 0.39333 acc train 0.34892
+05/11 19:26:26 iteration: 030 error: 0.34662 acc val: 0.40000 acc train 0.34833
+05/11 19:26:28 iteration: 040 error: 0.34387 acc val: 0.40667 acc train 0.36012
+05/11 19:26:31 iteration: 050 error: 0.34916 acc val: 0.42000 acc train 0.36896
+05/11 19:26:33 iteration: 060 error: 0.34738 acc val: 0.38667 acc train 0.35599
+05/11 19:26:36 iteration: 070 error: 0.34524 acc val: 0.43333 acc train 0.35855
+05/11 19:26:38 iteration: 080 error: 0.34056 acc val: 0.41333 acc train 0.36503
+05/11 19:26:41 iteration: 090 error: 0.34440 acc val: 0.40000 acc train 0.35992
+05/11 19:26:43 iteration: 100 error: 0.34237 acc val: 0.42000 acc train 0.36405
+05/11 19:26:46 iteration: 110 error: 0.34326 acc val: 0.40667 acc train 0.36090
+05/11 19:26:48 iteration: 120 error: 0.34958 acc val: 0.44000 acc train 0.36444
+05/11 19:26:51 iteration: 130 error: 0.34489 acc val: 0.42000 acc train 0.35540
+05/11 19:26:53 iteration: 140 error: 0.34283 acc val: 0.45333 acc train 0.36424
+05/11 19:26:56 iteration: 150 error: 0.34606 acc val: 0.47333 acc train 0.41631
+To file
+
+0.0,2,0.774339919852,3,34
+itemnr0
+0.0,0,0.698283112315,2,82
+0.0,3,1.0,5,99
+0.0,3,1.0,5,147
+0.0,3,1.0,5,158
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run12
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run12
+start learning
+05/11 19:26:56 iteration: 001 error: 0.38816 acc val: 0.20667 acc train 0.20098
+05/11 19:26:57 iteration: 002 error: 0.38663 acc val: 0.20667 acc train 0.20098
+05/11 19:26:57 iteration: 003 error: 0.38658 acc val: 0.20667 acc train 0.20098
+05/11 19:26:57 iteration: 004 error: 0.38417 acc val: 0.20667 acc train 0.20098
+05/11 19:26:57 iteration: 005 error: 0.37911 acc val: 0.20667 acc train 0.20059
+05/11 19:26:58 iteration: 006 error: 0.37593 acc val: 0.20667 acc train 0.21473
+05/11 19:26:58 iteration: 007 error: 0.37243 acc val: 0.22667 acc train 0.26031
+05/11 19:26:58 iteration: 008 error: 0.36639 acc val: 0.36667 acc train 0.33360
+05/11 19:26:58 iteration: 009 error: 0.36057 acc val: 0.34000 acc train 0.34086
+05/11 19:26:59 iteration: 010 error: 0.35978 acc val: 0.32000 acc train 0.35580
+05/11 19:27:01 iteration: 020 error: 0.34894 acc val: 0.36667 acc train 0.35403
+05/11 19:27:03 iteration: 030 error: 0.34730 acc val: 0.38000 acc train 0.36130
+05/11 19:27:06 iteration: 040 error: 0.34455 acc val: 0.37333 acc train 0.37957
+05/11 19:27:08 iteration: 050 error: 0.34523 acc val: 0.36667 acc train 0.38350
+05/11 19:27:11 iteration: 060 error: 0.34211 acc val: 0.38667 acc train 0.37348
+05/11 19:27:13 iteration: 070 error: 0.34230 acc val: 0.35333 acc train 0.37250
+05/11 19:27:16 iteration: 080 error: 0.34478 acc val: 0.37333 acc train 0.37505
+05/11 19:27:18 iteration: 090 error: 0.34236 acc val: 0.35333 acc train 0.36798
+05/11 19:27:20 iteration: 100 error: 0.34286 acc val: 0.36000 acc train 0.37701
+05/11 19:27:23 iteration: 110 error: 0.34293 acc val: 0.34667 acc train 0.36031
+05/11 19:27:25 iteration: 120 error: 0.34480 acc val: 0.38667 acc train 0.35658
+05/11 19:27:28 iteration: 130 error: 0.34407 acc val: 0.39333 acc train 0.38114
+05/11 19:27:30 iteration: 140 error: 0.34340 acc val: 0.38667 acc train 0.36739
+05/11 19:27:32 iteration: 150 error: 0.34625 acc val: 0.38667 acc train 0.41768
+To file
+
+0.0,0,0.774339919852,3,34
+itemnr0
+0.0,3,0.698283112315,2,82
+0.0,3,1.0,5,99
+0.0,0,1.0,5,147
+0.0,2,1.0,5,158
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run12
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run12
+start learning
+05/11 19:27:33 iteration: 001 error: 0.38335 acc val: 0.20667 acc train 0.19961
+05/11 19:27:33 iteration: 002 error: 0.39044 acc val: 0.20667 acc train 0.19961
+05/11 19:27:33 iteration: 003 error: 0.39188 acc val: 0.20667 acc train 0.19961
+05/11 19:27:33 iteration: 004 error: 0.37651 acc val: 0.20667 acc train 0.26189
+05/11 19:27:33 iteration: 005 error: 0.39212 acc val: 0.44667 acc train 0.39528
+05/11 19:27:33 iteration: 006 error: 0.31546 acc val: 0.37333 acc train 0.37033
+05/11 19:27:33 iteration: 007 error: 0.40491 acc val: 0.41333 acc train 0.38193
+05/11 19:27:33 iteration: 008 error: 0.37633 acc val: 0.39333 acc train 0.36306
+05/11 19:27:33 iteration: 009 error: 0.43898 acc val: 0.38000 acc train 0.34106
+05/11 19:27:33 iteration: 010 error: 0.48567 acc val: 0.40667 acc train 0.38094
+05/11 19:27:34 iteration: 020 error: 0.37840 acc val: 0.38667 acc train 0.37976
+05/11 19:27:34 iteration: 030 error: 0.41394 acc val: 0.40667 acc train 0.38134
+05/11 19:27:35 iteration: 040 error: 0.55718 acc val: 0.44000 acc train 0.39568
+05/11 19:27:35 iteration: 050 error: 0.38807 acc val: 0.42667 acc train 0.38998
+05/11 19:27:36 iteration: 060 error: 0.39851 acc val: 0.44000 acc train 0.40098
+05/11 19:27:37 iteration: 070 error: 0.42151 acc val: 0.40667 acc train 0.39725
+05/11 19:27:37 iteration: 080 error: 0.41399 acc val: 0.40000 acc train 0.40668
+05/11 19:27:38 iteration: 090 error: 0.40733 acc val: 0.40667 acc train 0.39823
+05/11 19:27:38 iteration: 100 error: 0.40823 acc val: 0.41333 acc train 0.39411
+05/11 19:27:39 iteration: 110 error: 0.41223 acc val: 0.40000 acc train 0.39136
+05/11 19:27:40 iteration: 120 error: 0.63594 acc val: 0.42667 acc train 0.40354
+05/11 19:27:40 iteration: 130 error: 0.40445 acc val: 0.41333 acc train 0.38035
+05/11 19:27:41 iteration: 140 error: 0.38526 acc val: 0.41333 acc train 0.38094
+05/11 19:27:41 iteration: 150 error: 0.42637 acc val: 0.42667 acc train 0.41198
+To file
+
+0.911513107615,3,0.774339919852,3,34
+itemnr0
+0.911513107615,3,0.698283112315,2,82
+0.830687678375,3,1.0,5,99
+0.0,0,1.0,5,147
+0.0,3,1.0,5,158
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5102 138 150
+
+
+ exp 1 politics names run13
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run13
+start learning
+05/11 19:27:42 iteration: 001 error: 0.38781 acc val: 0.22667 acc train 0.19933
+05/11 19:27:42 iteration: 002 error: 0.38850 acc val: 0.22667 acc train 0.19933
+05/11 19:27:43 iteration: 003 error: 0.38548 acc val: 0.22667 acc train 0.19933
+05/11 19:27:43 iteration: 004 error: 0.38287 acc val: 0.22667 acc train 0.19914
+05/11 19:27:43 iteration: 005 error: 0.37758 acc val: 0.22667 acc train 0.20365
+05/11 19:27:43 iteration: 006 error: 0.37114 acc val: 0.26000 acc train 0.25304
+05/11 19:27:44 iteration: 007 error: 0.36595 acc val: 0.40000 acc train 0.32615
+05/11 19:27:44 iteration: 008 error: 0.35896 acc val: 0.48000 acc train 0.35065
+05/11 19:27:44 iteration: 009 error: 0.35874 acc val: 0.44667 acc train 0.35241
+05/11 19:27:45 iteration: 010 error: 0.35666 acc val: 0.46667 acc train 0.35535
+05/11 19:27:47 iteration: 020 error: 0.34976 acc val: 0.44000 acc train 0.34692
+05/11 19:27:50 iteration: 030 error: 0.34393 acc val: 0.40667 acc train 0.35888
+05/11 19:27:52 iteration: 040 error: 0.34677 acc val: 0.43333 acc train 0.35672
+05/11 19:27:55 iteration: 050 error: 0.34311 acc val: 0.42000 acc train 0.35594
+05/11 19:27:57 iteration: 060 error: 0.34486 acc val: 0.42667 acc train 0.36084
+05/11 19:28:00 iteration: 070 error: 0.34486 acc val: 0.44000 acc train 0.35574
+05/11 19:28:02 iteration: 080 error: 0.34540 acc val: 0.43333 acc train 0.35457
+05/11 19:28:05 iteration: 090 error: 0.34644 acc val: 0.39333 acc train 0.35653
+05/11 19:28:07 iteration: 100 error: 0.34706 acc val: 0.40667 acc train 0.35280
+05/11 19:28:10 iteration: 110 error: 0.34507 acc val: 0.41333 acc train 0.35084
+05/11 19:28:12 iteration: 120 error: 0.34683 acc val: 0.39333 acc train 0.36221
+05/11 19:28:15 iteration: 130 error: 0.34498 acc val: 0.44667 acc train 0.35280
+05/11 19:28:17 iteration: 140 error: 0.34028 acc val: 0.40000 acc train 0.35555
+05/11 19:28:20 iteration: 150 error: 0.34507 acc val: 0.51333 acc train 0.40768
+To file
+
+0.0,2,0.774339919852,3,34
+itemnr0
+0.0,3,0.774339919852,3,37
+0.0,0,0.0,0,61
+0.0,3,0.872884064535,3,113
+0.0,0,0.0,0,195
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run13
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run13
+start learning
+05/11 19:28:20 iteration: 001 error: 0.38900 acc val: 0.19333 acc train 0.20255
+05/11 19:28:21 iteration: 002 error: 0.39109 acc val: 0.19333 acc train 0.20255
+05/11 19:28:21 iteration: 003 error: 0.38918 acc val: 0.19333 acc train 0.20255
+05/11 19:28:21 iteration: 004 error: 0.38633 acc val: 0.19333 acc train 0.20275
+05/11 19:28:21 iteration: 005 error: 0.38311 acc val: 0.19333 acc train 0.20275
+05/11 19:28:22 iteration: 006 error: 0.37891 acc val: 0.19333 acc train 0.20177
+05/11 19:28:22 iteration: 007 error: 0.37271 acc val: 0.19333 acc train 0.22770
+05/11 19:28:22 iteration: 008 error: 0.36717 acc val: 0.40000 acc train 0.30255
+05/11 19:28:22 iteration: 009 error: 0.36138 acc val: 0.44000 acc train 0.33438
+05/11 19:28:22 iteration: 010 error: 0.35763 acc val: 0.43333 acc train 0.33733
+05/11 19:28:25 iteration: 020 error: 0.34967 acc val: 0.43333 acc train 0.34715
+05/11 19:28:27 iteration: 030 error: 0.34575 acc val: 0.44667 acc train 0.36228
+05/11 19:28:30 iteration: 040 error: 0.34554 acc val: 0.43333 acc train 0.37387
+05/11 19:28:32 iteration: 050 error: 0.34294 acc val: 0.43333 acc train 0.37446
+05/11 19:28:35 iteration: 060 error: 0.34129 acc val: 0.46667 acc train 0.37367
+05/11 19:28:37 iteration: 070 error: 0.25289 acc val: 0.42667 acc train 0.36267
+05/11 19:28:40 iteration: 080 error: 0.34119 acc val: 0.46667 acc train 0.37112
+05/11 19:28:42 iteration: 090 error: 0.34265 acc val: 0.44000 acc train 0.36660
+05/11 19:28:45 iteration: 100 error: 0.34433 acc val: 0.44667 acc train 0.35953
+05/11 19:28:47 iteration: 110 error: 0.34260 acc val: 0.44667 acc train 0.36719
+05/11 19:28:50 iteration: 120 error: 0.34150 acc val: 0.44000 acc train 0.36699
+05/11 19:28:52 iteration: 130 error: 0.34175 acc val: 0.43333 acc train 0.36385
+05/11 19:28:54 iteration: 140 error: 0.34625 acc val: 0.46667 acc train 0.35953
+05/11 19:28:57 iteration: 150 error: 0.34062 acc val: 0.47333 acc train 0.42102
+To file
+
+0.0,3,0.774339919852,3,34
+itemnr0
+0.0,3,0.774339919852,3,37
+0.0,3,0.0,0,61
+0.0,3,0.872884064535,3,113
+0.0,3,0.0,0,195
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run13
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run13
+start learning
+05/11 19:28:57 iteration: 001 error: 0.38668 acc val: 0.24000 acc train 0.19921
+05/11 19:28:57 iteration: 002 error: 0.39919 acc val: 0.24000 acc train 0.19921
+05/11 19:28:57 iteration: 003 error: 0.40845 acc val: 0.24000 acc train 0.19921
+05/11 19:28:57 iteration: 004 error: 0.38704 acc val: 0.24000 acc train 0.19921
+05/11 19:28:57 iteration: 005 error: 0.37362 acc val: 0.44667 acc train 0.25206
+05/11 19:28:57 iteration: 006 error: 0.37362 acc val: 0.41333 acc train 0.22927
+05/11 19:28:57 iteration: 007 error: 0.42240 acc val: 0.42667 acc train 0.31473
+05/11 19:28:58 iteration: 008 error: 0.38843 acc val: 0.42000 acc train 0.39116
+05/11 19:28:58 iteration: 009 error: 0.37910 acc val: 0.39333 acc train 0.31100
+05/11 19:28:58 iteration: 010 error: 0.42909 acc val: 0.43333 acc train 0.26916
+05/11 19:28:58 iteration: 020 error: 0.39118 acc val: 0.44667 acc train 0.40530
+05/11 19:28:59 iteration: 030 error: 0.40799 acc val: 0.47333 acc train 0.38271
+05/11 19:28:59 iteration: 040 error: 0.38723 acc val: 0.42667 acc train 0.40491
+05/11 19:29:00 iteration: 050 error: 0.38760 acc val: 0.45333 acc train 0.39568
+05/11 19:29:01 iteration: 060 error: 0.37445 acc val: 0.46667 acc train 0.40491
+05/11 19:29:01 iteration: 070 error: 0.37175 acc val: 0.44667 acc train 0.39686
+05/11 19:29:02 iteration: 080 error: 0.38267 acc val: 0.45333 acc train 0.39391
+05/11 19:29:02 iteration: 090 error: 0.40366 acc val: 0.42667 acc train 0.39568
+05/11 19:29:03 iteration: 100 error: 0.48116 acc val: 0.45333 acc train 0.38802
+05/11 19:29:04 iteration: 110 error: 0.38972 acc val: 0.40000 acc train 0.37898
+05/11 19:29:04 iteration: 120 error: 0.38949 acc val: 0.41333 acc train 0.37957
+05/11 19:29:05 iteration: 130 error: 0.40338 acc val: 0.44000 acc train 0.38625
+05/11 19:29:05 iteration: 140 error: 0.39555 acc val: 0.40667 acc train 0.38291
+05/11 19:29:06 iteration: 150 error: 0.41480 acc val: 0.45333 acc train 0.41159
+To file
+
+1.0,3,0.774339919852,3,34
+itemnr0
+1.0,3,0.774339919852,3,37
+0.0,3,0.0,0,61
+0.0,2,0.872884064535,3,113
+1.0,3,0.0,0,195
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run14
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run14
+start learning
+05/11 19:29:06 iteration: 001 error: 0.38840 acc val: 0.18000 acc train 0.20196
+05/11 19:29:07 iteration: 002 error: 0.38924 acc val: 0.18000 acc train 0.20196
+05/11 19:29:07 iteration: 003 error: 0.38647 acc val: 0.18000 acc train 0.20196
+05/11 19:29:07 iteration: 004 error: 0.38192 acc val: 0.18000 acc train 0.20216
+05/11 19:29:07 iteration: 005 error: 0.37737 acc val: 0.18000 acc train 0.20963
+05/11 19:29:08 iteration: 006 error: 0.37133 acc val: 0.20667 acc train 0.26248
+05/11 19:29:08 iteration: 007 error: 0.36411 acc val: 0.34000 acc train 0.33556
+05/11 19:29:08 iteration: 008 error: 0.35969 acc val: 0.34667 acc train 0.35265
+05/11 19:29:08 iteration: 009 error: 0.35628 acc val: 0.34000 acc train 0.36110
+05/11 19:29:09 iteration: 010 error: 0.35428 acc val: 0.32667 acc train 0.35737
+05/11 19:29:11 iteration: 020 error: 0.35278 acc val: 0.33333 acc train 0.37210
+05/11 19:29:13 iteration: 030 error: 0.35086 acc val: 0.32667 acc train 0.37053
+05/11 19:29:16 iteration: 040 error: 0.34851 acc val: 0.35333 acc train 0.37033
+05/11 19:29:18 iteration: 050 error: 0.34824 acc val: 0.32000 acc train 0.37387
+05/11 19:29:20 iteration: 060 error: 0.34900 acc val: 0.31333 acc train 0.36857
+05/11 19:29:23 iteration: 070 error: 0.35067 acc val: 0.32000 acc train 0.37053
+05/11 19:29:25 iteration: 080 error: 0.35116 acc val: 0.34000 acc train 0.37151
+05/11 19:29:27 iteration: 090 error: 0.34973 acc val: 0.34000 acc train 0.37308
+05/11 19:29:30 iteration: 100 error: 0.34678 acc val: 0.32667 acc train 0.37014
+05/11 19:29:32 iteration: 110 error: 0.34818 acc val: 0.32667 acc train 0.36149
+05/11 19:29:34 iteration: 120 error: 0.34804 acc val: 0.32667 acc train 0.36974
+05/11 19:29:37 iteration: 130 error: 0.34887 acc val: 0.34000 acc train 0.37033
+05/11 19:29:39 iteration: 140 error: 0.34839 acc val: 0.33333 acc train 0.37151
+05/11 19:29:41 iteration: 150 error: 0.34691 acc val: 0.38667 acc train 0.40511
+To file
+
+0.0,3,0.830687678375,3,85
+itemnr0
+0.0,3,1.0,5,94
+0.0,2,1.0,5,98
+0.0,3,0.872884064535,3,113
+0.0,0,0.0,0,120
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run14
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run14
+start learning
+05/11 19:29:42 iteration: 001 error: 0.38849 acc val: 0.16667 acc train 0.20177
+05/11 19:29:42 iteration: 002 error: 0.39095 acc val: 0.16667 acc train 0.20177
+05/11 19:29:42 iteration: 003 error: 0.38777 acc val: 0.16667 acc train 0.20177
+05/11 19:29:43 iteration: 004 error: 0.38573 acc val: 0.16667 acc train 0.20138
+05/11 19:29:43 iteration: 005 error: 0.38260 acc val: 0.16667 acc train 0.20314
+05/11 19:29:43 iteration: 006 error: 0.37890 acc val: 0.16667 acc train 0.20413
+05/11 19:29:43 iteration: 007 error: 0.37364 acc val: 0.16667 acc train 0.24479
+05/11 19:29:44 iteration: 008 error: 0.36722 acc val: 0.28667 acc train 0.30157
+05/11 19:29:44 iteration: 009 error: 0.36069 acc val: 0.30667 acc train 0.34971
+05/11 19:29:44 iteration: 010 error: 0.36016 acc val: 0.31333 acc train 0.34892
+05/11 19:29:47 iteration: 020 error: 0.35105 acc val: 0.29333 acc train 0.35167
+05/11 19:29:49 iteration: 030 error: 0.34735 acc val: 0.30667 acc train 0.36385
+05/11 19:29:51 iteration: 040 error: 0.34621 acc val: 0.34667 acc train 0.36817
+05/11 19:29:54 iteration: 050 error: 0.34334 acc val: 0.35333 acc train 0.36542
+05/11 19:29:57 iteration: 060 error: 0.34136 acc val: 0.36000 acc train 0.37132
+05/11 19:29:59 iteration: 070 error: 0.34531 acc val: 0.36000 acc train 0.36444
+05/11 19:30:01 iteration: 080 error: 0.34147 acc val: 0.32667 acc train 0.37171
+05/11 19:30:04 iteration: 090 error: 0.34151 acc val: 0.36000 acc train 0.37957
+05/11 19:30:06 iteration: 100 error: 0.34311 acc val: 0.35333 acc train 0.36758
+05/11 19:30:09 iteration: 110 error: 0.34142 acc val: 0.35333 acc train 0.37898
+05/11 19:30:11 iteration: 120 error: 0.34280 acc val: 0.38000 acc train 0.37701
+05/11 19:30:14 iteration: 130 error: 0.34181 acc val: 0.36000 acc train 0.37603
+05/11 19:30:16 iteration: 140 error: 0.34158 acc val: 0.36000 acc train 0.36974
+05/11 19:30:19 iteration: 150 error: 0.34341 acc val: 0.38000 acc train 0.42554
+To file
+
+0.0,3,0.830687678375,3,85
+itemnr0
+0.0,2,1.0,5,94
+0.0,0,1.0,5,98
+0.0,0,0.872884064535,3,113
+0.0,3,0.0,0,120
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run14
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run14
+start learning
+05/11 19:30:19 iteration: 001 error: 0.38391 acc val: 0.16000 acc train 0.20157
+05/11 19:30:19 iteration: 002 error: 0.38869 acc val: 0.16000 acc train 0.20157
+05/11 19:30:19 iteration: 003 error: 0.39161 acc val: 0.16000 acc train 0.20157
+05/11 19:30:19 iteration: 004 error: 0.38769 acc val: 0.16000 acc train 0.34637
+05/11 19:30:19 iteration: 005 error: 0.39183 acc val: 0.38000 acc train 0.36837
+05/11 19:30:19 iteration: 006 error: 0.40550 acc val: 0.39333 acc train 0.37957
+05/11 19:30:19 iteration: 007 error: 0.39412 acc val: 0.40667 acc train 0.37328
+05/11 19:30:19 iteration: 008 error: 0.39975 acc val: 0.40667 acc train 0.38094
+05/11 19:30:19 iteration: 009 error: 0.40061 acc val: 0.38667 acc train 0.36955
+05/11 19:30:19 iteration: 010 error: 0.42594 acc val: 0.40667 acc train 0.36857
+05/11 19:30:20 iteration: 020 error: 0.37888 acc val: 0.41333 acc train 0.39096
+05/11 19:30:21 iteration: 030 error: 0.38171 acc val: 0.40667 acc train 0.38939
+05/11 19:30:21 iteration: 040 error: 0.38555 acc val: 0.40667 acc train 0.39489
+05/11 19:30:22 iteration: 050 error: 0.40196 acc val: 0.40667 acc train 0.37957
+05/11 19:30:22 iteration: 060 error: 0.37552 acc val: 0.41333 acc train 0.39705
+05/11 19:30:23 iteration: 070 error: 0.40725 acc val: 0.39333 acc train 0.40432
+05/11 19:30:24 iteration: 080 error: 0.25522 acc val: 0.36667 acc train 0.39980
+05/11 19:30:24 iteration: 090 error: 0.41430 acc val: 0.38667 acc train 0.40236
+05/11 19:30:25 iteration: 100 error: 0.38643 acc val: 0.36667 acc train 0.34971
+05/11 19:30:25 iteration: 110 error: 0.39356 acc val: 0.36000 acc train 0.36739
+05/11 19:30:26 iteration: 120 error: 0.39277 acc val: 0.38000 acc train 0.38251
+05/11 19:30:27 iteration: 130 error: 0.38678 acc val: 0.38667 acc train 0.37917
+05/11 19:30:27 iteration: 140 error: 0.41689 acc val: 0.33333 acc train 0.37191
+05/11 19:30:28 iteration: 150 error: 0.39147 acc val: 0.40667 acc train 0.40589
+To file
+
+1.0,3,0.830687678375,3,85
+itemnr0
+0.583305484923,3,1.0,5,94
+0.0,0,1.0,5,98
+1.0,3,0.872884064535,3,113
+0.0,2,0.0,0,120
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5101 150 139
+
+
+ exp 1 politics names run15
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run15
+start learning
+05/11 19:30:28 iteration: 001 error: 0.38746 acc val: 0.15108 acc train 0.20329
+05/11 19:30:29 iteration: 002 error: 0.38688 acc val: 0.15108 acc train 0.20329
+05/11 19:30:29 iteration: 003 error: 0.38584 acc val: 0.15108 acc train 0.20329
+05/11 19:30:29 iteration: 004 error: 0.38269 acc val: 0.15108 acc train 0.20310
+05/11 19:30:29 iteration: 005 error: 0.37882 acc val: 0.15108 acc train 0.20702
+05/11 19:30:30 iteration: 006 error: 0.37303 acc val: 0.15108 acc train 0.24172
+05/11 19:30:30 iteration: 007 error: 0.36867 acc val: 0.31655 acc train 0.31386
+05/11 19:30:30 iteration: 008 error: 0.36238 acc val: 0.33094 acc train 0.34307
+05/11 19:30:31 iteration: 009 error: 0.35871 acc val: 0.36691 acc train 0.34542
+05/11 19:30:31 iteration: 010 error: 0.35680 acc val: 0.37410 acc train 0.35346
+05/11 19:30:34 iteration: 020 error: 0.26880 acc val: 0.36691 acc train 0.35189
+05/11 19:30:36 iteration: 030 error: 0.35027 acc val: 0.37410 acc train 0.35503
+05/11 19:30:39 iteration: 040 error: 0.34630 acc val: 0.37410 acc train 0.36111
+05/11 19:30:41 iteration: 050 error: 0.34389 acc val: 0.37410 acc train 0.36189
+05/11 19:30:44 iteration: 060 error: 0.34504 acc val: 0.38129 acc train 0.36287
+05/11 19:30:46 iteration: 070 error: 0.34277 acc val: 0.36691 acc train 0.37973
+05/11 19:30:49 iteration: 080 error: 0.34421 acc val: 0.35971 acc train 0.35954
+05/11 19:30:51 iteration: 090 error: 0.34437 acc val: 0.39568 acc train 0.36032
+05/11 19:30:54 iteration: 100 error: 0.34424 acc val: 0.37410 acc train 0.35915
+05/11 19:30:56 iteration: 110 error: 0.34523 acc val: 0.35971 acc train 0.36169
+05/11 19:30:59 iteration: 120 error: 0.34266 acc val: 0.38849 acc train 0.35836
+05/11 19:31:01 iteration: 130 error: 0.34078 acc val: 0.39568 acc train 0.35346
+05/11 19:31:04 iteration: 140 error: 0.34139 acc val: 0.36691 acc train 0.35072
+05/11 19:31:06 iteration: 150 error: 0.34297 acc val: 0.41727 acc train 0.41600
+To file
+
+0.0,0,0.0,0,18
+itemnr0
+0.0,2,1.0,5,19
+0.0,0,0.0,0,129
+0.0,0,0.0,0,225
+0.0,3,0.819836637888,3,271
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run15
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run15
+start learning
+05/11 19:31:06 iteration: 001 error: 0.38949 acc val: 0.18667 acc train 0.20138
+05/11 19:31:07 iteration: 002 error: 0.38850 acc val: 0.18667 acc train 0.20138
+05/11 19:31:07 iteration: 003 error: 0.38560 acc val: 0.18667 acc train 0.20138
+05/11 19:31:07 iteration: 004 error: 0.38600 acc val: 0.18667 acc train 0.20138
+05/11 19:31:08 iteration: 005 error: 0.38185 acc val: 0.18667 acc train 0.20157
+05/11 19:31:08 iteration: 006 error: 0.37813 acc val: 0.18667 acc train 0.21139
+05/11 19:31:08 iteration: 007 error: 0.37412 acc val: 0.19333 acc train 0.26346
+05/11 19:31:08 iteration: 008 error: 0.36766 acc val: 0.33333 acc train 0.32829
+05/11 19:31:08 iteration: 009 error: 0.36387 acc val: 0.36667 acc train 0.34656
+05/11 19:31:09 iteration: 010 error: 0.35763 acc val: 0.38000 acc train 0.34420
+05/11 19:31:11 iteration: 020 error: 0.34886 acc val: 0.34000 acc train 0.34578
+05/11 19:31:14 iteration: 030 error: 0.34835 acc val: 0.34667 acc train 0.34990
+05/11 19:31:16 iteration: 040 error: 0.34385 acc val: 0.36000 acc train 0.35855
+05/11 19:31:18 iteration: 050 error: 0.34267 acc val: 0.44667 acc train 0.36405
+05/11 19:31:21 iteration: 060 error: 0.34189 acc val: 0.38000 acc train 0.36385
+05/11 19:31:23 iteration: 070 error: 0.34284 acc val: 0.42667 acc train 0.36876
+05/11 19:31:26 iteration: 080 error: 0.33984 acc val: 0.42667 acc train 0.36621
+05/11 19:31:28 iteration: 090 error: 0.34182 acc val: 0.43333 acc train 0.36385
+05/11 19:31:31 iteration: 100 error: 0.34112 acc val: 0.40000 acc train 0.36464
+05/11 19:31:33 iteration: 110 error: 0.34112 acc val: 0.43333 acc train 0.35088
+05/11 19:31:36 iteration: 120 error: 0.34211 acc val: 0.42667 acc train 0.34951
+05/11 19:31:38 iteration: 130 error: 0.34380 acc val: 0.44667 acc train 0.35206
+05/11 19:31:40 iteration: 140 error: 0.33829 acc val: 0.42667 acc train 0.35069
+05/11 19:31:43 iteration: 150 error: 0.34158 acc val: 0.50000 acc train 0.42122
+To file
+
+0.0,3,0.0,0,18
+itemnr0
+0.0,3,1.0,5,19
+0.0,0,0.0,0,129
+0.0,3,0.0,0,225
+0.0,3,0.819836637888,3,271
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run15
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run15
+start learning
+05/11 19:31:43 iteration: 001 error: 0.38695 acc val: 0.24000 acc train 0.19921
+05/11 19:31:43 iteration: 002 error: 0.39836 acc val: 0.24000 acc train 0.19921
+05/11 19:31:43 iteration: 003 error: 0.38364 acc val: 0.24000 acc train 0.19921
+05/11 19:31:43 iteration: 004 error: 0.37747 acc val: 0.24000 acc train 0.20550
+05/11 19:31:43 iteration: 005 error: 0.37111 acc val: 0.31333 acc train 0.25815
+05/11 19:31:43 iteration: 006 error: 0.36747 acc val: 0.45333 acc train 0.38016
+05/11 19:31:43 iteration: 007 error: 0.36654 acc val: 0.44667 acc train 0.38743
+05/11 19:31:43 iteration: 008 error: 0.36459 acc val: 0.40667 acc train 0.38939
+05/11 19:31:43 iteration: 009 error: 0.36725 acc val: 0.45333 acc train 0.38585
+05/11 19:31:44 iteration: 010 error: 0.36881 acc val: 0.46000 acc train 0.38232
+05/11 19:31:44 iteration: 020 error: 0.36998 acc val: 0.42000 acc train 0.39568
+05/11 19:31:45 iteration: 030 error: 0.37287 acc val: 0.46000 acc train 0.40020
+05/11 19:31:45 iteration: 040 error: 0.37018 acc val: 0.43333 acc train 0.40825
+05/11 19:31:46 iteration: 050 error: 0.37196 acc val: 0.48667 acc train 0.40550
+05/11 19:31:46 iteration: 060 error: 0.37851 acc val: 0.48000 acc train 0.41336
+05/11 19:31:47 iteration: 070 error: 0.37113 acc val: 0.46667 acc train 0.40196
+05/11 19:31:48 iteration: 080 error: 0.40373 acc val: 0.42667 acc train 0.34735
+05/11 19:31:48 iteration: 090 error: 0.38219 acc val: 0.46000 acc train 0.40589
+05/11 19:31:49 iteration: 100 error: 0.37592 acc val: 0.45333 acc train 0.40550
+05/11 19:31:49 iteration: 110 error: 0.37543 acc val: 0.48667 acc train 0.38566
+05/11 19:31:50 iteration: 120 error: 0.37513 acc val: 0.48000 acc train 0.40786
+05/11 19:31:51 iteration: 130 error: 0.38712 acc val: 0.47333 acc train 0.40393
+05/11 19:31:51 iteration: 140 error: 0.38729 acc val: 0.47333 acc train 0.39941
+05/11 19:31:52 iteration: 150 error: 0.38171 acc val: 0.48000 acc train 0.41139
+To file
+
+0.0,3,0.0,0,18
+itemnr0
+1.0,3,1.0,5,19
+0.0,0,0.0,0,129
+0.0,0,0.0,0,225
+0.0,3,0.819836637888,3,271
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run16
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run16
+start learning
+05/11 19:31:52 iteration: 001 error: 0.38836 acc val: 0.20667 acc train 0.20118
+05/11 19:31:53 iteration: 002 error: 0.38805 acc val: 0.20667 acc train 0.20118
+05/11 19:31:53 iteration: 003 error: 0.38662 acc val: 0.20667 acc train 0.20118
+05/11 19:31:53 iteration: 004 error: 0.38317 acc val: 0.20667 acc train 0.20118
+05/11 19:31:53 iteration: 005 error: 0.37880 acc val: 0.20667 acc train 0.20491
+05/11 19:31:54 iteration: 006 error: 0.37232 acc val: 0.21333 acc train 0.24499
+05/11 19:31:54 iteration: 007 error: 0.36522 acc val: 0.34667 acc train 0.32338
+05/11 19:31:54 iteration: 008 error: 0.36001 acc val: 0.34667 acc train 0.34558
+05/11 19:31:54 iteration: 009 error: 0.35664 acc val: 0.36667 acc train 0.35108
+05/11 19:31:55 iteration: 010 error: 0.35495 acc val: 0.36000 acc train 0.35580
+05/11 19:31:57 iteration: 020 error: 0.34804 acc val: 0.34667 acc train 0.35305
+05/11 19:32:00 iteration: 030 error: 0.34595 acc val: 0.31333 acc train 0.34853
+05/11 19:32:02 iteration: 040 error: 0.34449 acc val: 0.34667 acc train 0.35285
+05/11 19:32:05 iteration: 050 error: 0.34565 acc val: 0.36667 acc train 0.35285
+05/11 19:32:07 iteration: 060 error: 0.34422 acc val: 0.34000 acc train 0.35992
+05/11 19:32:09 iteration: 070 error: 0.34479 acc val: 0.37333 acc train 0.35344
+05/11 19:32:12 iteration: 080 error: 0.34575 acc val: 0.40000 acc train 0.36228
+05/11 19:32:15 iteration: 090 error: 0.34520 acc val: 0.38667 acc train 0.35855
+05/11 19:32:17 iteration: 100 error: 0.34445 acc val: 0.34667 acc train 0.36267
+05/11 19:32:20 iteration: 110 error: 0.34244 acc val: 0.35333 acc train 0.35344
+05/11 19:32:22 iteration: 120 error: 0.34175 acc val: 0.36667 acc train 0.36385
+05/11 19:32:24 iteration: 130 error: 0.34296 acc val: 0.34000 acc train 0.35422
+05/11 19:32:27 iteration: 140 error: 0.34083 acc val: 0.37333 acc train 0.36287
+05/11 19:32:29 iteration: 150 error: 0.34421 acc val: 0.40667 acc train 0.42083
+To file
+
+0.556033194092,3,0.750404575887,3,12
+itemnr0
+0.0,2,0.774339919852,3,34
+0.0,0,0.0,0,61
+0.0,0,0.0,0,143
+0.0,0,0.0,0,227
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run16
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run16
+start learning
+05/11 19:32:30 iteration: 001 error: 0.38891 acc val: 0.20000 acc train 0.20039
+05/11 19:32:30 iteration: 002 error: 0.38938 acc val: 0.20000 acc train 0.20039
+05/11 19:32:30 iteration: 003 error: 0.38467 acc val: 0.20000 acc train 0.20039
+05/11 19:32:31 iteration: 004 error: 0.38519 acc val: 0.20000 acc train 0.20039
+05/11 19:32:31 iteration: 005 error: 0.38072 acc val: 0.20000 acc train 0.20039
+05/11 19:32:31 iteration: 006 error: 0.37453 acc val: 0.20000 acc train 0.21670
+05/11 19:32:31 iteration: 007 error: 0.36797 acc val: 0.31333 acc train 0.26699
+05/11 19:32:32 iteration: 008 error: 0.36415 acc val: 0.38000 acc train 0.32417
+05/11 19:32:32 iteration: 009 error: 0.35941 acc val: 0.35333 acc train 0.34990
+05/11 19:32:32 iteration: 010 error: 0.35468 acc val: 0.34000 acc train 0.34165
+05/11 19:32:35 iteration: 020 error: 0.35258 acc val: 0.38000 acc train 0.35383
+05/11 19:32:37 iteration: 030 error: 0.34720 acc val: 0.40667 acc train 0.36248
+05/11 19:32:39 iteration: 040 error: 0.34820 acc val: 0.34000 acc train 0.36994
+05/11 19:32:42 iteration: 050 error: 0.34623 acc val: 0.38000 acc train 0.37917
+05/11 19:32:44 iteration: 060 error: 0.34550 acc val: 0.36000 acc train 0.36994
+05/11 19:32:47 iteration: 070 error: 0.34449 acc val: 0.36667 acc train 0.37308
+05/11 19:32:49 iteration: 080 error: 0.34289 acc val: 0.35333 acc train 0.36974
+05/11 19:32:52 iteration: 090 error: 0.33961 acc val: 0.35333 acc train 0.37230
+05/11 19:32:54 iteration: 100 error: 0.34674 acc val: 0.36000 acc train 0.36523
+05/11 19:32:56 iteration: 110 error: 0.34594 acc val: 0.36000 acc train 0.36169
+05/11 19:32:59 iteration: 120 error: 0.34335 acc val: 0.36000 acc train 0.36719
+05/11 19:33:01 iteration: 130 error: 0.34059 acc val: 0.34667 acc train 0.35540
+05/11 19:33:04 iteration: 140 error: 0.34707 acc val: 0.34667 acc train 0.34381
+05/11 19:33:06 iteration: 150 error: 0.34629 acc val: 0.40000 acc train 0.42200
+To file
+
+0.0,3,0.750404575887,3,12
+itemnr0
+0.0,2,0.774339919852,3,34
+0.0,0,0.0,0,61
+0.0,3,0.0,0,143
+0.0,3,0.0,0,227
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run16
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run16
+start learning
+05/11 19:33:06 iteration: 001 error: 0.38598 acc val: 0.15333 acc train 0.20255
+05/11 19:33:06 iteration: 002 error: 0.40516 acc val: 0.15333 acc train 0.20020
+05/11 19:33:06 iteration: 003 error: 0.40763 acc val: 0.15333 acc train 0.26169
+05/11 19:33:06 iteration: 004 error: 0.40069 acc val: 0.15333 acc train 0.31336
+05/11 19:33:06 iteration: 005 error: 0.41235 acc val: 0.36667 acc train 0.38448
+05/11 19:33:06 iteration: 006 error: 0.38445 acc val: 0.36667 acc train 0.35422
+05/11 19:33:06 iteration: 007 error: 0.45635 acc val: 0.26000 acc train 0.35972
+05/11 19:33:06 iteration: 008 error: 0.44927 acc val: 0.33333 acc train 0.35088
+05/11 19:33:06 iteration: 009 error: 0.48055 acc val: 0.27333 acc train 0.36248
+05/11 19:33:07 iteration: 010 error: 0.45786 acc val: 0.38667 acc train 0.38684
+05/11 19:33:07 iteration: 020 error: 0.38855 acc val: 0.37333 acc train 0.38232
+05/11 19:33:08 iteration: 030 error: 0.54139 acc val: 0.36667 acc train 0.37348
+05/11 19:33:08 iteration: 040 error: 0.46787 acc val: 0.29333 acc train 0.38802
+05/11 19:33:09 iteration: 050 error: 0.48990 acc val: 0.31333 acc train 0.37328
+05/11 19:33:10 iteration: 060 error: 0.53042 acc val: 0.37333 acc train 0.36582
+05/11 19:33:10 iteration: 070 error: 0.40170 acc val: 0.40667 acc train 0.38507
+05/11 19:33:11 iteration: 080 error: 0.40087 acc val: 0.42667 acc train 0.37151
+05/11 19:33:11 iteration: 090 error: 0.38864 acc val: 0.38000 acc train 0.38861
+05/11 19:33:12 iteration: 100 error: 0.39007 acc val: 0.35333 acc train 0.38802
+05/11 19:33:13 iteration: 110 error: 0.40700 acc val: 0.34667 acc train 0.38055
+05/11 19:33:13 iteration: 120 error: 0.38791 acc val: 0.36667 acc train 0.37564
+05/11 19:33:14 iteration: 130 error: 0.39411 acc val: 0.38000 acc train 0.37132
+05/11 19:33:14 iteration: 140 error: 0.52465 acc val: 0.36000 acc train 0.37191
+05/11 19:33:15 iteration: 150 error: 0.55224 acc val: 0.44667 acc train 0.38723
+To file
+
+0.0,0,0.750404575887,3,12
+itemnr0
+0.0,0,0.774339919852,3,34
+0.698283112315,3,0.0,0,61
+0.0,0,0.0,0,143
+0.0,2,0.0,0,227
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run17
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run17
+start learning
+05/11 19:33:15 iteration: 001 error: 0.38892 acc val: 0.17333 acc train 0.19980
+05/11 19:33:16 iteration: 002 error: 0.38854 acc val: 0.17333 acc train 0.19980
+05/11 19:33:16 iteration: 003 error: 0.38608 acc val: 0.17333 acc train 0.19961
+05/11 19:33:16 iteration: 004 error: 0.38236 acc val: 0.17333 acc train 0.19980
+05/11 19:33:17 iteration: 005 error: 0.37819 acc val: 0.17333 acc train 0.20020
+05/11 19:33:17 iteration: 006 error: 0.37292 acc val: 0.17333 acc train 0.23281
+05/11 19:33:17 iteration: 007 error: 0.36687 acc val: 0.26000 acc train 0.29784
+05/11 19:33:17 iteration: 008 error: 0.35935 acc val: 0.30667 acc train 0.33733
+05/11 19:33:18 iteration: 009 error: 0.35763 acc val: 0.31333 acc train 0.34479
+05/11 19:33:18 iteration: 010 error: 0.35506 acc val: 0.30000 acc train 0.34853
+05/11 19:33:20 iteration: 020 error: 0.34809 acc val: 0.32000 acc train 0.35010
+05/11 19:33:23 iteration: 030 error: 0.34624 acc val: 0.31333 acc train 0.35147
+05/11 19:33:25 iteration: 040 error: 0.34783 acc val: 0.34667 acc train 0.35501
+05/11 19:33:28 iteration: 050 error: 0.34542 acc val: 0.32667 acc train 0.35265
+05/11 19:33:30 iteration: 060 error: 0.34867 acc val: 0.36000 acc train 0.35874
+05/11 19:33:33 iteration: 070 error: 0.34611 acc val: 0.35333 acc train 0.35049
+05/11 19:33:35 iteration: 080 error: 0.34781 acc val: 0.33333 acc train 0.35697
+05/11 19:33:38 iteration: 090 error: 0.34624 acc val: 0.34667 acc train 0.35972
+05/11 19:33:40 iteration: 100 error: 0.34698 acc val: 0.32000 acc train 0.35324
+05/11 19:33:43 iteration: 110 error: 0.34504 acc val: 0.38000 acc train 0.34538
+05/11 19:33:45 iteration: 120 error: 0.34616 acc val: 0.34000 acc train 0.34578
+05/11 19:33:48 iteration: 130 error: 0.34487 acc val: 0.33333 acc train 0.34558
+05/11 19:33:50 iteration: 140 error: 0.34388 acc val: 0.33333 acc train 0.34853
+05/11 19:33:53 iteration: 150 error: 0.34476 acc val: 0.40000 acc train 0.40766
+To file
+
+0.829046830894,3,1.0,5,48
+itemnr0
+0.0,0,0.0,0,54
+0.0,3,0.60986816222,2,62
+0.0,0,0.0,0,92
+0.0,3,1.0,5,102
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run17
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run17
+start learning
+05/11 19:33:53 iteration: 001 error: 0.38806 acc val: 0.16667 acc train 0.20079
+05/11 19:33:53 iteration: 002 error: 0.39112 acc val: 0.16667 acc train 0.20079
+05/11 19:33:54 iteration: 003 error: 0.38809 acc val: 0.16667 acc train 0.20079
+05/11 19:33:54 iteration: 004 error: 0.38591 acc val: 0.16667 acc train 0.20079
+05/11 19:33:54 iteration: 005 error: 0.38154 acc val: 0.16667 acc train 0.20098
+05/11 19:33:55 iteration: 006 error: 0.37750 acc val: 0.16667 acc train 0.22299
+05/11 19:33:55 iteration: 007 error: 0.37066 acc val: 0.16667 acc train 0.26798
+05/11 19:33:55 iteration: 008 error: 0.36473 acc val: 0.36000 acc train 0.32574
+05/11 19:33:55 iteration: 009 error: 0.36272 acc val: 0.33333 acc train 0.34637
+05/11 19:33:56 iteration: 010 error: 0.35901 acc val: 0.32667 acc train 0.34794
+05/11 19:33:58 iteration: 020 error: 0.35125 acc val: 0.36000 acc train 0.34676
+05/11 19:34:01 iteration: 030 error: 0.34573 acc val: 0.37333 acc train 0.35108
+05/11 19:34:03 iteration: 040 error: 0.34201 acc val: 0.34000 acc train 0.36208
+05/11 19:34:06 iteration: 050 error: 0.34248 acc val: 0.32667 acc train 0.36739
+05/11 19:34:08 iteration: 060 error: 0.34095 acc val: 0.37333 acc train 0.37191
+05/11 19:34:10 iteration: 070 error: 0.34310 acc val: 0.35333 acc train 0.37132
+05/11 19:34:13 iteration: 080 error: 0.34369 acc val: 0.37333 acc train 0.36405
+05/11 19:34:15 iteration: 090 error: 0.33758 acc val: 0.37333 acc train 0.36267
+05/11 19:34:18 iteration: 100 error: 0.33875 acc val: 0.38667 acc train 0.36149
+05/11 19:34:20 iteration: 110 error: 0.34610 acc val: 0.36000 acc train 0.37682
+05/11 19:34:23 iteration: 120 error: 0.34263 acc val: 0.32000 acc train 0.37092
+05/11 19:34:25 iteration: 130 error: 0.33811 acc val: 0.39333 acc train 0.36758
+05/11 19:34:28 iteration: 140 error: 0.33782 acc val: 0.34000 acc train 0.36503
+05/11 19:34:30 iteration: 150 error: 0.34361 acc val: 0.40000 acc train 0.42102
+To file
+
+0.0,3,1.0,5,48
+itemnr0
+0.0,3,0.0,0,54
+0.0,2,0.60986816222,2,62
+0.0,0,0.0,0,92
+0.0,3,1.0,5,102
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5104 141 145
+
+
+ exp 3 politics names no context run17
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run17
+start learning
+05/11 19:34:30 iteration: 001 error: 0.38425 acc val: 0.14483 acc train 0.20278
+05/11 19:34:30 iteration: 002 error: 0.38625 acc val: 0.14483 acc train 0.20298
+05/11 19:34:30 iteration: 003 error: 0.38706 acc val: 0.14483 acc train 0.20298
+05/11 19:34:30 iteration: 004 error: 0.38268 acc val: 0.28966 acc train 0.27998
+05/11 19:34:31 iteration: 005 error: 0.38191 acc val: 0.24138 acc train 0.31563
+05/11 19:34:31 iteration: 006 error: 0.43376 acc val: 0.26897 acc train 0.31211
+05/11 19:34:31 iteration: 007 error: 0.47735 acc val: 0.24138 acc train 0.37108
+05/11 19:34:31 iteration: 008 error: 0.41295 acc val: 0.27586 acc train 0.38009
+05/11 19:34:31 iteration: 009 error: 0.38967 acc val: 0.27586 acc train 0.37696
+05/11 19:34:31 iteration: 010 error: 0.40436 acc val: 0.27586 acc train 0.37716
+05/11 19:34:31 iteration: 020 error: 0.38026 acc val: 0.26207 acc train 0.39459
+05/11 19:34:32 iteration: 030 error: 0.37654 acc val: 0.28966 acc train 0.38519
+05/11 19:34:33 iteration: 040 error: 0.27027 acc val: 0.29655 acc train 0.39812
+05/11 19:34:33 iteration: 050 error: 0.40757 acc val: 0.27586 acc train 0.39283
+05/11 19:34:34 iteration: 060 error: 0.45465 acc val: 0.28966 acc train 0.39910
+05/11 19:34:34 iteration: 070 error: 0.40318 acc val: 0.29655 acc train 0.39871
+05/11 19:34:35 iteration: 080 error: 0.44182 acc val: 0.32414 acc train 0.38460
+05/11 19:34:36 iteration: 090 error: 0.37901 acc val: 0.28966 acc train 0.37970
+05/11 19:34:36 iteration: 100 error: 0.44512 acc val: 0.29655 acc train 0.36560
+05/11 19:34:37 iteration: 110 error: 0.42052 acc val: 0.28276 acc train 0.37813
+05/11 19:34:38 iteration: 120 error: 0.42165 acc val: 0.26207 acc train 0.34326
+05/11 19:34:38 iteration: 130 error: 0.40818 acc val: 0.24828 acc train 0.33679
+05/11 19:34:39 iteration: 140 error: 0.46593 acc val: 0.26897 acc train 0.34444
+05/11 19:34:39 iteration: 150 error: 0.44511 acc val: 0.29655 acc train 0.40478
+To file
+
+0.0,3,1.0,5,48
+itemnr0
+0.740602251083,3,0.0,0,54
+0.0,0,0.60986816222,2,62
+0.0,0,0.0,0,92
+0.0,3,1.0,5,102
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run18
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run18
+start learning
+05/11 19:34:40 iteration: 001 error: 0.38930 acc val: 0.21333 acc train 0.19941
+05/11 19:34:40 iteration: 002 error: 0.38959 acc val: 0.21333 acc train 0.19921
+05/11 19:34:40 iteration: 003 error: 0.38722 acc val: 0.21333 acc train 0.19961
+05/11 19:34:41 iteration: 004 error: 0.38268 acc val: 0.21333 acc train 0.19862
+05/11 19:34:41 iteration: 005 error: 0.37832 acc val: 0.21333 acc train 0.20825
+05/11 19:34:41 iteration: 006 error: 0.37099 acc val: 0.26667 acc train 0.26464
+05/11 19:34:42 iteration: 007 error: 0.36441 acc val: 0.36000 acc train 0.33635
+05/11 19:34:42 iteration: 008 error: 0.35990 acc val: 0.38000 acc train 0.34990
+05/11 19:34:42 iteration: 009 error: 0.35846 acc val: 0.32667 acc train 0.35737
+05/11 19:34:42 iteration: 010 error: 0.35702 acc val: 0.37333 acc train 0.35855
+05/11 19:34:45 iteration: 020 error: 0.35003 acc val: 0.39333 acc train 0.34303
+05/11 19:34:48 iteration: 030 error: 0.34861 acc val: 0.36667 acc train 0.35344
+05/11 19:34:50 iteration: 040 error: 0.35026 acc val: 0.38667 acc train 0.36503
+05/11 19:34:52 iteration: 050 error: 0.34839 acc val: 0.38667 acc train 0.36660
+05/11 19:34:55 iteration: 060 error: 0.34862 acc val: 0.39333 acc train 0.36464
+05/11 19:34:57 iteration: 070 error: 0.34983 acc val: 0.38667 acc train 0.36169
+05/11 19:35:00 iteration: 080 error: 0.34826 acc val: 0.37333 acc train 0.36955
+05/11 19:35:02 iteration: 090 error: 0.34818 acc val: 0.40000 acc train 0.36699
+05/11 19:35:05 iteration: 100 error: 0.34563 acc val: 0.38000 acc train 0.36346
+05/11 19:35:07 iteration: 110 error: 0.34765 acc val: 0.38000 acc train 0.36916
+05/11 19:35:10 iteration: 120 error: 0.34685 acc val: 0.37333 acc train 0.36149
+05/11 19:35:12 iteration: 130 error: 0.34713 acc val: 0.38667 acc train 0.36208
+05/11 19:35:14 iteration: 140 error: 0.34698 acc val: 0.36000 acc train 0.35914
+05/11 19:35:17 iteration: 150 error: 0.34760 acc val: 0.40667 acc train 0.40629
+To file
+
+0.0,3,0.890740306601,4,8
+itemnr0
+0.0,3,1.0,5,59
+0.0,0,0.0,0,160
+0.0,3,1.0,5,230
+0.0,0,0.0,0,285
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run18
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run18
+start learning
+05/11 19:35:17 iteration: 001 error: 0.38885 acc val: 0.18667 acc train 0.20157
+05/11 19:35:18 iteration: 002 error: 0.38918 acc val: 0.18667 acc train 0.20157
+05/11 19:35:18 iteration: 003 error: 0.38708 acc val: 0.18667 acc train 0.20157
+05/11 19:35:18 iteration: 004 error: 0.38485 acc val: 0.18667 acc train 0.20157
+05/11 19:35:18 iteration: 005 error: 0.38155 acc val: 0.18667 acc train 0.20157
+05/11 19:35:19 iteration: 006 error: 0.37656 acc val: 0.18667 acc train 0.20688
+05/11 19:35:19 iteration: 007 error: 0.37198 acc val: 0.19333 acc train 0.25363
+05/11 19:35:19 iteration: 008 error: 0.36521 acc val: 0.28667 acc train 0.34303
+05/11 19:35:19 iteration: 009 error: 0.36137 acc val: 0.31333 acc train 0.34440
+05/11 19:35:20 iteration: 010 error: 0.35663 acc val: 0.30000 acc train 0.34322
+05/11 19:35:22 iteration: 020 error: 0.35177 acc val: 0.31333 acc train 0.34813
+05/11 19:35:25 iteration: 030 error: 0.34630 acc val: 0.32000 acc train 0.36208
+05/11 19:35:27 iteration: 040 error: 0.34556 acc val: 0.32667 acc train 0.37308
+05/11 19:35:29 iteration: 050 error: 0.34199 acc val: 0.34000 acc train 0.37092
+05/11 19:35:32 iteration: 060 error: 0.34193 acc val: 0.38000 acc train 0.36405
+05/11 19:35:34 iteration: 070 error: 0.33756 acc val: 0.38667 acc train 0.36817
+05/11 19:35:37 iteration: 080 error: 0.34341 acc val: 0.36667 acc train 0.37112
+05/11 19:35:39 iteration: 090 error: 0.34049 acc val: 0.35333 acc train 0.36385
+05/11 19:35:41 iteration: 100 error: 0.33990 acc val: 0.38000 acc train 0.36640
+05/11 19:35:44 iteration: 110 error: 0.33913 acc val: 0.34000 acc train 0.36582
+05/11 19:35:46 iteration: 120 error: 0.34543 acc val: 0.36000 acc train 0.37014
+05/11 19:35:49 iteration: 130 error: 0.34108 acc val: 0.35333 acc train 0.36012
+05/11 19:35:51 iteration: 140 error: 0.34038 acc val: 0.38667 acc train 0.36758
+05/11 19:35:54 iteration: 150 error: 0.34198 acc val: 0.44000 acc train 0.42024
+To file
+
+0.0,0,0.890740306601,4,8
+itemnr0
+0.0,3,1.0,5,59
+0.0,3,0.0,0,160
+0.0,0,1.0,5,230
+0.0,0,0.0,0,285
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run18
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run18
+start learning
+05/11 19:35:54 iteration: 001 error: 0.38357 acc val: 0.18667 acc train 0.20098
+05/11 19:35:54 iteration: 002 error: 0.38637 acc val: 0.18667 acc train 0.20098
+05/11 19:35:54 iteration: 003 error: 0.40144 acc val: 0.18667 acc train 0.20098
+05/11 19:35:54 iteration: 004 error: 0.34102 acc val: 0.33333 acc train 0.38762
+05/11 19:35:54 iteration: 005 error: 0.36982 acc val: 0.30667 acc train 0.39037
+05/11 19:35:54 iteration: 006 error: 0.36962 acc val: 0.30667 acc train 0.36601
+05/11 19:35:54 iteration: 007 error: 0.40473 acc val: 0.29333 acc train 0.38075
+05/11 19:35:54 iteration: 008 error: 0.38702 acc val: 0.31333 acc train 0.38998
+05/11 19:35:54 iteration: 009 error: 0.37055 acc val: 0.31333 acc train 0.38409
+05/11 19:35:54 iteration: 010 error: 0.38428 acc val: 0.28000 acc train 0.38527
+05/11 19:35:55 iteration: 020 error: 0.43457 acc val: 0.34000 acc train 0.37741
+05/11 19:35:55 iteration: 030 error: 0.40331 acc val: 0.36667 acc train 0.41022
+05/11 19:35:56 iteration: 040 error: 0.39186 acc val: 0.35333 acc train 0.39253
+05/11 19:35:57 iteration: 050 error: 0.40327 acc val: 0.35333 acc train 0.38153
+05/11 19:35:57 iteration: 060 error: 0.41255 acc val: 0.32667 acc train 0.38035
+05/11 19:35:58 iteration: 070 error: 0.39789 acc val: 0.34667 acc train 0.38861
+05/11 19:35:59 iteration: 080 error: 0.42753 acc val: 0.33333 acc train 0.34126
+05/11 19:35:59 iteration: 090 error: 0.43127 acc val: 0.32000 acc train 0.34361
+05/11 19:36:00 iteration: 100 error: 0.26171 acc val: 0.33333 acc train 0.39194
+05/11 19:36:00 iteration: 110 error: 0.39183 acc val: 0.36000 acc train 0.41100
+05/11 19:36:01 iteration: 120 error: 0.39864 acc val: 0.34000 acc train 0.38743
+05/11 19:36:02 iteration: 130 error: 0.26298 acc val: 0.33333 acc train 0.38861
+05/11 19:36:02 iteration: 140 error: 0.38618 acc val: 0.35333 acc train 0.40472
+05/11 19:36:03 iteration: 150 error: 0.38077 acc val: 0.35333 acc train 0.40943
+To file
+
+1.0,3,0.890740306601,4,8
+itemnr0
+1.0,3,1.0,5,59
+0.923633491582,3,0.0,0,160
+0.0,3,1.0,5,230
+0.0,0,0.0,0,285
+===========
+POLITICS NAMES
+===========
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 1 politics names run19
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_0.005_0.05_40_run19
+start learning
+05/11 19:36:03 iteration: 001 error: 0.38730 acc val: 0.18000 acc train 0.20157
+05/11 19:36:04 iteration: 002 error: 0.38987 acc val: 0.18000 acc train 0.20157
+05/11 19:36:04 iteration: 003 error: 0.38729 acc val: 0.18000 acc train 0.20157
+05/11 19:36:04 iteration: 004 error: 0.38357 acc val: 0.18000 acc train 0.20157
+05/11 19:36:04 iteration: 005 error: 0.37904 acc val: 0.18000 acc train 0.20904
+05/11 19:36:05 iteration: 006 error: 0.37186 acc val: 0.20000 acc train 0.26130
+05/11 19:36:05 iteration: 007 error: 0.36707 acc val: 0.32667 acc train 0.32888
+05/11 19:36:05 iteration: 008 error: 0.36154 acc val: 0.38000 acc train 0.34499
+05/11 19:36:05 iteration: 009 error: 0.35888 acc val: 0.37333 acc train 0.35914
+05/11 19:36:06 iteration: 010 error: 0.35686 acc val: 0.36667 acc train 0.36208
+05/11 19:36:08 iteration: 020 error: 0.35195 acc val: 0.34000 acc train 0.36090
+05/11 19:36:11 iteration: 030 error: 0.34920 acc val: 0.36667 acc train 0.35835
+05/11 19:36:13 iteration: 040 error: 0.34598 acc val: 0.32000 acc train 0.35658
+05/11 19:36:16 iteration: 050 error: 0.34835 acc val: 0.38000 acc train 0.40413
+05/11 19:36:18 iteration: 060 error: 0.34619 acc val: 0.32000 acc train 0.35599
+05/11 19:36:21 iteration: 070 error: 0.34421 acc val: 0.33333 acc train 0.36287
+05/11 19:36:23 iteration: 080 error: 0.34317 acc val: 0.32667 acc train 0.36012
+05/11 19:36:26 iteration: 090 error: 0.34476 acc val: 0.34000 acc train 0.35933
+05/11 19:36:29 iteration: 100 error: 0.34585 acc val: 0.34667 acc train 0.35953
+05/11 19:36:31 iteration: 110 error: 0.34688 acc val: 0.34000 acc train 0.35560
+05/11 19:36:34 iteration: 120 error: 0.34547 acc val: 0.34000 acc train 0.35422
+05/11 19:36:36 iteration: 130 error: 0.34489 acc val: 0.34667 acc train 0.36130
+05/11 19:36:39 iteration: 140 error: 0.34498 acc val: 0.35333 acc train 0.35167
+05/11 19:36:41 iteration: 150 error: 0.34342 acc val: 0.42000 acc train 0.41081
+To file
+
+0.0,3,0.861363244826,3,2
+itemnr0
+0.0,0,0.0,0,39
+0.0,0,0.0,0,95
+0.0,3,0.69281093729,2,103
+0.0,3,0.781437464314,3,107
+nr inputs 125 125
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 2 politics names random run19
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o2_hub_random\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o2_hub_random_0.005_0.05_40_run19
+start learning
+05/11 19:36:42 iteration: 001 error: 0.38805 acc val: 0.16667 acc train 0.20196
+05/11 19:36:42 iteration: 002 error: 0.38904 acc val: 0.16667 acc train 0.20196
+05/11 19:36:42 iteration: 003 error: 0.38623 acc val: 0.16667 acc train 0.20196
+05/11 19:36:43 iteration: 004 error: 0.38321 acc val: 0.16667 acc train 0.20196
+05/11 19:36:43 iteration: 005 error: 0.37856 acc val: 0.16667 acc train 0.20786
+05/11 19:36:43 iteration: 006 error: 0.37297 acc val: 0.16667 acc train 0.24028
+05/11 19:36:43 iteration: 007 error: 0.36827 acc val: 0.28000 acc train 0.30393
+05/11 19:36:44 iteration: 008 error: 0.36417 acc val: 0.28000 acc train 0.35639
+05/11 19:36:44 iteration: 009 error: 0.35770 acc val: 0.29333 acc train 0.36916
+05/11 19:36:44 iteration: 010 error: 0.35789 acc val: 0.28000 acc train 0.34676
+05/11 19:36:47 iteration: 020 error: 0.34908 acc val: 0.28000 acc train 0.35187
+05/11 19:36:49 iteration: 030 error: 0.35144 acc val: 0.30000 acc train 0.36719
+05/11 19:36:52 iteration: 040 error: 0.34553 acc val: 0.30667 acc train 0.37485
+05/11 19:36:54 iteration: 050 error: 0.34200 acc val: 0.30667 acc train 0.37151
+05/11 19:36:56 iteration: 060 error: 0.34151 acc val: 0.29333 acc train 0.36640
+05/11 19:36:59 iteration: 070 error: 0.34278 acc val: 0.30667 acc train 0.36582
+05/11 19:37:01 iteration: 080 error: 0.34317 acc val: 0.28667 acc train 0.37073
+05/11 19:37:04 iteration: 090 error: 0.34237 acc val: 0.30667 acc train 0.36582
+05/11 19:37:06 iteration: 100 error: 0.34338 acc val: 0.30000 acc train 0.36523
+05/11 19:37:09 iteration: 110 error: 0.34236 acc val: 0.26667 acc train 0.36680
+05/11 19:37:11 iteration: 120 error: 0.34074 acc val: 0.31333 acc train 0.36916
+05/11 19:37:14 iteration: 130 error: 0.34016 acc val: 0.29333 acc train 0.36169
+05/11 19:37:16 iteration: 140 error: 0.34347 acc val: 0.32667 acc train 0.37682
+05/11 19:37:18 iteration: 150 error: 0.34308 acc val: 0.34000 acc train 0.42279
+To file
+
+0.0,2,0.861363244826,3,2
+itemnr0
+0.0,3,0.0,0,39
+0.0,3,0.0,0,95
+0.0,3,0.69281093729,2,103
+0.0,3,0.781437464314,3,107
+nr inputs 5 5
+nr outputs 6 6
+0.693908631769,2
+Loaded sample 0
+Sizes train test val: 5090 150 150
+
+
+ exp 3 politics names no context run19
+Settings ws= 1 ouputs=6 inputs=5
+D:\Users\Lydia\results_freqs\nn_data\politics_names_o0_hub\data.txt
+D:\Users\Lydia\results_nn\politics_names_all\politics_names_o0_hub_0.005_0.05_40_run19
+start learning
+05/11 19:37:19 iteration: 001 error: 0.38427 acc val: 0.15333 acc train 0.20216
+05/11 19:37:19 iteration: 002 error: 0.38461 acc val: 0.15333 acc train 0.20236
+05/11 19:37:19 iteration: 003 error: 0.37931 acc val: 0.15333 acc train 0.20216
+05/11 19:37:19 iteration: 004 error: 0.37270 acc val: 0.15333 acc train 0.24204
+05/11 19:37:19 iteration: 005 error: 0.37060 acc val: 0.36000 acc train 0.34794
+05/11 19:37:19 iteration: 006 error: 0.36545 acc val: 0.34667 acc train 0.39627
+05/11 19:37:19 iteration: 007 error: 0.36527 acc val: 0.34000 acc train 0.40000
+05/11 19:37:19 iteration: 008 error: 0.36588 acc val: 0.31333 acc train 0.38998
+05/11 19:37:19 iteration: 009 error: 0.37252 acc val: 0.36000 acc train 0.39627
+05/11 19:37:19 iteration: 010 error: 0.37201 acc val: 0.35333 acc train 0.39823
+05/11 19:37:20 iteration: 020 error: 0.38634 acc val: 0.34000 acc train 0.40530
+05/11 19:37:20 iteration: 030 error: 0.39971 acc val: 0.33333 acc train 0.41257
+05/11 19:37:21 iteration: 040 error: 0.39555 acc val: 0.30667 acc train 0.35521
+05/11 19:37:21 iteration: 050 error: 0.27778 acc val: 0.36000 acc train 0.40570
+05/11 19:37:22 iteration: 060 error: 0.38396 acc val: 0.36000 acc train 0.39902
+05/11 19:37:23 iteration: 070 error: 0.39051 acc val: 0.37333 acc train 0.40314
+05/11 19:37:23 iteration: 080 error: 0.38083 acc val: 0.36667 acc train 0.40196
+05/11 19:37:24 iteration: 090 error: 0.38693 acc val: 0.37333 acc train 0.37662
+05/11 19:37:25 iteration: 100 error: 0.26423 acc val: 0.34667 acc train 0.36719
+05/11 19:37:25 iteration: 110 error: 0.40243 acc val: 0.34667 acc train 0.37603
+05/11 19:37:26 iteration: 120 error: 0.41399 acc val: 0.35333 acc train 0.41139
+05/11 19:37:26 iteration: 130 error: 0.25816 acc val: 0.35333 acc train 0.40923
+05/11 19:37:27 iteration: 140 error: 0.38457 acc val: 0.34667 acc train 0.41100
+05/11 19:37:28 iteration: 150 error: 0.25707 acc val: 0.35333 acc train 0.41552
+To file
+
+0.562532336926,3,0.861363244826,3,2
+itemnr0
+0.484544679054,3,0.0,0,39
+0.65380967909,3,0.0,0,95
+0.819983131933,3,0.69281093729,2,103
+1.0,3,0.781437464314,3,107
+nr inputs 125 125
+nr outputs 6 6
+0.439417741178,3
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Sizes train test val: 1295875 100000 100000
+
+
+ exp 1
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_o2_logas_hub\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_o2_logas_hub_5.0E-4_0.005_40
+start learning
+05/11 20:09:54 iteration: 001 error: 0.32844 acc val: 0.19529 acc train 0.20875
+05/11 20:11:13 iteration: 002 error: 0.34052 acc val: 0.18373 acc train 0.19733
+05/11 20:12:31 iteration: 003 error: 0.33762 acc val: 0.18670 acc train 0.20596
+05/11 20:13:46 iteration: 004 error: 0.33550 acc val: 0.19643 acc train 0.21026
+05/11 20:14:59 iteration: 005 error: 0.33546 acc val: 0.20565 acc train 0.20252
+05/11 20:16:10 iteration: 006 error: 0.33489 acc val: 0.21034 acc train 0.20988
+05/11 20:17:22 iteration: 007 error: 0.33364 acc val: 0.21674 acc train 0.21223
+05/11 20:18:33 iteration: 008 error: 0.33310 acc val: 0.22081 acc train 0.20825
+05/11 20:19:45 iteration: 009 error: 0.33311 acc val: 0.22084 acc train 0.20933
+05/11 20:20:57 iteration: 010 error: 0.33271 acc val: 0.22401 acc train 0.21320
+05/11 20:32:58 iteration: 020 error: 0.33101 acc val: 0.22168 acc train 0.20655
+05/11 20:44:47 iteration: 030 error: 0.33210 acc val: 0.22987 acc train 0.19777
+05/11 20:56:44 iteration: 040 error: 0.33285 acc val: 0.22763 acc train 0.20045
+05/11 21:08:38 iteration: 050 error: 0.33679 acc val: 0.23674 acc train 0.19546
+05/11 21:20:35 iteration: 060 error: 0.33914 acc val: 0.23924 acc train 0.20824
+05/11 21:32:37 iteration: 070 error: 0.34023 acc val: 0.23706 acc train 0.20170
+To file
+
+0.0,3,0.0,0,6
+itemnr0
+0.0,3,0.0,0,20
+0.0,3,0.439417741178,3,48
+0.0,3,0.495629423496,4,68
+0.0,0,0.0,0,70
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+
+
+ exp 2
+nr inputs 144 144
+nr outputs 6 6
+0.439417741178,3
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Sizes train test val: 1295875 100000 100000
+Settings ws= 5 ouputs=6 inputs=144
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_o2_logas_hub_timeind\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_o2_logas_hub_timeind_5.0E-4_0.005_40
+start learning
+05/11 21:41:19 iteration: 001 error: 0.32992 acc val: 0.18907 acc train 0.20949
+05/11 21:42:47 iteration: 002 error: 0.34017 acc val: 0.18389 acc train 0.20126
+05/11 21:44:17 iteration: 003 error: 0.33758 acc val: 0.18702 acc train 0.20122
+05/11 21:45:42 iteration: 004 error: 0.33549 acc val: 0.19667 acc train 0.19880
+05/11 21:47:03 iteration: 005 error: 0.33556 acc val: 0.20314 acc train 0.19960
+05/11 21:48:23 iteration: 006 error: 0.33471 acc val: 0.21265 acc train 0.19984
+05/11 21:49:43 iteration: 007 error: 0.33386 acc val: 0.21924 acc train 0.20428
+05/11 21:51:04 iteration: 008 error: 0.33323 acc val: 0.22150 acc train 0.19804
+05/11 21:52:26 iteration: 009 error: 0.33278 acc val: 0.22484 acc train 0.20206
+05/11 21:53:48 iteration: 010 error: 0.33284 acc val: 0.22532 acc train 0.19887
+05/11 22:08:01 iteration: 020 error: 0.33081 acc val: 0.23041 acc train 0.19902
+05/11 22:21:26 iteration: 030 error: 0.33028 acc val: 0.23271 acc train 0.19180
+05/11 22:34:46 iteration: 040 error: 0.33078 acc val: 0.23207 acc train 0.18207
+05/11 22:48:03 iteration: 050 error: 0.33226 acc val: 0.24019 acc train 0.18632
+05/11 23:01:26 iteration: 060 error: 0.33472 acc val: 0.23395 acc train 0.19789
+05/11 23:14:39 iteration: 070 error: 0.33681 acc val: 0.23109 acc train 0.20257
+To file
+
+0.0,3,0.0,0,6
+itemnr0
+0.0,3,0.0,0,20
+0.0,3,0.439417741178,3,48
+0.0,3,0.495629423496,4,68
+0.0,0,0.0,0,70
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+
+
+ exp 3
+nr inputs 125 125
+nr outputs 6 6
+0.439417741178,3
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Sizes train test val: 1295875 100000 100000
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_o2_logas_no_hub\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_o2_logas_no_hub_5.0E-4_0.005_40
+start learning
+05/11 23:23:48 iteration: 001 error: 0.36982 acc val: 0.25319 acc train 0.26714
+05/11 23:25:07 iteration: 002 error: 0.37766 acc val: 0.24099 acc train 0.25389
+05/11 23:26:27 iteration: 003 error: 0.37500 acc val: 0.23965 acc train 0.24820
+05/11 23:27:47 iteration: 004 error: 0.37351 acc val: 0.24005 acc train 0.23926
+05/11 23:29:05 iteration: 005 error: 0.37237 acc val: 0.24149 acc train 0.23691
+05/11 23:30:21 iteration: 006 error: 0.37140 acc val: 0.24799 acc train 0.23924
+05/11 23:31:34 iteration: 007 error: 0.37168 acc val: 0.25354 acc train 0.23976
+05/11 23:32:46 iteration: 008 error: 0.37102 acc val: 0.25530 acc train 0.23888
+05/11 23:34:00 iteration: 009 error: 0.37052 acc val: 0.26135 acc train 0.24064
+05/11 23:35:13 iteration: 010 error: 0.37006 acc val: 0.26435 acc train 0.24243
+05/11 23:47:12 iteration: 020 error: 0.36762 acc val: 0.27396 acc train 0.23531
+05/11 23:59:13 iteration: 030 error: 0.36808 acc val: 0.27433 acc train 0.23016
+06/11 00:11:19 iteration: 040 error: 0.36857 acc val: 0.27835 acc train 0.23256
+06/11 00:23:21 iteration: 050 error: 0.37170 acc val: 0.27692 acc train 0.24120
+06/11 00:35:25 iteration: 060 error: 0.37259 acc val: 0.27928 acc train 0.24405
+06/11 00:47:19 iteration: 070 error: 0.37355 acc val: 0.27976 acc train 0.24291
+To file
+
+0.0,3,0.0,0,6
+itemnr0
+0.0,3,0.0,0,20
+0.0,3,0.439417741178,3,48
+0.0,3,0.495629423496,4,68
+0.0,0,0.0,0,70
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+
+
+ exp RANDOM 4
+nr inputs 125 125
+nr outputs 6 6
+0.439417741178,3
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Sizes train test val: 1295875 100000 100000
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_random_o2_logas_hub\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_random_o2_logas_hub_5.0E-4_0.005_40
+start learning
+06/11 00:55:47 iteration: 001 error: 0.33003 acc val: 0.19551 acc train 0.20059
+06/11 00:57:07 iteration: 002 error: 0.34211 acc val: 0.18557 acc train 0.19782
+06/11 00:58:25 iteration: 003 error: 0.33907 acc val: 0.18863 acc train 0.19709
+06/11 00:59:38 iteration: 004 error: 0.33661 acc val: 0.19539 acc train 0.20735
+06/11 01:00:52 iteration: 005 error: 0.33498 acc val: 0.20338 acc train 0.20107
+06/11 01:02:07 iteration: 006 error: 0.33433 acc val: 0.21216 acc train 0.20965
+06/11 01:03:20 iteration: 007 error: 0.33434 acc val: 0.21662 acc train 0.21048
+06/11 01:04:34 iteration: 008 error: 0.33444 acc val: 0.22093 acc train 0.20543
+06/11 01:05:48 iteration: 009 error: 0.33421 acc val: 0.22113 acc train 0.21071
+06/11 01:07:03 iteration: 010 error: 0.33402 acc val: 0.22378 acc train 0.21039
+06/11 01:18:49 iteration: 020 error: 0.33282 acc val: 0.23076 acc train 0.19614
+06/11 01:30:44 iteration: 030 error: 0.33311 acc val: 0.23471 acc train 0.19217
+06/11 01:42:21 iteration: 040 error: 0.33792 acc val: 0.22667 acc train 0.19714
+06/11 01:54:18 iteration: 050 error: 0.34061 acc val: 0.23792 acc train 0.20511
+06/11 02:06:05 iteration: 060 error: 0.34484 acc val: 0.24058 acc train 0.20276
+06/11 02:17:59 iteration: 070 error: 0.34600 acc val: 0.23430 acc train 0.20498
+To file
+
+0.0,3,0.0,0,6
+itemnr0
+0.0,3,0.0,0,20
+0.0,3,0.439417741178,3,48
+0.0,3,0.495629423496,4,68
+0.0,0,0.0,0,70
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+
+
+ exp 5
+nr inputs 174 155
+nr outputs 6 6
+0.439417741178,3

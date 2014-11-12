@@ -1,0 +1,30 @@
+K:\Lydia\smrThesis\code\snowballstemmer-1.1.0\src
+
+
+
+
+{'freq_cutoff': 10, 'use_stemmer': 'no', 'max_nr_docs': 60000, 'case_name': 'new_football_lim60000', 'article_type': 'football'}
+final query -SELECT itemText, pubDate FROM mergednewsitems WHERE sourceType = 5-
+\new_football_lim60000
+cutoff 10
+directory made
+Database after2011
+Get items from database
+selection made
+20000 files, max files 60000 processed at 2014-11-12 15:01:11.507378
+40000 files, max files 60000 processed at 2014-11-12 15:01:51.952494
+Database before2011
+number of documents:  60000
+data processed, write to file
+nr of exceptions: 0
+number of words: 122105
+nr cooc entries: 8639367
+complete coocs to distributed files
+directory made
+remaining nr words:  27058 words to file at 2014-11-12 15:02:57.616769
+normalize coocs 2014-11-12 15:02:57.616769
+coocs to file 2014-11-12 15:11:22.547561
+min date 2012-01-01 maxdate 2013-04-27
+==============
+DONE
+==============

@@ -1,0 +1,300 @@
+nr inputs 125 125
+nr outputs 6 6
+0.0,0
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Loaded sample 1500000
+Sizes train test val: 1595310 200000 200000
+
+
+ exp 1
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_o2_logas_hub\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_o2_logas_hub_5.0E-4_0.005_40
+start learning
+04/11 17:53:04 iteration: 001 error: 0.32449 acc val: 0.22488 acc train 0.22571
+04/11 17:54:57 iteration: 002 error: 0.30657 acc val: 0.22520 acc train 0.22595
+04/11 17:56:49 iteration: 003 error: 0.30600 acc val: 0.22321 acc train 0.22460
+04/11 17:58:40 iteration: 004 error: 0.30511 acc val: 0.23231 acc train 0.23327
+04/11 18:00:31 iteration: 005 error: 0.30345 acc val: 0.25267 acc train 0.25454
+04/11 18:02:22 iteration: 006 error: 0.30086 acc val: 0.27889 acc train 0.28130
+04/11 18:04:14 iteration: 007 error: 0.29876 acc val: 0.29270 acc train 0.29439
+04/11 18:06:09 iteration: 008 error: 0.29787 acc val: 0.29870 acc train 0.29942
+04/11 18:08:05 iteration: 009 error: 0.29754 acc val: 0.30142 acc train 0.30177
+04/11 18:10:01 iteration: 010 error: 0.29739 acc val: 0.30272 acc train 0.30299
+04/11 18:29:09 iteration: 020 error: 0.29673 acc val: 0.30692 acc train 0.30694
+04/11 18:48:00 iteration: 030 error: 0.29625 acc val: 0.30889 acc train 0.30854
+04/11 19:06:43 iteration: 040 error: 0.29587 acc val: 0.30986 acc train 0.30929
+04/11 19:25:22 iteration: 050 error: 0.29559 acc val: 0.31034 acc train 0.30960
+04/11 19:43:42 iteration: 060 error: 0.29541 acc val: 0.31024 acc train 0.30948
+04/11 20:02:23 iteration: 070 error: 0.29527 acc val: 0.30993 acc train 0.30911
+To file
+
+0.0,3,0.567482741079,4,9
+itemnr0
+0.0,3,0.567482741079,4,27
+0.0,5,0.615235131699,5,29
+0.0,0,0.439417741178,3,41
+0.0,3,0.535982073587,4,48
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+itemnr100000
+itemnr110000
+itemnr120000
+itemnr130000
+itemnr140000
+itemnr150000
+itemnr160000
+itemnr170000
+itemnr180000
+itemnr190000
+
+
+ exp 2
+nr inputs 144 144
+nr outputs 6 6
+0.0,0
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Loaded sample 1500000
+Sizes train test val: 1595310 200000 200000
+Settings ws= 5 ouputs=6 inputs=144
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_o2_logas_hub_timeind\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_swrem_whole_o2_logas_5bins_tz_timeind_5.0E-4_0.005_40
+start learning
+04/11 20:16:15 iteration: 001 error: 0.32318 acc val: 0.23082 acc train 0.23123
+04/11 20:18:40 iteration: 002 error: 0.30595 acc val: 0.25387 acc train 0.25714
+04/11 20:21:06 iteration: 003 error: 0.30466 acc val: 0.25541 acc train 0.25977
+04/11 20:23:18 iteration: 004 error: 0.30257 acc val: 0.26713 acc train 0.27061
+04/11 20:25:26 iteration: 005 error: 0.29968 acc val: 0.28327 acc train 0.28510
+04/11 20:27:34 iteration: 006 error: 0.29748 acc val: 0.29231 acc train 0.29304
+04/11 20:29:42 iteration: 007 error: 0.29655 acc val: 0.29699 acc train 0.29752
+04/11 20:31:51 iteration: 008 error: 0.29618 acc val: 0.29972 acc train 0.30022
+04/11 20:33:59 iteration: 009 error: 0.29597 acc val: 0.30213 acc train 0.30236
+04/11 20:36:08 iteration: 010 error: 0.29582 acc val: 0.30384 acc train 0.30413
+04/11 20:57:36 iteration: 020 error: 0.29500 acc val: 0.31114 acc train 0.31056
+04/11 21:18:52 iteration: 030 error: 0.29451 acc val: 0.31044 acc train 0.30977
+04/11 21:40:13 iteration: 040 error: 0.29422 acc val: 0.30927 acc train 0.30882
+04/11 22:01:31 iteration: 050 error: 0.29403 acc val: 0.30888 acc train 0.30854
+04/11 22:23:02 iteration: 060 error: 0.29385 acc val: 0.30915 acc train 0.30867
+04/11 22:44:32 iteration: 070 error: 0.29365 acc val: 0.30919 acc train 0.30877
+To file
+
+0.0,3,0.567482741079,4,9
+itemnr0
+0.0,3,0.567482741079,4,27
+0.0,5,0.615235131699,5,29
+0.0,3,0.439417741178,3,41
+0.0,3,0.535982073587,4,48
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+itemnr100000
+itemnr110000
+itemnr120000
+itemnr130000
+itemnr140000
+itemnr150000
+itemnr160000
+itemnr170000
+itemnr180000
+itemnr190000
+
+
+ exp 3
+nr inputs 125 125
+nr outputs 6 6
+0.0,0
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Loaded sample 1500000
+Sizes train test val: 1595310 200000 200000
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_o2_logas_no_hub\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_o2_logas_no_hub5.0E-4_0.005_40
+start learning
+04/11 22:59:01 iteration: 001 error: 0.37321 acc val: 0.35881 acc train 0.35342
+04/11 23:01:09 iteration: 002 error: 0.35739 acc val: 0.35988 acc train 0.35406
+04/11 23:03:16 iteration: 003 error: 0.35696 acc val: 0.35945 acc train 0.35384
+04/11 23:05:23 iteration: 004 error: 0.35647 acc val: 0.35868 acc train 0.35307
+04/11 23:07:25 iteration: 005 error: 0.35574 acc val: 0.35807 acc train 0.35270
+04/11 23:09:18 iteration: 006 error: 0.35481 acc val: 0.35802 acc train 0.35266
+04/11 23:11:10 iteration: 007 error: 0.35386 acc val: 0.35838 acc train 0.35292
+04/11 23:13:04 iteration: 008 error: 0.35314 acc val: 0.35884 acc train 0.35343
+04/11 23:14:56 iteration: 009 error: 0.35270 acc val: 0.35953 acc train 0.35410
+04/11 23:16:50 iteration: 010 error: 0.35246 acc val: 0.36021 acc train 0.35465
+04/11 23:35:31 iteration: 020 error: 0.35179 acc val: 0.36154 acc train 0.35607
+04/11 23:54:16 iteration: 030 error: 0.35125 acc val: 0.36153 acc train 0.35627
+05/11 00:13:06 iteration: 040 error: 0.35068 acc val: 0.36126 acc train 0.35594
+05/11 00:31:45 iteration: 050 error: 0.35030 acc val: 0.36112 acc train 0.35577
+05/11 00:50:24 iteration: 060 error: 0.35009 acc val: 0.36102 acc train 0.35556
+05/11 01:09:00 iteration: 070 error: 0.34992 acc val: 0.36098 acc train 0.35557
+To file
+
+0.0,3,0.567482741079,4,9
+itemnr0
+0.0,3,0.567482741079,4,27
+0.0,5,0.615235131699,5,29
+0.0,0,0.439417741178,3,41
+0.0,3,0.535982073587,4,48
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+itemnr100000
+itemnr110000
+itemnr120000
+itemnr130000
+itemnr140000
+itemnr150000
+itemnr160000
+itemnr170000
+itemnr180000
+itemnr190000
+
+
+ exp RANDOM 4
+nr inputs 125 125
+nr outputs 6 6
+0.0,0
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Loaded sample 1500000
+Sizes train test val: 1595310 200000 200000
+Settings ws= 5 ouputs=6 inputs=125
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_random_o2_logas_hub\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_random_o2_logas_hub5.0E-4_0.005_40
+start learning
+05/11 01:22:08 iteration: 001 error: 0.32372 acc val: 0.22458 acc train 0.22510
+05/11 01:23:43 iteration: 002 error: 0.30659 acc val: 0.23160 acc train 0.23137
+05/11 01:25:18 iteration: 003 error: 0.30596 acc val: 0.22974 acc train 0.23015
+05/11 01:26:54 iteration: 004 error: 0.30482 acc val: 0.23099 acc train 0.23233
+05/11 01:28:29 iteration: 005 error: 0.30268 acc val: 0.25672 acc train 0.25799
+05/11 01:30:05 iteration: 006 error: 0.29997 acc val: 0.28227 acc train 0.28435
+05/11 01:31:41 iteration: 007 error: 0.29819 acc val: 0.29360 acc train 0.29557
+05/11 01:33:17 iteration: 008 error: 0.29751 acc val: 0.29852 acc train 0.29990
+05/11 01:34:53 iteration: 009 error: 0.29726 acc val: 0.30049 acc train 0.30197
+05/11 01:36:29 iteration: 010 error: 0.29712 acc val: 0.30189 acc train 0.30316
+05/11 01:52:13 iteration: 020 error: 0.29654 acc val: 0.30568 acc train 0.30650
+05/11 02:07:48 iteration: 030 error: 0.29611 acc val: 0.30690 acc train 0.30746
+05/11 02:23:20 iteration: 040 error: 0.29576 acc val: 0.30771 acc train 0.30798
+05/11 02:38:57 iteration: 050 error: 0.29553 acc val: 0.30837 acc train 0.30830
+05/11 02:54:34 iteration: 060 error: 0.29538 acc val: 0.30879 acc train 0.30845
+05/11 03:10:11 iteration: 070 error: 0.29526 acc val: 0.30901 acc train 0.30853
+To file
+
+0.0,3,0.567482741079,4,9
+itemnr0
+0.0,3,0.567482741079,4,27
+0.0,5,0.615235131699,5,29
+0.0,0,0.439417741178,3,41
+0.0,3,0.535982073587,4,48
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+itemnr100000
+itemnr110000
+itemnr120000
+itemnr130000
+itemnr140000
+itemnr150000
+itemnr160000
+itemnr170000
+itemnr180000
+itemnr190000
+
+
+ exp 5
+nr inputs 155 155
+nr outputs 6 6
+0.0,0
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Loaded sample 1500000
+Sizes train test val: 1595310 200000 200000
+Settings ws= 5 ouputs=6 inputs=155
+D:\Users\Lydia\results_freqs\nn_data\politics_lim_ns_o2_logas_hub_tarind5\data.txt
+D:\Users\Lydia\results_nn\politics_lim_ns_swrem_whole_o2_logas_5bins_tz_5.0E-4_0.005_40
+start learning
+05/11 03:22:57 iteration: 001 error: 0.31067 acc val: 0.26407 acc train 0.26221
+05/11 03:25:33 iteration: 002 error: 0.29921 acc val: 0.29497 acc train 0.29467
+05/11 03:27:52 iteration: 003 error: 0.29790 acc val: 0.30241 acc train 0.30205
+05/11 03:29:50 iteration: 004 error: 0.29690 acc val: 0.30757 acc train 0.30701
+05/11 03:31:50 iteration: 005 error: 0.29628 acc val: 0.31052 acc train 0.30970
+05/11 03:33:49 iteration: 006 error: 0.29592 acc val: 0.31189 acc train 0.31106
+05/11 03:35:49 iteration: 007 error: 0.29568 acc val: 0.31266 acc train 0.31170
+05/11 03:37:49 iteration: 008 error: 0.29549 acc val: 0.31310 acc train 0.31209
+05/11 03:39:47 iteration: 009 error: 0.29534 acc val: 0.31330 acc train 0.31227
+05/11 03:41:45 iteration: 010 error: 0.29520 acc val: 0.31337 acc train 0.31237
+05/11 04:01:42 iteration: 020 error: 0.29412 acc val: 0.31313 acc train 0.31200
+05/11 04:21:32 iteration: 030 error: 0.29346 acc val: 0.31280 acc train 0.31168
+05/11 04:41:21 iteration: 040 error: 0.29312 acc val: 0.31215 acc train 0.31116
+05/11 05:01:25 iteration: 050 error: 0.29293 acc val: 0.31142 acc train 0.31021
+05/11 05:21:26 iteration: 060 error: 0.29281 acc val: 0.31073 acc train 0.30934
+05/11 05:41:17 iteration: 070 error: 0.29273 acc val: 0.31004 acc train 0.30879
+To file
+
+0.0,3,0.567482741079,4,9
+itemnr0
+0.0,3,0.567482741079,4,27
+0.0,5,0.615235131699,5,29
+0.0,0,0.439417741178,3,41
+0.0,3,0.535982073587,4,48
+itemnr10000
+itemnr20000
+itemnr30000
+itemnr40000
+itemnr50000
+itemnr60000
+itemnr70000
+itemnr80000
+itemnr90000
+itemnr100000
+itemnr110000
+itemnr120000
+itemnr130000
+itemnr140000
+itemnr150000
+itemnr160000
+itemnr170000
+itemnr180000
+itemnr190000
+
+
+ exp 6
+nr inputs 180 180
+nr outputs 6 6
+0.0,0
+Loaded sample 0
+Loaded sample 500000
+Loaded sample 1000000
+Loaded sample 1500000

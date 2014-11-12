@@ -1,4 +1,0 @@
-Gaal**Louis;1;0;1
-Advocaat**Dick;4;0;1
-Boer**Frank;3;0;5
-Basten**Marco;10;0;2

@@ -1,8 +1,0 @@
-Gaal**Louis;1;0;3
-Wennemars**Erben;7;4;4
-Barneveld**Raymond;6;4;3
-Hiddink**Guus;5;0;1
-Jackson**Michael;4;10;1
-Spears**Britney;6;12;5
-Tuitert**Mark;5;6;2
-Williams**Robbie;6;11;2

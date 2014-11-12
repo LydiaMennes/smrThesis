@@ -52,3 +52,4 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+/code/thesis_NN/nbproject/private/
